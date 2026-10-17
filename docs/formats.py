@@ -22,7 +22,7 @@ HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE))
 from align import words
 
-ASSETS = pathlib.Path('/home/claude/marginnotes-videos/assets')
+ASSETS = pathlib.Path(__import__('os').environ.get('MN_ASSETS') or (pathlib.Path(__file__).resolve().parent.parent / 'assets'))
 F = HERE / 'node_modules/@fontsource'
 END = ('.', ',', '?', '!', ':', ';')
 
@@ -49,7 +49,7 @@ def img(name, maxw=2000, gray=False):
     return 'data:image/jpeg;base64,' + base64.b64encode(b.getvalue()).decode(), im.size
 
 
-def segment(audio, keywords):
+def segment(audio, keywords, maxw=4):
     """Split narration into caption chunks (<=4 words, at punctuation) and quote spans."""
     W = [{"w": w, "s": round(s, 3), "e": round(e, 3)} for w, s, e in words(audio + '.json')]
     parts, i = [], 0
@@ -60,7 +60,7 @@ def segment(audio, keywords):
             parts.append({"kind": "quote", "s": W[i]["s"], "e": W[j]["e"], "words": W[i:j + 1]}); i = j + 1; continue
         j = i
         while j + 1 < len(W) and not W[j]["w"].endswith(END) and not W[j + 1]["w"].startswith('"'): j += 1
-        clause = W[i:j + 1]; n = len(clause); k = -(-n // 4); size = -(-n // k)
+        clause = W[i:j + 1]; n = len(clause); k = -(-n // maxw); size = -(-n // k)
         for p in range(0, n, size):
             seg = clause[p:p + size]
             parts.append({"kind": "cap", "s": seg[0]["s"], "e": seg[-1]["e"], "text": " ".join(x["w"] for x in seg)})
@@ -106,7 +106,7 @@ function runShots(t,S){let k=0;for(let i=0;i<S.length;i++)if(t>=S[i].t0)k=i;
 def build(spec, out):
     style = spec["style"]; KEY = [k.lower() for k in spec.get("keywords", [])]
     W, P, end = segment(spec["audio"], KEY)
-    D = round(end + 1.3, 2)
+    D = round(end + (2.0 if style == "W" else 1.3), 2)
     quotes = [p for p in P if p["kind"] == "quote"]
     css, body, js, sfx = "", "", "", []
     ims = {}
@@ -130,13 +130,22 @@ def build(spec, out):
             S.append(dict(t0=cuts[i], t1=cuts[i + 1], img=key, iw=ims[key][1][0], ih=ims[key][1][1], a=v, b=drift))
         return S, cuts
 
-    if style in ("A", "C"):
-        S, cuts = shots_from(spec["images"], gray=(style == "C"), closeups=(style == "A"))
+    if style in ("A", "C", "W"):
+        S, cuts = shots_from(spec["images"], gray=(style == "C"), closeups=(style in ("A", "W")))
         sfx += [{"t": max(0, c - 0.25), "kind": "whoosh"} for c in cuts[1:-1]]
-        filt = "brightness(1.12) contrast(1.15) saturate(1.08)" if style == "A" else "contrast(1.45) brightness(.92)"
+        filt = "brightness(1.12) contrast(1.15) saturate(1.08)" if style in ("A", "W") else "contrast(1.45) brightness(.92)"
         css += f".shot{{position:absolute;left:0;top:0;transform-origin:0 0;filter:{filt}}}"
         body += "<div class=layer><img class=shot id=shA><img class=shot id=shB></div>"
-        if style == "A":
+        if style == "W":  # winners' recipe (Oct 17 audit): bright painting, 1-3 words, series tag, follow end card
+            css += """#shade{background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 45%,rgba(0,0,0,.45) 70%,rgba(0,0,0,.25) 100%)}
+#cap{position:absolute;left:142px;right:162px;top:960px;text-align:center;font:800 88px/1.08 Inter;color:#fff;letter-spacing:-.01em;-webkit-text-stroke:6px rgba(0,0,0,.85);paint-order:stroke fill;text-shadow:0 6px 26px rgba(0,0,0,.7)}
+#cap .k{color:#FF5C61}
+#q{position:absolute;left:142px;right:162px;top:880px;text-align:center;font:italic 700 66px/1.2 Playfair;color:#fff;text-shadow:0 4px 24px #000,0 0 8px #000}
+#cite{top:1290px}
+#series{position:absolute;left:0;right:0;top:300px;text-align:center;font:800 34px Inter;letter-spacing:.32em;color:#fff;text-shadow:0 2px 12px #000}
+#endc{position:absolute;left:142px;right:162px;top:930px;text-align:center;font:800 76px/1.15 Inter;color:#fff;-webkit-text-stroke:6px rgba(0,0,0,.85);paint-order:stroke fill;opacity:0}"""
+            body += f"<div class=layer id=shade></div><canvas id=dust width=1080 height=1920 class=layer></canvas><div id=series>{spec.get('series','')}</div><div id=endc>{spec.get('endcard','')}</div>"
+        elif style == "A":
             css += """#shade{background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.2) 48%,rgba(0,0,0,.6) 74%,rgba(0,0,0,.3) 100%)}
 #cap{position:absolute;left:142px;right:162px;top:940px;text-align:center;font:900 104px/1.02 Inter;color:#fff;text-transform:uppercase;letter-spacing:-.01em;-webkit-text-stroke:14px #000;paint-order:stroke fill;text-shadow:0 8px 30px rgba(0,0,0,.6)}
 #q{position:absolute;left:142px;right:162px;top:900px;text-align:center;font:italic 700 74px/1.18 Playfair;color:#fff;text-shadow:0 4px 24px #000,0 0 8px #000}
@@ -216,6 +225,11 @@ def build(spec, out):
         "A": r"""window.render=function(t){runShots(t,S);drawDust(t);grain(t);const p=cur(t);const cap=document.getElementById('cap'),q=document.getElementById('q'),ci=document.getElementById('cite');
  if(p&&p.kind=='cap'){cap.innerHTML=kw(p.text);const a=eo((t-p.s)/.16);cap.style.opacity=a;cap.style.transform='scale('+(0.88+0.12*a)+')';q.innerHTML='';ci.innerHTML=''}
  else if(p&&p.kind=='quote'){cap.innerHTML='';q.innerHTML=karaoke(p,t);ci.innerHTML=CITE;ci.style.opacity=eo((t-p.s-.2)/.4)}};""",
+        "W": r"""window.render=function(t){runShots(t,S);drawDust(t);grain(t);const p=cur(t);const cap=document.getElementById('cap'),q=document.getElementById('q'),ci=document.getElementById('cite'),ec=document.getElementById('endc');
+ const END=WD[WD.length-1].e;ec.style.opacity=t>END+.1?eo((t-END-.1)/.3):0;
+ if(t>END+.1){cap.innerHTML='';q.innerHTML='';ci.innerHTML='';return}
+ if(p&&p.kind=='cap'){cap.innerHTML=kw(p.text);const a=eo((t-p.s)/.16);cap.style.opacity=a;cap.style.transform='scale('+(0.92+0.08*a)+')';q.innerHTML='';ci.innerHTML=''}
+ else if(p&&p.kind=='quote'){cap.innerHTML='';q.innerHTML=karaoke(p,t);ci.innerHTML=CITE;ci.style.opacity=eo((t-p.s-.2)/.4)}};""",
         "C": r"""window.render=function(t){runShots(t,S);grain(t);const p=cur(t);const cap=document.getElementById('cap'),q=document.getElementById('q'),ci=document.getElementById('cite');
  if(p&&p.kind=='cap'){const grp=P.filter(x=>x.kind=='cap'&&Math.abs(x.s-p.s)<3&&x.s<=p.s+2.5&&x.s>=p.s-2.5);
   cap.innerHTML=grp.map(x=>'<span style="opacity:'+(t>=x.s?1:.25)+'">'+x.text+'</span>').join(' ');q.innerHTML='';ci.innerHTML=''}
@@ -246,11 +260,11 @@ window.render=function(t){let i=0;while(i<K.length-2&&t>=K[i+1][0])i++;const a=K
     html = (f"<!doctype html><html><head><meta charset=utf-8><style>{fonts()}{BASE_CSS}{css}</style></head>"
             f"<body>{body}<script>{js}</script></body></html>")
     o = pathlib.Path(out).resolve()
-    hp = o.with_suffix('.html'); hp.write_text(html)
+    hp = o.with_suffix('.html'); hp.write_text(html, encoding='utf-8')
     rs = o.with_suffix('.render.json')
     json.dump({"html": str(hp), "duration": D, "audio": spec["audio"] + '.mp3', "voice_delay": 0.0, "sfx": sfx, "bed": True}, open(rs, 'w'))
     subprocess.check_call([sys.executable, str(HERE / 'render2.py'), str(rs), str(o)])
 
 
 if __name__ == "__main__":
-    build(json.loads(pathlib.Path(sys.argv[1]).read_text()), sys.argv[2])
+    build(json.loads(pathlib.Path(sys.argv[1]).read_text(encoding="utf-8")), sys.argv[2])

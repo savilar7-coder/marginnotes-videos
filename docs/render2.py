@@ -43,7 +43,7 @@ def main(spec_path, out):
                            "-c:v", "mjpeg", "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "21",
                            "-pix_fmt", "yuv420p", str(silent)], stdin=subprocess.PIPE)
     with sync_playwright() as p:
-        b = p.chromium.launch()
+        b = p.chromium.launch(channel=__import__("os").environ.get("PW_CHANNEL") or None)  # PW_CHANNEL=msedge on Sergio's PC
         pg = b.new_page(viewport={"width": W, "height": H})
         pg.goto(pathlib.Path(spec["html"]).as_uri()); pg.wait_for_timeout(800)
         problems = []
