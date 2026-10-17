@@ -23,8 +23,8 @@ jobs:
             [ -z "$name" ] && continue; case "$name" in \#*) continue;; esac
             [ -f "old/$name.json" ] && continue
             curl -fsSL -A 'Mozilla/5.0' -o "old/$name.mp4" "$url"
-            ffmpeg -loglevel error -y -i "old/$name.mp4" -vn -ac 1 -ar 44100 -b:a 128k "old/$name.mp3"
-            ffmpeg -loglevel error -y -i "old/$name.mp4" -vf "fps=0.5,scale=270:-1,tile=6x3" -frames:v 1 "old/$name-sheet.jpg"
+            ffmpeg -nostdin -loglevel error -y -i "old/$name.mp4" -vn -ac 1 -ar 44100 -b:a 128k "old/$name.mp3"
+            ffmpeg -nostdin -loglevel error -y -i "old/$name.mp4" -vf "fps=0.5,scale=270:-1,tile=6x3" -frames:v 1 "old/$name-sheet.jpg"
             python3 - "$name" <<'PY'
           import sys, json
           from faster_whisper import WhisperModel
