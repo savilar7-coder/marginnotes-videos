@@ -1,0 +1,89 @@
+{
+ "image": "/home/claude/marginnotes-videos/assets/friedrich_monk_sea.jpg",
+ "focus": [
+  0.355,
+  0.86
+ ],
+ "zoom": [
+  1.0,
+  1.12
+ ],
+ "anchor_y": 0.86,
+ "audio": "/home/claude/marginnotes-videos/old/camus-universe.mp3",
+ "black_until": 0,
+ "duration": 0,
+ "beats": [
+  {
+   "t": 0.0,
+   "html": "<div class='cover'>NO <span class='red'>ANSWER.</span></div>"
+  },
+  {
+   "t": 3.01,
+   "html": "<div class='big'>Why this <span class='red'>job?</span></div>"
+  },
+  {
+   "t": 4.45,
+   "html": "<div class='big'>Why this <span class='red'>loss?</span></div>"
+  },
+  {
+   "t": 5.91,
+   "html": "<div class='big'>Why any of <span class='red'>it?</span></div>"
+  },
+  {
+   "t": 7.41,
+   "html": "<div class='big'>The universe says <span class='red'>nothing.</span></div>"
+  },
+  {
+   "t": 10.77,
+   "html": "<div class='mid'>Albert Camus called that silence</div><div class='big'><span class='red'>the absurd</span></div><div class='cap'>Camus \u00b7 The Myth of Sisyphus \u00b7 1942</div>"
+  },
+  {
+   "t": 13.81,
+   "html": "<div class='mid'>We want meaning.<br>The world <span class='red'>doesn\u2019t answer.</span></div>"
+  },
+  {
+   "t": 17.15,
+   "html": "<div class='mid'>Most people do one of <span class='red'>two things</span></div>"
+  },
+  {
+   "t": 19.43,
+   "html": "<div class='list'>1. Pretend there\u2019s an answer</div>"
+  },
+  {
+   "t": 20.77,
+   "html": "<div class='list'>1. Pretend there\u2019s an answer<br><span class='red'>2. Give up</span></div>"
+  },
+  {
+   "t": 22.63,
+   "html": "<div class='big'>Camus: a <span class='red'>third way</span></div>"
+  },
+  {
+   "t": 24.71,
+   "html": "<div class='mid'>Keep living fully, knowing there\u2019s <span class='red'>no answer.</span></div>"
+  },
+  {
+   "t": 27.01,
+   "html": "<div class='mid'>Like a man pushing a rock up a hill forever\u2026</div>"
+  },
+  {
+   "t": 30.15,
+   "html": "<div class='big'>\u2026who decides the climb is <span class='red'>his.</span></div>"
+  },
+  {
+   "t": 32.37,
+   "html": "<div class='mid'>You don\u2019t need the universe to <span class='red'>approve</span> of your life.</div>"
+  },
+  {
+   "t": 35.39,
+   "html": "<div class='big'>Just <span class='red'>live it.</span></div>"
+  },
+  {
+   "t": 37.39,
+   "html": "<div class='mid'>What would you do tomorrow if you stopped <span class='red'>waiting for a sign?</span></div>"
+  },
+  {
+   "t": 41.25,
+   "html": "<div class='mid'>Follow for <span class='red'>sourced</span> philosophy.</div><div class='cap'>Camus, paraphrased \u00b7 The Myth of Sisyphus</div>"
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "image": "/home/claude/marginnotes-videos/assets/rembrandt_old_man_red.jpg",
+ "focus": [
+  0.5,
+  0.4
+ ],
+ "zoom": [
+  1.0,
+  1.12
+ ],
+ "anchor_y": 0.3,
+ "audio": "/home/claude/marginnotes-videos/old/dostoevsky-firstline.mp3",
+ "black_until": 0,
+ "duration": 0,
+ "beats": [
+  {
+   "t": 0.0,
+   "html": "<div class='cover'>I AM A <span class='red'>SICK MAN.</span></div>"
+  },
+  {
+   "t": 3.29,
+   "html": "<div class='q'>\u201cI am a sick man.... I am a spiteful man. I am an <span class='red'>unattractive man.</span>\u201d</div><div class='cap'>Notes from Underground \u00b7 tr. C. Garnett, 1918</div>"
+  },
+  {
+   "t": 9.15,
+   "html": "<div class='mid'>A man who spent forty years <span class='red'>in his own head.</span></div>"
+  },
+  {
+   "t": 12.91,
+   "html": "<div class='mid'>He\u2019s thought about everything and <span class='red'>done almost nothing.</span></div>"
+  },
+  {
+   "t": 17.51,
+   "html": "<div class='big'>He calls his mind a <span class='red'>disease.</span></div>"
+  },
+  {
+   "t": 20.21,
+   "html": "<div class='big'>Overthinking feels like <span class='red'>depth.</span></div>"
+  },
+  {
+   "t": 22.47,
+   "html": "<div class='big'>It\u2019s often just <span class='red'>hiding.</span></div>"
+  },
+  {
+   "t": 24.59,
+   "html": "<div class='mid'>Every plan you analyze instead of starting is another night <span class='red'>in the underground.</span></div>"
+  },
+  {
+   "t": 30.55,
+   "html": "<div class='mid'>Pick one thing you\u2019ve thought about <span class='red'>for weeks.</span></div>"
+  },
+  {
+   "t": 33.47,
+   "html": "<div class='mid'>Do the <span class='red'>smallest version</span> tomorrow \u2014 before you can think again.</div>"
+  },
+  {
+   "t": 38.03,
+   "html": "<div class='big'>What are you <span class='red'>overthinking?</span></div>"
+  },
+  {
+   "t": 40.93,
+   "html": "<div class='mid'>Follow for <span class='red'>sourced</span> philosophy.</div><div class='cap'>Dostoevsky \u00b7 Notes from Underground (1864)</div>"
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "image": "/home/claude/marginnotes-videos/assets/caravaggio_narcissus.jpg",
+ "focus": [
+  0.5,
+  0.45
+ ],
+ "zoom": [
+  1.0,
+  1.12
+ ],
+ "anchor_y": 0.3,
+ "audio": "/home/claude/marginnotes-videos/old/jung-shadow.mp3",
+ "black_until": 0,
+ "duration": 0,
+ "beats": [
+  {
+   "t": 0.0,
+   "html": "<div class='cover'><span style='white-space:nowrap'>WHO ANNOYS</span><br><span class='red'>YOU?</span></div>"
+  },
+  {
+   "t": 1.67,
+   "html": "<div class='mid'>The person who annoys you most is <span class='red'>showing you something.</span></div>"
+  },
+  {
+   "t": 4.45,
+   "html": "<div class='big'>Jung\u2019s word: <span class='red'>the shadow</span></div><div class='cap'>C. G. Jung \u00b7 Aion, ch. 2 \u00b7 paraphrased</div>"
+  },
+  {
+   "t": 8.09,
+   "html": "<div class='mid'>The parts of you that you hide, deny, or were taught were <span class='red'>unacceptable.</span></div>"
+  },
+  {
+   "t": 12.43,
+   "html": "<div class='big'>They don\u2019t <span class='red'>disappear.</span></div>"
+  },
+  {
+   "t": 14.43,
+   "html": "<div class='big'>They go into <span class='red'>the shadow.</span></div>"
+  },
+  {
+   "t": 16.99,
+   "html": "<div class='mid'>We see it first in <span class='red'>other people.</span></div>"
+  },
+  {
+   "t": 19.91,
+   "html": "<div class='big'><span class='red'>Projection.</span></div>"
+  },
+  {
+   "t": 22.05,
+   "html": "<div class='mid'>The arrogance you can\u2019t stand in a coworker\u2026</div>"
+  },
+  {
+   "t": 24.79,
+   "html": "<div class='mid'>\u2026might be the <span class='red'>confidence</span> you never let yourself have.</div>"
+  },
+  {
+   "t": 28.11,
+   "html": "<div class='mid'>Next time someone gets to you, ask <span class='red'>one question:</span></div>"
+  },
+  {
+   "t": 32.67,
+   "html": "<div class='mid'>What exactly bothers me \u2014 and <span class='red'>where do I do a version of it?</span></div>"
+  },
+  {
+   "t": 37.25,
+   "html": "<div class='big'>Who\u2019s your <span class='red'>mirror?</span></div>"
+  },
+  {
+   "t": 39.13,
+   "html": "<div class='mid'>Follow for <span class='red'>sourced</span> philosophy.</div><div class='cap'>Jung, paraphrased \u00b7 Aion (1951)</div>"
+  }
+ ]
+}

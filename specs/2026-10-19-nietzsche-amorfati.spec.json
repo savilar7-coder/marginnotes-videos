@@ -1,0 +1,77 @@
+{
+ "image": "/home/claude/marginnotes-videos/assets/friedrich_woman_sun.jpg",
+ "focus": [
+  0.48,
+  0.45
+ ],
+ "zoom": [
+  1.0,
+  1.1
+ ],
+ "anchor_y": 0.3,
+ "audio": "/home/claude/marginnotes-videos/old/nietzsche-amorfati.mp3",
+ "black_until": 0,
+ "duration": 0,
+ "beats": [
+  {
+   "t": 0.0,
+   "html": "<div class='cover'>BAD <span class='red'>WEEK?</span></div>"
+  },
+  {
+   "t": 1.2,
+   "html": "<div class='mid'>Nietzsche\u2019s answer was <span class='red'>two words.</span></div>"
+  },
+  {
+   "t": 3.15,
+   "html": "<div class='big'><span class='red'>Amor fati.</span></div><div class='sub'>Love of fate.</div>"
+  },
+  {
+   "t": 6.37,
+   "html": "<div class='big'>New Year, <span class='red'>1882.</span></div><div class='cap'>Nietzsche \u00b7 The Gay Science \u00a7276</div>"
+  },
+  {
+   "t": 9.83,
+   "html": "<div class='mid'>He wishes himself one thing for the year:</div>"
+  },
+  {
+   "t": 14.29,
+   "html": "<div class='mid'>to see what is necessary in things <span class='red'>as beautiful.</span></div><div class='cap'>The Gay Science \u00a7276 \u00b7 paraphrased</div>"
+  },
+  {
+   "t": 17.67,
+   "html": "<div class='mid'>Not \u201ceverything happens <span class='red'>for a reason.</span>\u201d</div>"
+  },
+  {
+   "t": 19.93,
+   "html": "<div class='big'>No reason <span class='red'>required.</span></div>"
+  },
+  {
+   "t": 21.49,
+   "html": "<div class='mid'>This happened. It\u2019s <span class='red'>mine.</span></div>"
+  },
+  {
+   "t": 23.33,
+   "html": "<div class='mid'>And I won\u2019t spend my life <span class='red'>wishing it hadn\u2019t.</span></div>"
+  },
+  {
+   "t": 25.93,
+   "html": "<div class='mid'>Take the <span class='red'>worst thing</span> this week.</div>"
+  },
+  {
+   "t": 27.73,
+   "html": "<div class='mid'>If I had to choose this again, <span class='red'>what would I do with it?</span></div>"
+  },
+  {
+   "t": 31.93,
+   "html": "<div class='big'>Then <span class='red'>do that.</span></div>"
+  },
+  {
+   "t": 33.97,
+   "html": "<div class='mid'>Could you say <span class='red'>amor fati</span> about this week?</div>"
+  },
+  {
+   "t": 36.89,
+   "html": "<div class='mid'>Follow for <span class='red'>sourced</span> philosophy.</div><div class='cap'>Nietzsche \u00b7 The Gay Science \u00a7276 (1882)</div>"
+  }
+ ]
+}

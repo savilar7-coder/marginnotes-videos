@@ -1,0 +1,81 @@
+{
+ "image": "/home/claude/marginnotes-videos/assets/friedrich_wanderer.jpg",
+ "focus": [
+  0.5,
+  0.35
+ ],
+ "zoom": [
+  1.35,
+  1.0
+ ],
+ "anchor_y": 0.3,
+ "audio": "/home/claude/marginnotes-videos/old/marcus-zoomout.mp3",
+ "black_until": 0,
+ "duration": 0,
+ "beats": [
+  {
+   "t": 0.0,
+   "html": "<div class='cover'>ZOOM <span class='red'>OUT.</span></div>"
+  },
+  {
+   "t": 1.2,
+   "html": "<div class='big'>Your problems feel <span class='red'>huge.</span></div>"
+  },
+  {
+   "t": 2.53,
+   "html": "<div class='big'>The email.</div>"
+  },
+  {
+   "t": 3.57,
+   "html": "<div class='big'>The bill.</div>"
+  },
+  {
+   "t": 4.59,
+   "html": "<div class='mid'>What they said <span class='red'>about you.</span></div>"
+  },
+  {
+   "t": 6.25,
+   "html": "<div class='big'>Now <span class='red'>zoom out.</span></div>"
+  },
+  {
+   "t": 7.73,
+   "html": "<div class='mid'>Out of the room.</div>"
+  },
+  {
+   "t": 8.69,
+   "html": "<div class='mid'>Over the city.</div>"
+  },
+  {
+   "t": 9.55,
+   "html": "<div class='mid'>Past the clouds.</div>"
+  },
+  {
+   "t": 10.93,
+   "html": "<div class='mid'>Until the whole earth is <span class='red'>a blue dot</span> spinning in the dark.</div>"
+  },
+  {
+   "t": 14.69,
+   "html": "<div class='mid'>Marcus Aurelius, Emperor of Rome, did this <span class='red'>on purpose.</span></div>"
+  },
+  {
+   "t": 19.01,
+   "html": "<div class='mid'>In his private notes: how <span class='red'>small and brief</span> everything is.</div><div class='cap'>Meditations IV.3 \u00b7 VI.36 \u00b7 paraphrased</div>"
+  },
+  {
+   "t": 25.63,
+   "html": "<div class='mid'>Not to feel worthless.</div>"
+  },
+  {
+   "t": 26.99,
+   "html": "<div class='big'>To feel <span class='red'>free.</span></div>"
+  },
+  {
+   "t": 28.99,
+   "html": "<div class='mid'>Tonight, when it gets heavy: <span class='red'>zoom out.</span></div>"
+  },
+  {
+   "t": 32.39,
+   "html": "<div class='mid'>Save this for a <span class='red'>heavy day.</span></div><div class='cap'>Marcus Aurelius \u00b7 Meditations</div>"
+  }
+ ]
+}
