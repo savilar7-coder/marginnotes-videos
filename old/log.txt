@@ -1,0 +1,35 @@
++ sudo apt-get -qq update
++ sudo apt-get -qq install -y ffmpeg
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
++ pip -q install faster-whisper==1.0.3
++ mkdir -p old
++ read -r name url
++ '[' -z '#' ']'
++ case "$name" in
++ continue
++ read -r name url
++ '[' -z camus-universe ']'
++ case "$name" in
++ '[' -f old/camus-universe.json ']'
++ curl -fsSL -A Mozilla/5.0 -o old/camus-universe.mp4 https://static.metricool.com/planner/202610/7432476-file-2473542480475362545.mp4
++ ffmpeg -loglevel error -y -i old/camus-universe.mp4 -vn -ac 1 -ar 44100 -b:a 128k old/camus-universe.mp3
++ ffmpeg -loglevel error -y -i old/camus-universe.mp4 -vf fps=0.5,scale=270:-1,tile=6x3 -frames:v 1 old/camus-universe-sheet.jpg
++ python3 - camus-universe
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/faster_whisper/__init__.py", line 2, in <module>
+    from faster_whisper.transcribe import WhisperModel
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/faster_whisper/transcribe.py", line 17, in <module>
+    from faster_whisper.utils import download_model, format_timestamp, get_end, get_logger
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/faster_whisper/utils.py", line 8, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
