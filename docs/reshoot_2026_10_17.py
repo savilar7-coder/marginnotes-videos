@@ -31,7 +31,7 @@ V = {
   ]),
 "jung-shadow": dict(file="2026-10-19-jung-shadow", image="caravaggio_narcissus.jpg", focus=[0.5, 0.45], zoom=[1.0, 1.12],
   beats=[
-  ("", f"<div class='cover'>WHO ANNOYS {r('YOU?')}</div>"),
+  ("", f"<div class='cover'><span style='white-space:nowrap'>WHO ANNOYS</span><br>{r('YOU?')}</div>"),
   ("is showing", f"<div class='mid'>The person who annoys you most is {r('showing you something.')}</div>"),
   ("jung's word", f"<div class='big'>Jung’s word: {r('the shadow')}</div><div class='cap'>C. G. Jung · Aion, ch. 2 · paraphrased</div>"),
   ("traits you hide", f"<div class='mid'>The parts of you that you hide, deny, or were taught were {r('unacceptable.')}</div>"),
