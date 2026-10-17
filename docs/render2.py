@@ -10,6 +10,18 @@ from playwright.sync_api import sync_playwright
 
 FPS = 30
 W, H = 1080, 1920
+# Safe zone (docs/PIPELINE.md, Oct 17 2026): text within 10-85% width, 12-72% height.
+SAFE = {"x0": int(W * 0.10), "x1": int(W * 0.85), "y0": int(H * 0.12), "y1": int(H * 0.72)}
+AUDIT_JS = """() => {
+  const out = []; const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const vis = el => { let o = 1; for (let e = el; e && e.nodeType === 1; e = e.parentElement) {
+      const cs = getComputedStyle(e); if (cs.display === 'none' || cs.visibility === 'hidden') return 0; o *= parseFloat(cs.opacity); } return o; };
+  while (w.nextNode()) { const n = w.currentNode; if (!n.textContent.trim()) continue;
+    const el = n.parentElement; if (vis(el) < 0.15) continue;
+    const fs = parseFloat(getComputedStyle(el).fontSize); const r = document.createRange(); r.selectNodeContents(n);
+    for (const q of r.getClientRects()) if (q.width > 0 && q.right > 0 && q.left < innerWidth && q.bottom > 0 && q.top < innerHeight)
+      out.push([q.left, q.top, q.right, q.bottom, fs]); }
+  return out; }"""
 
 SFX = {
     # short filtered-noise swish
@@ -34,11 +46,26 @@ def main(spec_path, out):
         b = p.chromium.launch()
         pg = b.new_page(viewport={"width": W, "height": H})
         pg.goto(pathlib.Path(spec["html"]).as_uri()); pg.wait_for_timeout(800)
+        problems = []
         for f in range(int(math.ceil(D * FPS))):
             pg.evaluate(f"render({f / FPS})")
+            if f % (FPS // 2) == 0:
+                rs = pg.evaluate(AUDIT_JS); t = f / FPS
+                for x0, y0, x1, y1, fs in rs:
+                    if x0 < SAFE["x0"] - 2 or x1 > SAFE["x1"] + 2 or y0 < SAFE["y0"] - 2 or y1 > SAFE["y1"] + 2:
+                        problems.append(f"t={t:.1f}s text at x {x0:.0f}-{x1:.0f}, y {y0:.0f}-{y1:.0f} (font {fs:.0f}px) outside the safe zone")
+                if f == 0:
+                    tops = {round(y0 / 20) for x0, y0, x1, y1, fs in rs if fs >= 70}
+                    if len(tops) > 2:
+                        problems.append(f"hook on frame 1 has {len(tops)} lines; max 2")
             ff.stdin.write(pg.screenshot(type="jpeg", quality=90))
         b.close()
     ff.stdin.close(); ff.wait()
+    sheet = pathlib.Path(out).with_suffix(".sheet.jpg"); tiles = max(1, math.ceil(D / 2))
+    subprocess.check_call(["ffmpeg", "-loglevel", "error", "-y", "-i", str(silent), "-vf",
+        f"fps=0.5,drawbox=x={SAFE['x0']}:y={SAFE['y0']}:w={SAFE['x1']-SAFE['x0']}:h={SAFE['y1']-SAFE['y0']}:color=lime@0.9:t=6,"
+        f"scale=270:-1,tile=6x{math.ceil(tiles / 6)}:padding=6:color=white", "-frames:v", "1", str(sheet)])
+    print("contact sheet", sheet)
 
     inputs = ["-i", str(silent)]
     filt = []
@@ -61,6 +88,11 @@ def main(spec_path, out):
                            "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
                            "-movflags", "+faststart", out])
     print("wrote", out)
+    if problems:
+        print("SAFE-ZONE CHECK FAILED:"); [print("  ", x) for x in problems[:25]]
+        if len(problems) > 25: print(f"   ... and {len(problems) - 25} more")
+        sys.exit(2)
+    print("safe-zone check passed")
 
 
 if __name__ == "__main__":

@@ -21,5 +21,7 @@ TikTok crops the sides of 9:16 videos on tall phones and covers the right edge (
 4. **Hook:** max **2 lines** on the cover/first beat, huge words, readable on frame 1 (no fade-in on the first beat, no black opening behind it).
 5. **Check before scheduling:** open the contact sheet (1 frame every 2 s, safe zone drawn in green) and confirm every frame. Don't schedule a video whose sheet you haven't looked at.
 
-`docs/render.py` enforces 1, 2 and 4 automatically: it places text in the safe box, shrinks any line that would overflow, audits every 0.5 s and exits with **"SAFE-ZONE CHECK FAILED"** (exit code 2) if text leaves the zone, the hook runs past 2 lines, or text had to shrink below 55% (= too many words: cut them). It writes `<out>.sheet.jpg` next to the MP4.
-Only `render.py` (painting format) is used for new videos. `formats.py` / `render2.py` and the older animated format do not have these checks — don't schedule videos from them.
+Both renderers enforce this automatically — `docs/formats.py` (styles A/B/C/D, through `docs/render2.py`) and `docs/render.py` (single painting):
+every 0.5 s they measure every visible word and exit with **"SAFE-ZONE CHECK FAILED"** (exit code 2) if text leaves the zone or the frame-1 hook has more than 2 big lines; `render.py` also auto-shrinks long lines and flags text it had to shrink below 55% (= too many words: cut them).
+Both write `<out>.sheet.jpg` (1 frame every 2 s, safe zone in green) next to the MP4.
+Don't schedule anything rendered before Oct 17 2026 midday without checking it against these rules — the older animated format had none of them.

@@ -73,9 +73,9 @@ BASE_CSS = """*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;
 .layer{position:absolute;inset:0}
 #grain{position:absolute;inset:-20px;opacity:.10;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");mix-blend-mode:overlay}
 #vig{background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 45%,rgba(0,0,0,.6) 100%)}
-#label{position:absolute;top:250px;left:90px;font:700 26px Inter;letter-spacing:.3em;color:rgba(245,241,232,.6)}
-.k{color:#E8323C}
-#cite{position:absolute;left:90px;right:200px;text-align:center;font:700 28px Inter;letter-spacing:.2em;color:#ff4a52;text-shadow:0 2px 10px #000}
+#label{position:absolute;top:236px;left:142px;font:700 26px Inter;letter-spacing:.3em;color:rgba(245,241,232,.6)}
+.k{color:#FF5C61}
+#cite{position:absolute;left:142px;right:162px;text-align:center;font:700 28px Inter;letter-spacing:.2em;color:#ff4a52;text-shadow:0 2px 10px #000}
 """
 
 BASE_JS = r"""
@@ -138,24 +138,24 @@ def build(spec, out):
         body += "<div class=layer><img class=shot id=shA><img class=shot id=shB></div>"
         if style == "A":
             css += """#shade{background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.2) 48%,rgba(0,0,0,.6) 74%,rgba(0,0,0,.3) 100%)}
-#cap{position:absolute;left:90px;right:200px;top:1060px;text-align:center;font:900 104px/1.02 Inter;color:#fff;text-transform:uppercase;letter-spacing:-.01em;-webkit-text-stroke:14px #000;paint-order:stroke fill;text-shadow:0 8px 30px rgba(0,0,0,.6)}
-#q{position:absolute;left:90px;right:200px;top:900px;text-align:center;font:italic 700 74px/1.18 Playfair;color:#fff;text-shadow:0 4px 24px #000,0 0 8px #000}
-#cite{top:1360px}"""
+#cap{position:absolute;left:142px;right:162px;top:940px;text-align:center;font:900 104px/1.02 Inter;color:#fff;text-transform:uppercase;letter-spacing:-.01em;-webkit-text-stroke:14px #000;paint-order:stroke fill;text-shadow:0 8px 30px rgba(0,0,0,.6)}
+#q{position:absolute;left:142px;right:162px;top:900px;text-align:center;font:italic 700 74px/1.18 Playfair;color:#fff;text-shadow:0 4px 24px #000,0 0 8px #000}
+#cite{top:1300px}"""
             body += "<div class=layer id=shade></div><canvas id=dust width=1080 height=1920 class=layer></canvas>"
         else:
-            css += """#title{position:absolute;left:90px;right:200px;top:430px;text-align:center;font:italic 400 58px/1.2 Playfair;color:#fff;text-shadow:0 3px 18px #000}
-#cap,#q{position:absolute;left:90px;right:200px;top:1120px;text-align:center;font:italic 400 66px/1.25 Playfair;color:#fff;text-shadow:0 4px 22px #000,0 0 6px #000}
-#cite{top:1470px;color:#ddd}#q .n{color:#E8323C;font-weight:800;font-style:normal}"""
+            css += """#title{position:absolute;left:142px;right:162px;top:430px;text-align:center;font:italic 400 58px/1.2 Playfair;color:#fff;text-shadow:0 3px 18px #000}
+#cap,#q{position:absolute;left:142px;right:162px;top:960px;text-align:center;font:italic 400 66px/1.25 Playfair;color:#fff;text-shadow:0 4px 22px #000,0 0 6px #000}
+#cite{top:1310px;color:#ddd}#q .n{color:#FF5C61;font-weight:800;font-style:normal}"""
             body += f"<div id=title>{spec.get('title','')}</div>"
         js += f"const S={json.dumps(S)};"
     if style == "D":
         src, sz = img(spec["images"][0]["file"], gray=True); ims["i0"] = (src, sz)
         css += """#bg{background:radial-gradient(ellipse at 50% 45%,#2a0b0d 0%,#0b0506 70%)}
 #ghost{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;opacity:0;filter:contrast(1.3)}
-#word{position:absolute;left:60px;right:160px;top:760px;height:400px;display:flex;align-items:center;justify-content:center;text-align:center;font:900 200px/0.95 Inter;color:#F5F1E8;text-transform:uppercase;letter-spacing:-.03em}
-#word.k{color:#E8323C}
-#q{position:absolute;left:90px;right:200px;top:820px;text-align:center;font:italic 700 84px/1.15 Playfair;color:#fff;text-shadow:0 4px 24px #000}
-#cite{top:1420px}#bar{position:absolute;left:90px;top:1220px;height:10px;background:#E8323C}"""
+#word{position:absolute;left:142px;right:162px;top:760px;height:400px;display:flex;align-items:center;justify-content:center;text-align:center;font:900 200px/0.95 Inter;color:#F5F1E8;text-transform:uppercase;letter-spacing:-.03em}
+#word.k{color:#FF5C61}
+#q{position:absolute;left:142px;right:162px;top:820px;text-align:center;font:italic 700 84px/1.15 Playfair;color:#fff;text-shadow:0 4px 24px #000}
+#cite{top:1300px}#bar{position:absolute;left:142px;top:1220px;height:10px;background:#E8323C}"""
         body += "<div class=layer id=bg></div><img id=ghost><div id=word></div><div id=bar></div>"
         sfx += [{"t": w["s"], "kind": "thud"} for w in W if w["w"].strip('".,:;!?').lower() in KEY]
         qspans = [(q["s"] - .01, q["e"] + .01) for q in quotes]
@@ -192,10 +192,10 @@ def build(spec, out):
 #paper{position:absolute;left:0;top:0;filter:sepia(.35) brightness(1.04) contrast(1.08);box-shadow:0 40px 120px rgba(0,0,0,.7)}
 #ink{position:absolute;left:0;top:0;overflow:visible}
 #dim{background:rgba(10,6,3,.62)}
-#cap{position:absolute;left:90px;right:200px;top:1100px;text-align:center;font:800 112px/1.0 Playfair;color:#fff;text-transform:uppercase;text-shadow:0 6px 30px #000,0 0 8px #000}
-#q{position:absolute;left:90px;right:200px;top:1450px;text-align:center;font:italic 700 60px/1.2 Playfair;color:#fff;background:rgba(12,8,5,.78);border-radius:18px;padding:22px 26px;opacity:0}
-#tag{position:absolute;left:90px;right:200px;top:560px;text-align:center;font:700 28px Inter;letter-spacing:.2em;color:#E8323C;text-shadow:0 2px 10px rgba(0,0,0,.5)}
-#note{position:absolute;left:470px;top:790px;padding:6px 22px;background:#f3ead6;font:700 54px Caveat;color:#C8141E;transform:rotate(-4deg);box-shadow:0 6px 20px rgba(0,0,0,.35);opacity:0}"""
+#cap{position:absolute;left:142px;right:162px;top:900px;text-align:center;font:800 92px/1.02 Playfair;color:#fff;background:rgba(12,8,5,.8);border-radius:18px;padding:16px 22px;box-decoration-break:clone;text-transform:uppercase;text-shadow:0 6px 30px #000,0 0 8px #000}
+#q{position:absolute;left:142px;right:162px;top:1060px;text-align:center;font:italic 700 60px/1.2 Playfair;color:#fff;background:rgba(12,8,5,.78);border-radius:18px;padding:22px 26px;opacity:0}
+#tag{position:absolute;left:142px;right:162px;top:560px;text-align:center;font:700 28px Inter;letter-spacing:.2em;color:#FF5C61;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+#note{position:absolute;left:190px;max-width:700px;top:790px;padding:6px 22px;background:#f3ead6;font:700 54px Caveat;color:#C8141E;transform:rotate(-4deg);box-shadow:0 6px 20px rgba(0,0,0,.35);opacity:0}"""
         body += (f"<div class=layer id=desk></div><div id=cam><img id=paper style='width:{pw}px;height:{ph}px'>"
                  f"<svg id=ink width={pw} height={ph} viewBox='0 0 {pw} {ph}'>{paths}</svg></div><div class=layer id=dim></div>"
                  f"<div id=tag></div><div id=note>{pgd.get('note','')}</div>")
@@ -224,9 +224,9 @@ def build(spec, out):
 window.render=function(t){grain(t);const p=cur(t);const w=document.getElementById('word'),q=document.getElementById('q'),ci=document.getElementById('cite'),g=document.getElementById('ghost'),bar=document.getElementById('bar');
  const Q=P.find(x=>x.kind=='quote');const qs=Q?Q.s:99;
  if(!p||p.kind=='cap'){q.innerHTML='';ci.innerHTML='';let cw=DB[0];for(const x of DB)if(x.s<=t+0.02&&x.s<qs)cw=x;const raw=cw.text;const k=cw.k;
-  w.className=k?'k':'';w.textContent=raw;w.style.fontSize=Math.min(k?250:205,840/(Math.max(raw.length,3)*0.6))+'px';
+  w.className=k?'k':'';w.textContent=raw;w.style.fontSize=Math.min(k?190:175,600/(Math.max(raw.length,3)*0.9))+'px';
   const d=t-cw.s;const e=eo(d/.16);w.style.transform='scale('+((k?1.3:1.12)-(k?.3:.12)*e)+') rotate('+(k?-3:0)+'deg)';w.style.opacity=cw.s==0?1:Math.min(1,.35+d/.06);
-  bar.style.width=(780*cl(t/qs))+'px';g.style.opacity=Math.max(0,parseFloat(g.style.opacity||0)-.05)}
+  bar.style.width=(776*cl(t/qs))+'px';g.style.opacity=Math.max(0,parseFloat(g.style.opacity||0)-.05)}
  else{w.textContent='';bar.style.width='0px';q.innerHTML=karaoke(p,t);ci.innerHTML=CITE;g.style.opacity=.22*cl((t-p.s)/.6);g.style.transform='scale('+(1.05+0.03*(t-p.s))+')'}};""",
         "B": r"""document.getElementById('paper').src=IM.page;
 const U=[...document.querySelectorAll('.u')];U.forEach(u=>{const L=u.getTotalLength();u.style.strokeDasharray=L;u.style.strokeDashoffset=L;u.dataset.L=L});
