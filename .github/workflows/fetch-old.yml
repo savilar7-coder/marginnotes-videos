@@ -1,0 +1,42 @@
+name: fetch-old
+on:
+  push:
+    paths: ["old/list.txt"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download videos, extract narration, transcribe with word timings
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+          pip -q install faster-whisper==1.0.3
+          mkdir -p old
+          while read -r name url; do
+            [ -z "$name" ] && continue; case "$name" in \#*) continue;; esac
+            [ -f "old/$name.json" ] && continue
+            curl -sSL -o "old/$name.mp4" "$url"
+            ffmpeg -loglevel error -y -i "old/$name.mp4" -vn -ac 1 -ar 44100 -b:a 128k "old/$name.mp3"
+            ffmpeg -loglevel error -y -i "old/$name.mp4" -vf "fps=0.5,scale=270:-1,tile=6x3" -frames:v 1 "old/$name-sheet.jpg"
+            python3 - "$name" <<'PY'
+          import sys, json
+          from faster_whisper import WhisperModel
+          n = sys.argv[1]
+          m = WhisperModel("small.en", device="cpu", compute_type="int8")
+          segs, _ = m.transcribe(f"old/{n}.mp3", word_timestamps=True)
+          words = [{"w": w.word.strip(), "s": round(w.start, 2), "e": round(w.end, 2)} for s in segs for w in s.words]
+          json.dump({"text": " ".join(x["w"] for x in words), "words": words}, open(f"old/{n}.json", "w"), indent=0)
+          print(n, " ".join(x["w"] for x in words))
+          PY
+            rm "old/$name.mp4"
+          done < old/list.txt
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add old
+          git diff --cached --quiet || git commit -m "Old videos: narration + transcripts"
+          git push
