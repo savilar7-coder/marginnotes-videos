@@ -10,7 +10,7 @@ No containers need to be restarted.
 No user sessions are running outdated binaries.
 
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
-+ pip -q install faster-whisper==1.0.3
++ pip -q install faster-whisper==1.0.3 requests
 + mkdir -p old
 + read -r name url
 + '[' -z '#' ']'
@@ -24,12 +24,12 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 + ffmpeg -loglevel error -y -i old/camus-universe.mp4 -vn -ac 1 -ar 44100 -b:a 128k old/camus-universe.mp3
 + ffmpeg -loglevel error -y -i old/camus-universe.mp4 -vf fps=0.5,scale=270:-1,tile=6x3 -frames:v 1 old/camus-universe-sheet.jpg
 + python3 - camus-universe
-Traceback (most recent call last):
-  File "<stdin>", line 2, in <module>
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/faster_whisper/__init__.py", line 2, in <module>
-    from faster_whisper.transcribe import WhisperModel
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/faster_whisper/transcribe.py", line 17, in <module>
-    from faster_whisper.utils import download_model, format_timestamp, get_end, get_logger
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/faster_whisper/utils.py", line 8, in <module>
-    import requests
-ModuleNotFoundError: No module named 'requests'
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+camus-universe You ask the universe why. Why this job? Why this loss? Why any of it? And the universe says nothing. Albert Camus called that silence the absurd. We want meaning and the world doesn't answer. Most people do one of two things. They pretend there's an answer or they give up. Camus said there's a third way. Keep living fully knowing there's no answer. Like a man pushing a rock up a hill forever, who decides the climb is his. You don't need the universe to approve of your life. You just need to live it. What would you do tomorrow if you stopped waiting for a sign? Follow for sourced philosophy.
++ rm old/camus-universe.mp4
++ read -r name url
++ '[' -z //static.metricool.com/planner/202610/7432476-file-10118590859047675492.mp4 ']'
++ case "$name" in
++ '[' -f old///static.metricool.com/planner/202610/7432476-file-10118590859047675492.mp4.json ']'
++ curl -fsSL -A Mozilla/5.0 -o old///static.metricool.com/planner/202610/7432476-file-10118590859047675492.mp4.mp4 ''
+curl: (3) URL rejected: Malformed input to a URL function
