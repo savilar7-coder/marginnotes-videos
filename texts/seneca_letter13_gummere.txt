@@ -1,0 +1,14 @@
+{{header
+ | title      = [[../]]
+ | author     = Seneca
+ | translator = Richard Mott Gummere
+ | section    = Letter 13. On groundless fears
+ | previous   = [[../Letter 12|Letter  12. On old age]]
+ | next       = [[../Letter 14|Letter  14. On the reasons for withdrawing from the world]]
+ | notes      = 
+}}
+
+<pages index="Ad Lucilium epistulae morales, volume 1.djvu" include=97,99,101,103,105,107 fromsection="xiii" tosection="xiii" />
+
+{{rule}}
+{{reflist}}

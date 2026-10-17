@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Which Philosopher Are You? | Margin Notes</title>
+<meta name="description" content="8 questions, 2 minutes. Find out if you think like Seneca, Nietzsche, Jung or Camus, with a sourced practice for tonight. Free, no sign-up.">
+<meta property="og:title" content="Which philosopher are you?">
+<meta property="og:description" content="Seneca, Nietzsche, Jung or Camus? 8 questions, 2 minutes, a sourced practice for tonight.">
+<meta property="og:image" content="https://savilar7-coder.github.io/marginnotes-videos/quiz/img/cover.jpg">
+<meta name="theme-color" content="#0B0B0B">
+<style>
+@font-face{font-family:Playfair;src:url(pf800.woff2) format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:Playfair;src:url(pf400i.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:Inter;src:url(in500.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(in700.woff2) format('woff2');font-weight:700;font-display:swap}
+:root{--ink:#0B0B0B;--paper:#F5F1E8;--mute:rgba(245,241,232,.72);--line:rgba(245,241,232,.22);--red:#D3202A;--red2:#E8323C;--card:rgba(11,11,11,.62)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--ink);color:var(--paper);min-height:100%}
+body{font:500 17px/1.5 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+#bg{position:fixed;inset:0;background:#000 center 25%/cover no-repeat;transition:background-image .6s;z-index:0}
+#bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.72) 45%,rgba(0,0,0,.92))}
+.margin{position:fixed;top:0;bottom:0;left:22px;width:3px;background:var(--red);z-index:1}
+main{position:relative;z-index:2;max-width:560px;margin:0 auto;padding:28px 20px 48px 40px;min-height:100vh;display:flex;flex-direction:column}
+.lab{font:700 12px Inter;letter-spacing:.32em;color:var(--mute)}
+.kick{font:700 13px Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--red2)}
+h1{font:800 clamp(34px,9.6vw,60px)/1.02 Playfair;text-transform:uppercase;letter-spacing:-.01em;margin:14px 0 18px}
+h2{font:800 clamp(30px,8vw,40px)/1.08 Playfair;margin:12px 0 22px}
+p{color:var(--mute)}
+.screen{display:none;flex:1;flex-direction:column;justify-content:center;padding:24px 0}
+.screen.on{display:flex}
+.btn{display:block;width:100%;text-align:center;text-decoration:none;cursor:pointer;border:0;border-radius:14px;padding:17px 18px;font:700 16px Inter;letter-spacing:.02em;margin-top:12px}
+.btn.red{background:var(--red);color:#fff}
+.btn.ghost{background:transparent;color:var(--paper);border:1.5px solid var(--line)}
+.btn:active{transform:scale(.99)}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{text-align:left;width:100%;border:1.5px solid var(--line);background:var(--card);color:var(--paper);border-radius:14px;padding:16px 16px;font:500 16px/1.4 Inter;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:blur(2px)}
+.opt:hover{border-color:rgba(245,241,232,.5)}
+.opt.pick{border-color:var(--red);background:rgba(211,32,42,.18)}
+.bar{height:3px;background:var(--line);border-radius:2px;margin:18px 0 6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--red);width:0;transition:width .3s}
+.count{font:700 12px Inter;letter-spacing:.18em;color:var(--mute)}
+blockquote{font:italic 400 21px/1.4 Playfair;color:var(--paper);border-left:3px solid var(--red);padding:2px 0 2px 16px;margin:20px 0 6px}
+.cite{font:700 11px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--red2);padding-left:19px;margin-bottom:20px}
+.box{border:1.5px solid var(--line);border-radius:14px;padding:16px;margin:18px 0 4px;background:var(--card)}
+.box b{color:var(--paper)}
+.small{font-size:13px;color:var(--mute);margin-top:18px}
+[hidden]{display:none!important}
+.row{display:flex;gap:10px}.row .btn{flex:1}
+footer{position:relative;z-index:2;text-align:center;padding:0 20px 28px 40px;font-size:12px;color:var(--mute)}
+footer a{color:var(--mute)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="bg"></div><div class="margin"></div>
+<main>
+  <div class="lab">MARGIN NOTES</div>
+
+  <section class="screen on" id="start">
+    <div class="kick">8 questions · 2 minutes · free</div>
+    <h1>Which philosopher are you?</h1>
+    <p>Seneca, Nietzsche, Jung or Camus. Answer honestly and get your philosopher, a real line from their work with its source, and a practice for tonight.</p>
+    <button class="btn red" id="go">Start</button>
+    <p class="small">No sign-up. No fake quotes. Just for fun and self-reflection, not a psychological test.</p>
+  </section>
+
+  <section class="screen" id="quiz">
+    <div class="count" id="count"></div>
+    <div class="bar"><i id="prog"></i></div>
+    <h2 id="q"></h2>
+    <div class="opts" id="opts"></div>
+  </section>
+
+  <section class="screen" id="result">
+    <div class="kick" id="rkick">You think like</div>
+    <h1 id="rname"></h1>
+    <p id="rdesc"></p>
+    <blockquote id="rquote"></blockquote>
+    <div class="cite" id="rcite"></div>
+    <div class="box"><b>Tonight:</b> <span id="rtonight"></span></div>
+    <a class="btn red" id="rbuy" href="#" target="_blank" rel="noopener"></a>
+    <a class="btn ghost" id="rfree" href="#" target="_blank" rel="noopener" hidden>Get the free 7-night version</a>
+    <div class="row">
+      <button class="btn ghost" id="share">Share my result</button>
+      <button class="btn ghost" id="again">Retake</button>
+    </div>
+    <p class="small" id="rmix"></p>
+    <p class="small">More sourced philosophy every day on TikTok, Instagram and YouTube: <b>@marginnotes.phil</b></p>
+  </section>
+</main>
+<footer>Paintings: public domain. Quotes from public-domain translations; Jung and Camus are summarised in our own words. · <a href="https://www.etsy.com/shop/LamaisonMX?section_id=60923122&utm_source=quiz" target="_blank" rel="noopener">Margin Notes journals</a></footer>
+
+<script>
+// When the free Payhip product is live, paste its URL here and the free button appears.
+const FREE_URL = "https://payhip.com/b/RIapT";
+const ETSY = id => `https://www.etsy.com/listing/${id}?utm_source=quiz&utm_medium=marginnotes`;
+const R = {
+  S:{name:"Seneca", img:"img/seneca.jpg",
+     desc:"You want a calm, well-run life. You'd rather fix one small thing tonight than dream about a perfect tomorrow. Your risk: being too hard on yourself.",
+     quote:"“What bad habit of yours have you cured to-day? what vice have you checked? in what respect are you better?”",
+     cite:"Seneca, On Anger III.36 · tr. Aubrey Stewart (1900)",
+     tonight:"Before your phone, answer Seneca's three questions about today. One honest line each.",
+     buy:["The Evening Review journal + guided audio", ETSY(4595572690)]},
+  N:{name:"Nietzsche", img:"img/nietzsche.jpg",
+     desc:"You'd rather turn pain into fuel than avoid it. You want to become someone, not just feel fine. Your risk: burning yourself out to prove a point.",
+     quote:"“Amor fati: let that henceforth be my love!”",
+     cite:"Nietzsche, The Joyful Wisdom §276 · tr. Thomas Common (1910)",
+     tonight:"Take the worst thing this week and ask: if I had to choose this again, what would I do with it?",
+     buy:["The Amor Fati journal + guided audio", ETSY(4595607546)]},
+  J:{name:"Jung", img:"img/jung.jpg",
+     desc:"You notice what others miss, especially in people. You want to understand why you do what you do. Your risk: overthinking instead of acting.",
+     quote:"Jung's idea, in our words: the parts of yourself you refuse to look at don't disappear. You meet them in other people, and in the patterns that keep repeating.",
+     cite:"After C. G. Jung, Aion (1951), ch. 2, “The Shadow” · paraphrase",
+     tonight:"Name one person who annoyed you more than they deserved today. Where does that same trait live in you?",
+     buy:["The Shadow Journal + guided audio", ETSY(4595586229)]},
+  C:{name:"Camus", img:"img/camus.jpg",
+     desc:"You don't need life to come with a manual. You'd rather live fully, eyes open, than wait for a sign. Your risk: shrugging off things that deserve a fight.",
+     quote:"“One must imagine Sisyphus happy.”",
+     cite:"Albert Camus, The Myth of Sisyphus (1942), final line",
+     tonight:"Name your rock: the thing you push every day. Then find one way to push it on purpose instead of by default.",
+     buy:["The Philosophy Journal Bundle (3 journals + 3 audios)", ETSY(4595622867)]}
+};
+const Q = [
+ ["Something went wrong today. Your first thought?",
+  [["S","What part of this was actually mine to control?"],["N","Fine. What can I make of this?"],["J","Why does this keep happening to me?"],["C","Of course it did. I'll laugh, then carry on my way."]]],
+ ["Your ideal Friday night:",
+  [["S","Quiet dinner, early night, good book"],["N","Working on something hard that nobody asked me to do"],["J","A long, deep talk about people and dreams"],["C","Outside with friends, no plan, stay out late"]]],
+ ["Someone criticises you in front of others. You…",
+  [["S","Ask myself if they're right, and fix it if so"],["N","Use it as fuel"],["J","Wonder why it stung so much"],["C","Shrug. Their opinion doesn't change my day"]]],
+ ["Which sentence feels most true?",
+  [["S","We suffer more in our heads than in real life"],["N","What doesn't destroy me makes me stronger"],["J","What I avoid in myself, I keep meeting in others"],["C","Life has no built-in meaning, and that's freeing"]]],
+ ["Your honest weakness:",
+  [["S","I can be too strict with myself"],["N","I go all-in and burn out"],["J","I overthink everything"],["C","I detach when I should care"]]],
+ ["Pick a place:",
+  [["S","A library at dawn"],["N","A mountain top in the wind"],["J","A candle-lit room with a mirror"],["C","A beach at noon"]]],
+ ["You and your phone:",
+  [["S","I set limits and mostly keep them"],["N","A tool. I use it to build things"],["J","Late-night scrolling while thinking about life"],["C","I forget it exists for hours"]]],
+ ["What do you want more of?",
+  [["S","Calm"],["N","Strength"],["J","Self-knowledge"],["C","Freedom"]]]
+];
+const $ = id => document.getElementById(id);
+let i = 0, score = {S:0,N:0,J:0,C:0}, last = null;
+function bg(src){ $("bg").style.backgroundImage = `url(${src})`; }
+function show(id){ document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("on", s.id===id)); window.scrollTo(0,0); }
+function ask(){
+  const [q, opts] = Q[i];
+  $("count").textContent = `QUESTION ${i+1} OF ${Q.length}`;
+  $("prog").style.width = `${(i/Q.length)*100}%`;
+  $("q").textContent = q;
+  const box = $("opts"); box.innerHTML = "";
+  // shuffle option order so the same letter isn't always first
+  opts.map(o=>[Math.random(),o]).sort((a,b)=>a[0]-b[0]).forEach(([,[k,t]])=>{
+    const b = document.createElement("button"); b.className = "opt"; b.textContent = t;
+    b.onclick = () => { b.classList.add("pick"); score[k]++; last = k; setTimeout(()=>{ i++; i < Q.length ? ask() : result(); }, 180); };
+    box.appendChild(b);
+  });
+}
+function result(){
+  const order = Object.entries(score).sort((a,b)=> b[1]-a[1] || (a[0]===last?-1:b[0]===last?1:0));
+  const k = order[0][0], r = R[k];
+  bg(r.img);
+  $("rname").textContent = r.name;
+  $("rdesc").textContent = r.desc;
+  $("rquote").textContent = r.quote;
+  $("rcite").textContent = r.cite;
+  $("rtonight").textContent = r.tonight;
+  $("rbuy").textContent = r.buy[0]; $("rbuy").href = r.buy[1];
+  if (FREE_URL) { $("rfree").hidden = false; $("rfree").href = FREE_URL; }
+  const pct = Object.fromEntries(order.map(([kk,v])=>[kk, Math.round(v/Q.length*100)]));
+  $("rmix").textContent = "Your mix: " + order.map(([kk])=>`${R[kk].name} ${pct[kk]}%`).join(" · ");
+  $("share").onclick = async () => {
+    const text = `I got ${r.name} on the Margin Notes philosopher quiz. Which philosopher are you?`;
+    const url = location.href.split("?")[0];
+    try { if (navigator.share) { await navigator.share({title:"Which philosopher are you?", text, url}); return; } } catch(e) { return; }
+    try { await navigator.clipboard.writeText(`${text} ${url}`); $("share").textContent = "Link copied"; } catch(e) { $("share").textContent = url; }
+  };
+  show("result");
+}
+$("go").onclick = () => { i = 0; score = {S:0,N:0,J:0,C:0}; bg("img/cover.jpg"); show("quiz"); ask(); };
+$("again").onclick = () => { $("share").textContent = "Share my result"; $("go").onclick(); };
+bg("img/cover.jpg");
+</script>
+</body>
+</html>

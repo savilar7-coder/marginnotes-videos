@@ -1,0 +1,29 @@
+name: fetch-images
+on:
+  push:
+    paths: ["images.txt"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download public-domain paintings listed in images.txt
+        run: |
+          mkdir -p assets
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            case "$name" in \#*) continue;; esac
+            if [ ! -f "assets/$name" ]; then
+              curl -sSL -A "MarginNotesBot/1.0 (savilar7@gmail.com)" -o "assets/$name" "$url" && echo "got $name"
+            fi
+          done < images.txt
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet || git commit -m "Fetch images"
+          git push

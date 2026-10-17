@@ -1,0 +1,10 @@
+# name url  (public-domain paintings from Wikimedia Commons)
+ribera_philosopher.jpg https://upload.wikimedia.org/wikipedia/commons/8/8d/A_Philosopher_LACMA_M.91.125.2.jpg
+titian_sisyphus.jpg https://upload.wikimedia.org/wikipedia/commons/3/33/Titian_-_Sisyphus_-_Madrid_-_Prado.jpg
+caravaggio_narcissus.jpg https://upload.wikimedia.org/wikipedia/commons/3/37/Narcissus_by_Caravaggio%2C_1597%E2%80%931599%2C_Galleria_Nazionale_d%27Arte_Antica_%2821836123485%29.jpg
+friedrich_wanderer.jpg https://upload.wikimedia.org/wikipedia/commons/a/af/Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg
+rembrandt_old_man_red.jpg https://upload.wikimedia.org/wikipedia/commons/a/a2/Rembrandt_Harmenszoon_van_Rijn_-_An_Old_Man_in_Red.JPG
+ribera_philosopher2.jpg https://upload.wikimedia.org/wikipedia/commons/9/92/A_Philosopher_-_Jos%C3%A9_de_Ribera_-_1635.jpg
+gummere_p97.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ad_Lucilium_epistulae_morales%2C_volume_1.djvu/page97-1920px-Ad_Lucilium_epistulae_morales%2C_volume_1.djvu.jpg
+gummere_p99.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ad_Lucilium_epistulae_morales%2C_volume_1.djvu/page99-1920px-Ad_Lucilium_epistulae_morales%2C_volume_1.djvu.jpg
+gummere_p101.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ad_Lucilium_epistulae_morales%2C_volume_1.djvu/page101-1920px-Ad_Lucilium_epistulae_morales%2C_volume_1.djvu.jpg

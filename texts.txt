@@ -1,0 +1,7 @@
+enchiridion_higginson.txt https://www.gutenberg.org/cache/epub/45109/pg45109.txt
+joyful_wisdom_common.txt https://www.gutenberg.org/cache/epub/52881/pg52881.txt
+seneca_letter13_gummere.txt https://en.wikisource.org/w/index.php?title=Moral_letters_to_Lucilius/Letter_13&action=raw
+seneca_letter13_gummere.html https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_13
+gummere_p97.json https://commons.wikimedia.org/w/api.php?action=query&titles=File:Ad_Lucilium_epistulae_morales,_volume_1.djvu&prop=imageinfo&iiprop=url&iiurlwidth=1600&iiurlparam=page97-1600px&format=json
+gummere_p99.json https://commons.wikimedia.org/w/api.php?action=query&titles=File:Ad_Lucilium_epistulae_morales,_volume_1.djvu&prop=imageinfo&iiprop=url&iiurlwidth=1600&iiurlparam=page99-1600px&format=json
+gummere_p101.json https://commons.wikimedia.org/w/api.php?action=query&titles=File:Ad_Lucilium_epistulae_morales,_volume_1.djvu&prop=imageinfo&iiprop=url&iiurlwidth=1600&iiurlparam=page101-1600px&format=json

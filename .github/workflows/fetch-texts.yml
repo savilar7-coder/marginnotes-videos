@@ -1,0 +1,31 @@
+name: fetch-texts
+on:
+  push:
+    paths: ["texts.txt", ".github/workflows/fetch-texts.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download public-domain texts listed in texts.txt
+        run: |
+          mkdir -p texts
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            [ -f "texts/$name" ] || curl -sSL -A "MarginNotesBot/1.0" -o "texts/$name" "$url"
+          done < texts.txt
+      - name: ElevenLabs credit check
+        env:
+          XI: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -s -H "xi-api-key: $XI" https://api.elevenlabs.io/v1/user/subscription | python3 -c "import sys,json;d=json.load(sys.stdin);print({k:d.get(k) for k in ['tier','character_count','character_limit','next_character_count_reset_unix','status','detail']})" | tee texts/_credits.txt || true
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add texts
+          git diff --cached --quiet || git commit -m "Fetch texts"
+          git push

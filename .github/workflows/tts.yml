@@ -1,0 +1,56 @@
+name: tts
+on:
+  push:
+    paths: ["scripts/**"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  speak:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate narration with ElevenLabs
+        env:
+          XI_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import os, json, base64, glob, urllib.request, urllib.error
+          key = os.environ["XI_KEY"]
+          def call(url, body=None):
+              req = urllib.request.Request(url, data=json.dumps(body).encode() if body else None,
+                    headers={"xi-api-key": key, "Content-Type": "application/json"})
+              try:
+                  return json.load(urllib.request.urlopen(req, timeout=300))
+              except urllib.error.HTTPError as e:
+                  print("HTTP", e.code, e.read()[:500]); raise
+          vid = "onwK4e9ZLuTAKqWW03F9"  # Daniel (ElevenLabs stock voice), chosen by Sergio Oct 16; his clone is bCVtrce9vY4IQKrTHVnM
+          os.makedirs("audio", exist_ok=True)
+          for path in sorted(glob.glob("scripts/*.txt")):
+              name = os.path.splitext(os.path.basename(path))[0]
+              if os.path.exists(f"audio/{name}.mp3"):
+                  continue
+              text = open(path).read().strip()
+              v = vid
+              model = "eleven_v3"  # chosen by Sergio Oct 16 (test C)
+              vs = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": True}
+              while text.startswith("#"):
+                  first, _, text = text.partition("\n")
+                  k, _, val = first[1:].partition(":")
+                  if k == "voice": v = val.strip()
+                  elif k == "model": model = val.strip()
+                  elif k == "settings": vs.update(json.loads(val))
+                  text = text.strip()
+              r = call(f"https://api.elevenlabs.io/v1/text-to-speech/{v}/with-timestamps?output_format=mp3_44100_128",
+                       {"text": text, "model_id": model, "voice_settings": vs})
+              open(f"audio/{name}.mp3", "wb").write(base64.b64decode(r["audio_base64"]))
+              json.dump(r.get("alignment"), open(f"audio/{name}.json", "w"))
+              print("made", name)
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audio
+          git diff --cached --quiet || git commit -m "Narration"
+          git push

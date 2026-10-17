@@ -1,0 +1,3 @@
+#model: eleven_v3
+#settings: {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0}
+You've already lived through things that never happened. Seneca wrote to a friend about exactly this, two thousand years ago. Tonight, pick the worry that kept you up. Ask it: what's my proof?
