@@ -17,7 +17,7 @@ jobs:
         run: |
           mkdir -p old; exec > >(tee old/log.txt) 2>&1; set -x
           sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
-          pip -q install faster-whisper==1.0.3
+          pip -q install faster-whisper==1.0.3 requests
           mkdir -p old
           while read -r name url; do
             [ -z "$name" ] && continue; case "$name" in \#*) continue;; esac
