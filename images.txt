@@ -8,3 +8,5 @@ ribera_philosopher2.jpg https://upload.wikimedia.org/wikipedia/commons/9/92/A_Ph
 gummere_p97.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ad_Lucilium_epistulae_morales%2C_volume_1.djvu/page97-1920px-Ad_Lucilium_epistulae_morales%2C_volume_1.djvu.jpg
 gummere_p99.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ad_Lucilium_epistulae_morales%2C_volume_1.djvu/page99-1920px-Ad_Lucilium_epistulae_morales%2C_volume_1.djvu.jpg
 gummere_p101.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ad_Lucilium_epistulae_morales%2C_volume_1.djvu/page101-1920px-Ad_Lucilium_epistulae_morales%2C_volume_1.djvu.jpg
+friedrich_monk_sea.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Der_M%C3%B6nch_am_Meer_-_Google_Art_Project.jpg?width=2400
+friedrich_woman_sun.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Frau_vor_untergehender_Sonne.jpg?width=2400
