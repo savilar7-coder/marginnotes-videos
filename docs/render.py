@@ -8,7 +8,8 @@ spec = {
   "zoom": [1.0, 1.15],                 # Ken Burns start/end scale
   "duration": 40.0,                    # seconds (ignored if audio is longer)
   "audio": "/path/voice.wav" or null,  # narration
-  "black_until": 3.5,                  # seconds of black opening (0 = painting from start)
+  "black_until": 0,                    # seconds of black opening (keep 0: the first frame is the cover)
+  "anchor_y": 0.30,                    # where the focus point sits on screen (0.80 = figure below the text)
   "beats": [ {"t": 0.0, "html": "<div class='big'>...</div>"}, ... ]
 }
 Text classes: big, mid, q (italic quote), cap (small red caps), red, white, sub.
@@ -50,7 +51,7 @@ def build_html(spec):
 html,body{{width:{W}px;height:{H}px;background:#000;overflow:hidden;color:#F5F1E8}}
 #bgwrap{{position:absolute;inset:0;overflow:hidden}}
 #bg{{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}}
-#shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.58) 12%,rgba(0,0,0,.66) 40%,rgba(0,0,0,.74) 72%,rgba(0,0,0,.9) 100%)}}
+#shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.45) 12%,rgba(0,0,0,.56) 40%,rgba(0,0,0,.6) 72%,rgba(0,0,0,.82) 100%)}}
 #black{{position:absolute;inset:0;background:#000}}
 #grain{{position:absolute;inset:-50%;opacity:.07;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:3px 3px}}
 #margin{{position:absolute;left:{SAFE['x0']}px;top:{SAFE['y0']}px;height:{SAFE['y1']-SAFE['y0']}px;width:4px;background:#D3202A}}
@@ -92,7 +93,7 @@ window.render=function(t){{
   const p=Math.min(1,Math.max(0,(t-BU)/Math.max(1,D-BU)));
   const z=cover*(Z0+(Z1-Z0)*(p*p*(3-2*p)));
   const w=IW*z,h=IH*z;
-  let x={W}/2-FX*w, y={H}*0.30-FY*h;
+  let x={W}/2-FX*w, y={H}*{spec.get('anchor_y',0.30)}-FY*h;
   x=Math.min(0,Math.max({W}-w,x)); y=Math.min(0,Math.max({H}-h,y));
   bg.style.width=IW+'px'; bg.style.transform=`translate(${{x}}px,${{y}}px) scale(${{z}})`;
   bl.style.opacity = t<BU ? 1 : Math.max(0,1-(t-BU)/0.35);
