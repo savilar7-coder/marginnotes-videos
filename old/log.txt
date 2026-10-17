@@ -20,16 +20,46 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 + '[' -z camus-universe ']'
 + case "$name" in
 + '[' -f old/camus-universe.json ']'
-+ curl -fsSL -A Mozilla/5.0 -o old/camus-universe.mp4 https://static.metricool.com/planner/202610/7432476-file-2473542480475362545.mp4
-+ ffmpeg -loglevel error -y -i old/camus-universe.mp4 -vn -ac 1 -ar 44100 -b:a 128k old/camus-universe.mp3
-+ ffmpeg -loglevel error -y -i old/camus-universe.mp4 -vf fps=0.5,scale=270:-1,tile=6x3 -frames:v 1 old/camus-universe-sheet.jpg
-+ python3 - camus-universe
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-camus-universe You ask the universe why. Why this job? Why this loss? Why any of it? And the universe says nothing. Albert Camus called that silence the absurd. We want meaning and the world doesn't answer. Most people do one of two things. They pretend there's an answer or they give up. Camus said there's a third way. Keep living fully knowing there's no answer. Like a man pushing a rock up a hill forever, who decides the climb is his. You don't need the universe to approve of your life. You just need to live it. What would you do tomorrow if you stopped waiting for a sign? Follow for sourced philosophy.
-+ rm old/camus-universe.mp4
++ continue
 + read -r name url
-+ '[' -z //static.metricool.com/planner/202610/7432476-file-10118590859047675492.mp4 ']'
++ '[' -z jung-shadow ']'
 + case "$name" in
-+ '[' -f old///static.metricool.com/planner/202610/7432476-file-10118590859047675492.mp4.json ']'
-+ curl -fsSL -A Mozilla/5.0 -o old///static.metricool.com/planner/202610/7432476-file-10118590859047675492.mp4.mp4 ''
-curl: (3) URL rejected: Malformed input to a URL function
++ '[' -f old/jung-shadow.json ']'
++ curl -fsSL -A Mozilla/5.0 -o old/jung-shadow.mp4 https://static.metricool.com/planner/202610/7432476-file-10118590859047675492.mp4
++ ffmpeg -nostdin -loglevel error -y -i old/jung-shadow.mp4 -vn -ac 1 -ar 44100 -b:a 128k old/jung-shadow.mp3
++ ffmpeg -nostdin -loglevel error -y -i old/jung-shadow.mp4 -vf fps=0.5,scale=270:-1,tile=6x3 -frames:v 1 old/jung-shadow-sheet.jpg
++ python3 - jung-shadow
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+jung-shadow The person who annoys you most is showing you something. Jung's word for the parts of you that you refuse to see. Traits you hide, deny or were taught were unacceptable. They don't disappear. They go into the shadow. We see it first in other people. Jung called it projection. The arrogance you can't stand in a coworker might be the confidence you never let yourself have. Next time someone really gets to you, ask one question. What exactly bothers me and where do I do a version of it? Who's your mirror? Follow for sourced philosophy.
++ rm old/jung-shadow.mp4
++ read -r name url
++ '[' -z nietzsche-amorfati ']'
++ case "$name" in
++ '[' -f old/nietzsche-amorfati.json ']'
++ curl -fsSL -A Mozilla/5.0 -o old/nietzsche-amorfati.mp4 https://static.metricool.com/planner/202610/7432476-file-9498478322658045070.mp4
++ ffmpeg -nostdin -loglevel error -y -i old/nietzsche-amorfati.mp4 -vn -ac 1 -ar 44100 -b:a 128k old/nietzsche-amorfati.mp3
++ ffmpeg -nostdin -loglevel error -y -i old/nietzsche-amorfati.mp4 -vf fps=0.5,scale=270:-1,tile=6x3 -frames:v 1 old/nietzsche-amorfati-sheet.jpg
++ python3 - nietzsche-amorfati
+nietzsche-amorfati Nietzsche's answer was two words, amor fati, love of fate, New Year, 1882. In the Gay Science Section 276, Nietzsche writes himself a New Year's wish to see what is necessary in things as beautiful. Not everything happens for a reason. No reason required. This happened, it's mine, and I won't spend my life wishing it hadn't. Take the worst thing this week. Ask, if I had to choose this again, what would I do with it? Then do that. Could you say amor fati about this week? Follow for sourced philosophy.
++ rm old/nietzsche-amorfati.mp4
++ read -r name url
++ '[' -z dostoevsky-firstline ']'
++ case "$name" in
++ '[' -f old/dostoevsky-firstline.json ']'
++ curl -fsSL -A Mozilla/5.0 -o old/dostoevsky-firstline.mp4 https://static.metricool.com/planner/202610/7432476-file-2526939377290542547.mp4
++ ffmpeg -nostdin -loglevel error -y -i old/dostoevsky-firstline.mp4 -vn -ac 1 -ar 44100 -b:a 128k old/dostoevsky-firstline.mp3
++ ffmpeg -nostdin -loglevel error -y -i old/dostoevsky-firstline.mp4 -vf fps=0.5,scale=270:-1,tile=6x3 -frames:v 1 old/dostoevsky-firstline-sheet.jpg
++ python3 - dostoevsky-firstline
+dostoevsky-firstline The most honest first line in literature, I am a sick man, I am a spiteful man, I am an unattractive man, a man who spent forty years in his own head. Dostoyevsky's narrator has thought about everything and done almost nothing. He calls his mind a disease. Overthinking feels like depth. It's often just hiding. Every plan you analyze instead of starting is another night in the underground. Pick one thing you've thought about for weeks. Do the smallest version of it tomorrow before you can think again. What are you overthinking right now? Follow for sourced philosophy.
++ rm old/dostoevsky-firstline.mp4
++ read -r name url
++ '[' -z marcus-zoomout ']'
++ case "$name" in
++ '[' -f old/marcus-zoomout.json ']'
++ curl -fsSL -A Mozilla/5.0 -o old/marcus-zoomout.mp4 https://static.metricool.com/planner/202610/7432476-file-4290523922275208239.mp4
++ ffmpeg -nostdin -loglevel error -y -i old/marcus-zoomout.mp4 -vn -ac 1 -ar 44100 -b:a 128k old/marcus-zoomout.mp3
++ ffmpeg -nostdin -loglevel error -y -i old/marcus-zoomout.mp4 -vf fps=0.5,scale=270:-1,tile=6x3 -frames:v 1 old/marcus-zoomout-sheet.jpg
++ python3 - marcus-zoomout
+marcus-zoomout Your problems feel huge. The email, the bill, what they said about you, now zoom out, out of the room, over the city, past the clouds, until the whole earth is a blue dot spinning in the dark. Marcus Aurelius, Emperor of Rome, did this on purpose. In his private notes, he kept reminding himself how small and brief everything is, compared to all of time and space, not to feel worthless, to feel free. So tonight when it gets heavy, zoom out, save this for a heavy day.
++ rm old/marcus-zoomout.mp4
++ read -r name url
