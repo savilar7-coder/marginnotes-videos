@@ -11,7 +11,7 @@ Sergio approved after the TikTok audit (Ecosystem repo research/tiktok-audit/AUD
 * Captions: "<Series> #N: <hook>. <Author>, <work> (tr. <translator>): "<quote>". <one line>. Follow for #N+1." + 5 tags.
 * After 72 h, the weakest videos go private (never delete).
 * Local render (Sergio's PC): `PW_CHANNEL=msedge python docs/formats.py /abs/spec.json /abs/out.mp4`.
-* Next numbers after Oct 19: Stoic Reset #6, Shadow Work #4, 2 AM Philosophy #5.
+* Scheduled through Mon Oct 20 (5/day). Next numbers: Stoic Reset #9, Shadow Work #6, 2 AM Philosophy #8. Tue Oct 21 still has 1 old long video (16:30 zoom-out) + 1 old draft.
 
 # Margin Notes video pipeline (from Oct 16, 2026)
 
