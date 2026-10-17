@@ -1,3 +1,18 @@
+# UPDATE Oct 17, 2026 (12:30) — wins over everything below
+
+Sergio approved after the TikTok audit (Ecosystem repo research/tiktok-audit/AUDIT.md):
+* **Style W is the default** (`"style":"W"` in formats.py): bright full-colour paintings, short white captions, series tag
+  on top (`"series":"STOIC RESET · #6"`), end card (`"endcard":"Follow for #7"`). 12–20 s scripts, ~25–40 words,
+  one verified quote (karaoke + cite) or a clearly labelled paraphrase (Jung, Camus).
+* **Series, numbered, never one-offs:** Stoic Reset (Seneca/Epictetus/Marcus), Shadow Work (Jung, paraphrase only),
+  2 AM Philosophy (Nietzsche, Dostoevsky, Camus-paraphrase, late-night emotional). Keep numbering continuous.
+* **5 TikToks a day:** 09:00, 13:00, 16:30, 19:30, 21:30 (America/Hermosillo). Instagram + YouTube only 1–2 a day
+  (the 09:00 and 19:30 posts); the rest TikTok-only. English only.
+* Captions: "<Series> #N: <hook>. <Author>, <work> (tr. <translator>): "<quote>". <one line>. Follow for #N+1." + 5 tags.
+* After 72 h, the weakest videos go private (never delete).
+* Local render (Sergio's PC): `PW_CHANNEL=msedge python docs/formats.py /abs/spec.json /abs/out.mp4`.
+* Next numbers after Oct 19: Stoic Reset #6, Shadow Work #4, 2 AM Philosophy #5.
+
 # Margin Notes video pipeline (from Oct 16, 2026)
 
 No HeyGen. Free render + ElevenLabs voice clone + GitHub hosting + Metricool.
