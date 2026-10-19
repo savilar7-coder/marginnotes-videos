@@ -1,3 +1,18 @@
+# UPDATE Oct 19, 2026 — wins over everything below (Sergio: "optimize")
+
+Numbers that drove this (Metricool, Oct 16-19): organic ~550 views/video, avg watch ~3 s on 12-45 s videos, shares ~0,
+For You 96-98%. 5 posts/day got throttled (the 4th and 5th of Oct 17 got 11 and 14 views); 2/day brought ~550 back.
+The Oct 17 game video's 127.5K views were a PAID Promote, not organic.
+
+1. **2 TikToks a day, max:** 13:00 and 19:30 (America/Hermosillo). Never more than 2; extra videos wait as drafts.
+2. **Hook on frame 1 is a question or a sting aimed at the viewer** ("You're replaying things that never happened.",
+   "Who are you without the mask?"), max 2 lines, already enforced by the renderers.
+3. **End with a SHARE line, not only "Follow":** the end card is "Send this to someone who <specific person>" plus the
+   series number small ("Stoic Reset #9"). Examples: "Send this to someone who overthinks at 2 AM", "...who can't let
+   go", "...who wears a mask at work". Caption keeps "Follow for #N+1" at the end.
+4. **Length 12-16 s** (shorter loops = higher completion; 20 s+ only when the quote needs it).
+5. **Shadow Work leads** (best hold: 5-6 s on Instagram, 552-578 views on TikTok); keep Stoic Reset and 2 AM as the other two.
+
 # UPDATE Oct 17, 2026 (12:30) — wins over everything below
 
 Sergio approved after the TikTok audit (Ecosystem repo research/tiktok-audit/AUDIT.md):
