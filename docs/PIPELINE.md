@@ -40,3 +40,8 @@ Both renderers enforce this automatically — `docs/formats.py` (styles A/B/C/D,
 every 0.5 s they measure every visible word and exit with **"SAFE-ZONE CHECK FAILED"** (exit code 2) if text leaves the zone or the frame-1 hook has more than 2 big lines; `render.py` also auto-shrinks long lines and flags text it had to shrink below 55% (= too many words: cut them).
 Both write `<out>.sheet.jpg` (1 frame every 2 s, safe zone in green) next to the MP4.
 Don't schedule anything rendered before Oct 17 2026 midday without checking it against these rules — the older animated format had none of them.
+
+## Keep the site under GitHub Pages' 1 GB (Oct 19 2026)
+Metricool keeps its own copy of every video once the post is scheduled, so `v/` only needs the videos that are not
+scheduled yet. Prune posted ones regularly (normal commit, no history rewrite); the originals are archived on the PC in
+`C:\Ecosystem\work\video-archive\`. First prune: the 26 videos from Oct 16-19 (~760 MB).
