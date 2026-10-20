@@ -36,5 +36,12 @@ friedrich_two_men_moon.jpg https://commons.wikimedia.org/wiki/Special:FilePath/F
 monet_water_lilies.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Water_Lilies_-_1906%2C_Ryerson.jpg?width=2400
 vermeer_astronomer.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Johannes_Vermeer_-_The_Astronomer_-_1668.jpg?width=2400
 wright_orrery.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Wright_of_Derby%2C_The_Orrery.jpg?width=2400
-friedrich_chalk_cliffs.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich,_Caspar_David_-_Kreidefelsen_auf_R%C3%BCgen_-_Kunst_Museum_Winterthur.jpg?width=2400
 wright_air_pump.jpg https://commons.wikimedia.org/wiki/Special:FilePath/An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby,_1768.jpg?width=2400
+wright_blacksmith.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Joseph_Wright_of_Derby_-_The_Blacksmith%27s_Shop_-_Google_Art_Project.jpg?width=2400
+turner_snowstorm.jpg https://commons.wikimedia.org/wiki/Special:FilePath/J.M.W._Turner_%E2%80%93_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth.jpg?width=2400
+vangogh_rhone.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Starry_Night_Over_the_Rhone.jpg?width=2400
+caravaggio_emmaus.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Supper_at_Emmaus-Caravaggio_%281601%29.jpg?width=2400
+wright_vesuvius.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Joseph_Wright_of_Derby_-_Vesuvius_from_Posillipo_-_Google_Art_Project.jpg?width=2400
+latour_magdalene.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Georges_de_La_Tour_-_The_Magdalen_with_the_Smoking_Flame_-_Google_Art_Project.jpg?width=2400
+latour_joseph.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Joseph_charpentier_%28La_Tour%29.jpg?width=2400
+aivazovsky_moonlit.jpg https://commons.wikimedia.org/wiki/Special:FilePath/A_Moonlit_Night_on_the_Crimean_Coast%29.jpg?width=2400
