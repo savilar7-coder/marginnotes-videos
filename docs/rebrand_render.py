@@ -78,14 +78,14 @@ def text_layer(words, emphasis, big):
             size -= 6; f = ImageFont.truetype(FONT, size)
         bb = f.getbbox(txt)
         rend.append((txt, f, col, bb))
-    hgt = sum(bb[3] - bb[1] + 18 for *_, bb in rend)
+    hgt = sum(bb[3] - bb[1] + 34 for *_, bb in rend)
     img = Image.new("RGBA", (W, hgt + 80), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     y = 40
     for txt, f, col, bb in rend:
         x = (W - (bb[2] - bb[0])) // 2 - bb[0]
         d.text((x, y - bb[1]), txt, font=f, fill=col + (255,))
-        y += bb[3] - bb[1] + 18
+        y += bb[3] - bb[1] + 34
     shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
     shadow.putalpha(img.getchannel("A").filter(ImageFilter.GaussianBlur(14)).point(lambda a: int(a * 0.85)))
     out = Image.new("RGBA", img.size, (0, 0, 0, 0))
@@ -135,6 +135,58 @@ def music_bed(seconds, path, sr=44100):
         w.setnchannels(2); w.setsampwidth(2); w.setframerate(sr); w.writeframes(pcm.tobytes())
 
 
+def music_beat(seconds, path, bpm=76, sr=44100):
+    """Pad + soft piano plucks on every beat + low pulse on each bar. Generated here: no licence issues.
+    Returns the beat times so shots can cut on the beat."""
+    music_bed(seconds, path, sr)
+    with wave.open(path) as w:
+        base = np.frombuffer(w.readframes(w.getnframes()), np.int16).reshape(-1, 2).astype(np.float32) / 32767
+    n = base.shape[0]
+    t = np.arange(n) / sr
+    beat = 60.0 / bpm
+    beats = np.arange(1.0, seconds - 1.0, beat)
+    chords = [[440.0, 523.25, 659.25], [349.23, 440.0, 523.25], [392.0, 523.25, 659.25], [392.0, 493.88, 587.33]]
+    out = np.zeros(n, np.float32)
+    for i, b in enumerate(beats):
+        ch = chords[(i // 8) % 4]
+        f = ch[i % 3] if i % 4 != 3 else ch[0] * 2
+        i0 = int(b * sr); L = min(n - i0, int(sr * 1.6))
+        if L <= 0:
+            continue
+        tt = np.arange(L) / sr
+        env = np.exp(-tt * 3.2) * (1 - np.exp(-tt * 400))
+        tone = np.sin(2 * np.pi * f * tt) + 0.35 * np.sin(2 * np.pi * 2 * f * tt) + 0.12 * np.sin(2 * np.pi * 3 * f * tt)
+        out[i0:i0 + L] += (0.10 if i % 4 == 0 else 0.07) * env * tone
+        if i % 4 == 0:  # bar pulse
+            Lk = min(n - i0, int(sr * 0.35)); tk = np.arange(Lk) / sr
+            out[i0:i0 + Lk] += 0.22 * np.exp(-tk * 14) * np.sin(2 * np.pi * (55 + 40 * np.exp(-tk * 30)) * tk)
+    fade = np.clip(np.minimum(t / 2.0, (seconds - t) / 3.0), 0, 1)
+    mix = base + np.stack([out, np.roll(out, 180)], 1) * fade[:, None]
+    pcm = (np.tanh(mix * 1.2) * 0.8 * 32767).astype(np.int16)
+    with wave.open(path, "wb") as w:
+        w.setnchannels(2); w.setsampwidth(2); w.setframerate(sr); w.writeframes(pcm.tobytes())
+    return beats
+
+
+def ease_out_back(x):
+    x = max(0.0, min(1.0, x)); c = 1.7
+    return 1 + (c + 1) * (x - 1) ** 3 + c * (x - 1) ** 2
+
+
+class ClipReader:
+    """Frames of a pre-rendered motion clip (DepthFlow), loaded one shot at a time."""
+    def __init__(self):
+        self.path, self.frames = None, None
+    def get(self, path, idx):
+        if path != self.path:
+            fw, fh = FX1 - FX0, FY1 - FY0
+            raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-vf", f"scale={fw}:{fh}", "-r", str(FPS),
+                                  "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True, check=True).stdout
+            self.frames = np.frombuffer(raw, np.uint8).reshape(-1, fh, fw, 3)
+            self.path = path
+        return self.frames[min(idx, len(self.frames) - 1)]
+
+
 def main(spec_path, out_path):
     spec = json.load(open(spec_path))
     emphasis = {e.lower() for e in spec["emphasis"]}
@@ -170,7 +222,15 @@ def main(spec_path, out_path):
         return layers[(i, big)]
 
     mus = out_path + ".music.wav"
-    music_bed(dur, mus)
+    if spec.get("bpm"):
+        beats = music_beat(dur, mus, spec["bpm"])
+        for sh in shots:
+            if sh["t"] > hook_until + 0.5:
+                sh["t"] = float(beats[np.argmin(np.abs(beats - sh["t"]))])
+        shots.sort(key=lambda x: x["t"])
+    else:
+        music_bed(dur, mus)
+    clips = ClipReader()
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
                            "-itsoffset", str(voice_delay), "-i", spec["audio"], "-i", mus,
@@ -188,8 +248,11 @@ def main(spec_path, out_path):
             s = shots[si]
             t_end = shots[si + 1]["t"] if si + 1 < len(shots) else dur
             p = (t - s["t"]) / max(0.1, t_end - s["t"])
-            pic = shot_frame(imgs[s["img"]], s.get("focus", [0.5, 0.5]), *s.get("zoom", [1.0, 1.12]), p,
-                             s.get("drift", [1, 0]))
+            if s.get("clip"):
+                pic = clips.get(s["clip"], int((t - s["t"]) * FPS))
+            else:
+                pic = shot_frame(imgs[s["img"]], s.get("focus", [0.5, 0.5]), *s.get("zoom", [1.0, 1.12]), p,
+                                 s.get("drift", [1, 0]))
             a = np.asarray(pic, np.float32) * vign * spec.get("dim", 0.62) * gain[s["img"]]
             flick = 1.0 + 0.025 * math.sin(t * 7.3) + 0.015 * math.sin(t * 13.1)
             a *= flick
@@ -211,13 +274,15 @@ def main(spec_path, out_path):
         ci = max((i for i, c in enumerate(caps) if c["t0"] <= t), default=0)
         if t < caps[ci]["t1"] + 0.05:
             L = layer(ci, t < hook_until)
-            k = min(1.0, (t - caps[ci]["t0"]) / 0.12) if ci > 0 else 1.0
-            sc = 0.86 + 0.14 * k
-            if sc < 0.999:
-                L2 = L.resize((int(L.width * sc), int(L.height * sc)), Image.BILINEAR)
-            else:
-                L2 = L
-            frame.paste(L2, ((W - L2.width) // 2, TEXT_Y - L2.height // 2), L2)
+            p = min(1.0, (t - caps[ci]["t0"]) / 0.2) if ci > 0 else 1.0
+            k = ease_out_back(p)
+            sc = 0.82 + 0.18 * k
+            dy = int((1 - k) * 46)
+            L2 = L.resize((max(1, int(L.width * sc)), max(1, int(L.height * sc))), Image.BILINEAR) if sc < 0.999 or sc > 1.001 else L
+            if p < 1.0:
+                al = L2.getchannel("A").point(lambda a, m=min(1.0, p * 2.5): int(a * m))
+                L2 = L2.copy(); L2.putalpha(al)
+            frame.paste(L2, ((W - L2.width) // 2, TEXT_Y - L2.height // 2 + dy), L2)
         # brand mark
         if t >= hook_until:
             f = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 26)
