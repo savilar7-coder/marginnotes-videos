@@ -225,7 +225,7 @@ def main(spec_path, out_path):
     if spec.get("bpm"):
         beats = music_beat(dur, mus, spec["bpm"])
         for sh in shots:
-            if sh["t"] > hook_until + 0.5:
+            if spec.get("snap", True) and sh["t"] > hook_until + 0.5:
                 sh["t"] = float(beats[np.argmin(np.abs(beats - sh["t"]))])
         shots.sort(key=lambda x: x["t"])
     else:
