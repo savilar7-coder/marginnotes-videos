@@ -1,0 +1,222 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.9,
+ "tail": 0.35,
+ "audio": "audio/2026-10-21-0900-jung-mirror.mp3",
+ "align": "audio/2026-10-21-0900-jung-mirror.json",
+ "hook_until": 0.0,
+ "emphasis": [
+  "ignore",
+  "differently",
+  "yourself",
+  "arrogance",
+  "confidence",
+  "laziness",
+  "rest",
+  "neediness",
+  "help",
+  "loudness",
+  "voice",
+  "shadow",
+  "one",
+  "first",
+  "remember"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/caravaggio_narcissus.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "t": 3.35,
+   "img": "assets/rembrandt_philosopher.jpg",
+   "line": "But Carl Jung saw it differently",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 8.15,
+   "img": "assets/caravaggio_narcissus.jpg",
+   "line": "showing you yourself",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "zoom": [
+    1.0,
+    1.18
+   ]
+  },
+  {
+   "t": 12.65,
+   "img": "assets/ingres_napoleon_throne.jpg",
+   "line": "arrogance",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 15.75,
+   "img": "assets/ingres_napoleon_throne.jpg",
+   "line": "confidence you never let yourself have",
+   "focus": [
+    0.5,
+    0.22
+   ],
+   "zoom": [
+    1.6,
+    1.8
+   ]
+  },
+  {
+   "t": 18.45,
+   "img": "assets/vangogh_noon_rest.jpg",
+   "line": "laziness",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 21.25,
+   "img": "assets/vangogh_noon_rest.jpg",
+   "line": "rest you never let yourself take",
+   "focus": [
+    0.55,
+    0.6
+   ],
+   "zoom": [
+    1.5,
+    1.65
+   ]
+  },
+  {
+   "t": 23.75,
+   "img": "assets/millet_gleaners.jpg",
+   "line": "neediness",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 26.55,
+   "img": "assets/rembrandt_prodigal_son.jpg",
+   "line": "help you're too proud to ask for",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 29.35,
+   "img": "assets/munch_scream.jpg",
+   "line": "loudness",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 32.25,
+   "img": "assets/munch_scream.jpg",
+   "line": "the voice you swallowed",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "zoom": [
+    1.6,
+    1.8
+   ]
+  },
+  {
+   "t": 35.15,
+   "img": "assets/latour_magdalene.jpg",
+   "line": "Jung called it the shadow",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 38.25,
+   "img": "assets/hammershoi_woman_back.jpg",
+   "line": "parts you hid so well",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 43.35,
+   "img": "assets/vermeer_pearl_earring.jpg",
+   "line": "which one is yours",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom": [
+    1.1,
+    1.25
+   ]
+  },
+  {
+   "t": 48.05,
+   "img": "assets/friedrich_two_men_moon.jpg",
+   "line": "send this to the person",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 52.15,
+   "img": "assets/turner_snowstorm.jpg",
+   "line": "gets under your skin",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 56.5,
+   "img": "assets/caravaggio_narcissus.jpg",
+   "line": "They said (loop)",
+   "zoom": [
+    1.0,
+    1.05
+   ]
+  }
+ ],
+ "vignette": 0.5
+}

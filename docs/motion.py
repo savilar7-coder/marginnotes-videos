@@ -28,10 +28,13 @@ FPS = 30
 class Drift(DepthScene):
     direction: float = 1.0
     push: float = 0.08
+    hook: bool = False
 
     def update(self):
-        e = 0.5 - 0.5 * math.cos(math.pi * min(1.0, max(0.0, self.tau)))
-        self.state.height = 0.22
+        x = min(1.0, max(0.0, self.tau))
+        # the hook shot moves fast at once (ease-out) so the first 2 s visibly move; the rest ease in and out
+        e = 1.0 - (1.0 - x) ** 2.2 if self.hook else 0.5 - 0.5 * math.cos(math.pi * x)
+        self.state.height = 0.32 if self.hook else 0.22
         self.state.steady = 0.25
         self.state.isometric = 0.55
         self.state.zoom = 1.0 - self.push * e
@@ -72,6 +75,9 @@ def main(spec_path):
         scene.state = DepthState()
         scene.direction = 1.0 if i % 2 == 0 else -1.0
         scene.push = 0.10 if length < 4 else 0.14
+        scene.hook = (i == 0)
+        if i == 0:
+            scene.push = 0.24
         scene.main(output=str(out), width=FW, height=FH, fps=FPS, time=length, ssaa=1.0)
         s["clip"] = str(out).replace(os.sep, "/")
         print(f"shot {i:02d} {length:4.1f}s {s['img']}", flush=True)

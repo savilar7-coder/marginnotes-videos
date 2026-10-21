@@ -41,7 +41,8 @@ def words_from_alignment(al):
 FUNC = {"a", "an", "the", "to", "of", "in", "on", "at", "by", "for", "with", "from", "and", "or", "but", "if", "is",
         "are", "was", "were", "be", "his", "her", "their", "your", "you're", "my", "our", "its", "that", "this", "these",
         "those", "who", "which", "than", "not", "no", "does", "do", "did", "as", "into", "so", "when", "what", "before",
-        "after", "about", "every", "some", "it's", "i", "he", "she", "they", "we"}
+        "after", "about", "every", "some", "it's", "i", "he", "she", "they", "we",
+        "one", "two", "three", "four", "five", "ten", "hundred", "thousand"}
 
 
 def _clean(w):
@@ -84,7 +85,9 @@ def chunk(words, emphasis):
             continue
         c = _clean(w)
         lone_small = len(cur) == 1 and c in emphasis and not re.search(r"[.,:;?!…]$", cur[0][0])
-        if cur and not name_tail and not lone_small and (c in emphasis or len(cur) >= 3 or s_ - cur[-1][2] > 0.35):
+        ends_short = len(cur) == 3 and re.search(r"[.,:;?!…]$", w) and len(c) <= 6 and c not in emphasis
+        if cur and not name_tail and not lone_small and (c in emphasis or (len(cur) >= 3 and not ends_short)
+                                                          or s_ - cur[-1][2] > 0.35):
             flush_with_carry()
         cur.append((w, s_, e_))
         nxt = words[i + 1][0] if i + 1 < len(words) else ""
@@ -182,9 +185,14 @@ def text_layer(words, emphasis, big):
         if has_em and not em:
             size = 110
         lines.append((d.upper(), size, RED if em else (255, 255, 255)))
-    # stack: each word on its own line if emphasis present, else one/two lines
-    if not has_em and sum(len(l[0]) for l in lines) <= 9:
-        lines = [(" ".join(l[0] for l in lines), lines[0][1], (255, 255, 255))]
+    # pack consecutive plain words into lines of <= 9 characters; an emphasis word always gets its own line
+    packed = []
+    for txt, size, col in lines:
+        if packed and col != RED and packed[-1][2] != RED and len(packed[-1][0]) + 1 + len(txt) <= 9:
+            packed[-1] = (packed[-1][0] + " " + txt, min(packed[-1][1], size), col)
+        else:
+            packed.append((txt, size, col))
+    lines = packed
     rend = []
     for txt, size, col in lines:
         f = ImageFont.truetype(FONT, size)
@@ -348,7 +356,8 @@ def main(spec_path, out_path):
     # vignette for the painting
     yy, xx = np.mgrid[0:FY1 - FY0, 0:FX1 - FX0]
     r = np.sqrt(((xx - (FX1 - FX0) / 2) / ((FX1 - FX0) / 2)) ** 2 + ((yy - (FY1 - FY0) / 2) / ((FY1 - FY0) / 2)) ** 2)
-    vign = np.clip(1.15 - 0.55 * r ** 2, 0.35, 1.0)[..., None]
+    k = spec.get("vignette", 1.0)
+    vign = np.clip(1.0 + 0.15 * k - 0.55 * k * r ** 2, 1.0 - 0.65 * k, 1.0)[..., None]
     rng = np.random.default_rng(7)
     grains = [rng.normal(0, 14, (H // 2, W // 2)).astype(np.float32) for _ in range(6)]
     dust = rng.random((60, 4))  # x, y, speed, size
@@ -379,7 +388,7 @@ def main(spec_path, out_path):
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
                            "-itsoffset", str(voice_delay), "-i", spec["audio"], "-i", mus,
-                           "-filter_complex", "[1:a]volume=1.0[v];[2:a]volume=0.55[m];[v][m]amix=inputs=2:duration=longest:normalize=0[a]",
+                           "-filter_complex", f"[1:a]volume=1.0[v];[2:a]volume={0.0 if spec.get('music') is False else spec.get('music_volume', 0.55)}[m];[v][m]amix=inputs=2:duration=longest:normalize=0[a]",
                            "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-preset", "medium", "-b:v", "6M", "-maxrate", "8M", "-bufsize", "12M",
                            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart",
                            out_path], stdin=subprocess.PIPE)
