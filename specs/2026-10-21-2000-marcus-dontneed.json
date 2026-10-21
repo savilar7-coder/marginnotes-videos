@@ -1,0 +1,198 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.78,
+ "tail": 0.35,
+ "audio": "audio/2026-10-21-2000-marcus-dontneed.mp3",
+ "align": "audio/2026-10-21-2000-marcus-dontneed.json",
+ "hook_until": 0.6,
+ "emphasis": [
+  "beach",
+  "cabin",
+  "city",
+  "alone",
+  "marcus",
+  "emperor",
+  "notebook",
+  "soul",
+  "carry",
+  "now",
+  "breath",
+  "storm",
+  "here",
+  "running",
+  "need"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/aivazovsky_moonlit.jpg",
+   "line": "hook"
+  },
+  {
+   "t": 0.6,
+   "img": "assets/aivazovsky_moonlit.jpg",
+   "line": "a beach to find peace",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 2.15,
+   "img": "assets/bierstadt_sierra_nevada.jpg",
+   "line": "a cabin in the mountains",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 4.85,
+   "img": "assets/grimshaw_liverpool_quay.jpg",
+   "line": "a new city, a quieter life",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 8.65,
+   "img": "assets/hammershoi_woman_back.jpg",
+   "line": "everyone to leave you alone",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 11.35,
+   "img": "assets/delacroix_marcus_last_words.jpg",
+   "line": "Marcus Aurelius had all of that",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 14.35,
+   "img": "assets/cole_empire_consummation.jpg",
+   "line": "emperor of Rome",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 16.35,
+   "img": "assets/rembrandt_philosopher.jpg",
+   "line": "private notebook",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 20.35,
+   "img": "assets/friedrich_monk_sea.jpg",
+   "line": "retire better than to his own soul",
+   "focus": [
+    0.2,
+    0.6
+   ],
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 26.25,
+   "img": "assets/hammershoi_interior.jpg",
+   "line": "the one you carry",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 30.35,
+   "img": "assets/monet_impression_sunrise.jpg",
+   "line": "not after the vacation",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 32.45,
+   "img": "assets/turner_rain_steam.jpg",
+   "line": "not when the noise stops",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 34.45,
+   "img": "assets/friedrich_woman_sun.jpg",
+   "line": "Now",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 35.75,
+   "img": "assets/whistler_nocturne.jpg",
+   "line": "one breath",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 37.65,
+   "img": "assets/turner_snowstorm.jpg",
+   "line": "the storm is out there",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 39.95,
+   "img": "assets/vermeer_astronomer.jpg",
+   "line": "you are in here",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 41.65,
+   "img": "assets/friedrich_two_men_moon.jpg",
+   "line": "tired of running",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 44.65,
+   "img": "assets/aivazovsky_moonlit.jpg",
+   "line": "Because you don't need (loop)",
+   "zoom": [
+    1.0,
+    1.05
+   ]
+  }
+ ]
+}

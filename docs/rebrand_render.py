@@ -196,7 +196,7 @@ def main(spec_path, out_path):
         w[1] += voice_delay; w[2] += voice_delay
     caps = chunk(words, emphasis)
     caps[0]["t0"] = 0.0
-    dur = words[-1][2] + 1.6
+    dur = words[-1][2] + spec.get("tail", 1.6)
     hook_until = spec["hook_until"]
     shots = spec["shots"]
     imgs = {s["img"]: Image.open(s["img"]).convert("RGB") for s in shots}
