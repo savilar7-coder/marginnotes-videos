@@ -1,0 +1,186 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.78,
+ "tail": 0.35,
+ "audio": "audio/2026-10-21-1400-seneca-oneday.mp3",
+ "align": "audio/2026-10-21-1400-seneca-oneday.json",
+ "hook_until": 0.0,
+ "emphasis": [
+  "realize",
+  "feared",
+  "nothing",
+  "night",
+  "suffered",
+  "seneca",
+  "imagination",
+  "reality",
+  "three",
+  "more",
+  "before",
+  "all",
+  "stop",
+  "day"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/friedrich_monk_sea.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 1.85,
+   "img": "assets/friedrich_monk_sea.jpg",
+   "line": "the thing you feared never came",
+   "focus": [
+    0.2,
+    0.6
+   ],
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 5.05,
+   "img": "assets/hammershoi_woman_back.jpg",
+   "line": "rehearsed that conversation",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 9.35,
+   "img": "assets/whistler_nocturne.jpg",
+   "line": "worst night of your life",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 15.95,
+   "img": "assets/munch_melancholy.jpg",
+   "line": "suffered for things that never happened",
+   "focus": [
+    0.3,
+    0.5
+   ],
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 20.35,
+   "img": "assets/rubens_dying_seneca.jpg",
+   "line": "Seneca realized it",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 23.95,
+   "img": "assets/gummere_p97.jpg",
+   "line": "He wrote to a friend",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "zoom": [
+    1.0,
+    1.1
+   ]
+  },
+  {
+   "t": 25.85,
+   "img": "assets/bocklin_isle_dead.jpg",
+   "line": "suffer more often in imagination",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 29.75,
+   "img": "assets/ninth_wave.jpg",
+   "line": "three tricks fear plays",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 33.55,
+   "img": "assets/turner_snowstorm.jpg",
+   "line": "more than they ought",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 36.45,
+   "img": "assets/friedrich_abbey.jpg",
+   "line": "before they ought",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 39.35,
+   "img": "assets/friedrich_moonrise_sea.jpg",
+   "line": "when they ought not at all",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 43.35,
+   "img": "assets/aivazovsky_moonlit.jpg",
+   "line": "More/Before/When",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 49.35,
+   "img": "assets/latour_magdalene.jpg",
+   "line": "the night your mind won't stop",
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 52.95,
+   "img": "assets/friedrich_monk_sea.jpg",
+   "line": "Because one day (loop)",
+   "zoom": [
+    1.0,
+    1.05
+   ]
+  }
+ ],
+ "quote_source": [
+  "Seneca \u00b7 Letter 13 \u00b7 tr. Gummere",
+  "Seneca \u00b7 Letter 13 \u00b7 tr. Gummere"
+ ]
+}

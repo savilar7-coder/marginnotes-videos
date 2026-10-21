@@ -16,6 +16,9 @@ from PIL import Image
 from depthflow.scene import DepthScene
 from depthflow.state import DepthState
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from rebrand_render import split_long_shots  # noqa: E402
+
 FW, FH = 980, 1260          # rounded-frame size in rebrand_render.py (FX1-FX0, FY1-FY0)
 SUPER = 1.5                 # feed DepthFlow a sharper crop than the output
 FPS = 30
@@ -52,7 +55,8 @@ def main(spec_path):
     spec = json.loads(spec_path.read_text())
     al = json.load(open(spec["align"]))
     dur = max(al["character_end_times_seconds"]) + spec.get("voice_delay", 0.15) + spec.get("tail", 1.6)
-    shots = spec["shots"]
+    shots = split_long_shots(spec["shots"], dur, spec.get("max_shot", 4.2))
+    spec["shots"] = shots
     outdir = pathlib.Path("motion") / spec_path.stem
     outdir.mkdir(parents=True, exist_ok=True)
     scene = Drift(backend="headless")

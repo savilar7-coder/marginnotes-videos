@@ -16,6 +16,8 @@ W, H, FPS = 1080, 1920, 30
 FX0, FY0, FX1, FY1 = 50, 330, 1030, 1590          # rounded frame (inside TikTok safe area)
 RADIUS = 70
 FONT = "C:/Windows/Fonts/seguibl.ttf"              # Segoe UI Black
+QFONT = "C:/Windows/Fonts/georgiai.ttf"            # quotes: Georgia Italic
+SFONT = "C:/Windows/Fonts/segoeuib.ttf"            # small source line
 RED = (255, 92, 97)
 TEXT_Y = 860                                       # caption centre (safe zone 230-1382)
 
@@ -36,24 +38,136 @@ def words_from_alignment(al):
     return words
 
 
+FUNC = {"a", "an", "the", "to", "of", "in", "on", "at", "by", "for", "with", "from", "and", "or", "but", "if", "is",
+        "are", "was", "were", "be", "his", "her", "their", "your", "you're", "my", "our", "its", "that", "this", "these",
+        "those", "who", "which", "than", "not", "no", "does", "do", "did", "as", "into", "so", "when", "what", "before",
+        "after", "about", "every", "some", "it's", "i", "he", "she", "they", "we"}
+
+
+def _clean(w):
+    return re.sub(r"[^\w']", "", w).lower()
+
+
+def _opens_quote(w):
+    return w[:1] in ('"', "“")
+
+
+def _closes_quote(w):
+    return bool(re.search(r'["”][.,;:!?…]*$', w)) and not (_opens_quote(w) and len(w) <= 2)
+
+
 def chunk(words, emphasis):
-    """1-3 words per caption; break on punctuation, pauses, and before/after emphasis words."""
+    """Captions of 1-4 words that never end on a small word ("the", "a", "to"...): small words move to the next
+    screen with the word they belong to. A spoken quote stays one caption (kind "quote") shown whole."""
     out, cur = [], []
-    for i, (w, s, e) in enumerate(words):
-        clean = re.sub(r"[^\w']", "", w).lower()
-        if cur and (clean in emphasis or len(cur) >= 3 or s - cur[-1][2] > 0.35):
-            out.append(cur); cur = []
-        cur.append((w, s, e))
-        if re.search(r"[.,:;?!\"…]$", w) or clean in emphasis:
-            out.append(cur); cur = []
+
+    def flush_with_carry():
+        nonlocal cur
+        carry = []
+        while cur and _clean(cur[-1][0]) in FUNC and not re.search(r"[.,:;?!…]$", cur[-1][0]):
+            carry.insert(0, cur.pop())
+        if cur:
+            out.append({"kind": "text", "words": cur})
+        cur = carry
+
+    i, name_tail = 0, False
+    while i < len(words):
+        w, s_, e_ = words[i]
+        if _opens_quote(w):
+            if cur:
+                out.append({"kind": "text", "words": cur}); cur = []
+            q, j = [words[i]], i
+            while not _closes_quote(words[j][0]) and j + 1 < len(words):
+                j += 1; q.append(words[j])
+            out.append({"kind": "quote", "words": q})
+            i = j + 1
+            continue
+        c = _clean(w)
+        lone_small = len(cur) == 1 and c in emphasis and not re.search(r"[.,:;?!…]$", cur[0][0])
+        if cur and not name_tail and not lone_small and (c in emphasis or len(cur) >= 3 or s_ - cur[-1][2] > 0.35):
+            flush_with_carry()
+        cur.append((w, s_, e_))
+        nxt = words[i + 1][0] if i + 1 < len(words) else ""
+        # keep a name together ("Marcus Aurelius"): a capitalised emphasis word followed by another capitalised word
+        keep_name = (c in emphasis and w[:1].isupper() and nxt[:1].isupper() and not _opens_quote(nxt)
+                     and not re.search(r"[.,:;?!…]$", w))
+        if name_tail or (not keep_name and (re.search(r"[.,:;?!\"…]$", w) or c in emphasis)):
+            out.append({"kind": "text", "words": cur}); cur = []
+        name_tail = keep_name
+        i += 1
     if cur:
-        out.append(cur)
+        out.append({"kind": "text", "words": cur})
     caps = []
     for i, c in enumerate(out):
-        start = c[0][1]
-        end = out[i + 1][0][1] if i + 1 < len(out) else c[-1][2] + 0.6
-        caps.append({"words": [x[0] for x in c], "t0": start, "t1": end})
+        start = c["words"][0][1]
+        end = out[i + 1]["words"][0][1] if i + 1 < len(out) else c["words"][-1][2] + 0.6
+        caps.append({"kind": c["kind"], "words": [x[0] for x in c["words"]],
+                     "times": [(x[1], x[2]) for x in c["words"]], "t0": start, "t1": end})
     return caps
+
+
+def quote_layer(words, k, source=None):
+    """A spoken quote shown whole in italic serif; words already spoken are cream, the current one red,
+    upcoming ones dimmed. Optional small source line underneath."""
+    f = ImageFont.truetype(QFONT, 64)
+    txt = [w for w in words]
+    txt[0] = "“" + re.sub(r'^["“]', "", txt[0])
+    txt[-1] = re.sub(r'["”]([.,;:!?…]*)$', r"\1", txt[-1]) + "”"
+    space = f.getlength(" ")
+    lines, line, wline = [], [], 0.0
+    for idx, w in enumerate(txt):
+        wl = f.getlength(w)
+        if line and wline + space + wl > 820:
+            lines.append(line); line, wline = [], 0.0
+        line.append((idx, w, wl)); wline += (space if len(line) > 1 else 0) + wl
+    if line:
+        lines.append(line)
+    lh = 84
+    sf = ImageFont.truetype(SFONT, 28) if source else None
+    hgt = lh * len(lines) + (70 if source else 0)
+    pad = 120
+    img = Image.new("RGBA", (W, hgt + 2 * pad), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    y = pad
+    for ln in lines:
+        lw = sum(x[2] for x in ln) + space * (len(ln) - 1)
+        x = (W - lw) / 2
+        for idx, w, wl in ln:
+            col = RED + (255,) if idx == k else ((237, 230, 218, 255) if idx < k else (237, 230, 218, 120))
+            d.text((x, y), w, font=f, fill=col, stroke_width=3, stroke_fill=(10, 8, 8, 255))
+            x += wl + space
+        y += lh
+    if source:
+        st = source.upper()
+        sw = sf.getlength(st) + 4 * len(st)
+        x = (W - sw) / 2
+        for ch in st:
+            d.text((x, y + 26), ch, font=sf, fill=(201, 191, 174, 230))
+            x += sf.getlength(ch) + 4
+    halo = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    halo.putalpha(img.getchannel("A").filter(ImageFilter.GaussianBlur(44)).point(lambda a: min(255, int(a * 1.7))))
+    out = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    out.alpha_composite(halo); out.alpha_composite(img)
+    return out
+
+
+def split_long_shots(shots, dur, max_len=4.2):
+    """No painting holds longer than ~max_len s: long shots become a wide view then closer views of the same art."""
+    out = []
+    for i, s in enumerate(shots):
+        end = shots[i + 1]["t"] if i + 1 < len(shots) else dur
+        n = max(1, math.ceil((end - s["t"]) / max_len)) if s["t"] > 0 or end > max_len else 1
+        z0 = s.get("zoom", [1.0, 1.12])[0]
+        for k in range(n):
+            part = dict(s)
+            part.pop("clip", None)
+            part["t"] = round(s["t"] + k * (end - s["t"]) / n, 3)
+            if k:
+                zz = z0 * (1.0 + 0.3 * k)
+                part["zoom"] = [zz, zz + 0.1]
+                part["drift"] = [(-1) ** k, 0]
+            out.append(part)
+    return out
 
 
 def text_layer(words, emphasis, big):
@@ -85,7 +199,7 @@ def text_layer(words, emphasis, big):
     y = pad
     for txt, f, col, bb in rend:
         x = (W - (bb[2] - bb[0])) // 2 - bb[0]
-        d.text((x, y - bb[1]), txt, font=f, fill=col + (255,))
+        d.text((x, y - bb[1]), txt, font=f, fill=col + (255,), stroke_width=5, stroke_fill=(12, 8, 8, 255))
         y += bb[3] - bb[1] + 34
     shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
     shadow.putalpha(img.getchannel("A").filter(ImageFilter.GaussianBlur(14)).point(lambda a: int(a * 0.85)))
@@ -215,7 +329,15 @@ def main(spec_path, out_path):
     dur = words[-1][2] + spec.get("tail", 1.6)
     hook_until = spec["hook_until"]
     shots = spec["shots"]
+    if not any(s.get("clip") for s in shots):        # motion specs are already split by docs/motion.py
+        shots = split_long_shots(shots, dur, spec.get("max_shot", 4.2))
     imgs = {s["img"]: Image.open(s["img"]).convert("RGB") for s in shots}
+    qsrc = spec.get("quote_source")
+    qsrc = qsrc if isinstance(qsrc, list) else [qsrc] * 20
+    qn = 0
+    for c in caps:
+        if c["kind"] == "quote":
+            c["source"] = qsrc[qn] if qn < len(qsrc) else None; qn += 1
     # auto-exposure: bring dark paintings (Rembrandt, La Tour) up to a common brightness
     gain = {k: float(np.clip(105.0 / max(1.0, np.asarray(v.convert("L"), np.float32).mean()), 0.75, 2.2))
             for k, v in imgs.items()}
@@ -232,9 +354,16 @@ def main(spec_path, out_path):
     dust = rng.random((60, 4))  # x, y, speed, size
 
     layers = {}
-    def layer(i, big):
+    def layer(i, big, t=0.0):
+        c = caps[i]
+        if c["kind"] == "quote":
+            k = max((j for j, (ws, we) in enumerate(c["times"]) if ws <= t), default=0)
+            key = (i, "q", k)
+            if key not in layers:
+                layers[key] = quote_layer(c["words"], k, c.get("source"))
+            return layers[key]
         if (i, big) not in layers:
-            layers[(i, big)] = text_layer(caps[i]["words"], emphasis, big)
+            layers[(i, big)] = text_layer(c["words"], emphasis, big)
         return layers[(i, big)]
 
     mus = out_path + ".music.wav"
@@ -273,8 +402,8 @@ def main(spec_path, out_path):
             flick = 1.0 + 0.025 * math.sin(t * 7.3) + 0.015 * math.sin(t * 13.1)
             a *= flick
             # entry flash-in for each new shot (fast fade from black)
-            if si > 0:   # no fade on the very first frame: the hook must be readable at 0:00
-                a *= min(1.0, (t - s["t"]) / 0.18 + 0.15)
+            if si > 0:   # soft 0.1 s dip at a cut (from 80%), not a dark flash: no strobe (Fable review)
+                a *= min(1.0, (t - s["t"]) / 0.10 * 0.2 + 0.8)
             pic = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
             frame.paste(pic, (FX0, FY0), mask)
             # thin frame border
@@ -290,7 +419,7 @@ def main(spec_path, out_path):
         # caption
         ci = max((i for i, c in enumerate(caps) if c["t0"] <= t), default=0)
         if t < caps[ci]["t1"] + 0.05:
-            L = layer(ci, t < hook_until)
+            L = layer(ci, t < hook_until, t)
             p = min(1.0, (t - caps[ci]["t0"]) / 0.2) if ci > 0 else 1.0
             k = ease_out_back(p)
             sc = 0.82 + 0.18 * k
