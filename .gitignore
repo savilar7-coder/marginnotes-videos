@@ -1,2 +1,8 @@
+old/*.mp4
+__pycache__/
+out/*.mp4
+out/*.html
+out/*.jpg
+out/*.render.json
+out/*.silent.mp4
 motion/
-out/
