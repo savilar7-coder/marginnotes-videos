@@ -45,3 +45,10 @@ wright_vesuvius.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Joseph_W
 latour_magdalene.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Georges_de_La_Tour_-_The_Magdalen_with_the_Smoking_Flame_-_Google_Art_Project.jpg?width=2400
 latour_joseph.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Joseph_charpentier_%28La_Tour%29.jpg?width=2400
 aivazovsky_moonlit.jpg https://commons.wikimedia.org/wiki/Special:FilePath/A_Moonlit_Night_on_the_Crimean_Coast%29.jpg?width=2400
+grimshaw_liverpool_quay.jpg https://commons.wikimedia.org/wiki/Special:FilePath/John_Atkinson_Grimshaw_-_Liverpool_Quay_by_Moonlight_(1887).jpg?width=2400
+grimshaw_thames.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Reflections_on_the_Thames,_Westminster_-_Grimshaw,_John_Atkinson.jpg?width=2400
+friedrich_woman_window.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Frau_am_Fenster_-_Google_Art_Project.jpg?width=2400
+friedrich_moonrise_sea.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Mondaufgang_am_Meer_-_Google_Art_Project.jpg?width=2400
+hammershoi_woman_back.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Vilhelm_Hammershoi_-_Interieur_mit_Rueckenansicht_einer_Frau_-_1903-1904_-_Randers_Kunstmuseum.jpg?width=2400
+whistler_falling_rocket.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Whistler-Nocturne_in_black_and_gold.jpg?width=2400
+friedrich_man_woman_moon.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Man_and_Woman_Contemplating_the_Moon_-_WGA08271.jpg?width=2400
