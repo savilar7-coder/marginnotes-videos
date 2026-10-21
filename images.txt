@@ -52,3 +52,5 @@ friedrich_moonrise_sea.jpg https://commons.wikimedia.org/wiki/Special:FilePath/C
 hammershoi_woman_back.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Vilhelm_Hammershoi_-_Interieur_mit_Rueckenansicht_einer_Frau_-_1903-1904_-_Randers_Kunstmuseum.jpg?width=2400
 whistler_falling_rocket.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Whistler-Nocturne_in_black_and_gold.jpg?width=2400
 friedrich_man_woman_moon.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Man_and_Woman_Contemplating_the_Moon_-_WGA08271.jpg?width=2400
+vermeer_woman_letter.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Johannes_Vermeer_-_Woman_in_Blue_Reading_a_Letter_-_WGA24657.jpg?width=2400
+epictetus_frontispiece.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Epicteti_Enchiridion_Latinis_versibus_adumbratum_(Oxford_1715)_frontispiece.jpg?width=2400
