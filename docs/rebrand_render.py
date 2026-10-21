@@ -371,10 +371,20 @@ def main(spec_path, out_path):
             if key not in layers:
                 layers[key] = quote_layer(c["words"], k, c.get("source"))
             return layers[key]
-        if (i, big) not in layers:
-            layers[(i, big)] = text_layer(c["words"], emphasis, big)
-        return layers[(i, big)]
+        # build the phrase word by word: a word appears only once it is spoken (iNQ style, no text ahead of voice)
+        k = max(1, sum(1 for ws, we in c["times"] if ws <= t + 0.02))
+        key = (i, big, k)
+        if key not in layers:
+            layers[key] = text_layer(c["words"][:k], emphasis, big)
+        return layers[key]
 
+    # caption timeline for the pre-publish gate: when each word appears vs when it is spoken
+    tl = []
+    for c in caps:
+        for j, (w, (ws, we)) in enumerate(zip(c["words"], c["times"])):
+            shown = c["t0"] if (c["kind"] == "quote" or j == 0) else max(c["t0"], ws - 0.02)
+            tl.append({"word": w, "shown": round(shown, 3), "spoken": round(ws, 3), "kind": c["kind"]})
+    json.dump(tl, open(out_path + ".captions.json", "w"))
     mus = out_path + ".music.wav"
     if spec.get("bpm"):
         beats = music_beat(dur, mus, spec["bpm"])
@@ -387,8 +397,8 @@ def main(spec_path, out_path):
     clips = ClipReader()
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-                           "-itsoffset", str(voice_delay), "-i", spec["audio"], "-i", mus,
-                           "-filter_complex", f"[1:a]volume=1.0[v];[2:a]volume={0.0 if spec.get('music') is False else spec.get('music_volume', 0.55)}[m];[v][m]amix=inputs=2:duration=longest:normalize=0[a]",
+                           "-i", spec["audio"], "-i", mus,
+                           "-filter_complex", f"[1:a]adelay={int(voice_delay * 1000)}:all=1,volume=1.0[v];[2:a]volume={0.0 if spec.get('music') is False else spec.get('music_volume', 0.55)}[m];[v][m]amix=inputs=2:duration=longest:normalize=0[a]",
                            "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-preset", "medium", "-b:v", "6M", "-maxrate", "8M", "-bufsize", "12M",
                            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart",
                            out_path], stdin=subprocess.PIPE)
@@ -458,5 +468,23 @@ def main(spec_path, out_path):
     print("done", out_path, f"{dur:.1f}s", len(caps), "captions")
 
 
+def timeline_only(spec_path, out_path):
+    """Write only <out>.captions.json (same caption logic as main) for a video rendered by this code version."""
+    spec = json.load(open(spec_path))
+    emphasis = {e.lower() for e in spec["emphasis"]}
+    words = words_from_alignment(json.load(open(spec["align"])))
+    d = spec.get("voice_delay", 0.15)
+    for w in words:
+        w[1] += d; w[2] += d
+    caps = chunk(words, emphasis); caps[0]["t0"] = 0.0
+    tl = [{"word": w, "spoken": round(ws, 3), "kind": c["kind"],
+           "shown": round(c["t0"] if (c["kind"] == "quote" or j == 0) else max(c["t0"], ws - 0.02), 3)}
+          for c in caps for j, (w, (ws, we)) in enumerate(zip(c["words"], c["times"]))]
+    json.dump(tl, open(out_path + ".captions.json", "w"))
+
+
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2])
+    if sys.argv[1] == "--timeline":
+        timeline_only(sys.argv[2], sys.argv[3])
+    else:
+        main(sys.argv[1], sys.argv[2])
