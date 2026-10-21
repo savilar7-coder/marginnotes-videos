@@ -1,0 +1,205 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.78,
+ "tail": 0.35,
+ "audio": "audio/2026-10-21-2000-marcus-dontneed-v2.mp3",
+ "align": "audio/2026-10-21-2000-marcus-dontneed-v2.json",
+ "hook_until": 0.0,
+ "emphasis": [
+  "beach",
+  "cabin",
+  "city",
+  "alone",
+  "marcus",
+  "emperor",
+  "notebook",
+  "soul",
+  "carry",
+  "now",
+  "breath",
+  "storm",
+  "here",
+  "running",
+  "need"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/friedrich_moonrise_sea.jpg",
+   "line": "a beach to find peace",
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 2.1,
+   "img": "assets/bierstadt_sierra_nevada.jpg",
+   "line": "a cabin in the mountains",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 4.7,
+   "img": "assets/turner_dido_carthage.jpg",
+   "line": "a new city, a quieter life",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 8.3,
+   "img": "assets/robert_louvre_ruins.jpg",
+   "line": "everyone to leave you alone",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 11.7,
+   "img": "assets/delacroix_marcus_last_words.jpg",
+   "line": "Marcus Aurelius had all of that",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 15.0,
+   "img": "assets/cole_empire_consummation.jpg",
+   "line": "emperor of Rome",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 17.1,
+   "img": "assets/delacroix_marcus_last_words.jpg",
+   "line": "private notebook, to himself",
+   "focus": [
+    0.42,
+    0.38
+   ],
+   "zoom": [
+    1.6,
+    1.8
+   ]
+  },
+  {
+   "t": 21.3,
+   "img": "assets/cole_empire_desolation.jpg",
+   "line": "retire into his own soul",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 31.1,
+   "img": "assets/friedrich_moonrise_sea.jpg",
+   "line": "the one you carry",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "zoom": [
+    1.5,
+    1.65
+   ]
+  },
+  {
+   "t": 35.2,
+   "img": "assets/turner_ancient_rome.jpg",
+   "line": "not after the vacation",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 37.3,
+   "img": "assets/cole_empire_destruction.jpg",
+   "line": "not when the noise stops",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 39.3,
+   "img": "assets/friedrich_woman_sun.jpg",
+   "line": "Now",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 40.7,
+   "img": "assets/friedrich_woman_sun.jpg",
+   "line": "one breath",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "zoom": [
+    1.5,
+    1.65
+   ]
+  },
+  {
+   "t": 42.8,
+   "img": "assets/turner_snowstorm.jpg",
+   "line": "the storm is out there",
+   "zoom": [
+    1.0,
+    1.15
+   ]
+  },
+  {
+   "t": 44.5,
+   "img": "assets/ninth_wave.jpg",
+   "line": "you are in here",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 46.1,
+   "img": "assets/turner_temeraire.jpg",
+   "line": "tired of running",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 49.4,
+   "img": "assets/friedrich_moonrise_sea.jpg",
+   "line": "Because you don't need (loop)",
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "zoom": [
+    1.0,
+    1.05
+   ]
+  }
+ ]
+}

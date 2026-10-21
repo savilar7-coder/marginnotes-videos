@@ -108,7 +108,9 @@ def shot_frame(img, focus, z0, z1, p, drift):
     cx = focus[0] * iw + drift[0] * (p - 0.5) * cw * 0.08
     cy = focus[1] * ih + drift[1] * (p - 0.5) * ch * 0.08
     cx = min(max(cx, cw / 2), iw - cw / 2); cy = min(max(cy, ch / 2), ih - ch / 2)
-    box = (cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2)
+    cw, ch = min(cw, iw), min(ch, ih)
+    cx = min(max(cx, cw / 2), iw - cw / 2); cy = min(max(cy, ch / 2), ih - ch / 2)
+    box = (max(0.0, cx - cw / 2), max(0.0, cy - ch / 2), min(iw, cx + cw / 2), min(ih, cy + ch / 2))
     return img.resize((fw, fh), Image.BICUBIC, box=box)
 
 
