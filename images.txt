@@ -60,3 +60,8 @@ munch_scream.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Edvard_Munc
 rubens_dying_seneca.jpg https://commons.wikimedia.org/wiki/Special:FilePath/The_Dying_Seneca_-_Peter_Paul_Rubens.jpg?width=2400
 delacroix_marcus_last_words.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix-Marc_Aurèle-MBA-Lyon.jpg?width=2400
 cole_empire_consummation.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg?width=2400
+cole_empire_desolation.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg?width=2400
+cole_empire_destruction.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Cole_Thomas_The_Course_of_Empire_Destruction_1836.jpg?width=2400
+turner_ancient_rome.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Joseph_Mallord_William_Turner_-_Ancient_Rome;_Agrippina_Landing_with_the_Ashes_of_Germanicus_-_Google_Art_Project.jpg?width=2400
+robert_louvre_ruins.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Hubert_Robert_-_Imaginary_View_of_the_Grande_Galerie_in_the_Louvre_in_Ruins_-_WGA19589.jpg?width=2400
+turner_dido_carthage.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Turner_Dido_Building_Carthage.jpg?width=2400
