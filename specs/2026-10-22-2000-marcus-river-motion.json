@@ -1,0 +1,285 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.9,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "audio": "audio/2026-10-22-2000-marcus-river.mp3",
+ "align": "audio/2026-10-22-2000-marcus-river.json",
+ "hook_until": 0.0,
+ "thinker": "marcus",
+ "emphasis": [
+  "tonight",
+  "leaving",
+  "marcus",
+  "emperor",
+  "river",
+  "violent",
+  "away",
+  "fear",
+  "river",
+  "moment",
+  "present",
+  "real",
+  "temporary",
+  "permanent"
+ ],
+ "quote_source": [
+  "Marcus Aurelius \u00b7 Meditations IV.43 \u00b7 tr. Long",
+  "Marcus Aurelius \u00b7 Meditations II.14 \u00b7 tr. Long"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/friedrich_moonrise_sea.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot00.mp4"
+  },
+  {
+   "t": 1.86,
+   "img": "assets/turner_temeraire.jpg",
+   "line": "it's already leaving",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot01.mp4"
+  },
+  {
+   "t": 3.26,
+   "img": "assets/delacroix_marcus_last_words.jpg",
+   "line": "Marcus Aurelius emperor",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot02.mp4"
+  },
+  {
+   "t": 7.29,
+   "img": "assets/turner_ancient_rome.jpg",
+   "line": "wrote this in his",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot03.mp4"
+  },
+  {
+   "t": 9.81,
+   "img": "assets/turner_rain_steam.jpg",
+   "line": "Time is like a river",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot04.mp4"
+  },
+  {
+   "t": 13.87,
+   "img": "assets/ninth_wave.jpg",
+   "line": "and a violent stream",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot05.mp4"
+  },
+  {
+   "t": 16.9,
+   "img": "assets/ninth_wave.jpg",
+   "line": "and a violent stream",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot06.mp4"
+  },
+  {
+   "t": 19.93,
+   "img": "assets/turner_snowstorm.jpg",
+   "line": "and another comes",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot07.mp4"
+  },
+  {
+   "t": 22.74,
+   "img": "assets/turner_snowstorm.jpg",
+   "line": "and another comes",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot08.mp4"
+  },
+  {
+   "t": 25.55,
+   "img": "assets/cole_empire_destruction.jpg",
+   "line": "The bad day",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot09.mp4"
+  },
+  {
+   "t": 29.43,
+   "img": "assets/cole_empire_desolation.jpg",
+   "line": "The fear you went",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot10.mp4"
+  },
+  {
+   "t": 31.91,
+   "img": "assets/turner_temeraire.jpg",
+   "line": "All of it is already",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot11.mp4"
+  },
+  {
+   "t": 34.095,
+   "img": "assets/turner_temeraire.jpg",
+   "line": "All of it is already",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot12.mp4"
+  },
+  {
+   "t": 36.28,
+   "img": "assets/friedrich_woman_sun.jpg",
+   "line": "But so is this moment",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot13.mp4"
+  },
+  {
+   "t": 40.45,
+   "img": "assets/bierstadt_sierra_nevada.jpg",
+   "line": "Marcus wrote",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot14.mp4"
+  },
+  {
+   "t": 43.085,
+   "img": "assets/bierstadt_sierra_nevada.jpg",
+   "line": "Marcus wrote",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot15.mp4"
+  },
+  {
+   "t": 45.72,
+   "img": "assets/cole_empire_consummation.jpg",
+   "line": "Everything is real",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot16.mp4"
+  },
+  {
+   "t": 47.94,
+   "img": "assets/cole_empire_consummation.jpg",
+   "line": "Everything is real",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot17.mp4"
+  },
+  {
+   "t": 50.16,
+   "img": "assets/robert_louvre_ruins.jpg",
+   "line": "So don't spend tonight",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot18.mp4"
+  },
+  {
+   "t": 52.975,
+   "img": "assets/robert_louvre_ruins.jpg",
+   "line": "So don't spend tonight",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot19.mp4"
+  },
+  {
+   "t": 55.79,
+   "img": "assets/turner_dido_carthage.jpg",
+   "line": "Save this for the nights",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot20.mp4"
+  },
+  {
+   "t": 58.98,
+   "img": "assets/friedrich_moonrise_sea.jpg",
+   "line": "Because whatever you're carrying",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-2000-marcus-river/shot21.mp4"
+  }
+ ]
+}
