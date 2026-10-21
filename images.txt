@@ -54,3 +54,9 @@ whistler_falling_rocket.jpg https://commons.wikimedia.org/wiki/Special:FilePath/
 friedrich_man_woman_moon.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Man_and_Woman_Contemplating_the_Moon_-_WGA08271.jpg?width=2400
 vermeer_woman_letter.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Johannes_Vermeer_-_Woman_in_Blue_Reading_a_Letter_-_WGA24657.jpg?width=2400
 epictetus_frontispiece.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Epicteti_Enchiridion_Latinis_versibus_adumbratum_(Oxford_1715)_frontispiece.jpg?width=2400
+ingres_napoleon_throne.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Ingres,_Napoleon_on_his_Imperial_throne.jpg?width=2400
+vangogh_noon_rest.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Noon,_rest_from_work_-_Van_Gogh.jpeg?width=2400
+munch_scream.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Edvard_Munch,_1893,_The_Scream,_oil,_tempera_and_pastel_on_cardboard,_91_x_73_cm,_National_Gallery_of_Norway.jpg?width=2400
+rubens_dying_seneca.jpg https://commons.wikimedia.org/wiki/Special:FilePath/The_Dying_Seneca_-_Peter_Paul_Rubens.jpg?width=2400
+delacroix_marcus_last_words.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix-Marc_Aurèle-MBA-Lyon.jpg?width=2400
+cole_empire_consummation.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg?width=2400
