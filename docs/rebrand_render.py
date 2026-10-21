@@ -74,22 +74,26 @@ def text_layer(words, emphasis, big):
     rend = []
     for txt, size, col in lines:
         f = ImageFont.truetype(FONT, size)
-        while f.getbbox(txt)[2] > 770 and size > 40:
+        while f.getbbox(txt)[2] > 700 and size > 40:
             size -= 6; f = ImageFont.truetype(FONT, size)
         bb = f.getbbox(txt)
         rend.append((txt, f, col, bb))
     hgt = sum(bb[3] - bb[1] + 34 for *_, bb in rend)
-    img = Image.new("RGBA", (W, hgt + 80), (0, 0, 0, 0))
+    pad = 120
+    img = Image.new("RGBA", (W, hgt + 2 * pad), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    y = 40
+    y = pad
     for txt, f, col, bb in rend:
         x = (W - (bb[2] - bb[0])) // 2 - bb[0]
         d.text((x, y - bb[1]), txt, font=f, fill=col + (255,))
         y += bb[3] - bb[1] + 34
     shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
     shadow.putalpha(img.getchannel("A").filter(ImageFilter.GaussianBlur(14)).point(lambda a: int(a * 0.85)))
+    # soft dark halo so words stay readable on bright parts of a painting (Sonnet review, Oct 20)
+    halo = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    halo.putalpha(img.getchannel("A").filter(ImageFilter.GaussianBlur(48)).point(lambda a: min(255, int(a * 1.6))))
     out = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    out.alpha_composite(shadow, (0, 6)); out.alpha_composite(img)
+    out.alpha_composite(halo); out.alpha_composite(shadow, (0, 6)); out.alpha_composite(img)
     return out
 
 
@@ -176,17 +180,27 @@ def ease_out_back(x):
 
 
 class ClipReader:
-    """Frames of a pre-rendered motion clip (DepthFlow), loaded one shot at a time."""
+    """Frames of a pre-rendered motion clip (docs/motion.py), streamed one shot at a time."""
     def __init__(self):
-        self.path, self.frames = None, None
+        self.path, self.proc, self.idx, self.last = None, None, -1, None
+        self.fw, self.fh = FX1 - FX0, FY1 - FY0
+
     def get(self, path, idx):
         if path != self.path:
-            fw, fh = FX1 - FX0, FY1 - FY0
-            raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-vf", f"scale={fw}:{fh}", "-r", str(FPS),
-                                  "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True, check=True).stdout
-            self.frames = np.frombuffer(raw, np.uint8).reshape(-1, fh, fw, 3)
-            self.path = path
-        return self.frames[min(idx, len(self.frames) - 1)]
+            if self.proc:
+                self.proc.kill()
+            self.proc = subprocess.Popen(["ffmpeg", "-v", "error", "-i", path, "-vf", f"scale={self.fw}:{self.fh}",
+                                          "-r", str(FPS), "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
+                                         stdout=subprocess.PIPE)
+            self.path, self.idx, self.last = path, -1, None
+        n = self.fw * self.fh * 3
+        while self.idx < idx:
+            buf = self.proc.stdout.read(n)
+            if len(buf) < n:            # clip ended: hold the last frame
+                break
+            self.last = np.frombuffer(buf, np.uint8).reshape(self.fh, self.fw, 3)
+            self.idx += 1
+        return self.last
 
 
 def main(spec_path, out_path):
@@ -259,7 +273,8 @@ def main(spec_path, out_path):
             flick = 1.0 + 0.025 * math.sin(t * 7.3) + 0.015 * math.sin(t * 13.1)
             a *= flick
             # entry flash-in for each new shot (fast fade from black)
-            a *= min(1.0, (t - s["t"]) / 0.18 + 0.15)
+            if si > 0:   # no fade on the very first frame: the hook must be readable at 0:00
+                a *= min(1.0, (t - s["t"]) / 0.18 + 0.15)
             pic = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
             frame.paste(pic, (FX0, FY0), mask)
             # thin frame border
