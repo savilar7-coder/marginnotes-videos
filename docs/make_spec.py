@@ -3,7 +3,7 @@
     python docs/make_spec.py plans/<name>.json      -> specs/<name>.json
 
 Plan: {"name", "thinker", "emphasis": [...], "quote_source": [...],
-       "shots": [[anchor phrase, image name, focus or null], ...]}   (first shot = hook, starts at 0)
+       "shots": [[anchor phrase, image name, focus or null, optional move], ...]}   (first shot = hook, starts at 0)
 Anchors are searched in order, so a repeated phrase (the loop line) matches its next occurrence.
 """
 import json, os, re, sys
@@ -26,7 +26,7 @@ def main(plan_path):
     toks = [norm(w[0]) for w in words]
     delay = plan.get("voice_delay", 0.15)
     shots, pos = [], 0
-    for i, (anchor, img, focus) in enumerate(plan["shots"]):
+    for i, (anchor, img, focus, *extra) in enumerate(plan["shots"]):
         a = [norm(x) for x in anchor.split()]
         if i == 0:
             t = 0.0
@@ -38,8 +38,13 @@ def main(plan_path):
         s = {"t": t, "img": f"assets/{img}.jpg", "line": anchor, "zoom": [1.0, 1.12]}
         if focus:
             s["focus"] = focus
+        if extra:                       # optional 4th item: camera move (docs/motion.py), e.g. "dolly"
+            s["move"] = extra[0]
         shots.append(s)
+    # Oct 22 standard: whole hook on frame 0, ~-14 LUFS, bigger card (SOP)
     spec = {"bpm": 76, "snap": False, "dim": 0.9, "tail": 0.35, "vignette": 0.5,
+            "hook_card": plan.get("hook_card", 1.2), "lufs": plan.get("lufs", -12.5),
+            "card": plan.get("card", [40, 250, 1040, 1650]),
             "audio": f"audio/{name}.mp3", "align": f"audio/{name}.json", "hook_until": 0.0,
             "thinker": plan["thinker"], "emphasis": plan["emphasis"], "quote_source": plan["quote_source"],
             "shots": shots}

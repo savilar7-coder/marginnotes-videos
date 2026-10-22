@@ -5,8 +5,11 @@ Run with the DepthFlow venv (work/dfvenv), then render the result with rebrand_r
     dfvenv/Scripts/python docs/motion.py specs/<name>.json        -> specs/<name>-motion.json + motion/<name>/shotNN.mp4
     venv/Scripts/python  docs/rebrand_render.py specs/<name>-motion.json out/<name>-motion.mp4
 
-Each shot keeps the framing chosen in the spec (img + focus + start zoom) and gets a slow push-in plus a sideways
-drift; the drift direction alternates shot to shot so cuts feel alive.
+Each shot keeps the framing chosen in the spec (img + focus + start zoom) and gets a camera move. Shot "move"
+(Oct 22): push (push-in + sideways drift, the old default), pull (start close, pull back to reveal), rise (camera
+lifts), orbit (half circle around the subject), dolly (vertigo: perspective stretches while the frame holds).
+Without "move", shots cycle through push/rise/orbit/pull so no two cuts in a row move the same way; the hook pushes
+fast. "dof": true adds depth-of-field blur on the far background. Spec "card": [x0, y0, x1, y1] sets the frame size.
 """
 import json, math, os, pathlib, sys
 
@@ -22,6 +25,7 @@ from rebrand_render import split_long_shots  # noqa: E402
 FW, FH = 980, 1260          # rounded-frame size in rebrand_render.py (FX1-FX0, FY1-FY0)
 SUPER = 1.5                 # feed DepthFlow a sharper crop than the output
 FPS = 30
+CYCLE = ["push", "rise", "orbit", "pull"]   # default moves; "dolly" only when a shot asks for it
 
 
 @define
@@ -30,15 +34,35 @@ class Drift(DepthScene):
     push: float = 0.08
     hook: bool = False
 
+    move: str = "push"
+
     def update(self):
         x = min(1.0, max(0.0, self.tau))
         # the hook shot moves fast at once (ease-out) so the first 2 s visibly move; the rest ease in and out
         e = 1.0 - (1.0 - x) ** 2.2 if self.hook else 0.5 - 0.5 * math.cos(math.pi * x)
+        d = self.direction
         self.state.height = 0.32 if self.hook else 0.22
         self.state.steady = 0.25
         self.state.isometric = 0.55
-        self.state.zoom = 1.0 - self.push * e
-        self.state.offset = (self.direction * (-0.30 + 0.60 * e), 0.0)
+        if self.move == "pull":
+            self.state.zoom = 1.0 - self.push * (1.0 - e)
+            self.state.offset = (d * (0.15 - 0.30 * e), 0.0)
+        elif self.move == "rise":
+            self.state.zoom = 1.0 - 0.5 * self.push * e
+            self.state.offset = (0.0, d * (-0.28 + 0.56 * e))
+        elif self.move == "orbit":
+            a = math.pi * (e - 0.5) * d
+            self.state.height = 0.28
+            self.state.zoom = 1.0 - 0.5 * self.push
+            self.state.offset = (0.34 * math.sin(a), 0.16 * math.cos(a) - 0.08)
+        elif self.move == "dolly":
+            self.state.isometric = 0.35
+            self.state.height = 0.30
+            self.state.dolly = 6.0 * e
+            self.state.zoom = 1.0 - self.push * e
+        else:
+            self.state.zoom = 1.0 - self.push * e
+            self.state.offset = (d * (-0.30 + 0.60 * e), 0.0)
 
 
 def crop(img, focus, zoom):
@@ -60,6 +84,10 @@ def main(spec_path):
     dur = max(al["character_end_times_seconds"]) + spec.get("voice_delay", 0.15) + spec.get("tail", 1.6)
     shots = split_long_shots(spec["shots"], dur, spec.get("max_shot", 4.2))
     spec["shots"] = shots
+    global FW, FH
+    if spec.get("card"):
+        x0, y0, x1, y1 = spec["card"]
+        FW, FH = x1 - x0, y1 - y0
     outdir = pathlib.Path("motion") / spec_path.stem
     outdir.mkdir(parents=True, exist_ok=True)
     scene = Drift(backend="headless")
@@ -76,11 +104,14 @@ def main(spec_path):
         scene.direction = 1.0 if i % 2 == 0 else -1.0
         scene.push = 0.10 if length < 4 else 0.14
         scene.hook = (i == 0)
+        scene.move = s.get("move") or ("push" if i == 0 else CYCLE[i % len(CYCLE)])
+        if s.get("dof"):
+            scene.state.blur.intensity, scene.state.blur.start = 0.7, 0.55
         if i == 0:
             scene.push = 0.24
         scene.main(output=str(out), width=FW, height=FH, fps=FPS, time=length, ssaa=1.0)
         s["clip"] = str(out).replace(os.sep, "/")
-        print(f"shot {i:02d} {length:4.1f}s {s['img']}", flush=True)
+        print(f"shot {i:02d} {length:4.1f}s {scene.move:5} {s['img']}", flush=True)
     out_spec = spec_path.with_name(spec_path.stem + "-motion.json")
     out_spec.write_text(json.dumps(spec, indent=1))
     print("wrote", out_spec)

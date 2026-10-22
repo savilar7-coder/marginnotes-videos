@@ -1,0 +1,15 @@
+{"name": "2026-10-23-2000-seneca-time", "thinker": "seneca",
+ "emphasis": ["time", "seneca", "away", "postponing", "scroll", "someday", "more", "nothing", "hour"],
+ "quote_source": ["Seneca · Letter 1 · tr. Gummere", "Seneca · Letter 1 · tr. Gummere"],
+ "shots": [
+  ["hook", "dou_astronomer_candle", [0.5, 0.62], "push"],
+  ["Seneca said", "david_death_seneca", [0.35, 0.5]],
+  ["He wrote to his friend", "metsu_man_writing", null],
+  ["While we are postponing", "steenwyck_vanitas", [0.4, 0.6], "dolly"],
+  ["Every scroll", "latour_st_jerome", null],
+  ["Every someday", "millet_angelus", null],
+  ["Every just one more", "schalcken_candle", null],
+  ["Nothing, Lucilius", "holbein_ambassadors", null, "pull"],
+  ["So tonight", "latour_newborn", [0.6, 0.5]],
+  ["Because they say", "dou_astronomer_candle", [0.5, 0.62], "pull"]
+ ]}

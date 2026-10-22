@@ -10,6 +10,7 @@ spec: {"audio": "audio/x.mp3", "align": "audio/x.json", "hook_until": 2.4,
 optional: "hook_card": 1.2  -> the whole first sentence on screen, still, from frame 0 until it has been spoken
                                (at least 1.2 s; critics, Oct 22)
           "lufs": -14       -> loudness-normalise the final mix (TikTok sits near -14; we were at -18)
+          "card": [40, 250, 1040, 1650] -> painting card size (default 50, 330, 1030, 1590)
 """
 import json, math, re, subprocess, sys, wave
 import numpy as np
@@ -115,7 +116,8 @@ def chunk(words, emphasis):
 def quote_layer(words, k, source=None):
     """A spoken quote shown whole in italic serif; words already spoken are cream, the current one red,
     upcoming ones dimmed. Optional small source line underneath."""
-    f = ImageFont.truetype(QFONT, 64)
+    qsize = 96 if len(words) <= 8 else 80 if len(words) <= 14 else 64   # short quotes big enough for a phone (Oct 22)
+    f = ImageFont.truetype(QFONT, qsize)
     txt = [w for w in words]
     txt[0] = "“" + re.sub(r'^["“]', "", txt[0])
     txt[-1] = re.sub(r'["”]([.,;:!?…]*)$', r"\1", txt[-1]) + "”"
@@ -128,7 +130,7 @@ def quote_layer(words, k, source=None):
         line.append((idx, w, wl)); wline += (space if len(line) > 1 else 0) + wl
     if line:
         lines.append(line)
-    lh = 84
+    lh = int(qsize * 1.31)
     sf = ImageFont.truetype(SFONT, 28) if source else None
     hgt = lh * len(lines) + (70 if source else 0)
     pad = 120
@@ -330,6 +332,9 @@ class ClipReader:
 
 def main(spec_path, out_path):
     spec = json.load(open(spec_path))
+    global FX0, FY0, FX1, FY1
+    if spec.get("card"):                 # bigger painting card (Oct 22 deliberation); old specs keep the default
+        FX0, FY0, FX1, FY1 = spec["card"]
     emphasis = {e.lower() for e in spec["emphasis"]}
     words = words_from_alignment(json.load(open(spec["align"])))
     voice_delay = spec.get("voice_delay", 0.15)
