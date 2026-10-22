@@ -139,3 +139,16 @@ repin_refusal_confession.jpg https://commons.wikimedia.org/wiki/Special:FilePath
 levitan_vladimirka.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Levitan_Vladimirka_study_1892.jpg?width=2400
 repin_barge_haulers.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Ilia_Efimovich_Repin_%281844-1930%29_-_Volga_Boatmen_%281870-1873%29.jpg?width=2400
 levitan_eternal_peace.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Levitan_nad_vech_pok28.jpg?width=2400
+# Oct 22: Jung set +more (no-repeat rule needs ~45)
+goya_dog.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Goya_Dog.jpg?width=2400
+munch_anxiety.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Edvard_Munch_-_Anxiety_-_Google_Art_Project.jpg?width=2400
+munch_self_cigarette.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Munch_SelfBurningCigarette.jpg?width=2400
+caravaggio_lizard.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio_-_Boy_Bitten_by_a_Lizard.jpg?width=2400
+rembrandt_night_watch.jpg https://commons.wikimedia.org/wiki/Special:FilePath/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg?width=2400
+hammershoi_sunbeams.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Hammersh%C3%B8i_Dust_motes_dancing.jpg?width=2400
+bosch_death_miser.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Hieronymus_Bosch%2C_Death_and_the_Miser%2C_c._1485-1490%2C_NGA_41645.jpg?width=2400
+bruegel_dulle_griet.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Dulle_Griet%2C_by_Pieter_Brueghel_%28I%29.jpg?width=2400
+martin_pandemonium.jpg https://commons.wikimedia.org/wiki/Special:FilePath/John_Martin_Le_Pandemonium_Louvre.JPG?width=2400
+vermeer_girl_window.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg?width=2400
+velazquez_meninas.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg?width=2400
+vangogh_bandaged_ear.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_Self-Portrait_with_Bandaged_Ear_1889_-_Google_Art_Project.jpg?width=2400
