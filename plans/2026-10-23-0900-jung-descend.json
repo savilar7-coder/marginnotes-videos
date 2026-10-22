@@ -1,28 +1,165 @@
-{"name": "2026-10-23-0900-jung-descend", "thinker": "jung",
- "emphasis": ["dark", "wins", "anger", "envy", "seen", "underground", "shadow", "fate", "fight", "person", "destroy", "first", "panic", "again", "strongest", "work"],
+{
+ "name": "2026-10-23-0900-jung-descend",
+ "thinker": "jung",
+ "emphasis": [
+  "dark",
+  "wins",
+  "anger",
+  "envy",
+  "seen",
+  "underground",
+  "shadow",
+  "fate",
+  "fight",
+  "person",
+  "destroy",
+  "first",
+  "panic",
+  "again",
+  "strongest",
+  "work"
+ ],
  "quote_source": [],
  "shots": [
-  ["hook", "fuseli_nightmare", null, "push"],
-  ["Jung said that's exactly", "bocklin_self_death", null],
-  ["The anger you swallow", "munch_scream", null],
-  ["The envy you would", "titian_prudence", null],
-  ["The part of you", "hammershoi_woman_back", null],
-  ["Push it down", "khnopff_lock_door", null],
-  ["It goes underground", "dore_charon", [0.5, 0.45], "dolly"],
-  ["Jung called it the shadow", "friedrich_two_men_moon", null],
-  ["And his warning was simple", "redon_eye_balloon", [0.5, 0.35]],
-  ["whatever you refuse to look at", "redon_closed_eyes", [0.5, 0.35]],
-  ["you end up meeting outside", "rossetti_how_they_met", null],
-  ["and you call it fate", "schwabe_gravedigger", null, "dolly"],
-  ["The same fight", "bosch_garden", [0.83, 0.5]],
-  ["The same kind of person", "vaneyck_arnolfini", [0.5, 0.4]],
-  ["The same three", "hammershoi_interior", null],
-  ["So he didn't say destroy it", "redon_cyclops", [0.5, 0.3]],
-  ["He said go down first", "waterhouse_shalott", null],
-  ["Meet it", "vermeer_pearl_earring", null],
-  ["And the next time it shows up", "vangogh_almond_blossom", null],
-  ["Just say", "rembrandt_self_1669", [0.5, 0.35]],
-  ["The strongest people you know", "blake_newton", null],
-  ["They put it to work", "rembrandt_prodigal_son", null],
-  ["Because they told you", "fuseli_nightmare", null, "pull"]
- ]}
+  [
+   "hook",
+   "fuseli_nightmare",
+   null,
+   "push"
+  ],
+  [
+   "Jung said that's exactly",
+   "redon_cyclops",
+   [
+    0.5,
+    0.3
+   ]
+  ],
+  [
+   "The anger you swallow",
+   "munch_scream",
+   null
+  ],
+  [
+   "The envy you would",
+   "titian_prudence",
+   null
+  ],
+  [
+   "The part of you",
+   "hammershoi_woman_back",
+   null
+  ],
+  [
+   "Push it down",
+   "khnopff_lock_door",
+   null
+  ],
+  [
+   "It goes underground",
+   "dore_charon",
+   [
+    0.5,
+    0.45
+   ],
+   "dolly"
+  ],
+  [
+   "Jung called it the shadow",
+   "friedrich_two_men_moon",
+   null
+  ],
+  [
+   "And his warning was simple",
+   "redon_eye_balloon",
+   [
+    0.5,
+    0.35
+   ]
+  ],
+  [
+   "whatever you refuse to look at",
+   "redon_closed_eyes",
+   [
+    0.5,
+    0.35
+   ]
+  ],
+  [
+   "you end up meeting outside",
+   "rossetti_how_they_met",
+   null
+  ],
+  [
+   "and you call it fate",
+   "schwabe_gravedigger",
+   null,
+   "dolly"
+  ],
+  [
+   "The same fight",
+   "bosch_garden",
+   [
+    0.83,
+    0.5
+   ]
+  ],
+  [
+   "The same kind of person",
+   "vaneyck_arnolfini",
+   [
+    0.5,
+    0.4
+   ]
+  ],
+  [
+   "The same three",
+   "hammershoi_interior",
+   null
+  ],
+  [
+   "So he didn't say destroy it",
+   "bocklin_self_death",
+   null
+  ],
+  [
+   "He said go down first",
+   "waterhouse_shalott",
+   null
+  ],
+  [
+   "Meet it",
+   "vermeer_pearl_earring",
+   null
+  ],
+  [
+   "And the next time it shows up",
+   "vangogh_almond_blossom",
+   null
+  ],
+  [
+   "Just say",
+   "rembrandt_self_1669",
+   [
+    0.5,
+    0.35
+   ]
+  ],
+  [
+   "The strongest people you know",
+   "blake_newton",
+   null
+  ],
+  [
+   "They put it to work",
+   "rembrandt_prodigal_son",
+   null
+  ],
+  [
+   "Because they told you",
+   "fuseli_nightmare",
+   null,
+   "pull"
+  ]
+ ]
+}

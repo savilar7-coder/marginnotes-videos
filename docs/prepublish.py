@@ -3,7 +3,7 @@
     python docs/prepublish.py specs/<name>-motion.json out/<name>.mp4
 
 Machine checks (FAIL blocks publishing, WARN needs a human look):
-  1 file      1080x1920, 30 fps, 45-75 s, < 60 MB, audio starts at 0 (no edit-list shift)
+  1 file      1080x1920, 30 fps, 20-75 s (WARN under 60), < 60 MB, audio starts at 0 (no edit-list shift)
   2 sync      voice in the video sits at voice_delay +-0.05 s, no drift (start vs end)
   3 captions  no caption word shown before it is spoken (word-by-word reveal); a hook card (whole first
               sentence, frame 0, held until spoken) is allowed for the first sentence only, max 12 words
@@ -71,7 +71,8 @@ def main(spec_path, video):
     dur, size = float(p["format"]["duration"]), int(p["format"]["size"])
     ok = v["width"] == 1080 and v["height"] == 1920 and v["r_frame_rate"] == "30/1"
     res("PASS" if ok else "FAIL", "file", f"{v['width']}x{v['height']} @ {v['r_frame_rate']}")
-    res("PASS" if 45 <= dur <= 75 else "FAIL", "file", f"length {dur:.1f} s" + ("" if dur >= 60 else " (under 60 s: no Creator Rewards)"))
+    # 20 s floor: the Oct 23-29 length test runs ~28 s cuts next to ~58 s ones (deliberation, Oct 22)
+    res("PASS" if 20 <= dur <= 75 else "FAIL", "file", f"length {dur:.1f} s" + ("" if dur >= 60 else " (under 60 s: no Creator Rewards)"))
     if dur < 60:
         res("WARN", "file", "under 60 s")
     res("PASS" if size < 60e6 else "FAIL", "file", f"size {size / 1e6:.0f} MB")

@@ -1,0 +1,150 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.9,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  40,
+  250,
+  1040,
+  1650
+ ],
+ "audio": "audio/2026-10-23-2000-seneca-time.mp3",
+ "align": "audio/2026-10-23-2000-seneca-time.json",
+ "hook_until": 0.0,
+ "thinker": "seneca",
+ "emphasis": [
+  "time",
+  "seneca",
+  "away",
+  "postponing",
+  "scroll",
+  "someday",
+  "more",
+  "nothing",
+  "hour"
+ ],
+ "quote_source": [
+  "Seneca \u00b7 Letter 1 \u00b7 tr. Gummere",
+  "Seneca \u00b7 Letter 1 \u00b7 tr. Gummere"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/latour_newborn.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "move": "push"
+  },
+  {
+   "t": 1.73,
+   "img": "assets/david_death_seneca.jpg",
+   "line": "Seneca said",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.35,
+    0.5
+   ]
+  },
+  {
+   "t": 5.78,
+   "img": "assets/metsu_man_writing.jpg",
+   "line": "He wrote to his friend",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 8.21,
+   "img": "assets/steenwyck_vanitas.jpg",
+   "line": "While we are postponing",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.4,
+    0.6
+   ],
+   "move": "dolly"
+  },
+  {
+   "t": 12.54,
+   "img": "assets/latour_st_jerome.jpg",
+   "line": "Every scroll",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 13.82,
+   "img": "assets/millet_angelus.jpg",
+   "line": "Every someday",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 15.18,
+   "img": "assets/inness_home_heron.jpg",
+   "line": "Every just one more",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 17.45,
+   "img": "assets/holbein_ambassadors.jpg",
+   "line": "Nothing, Lucilius",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "move": "pull"
+  },
+  {
+   "t": 22.6,
+   "img": "assets/schalcken_candle.jpg",
+   "line": "So tonight",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "t": 25.96,
+   "img": "assets/latour_newborn.jpg",
+   "line": "Because they say",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "move": "pull"
+  }
+ ]
+}

@@ -404,6 +404,9 @@ def main(spec_path, out_path):
     tl += [{"word": w, "shown": 0.0, "spoken": round(ws, 3), "kind": "hook"} for w, ws, we in hook_words]
     json.dump(tl, open(out_path + ".captions.json", "w"))
     hook_layer = text_layer([w for w, _, _ in hook_words], emphasis, True) if hook_words else None
+    # captions of the hook sentence already shown on the card are skipped afterwards (no "SIDE" echo)
+    first_after = next((i for i, c in enumerate(caps) if c["times"][0][0] > hook_words[-1][1] + 0.01),
+                       len(caps)) if hook_words else 0
     mus = out_path + ".music.wav"
     if spec.get("bpm"):
         beats = music_beat(dur, mus, spec["bpm"])
@@ -437,6 +440,9 @@ def main(spec_path, out_path):
                 pic = shot_frame(imgs[s["img"]], s.get("focus", [0.5, 0.5]), *s.get("zoom", [1.0, 1.12]), p,
                                  s.get("drift", [1, 0]))
             a = np.asarray(pic, np.float32) * vign * spec.get("dim", 0.62) * gain[s["img"]]
+            qi = max((i for i, c in enumerate(caps) if c["t0"] <= t), default=0)
+            if caps[qi]["kind"] == "quote" and t < caps[qi]["t1"] + 0.05:
+                a *= 0.6                 # darker painting behind a quote so the serif text reads on a phone
             flick = 1.0 + 0.025 * math.sin(t * 7.3) + 0.015 * math.sin(t * 13.1)
             a *= flick
             # entry flash-in for each new shot (fast fade from black)
@@ -458,7 +464,7 @@ def main(spec_path, out_path):
         ci = max((i for i, c in enumerate(caps) if c["t0"] <= t), default=0)
         if hook_layer is not None and t < hook_card:
             frame.paste(hook_layer, ((W - hook_layer.width) // 2, TEXT_Y - hook_layer.height // 2), hook_layer)
-        elif t < caps[ci]["t1"] + 0.05:
+        elif ci >= first_after and t < caps[ci]["t1"] + 0.05:
             L = layer(ci, t < hook_until, t)
             p = min(1.0, (t - caps[ci]["t0"]) / 0.2) if ci > 0 else 1.0
             k = ease_out_back(p)

@@ -1,0 +1,302 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.9,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  40,
+  250,
+  1040,
+  1650
+ ],
+ "audio": "audio/2026-10-23-0900-jung-descend.mp3",
+ "align": "audio/2026-10-23-0900-jung-descend.json",
+ "hook_until": 0.0,
+ "thinker": "jung",
+ "emphasis": [
+  "dark",
+  "wins",
+  "anger",
+  "envy",
+  "seen",
+  "underground",
+  "shadow",
+  "fate",
+  "fight",
+  "person",
+  "destroy",
+  "first",
+  "panic",
+  "again",
+  "strongest",
+  "work"
+ ],
+ "quote_source": [],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/fuseli_nightmare.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "move": "push",
+   "clip": "motion/2026-10-23-0900-jung-descend/shot00.mp4"
+  },
+  {
+   "t": 2.24,
+   "img": "assets/redon_cyclops.jpg",
+   "line": "Jung said that's exactly",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot01.mp4"
+  },
+  {
+   "t": 5.97,
+   "img": "assets/munch_scream.jpg",
+   "line": "The anger you swallow",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot02.mp4"
+  },
+  {
+   "t": 8.08,
+   "img": "assets/titian_prudence.jpg",
+   "line": "The envy you would",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot03.mp4"
+  },
+  {
+   "t": 10.11,
+   "img": "assets/hammershoi_woman_back.jpg",
+   "line": "The part of you",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot04.mp4"
+  },
+  {
+   "t": 12.79,
+   "img": "assets/khnopff_lock_door.jpg",
+   "line": "Push it down",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot05.mp4"
+  },
+  {
+   "t": 15.97,
+   "img": "assets/dore_charon.jpg",
+   "line": "It goes underground",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "move": "dolly",
+   "clip": "motion/2026-10-23-0900-jung-descend/shot06.mp4"
+  },
+  {
+   "t": 18.48,
+   "img": "assets/friedrich_two_men_moon.jpg",
+   "line": "Jung called it the shadow",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot07.mp4"
+  },
+  {
+   "t": 21.39,
+   "img": "assets/redon_eye_balloon.jpg",
+   "line": "And his warning was simple",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot08.mp4"
+  },
+  {
+   "t": 24.09,
+   "img": "assets/redon_closed_eyes.jpg",
+   "line": "whatever you refuse to look at",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot09.mp4"
+  },
+  {
+   "t": 26.51,
+   "img": "assets/rossetti_how_they_met.jpg",
+   "line": "you end up meeting outside",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot10.mp4"
+  },
+  {
+   "t": 28.53,
+   "img": "assets/schwabe_gravedigger.jpg",
+   "line": "and you call it fate",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "move": "dolly",
+   "clip": "motion/2026-10-23-0900-jung-descend/shot11.mp4"
+  },
+  {
+   "t": 30.19,
+   "img": "assets/bosch_garden.jpg",
+   "line": "The same fight",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.83,
+    0.5
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot12.mp4"
+  },
+  {
+   "t": 32.07,
+   "img": "assets/vaneyck_arnolfini.jpg",
+   "line": "The same kind of person",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot13.mp4"
+  },
+  {
+   "t": 33.87,
+   "img": "assets/hammershoi_interior.jpg",
+   "line": "The same three",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot14.mp4"
+  },
+  {
+   "t": 36.08,
+   "img": "assets/bocklin_self_death.jpg",
+   "line": "So he didn't say destroy it",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot15.mp4"
+  },
+  {
+   "t": 38.48,
+   "img": "assets/waterhouse_shalott.jpg",
+   "line": "He said go down first",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot16.mp4"
+  },
+  {
+   "t": 41.15,
+   "img": "assets/vermeer_pearl_earring.jpg",
+   "line": "Meet it",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot17.mp4"
+  },
+  {
+   "t": 42.93,
+   "img": "assets/vangogh_almond_blossom.jpg",
+   "line": "And the next time it shows up",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot18.mp4"
+  },
+  {
+   "t": 45.81,
+   "img": "assets/rembrandt_self_1669.jpg",
+   "line": "Just say",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot19.mp4"
+  },
+  {
+   "t": 48.57,
+   "img": "assets/blake_newton.jpg",
+   "line": "The strongest people you know",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot20.mp4"
+  },
+  {
+   "t": 52.13,
+   "img": "assets/rembrandt_prodigal_son.jpg",
+   "line": "They put it to work",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-0900-jung-descend/shot21.mp4"
+  },
+  {
+   "t": 54.19,
+   "img": "assets/fuseli_nightmare.jpg",
+   "line": "Because they told you",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "move": "pull",
+   "clip": "motion/2026-10-23-0900-jung-descend/shot22.mp4"
+  }
+ ]
+}
