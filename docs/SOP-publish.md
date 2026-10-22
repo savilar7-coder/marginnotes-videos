@@ -13,11 +13,17 @@ Owner of the final yes: Sergio. Claude runs steps 1-6 and asks for step 7.
 - Ends with a share/save line and a loop back into the first line. Target 60-66 s (Creator Rewards needs > 60 s).
 
 ## 2. Pictures
-- Only paintings from the thinker's set (`docs/art_sets.json`); one painting per spoken line, matching the line.
+- Only paintings from the thinker's set (`docs/art_sets.json`, ~30 each since Oct 22); one painting per spoken line,
+  matching the line. A painting at most twice per video, and none from this thinker's previous video (gate FAILs).
+- New paintings: public domain, no frame/wall/round mount/watermark, no nudity TikTok could flag. Add to `images.txt`
+  (cloud job fetches; Wikimedia rate-limits, so check every file opens) and eye-check a contact sheet first.
 - No museum frames/walls in the image. No painting held > 4.5 s.
 
 ## 3. Render
-- `dfvenv/Scripts/python docs/motion.py specs/<n>.json` then `venv/Scripts/python docs/rebrand_render.py specs/<n>-motion.json out/<n>.mp4`
+- DepthFlow (3D motion) has ONE home: `C:\Users\Savil\tools\dfvenv` (outside every repo/worktree; tested Oct 22).
+  Other Python: `C:\Ecosystem\venv`. Run from the marginnotes-videos folder:
+- `C:/Users/Savil/tools/dfvenv/Scripts/python docs/motion.py specs/<n>.json` (~10 s per shot, writes motion/<n>/, git-ignored)
+  then `C:/Ecosystem/venv/Scripts/python docs/rebrand_render.py specs/<n>-motion.json out/<n>.mp4`
 - Spec `"lufs": -12.5` (single-pass loudnorm lands near -14 LUFS; unset = old -18 mix).
 
 ## 4. Machine gate (must PASS)
