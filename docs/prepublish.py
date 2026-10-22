@@ -9,13 +9,15 @@ Machine checks (FAIL blocks publishing, WARN needs a human look):
               sentence, frame 0, held until spoken) is allowed for the first sentence only, max 12 words
   9 loudness  integrated loudness -15.5 to -12.5 LUFS (TikTok ~-14)
   4 quotes    every "quoted" sentence in the script is word for word in texts/ (public-domain sources)
-  5 art       every painting belongs to the thinker's set (docs/art_sets.json); no painting held > 4.5 s
+  5 art       every painting belongs to the thinker's set (docs/art_sets.json); no painting held > 4.5 s;
+              no painting more than twice in a video, none from this thinker's previous video
   6 hook      frame at 0.1 s is not dark and shows text
   7 light     painting area not muddy (mean brightness >= 60 of 255)
   8 layout    scripts/video_qa.py safe zones (text under TikTok buttons/caption); flagged seconds -> look at the sheet
 Exit code 0 = PASS (WARNs printed), 1 = FAIL.
 """
-import json, os, re, subprocess, sys
+import glob, json, os, re, subprocess, sys
+from collections import Counter
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -138,6 +140,23 @@ def main(spec_path, video):
     shots = spec["shots"]
     longest = max((shots[i + 1]["t"] if i + 1 < len(shots) else dur) - s["t"] for i, s in enumerate(shots))
     res("PASS" if longest <= 4.5 else "FAIL", "art", f"longest painting hold {longest:.1f} s")
+    # no repeats (Sergio, Oct 22): a painting comes back at most twice in a video (a long shot split into closer
+    # views counts once) and never reuses a painting from this thinker's previous video
+    imgs = [os.path.basename(s["img"]).rsplit(".", 1)[0] for s in shots]
+    runs = [im for i, im in enumerate(imgs) if i == 0 or im != imgs[i - 1]]
+    over = {im: n for im, n in Counter(runs).items() if n > 2}
+    res("PASS" if not over else "FAIL", "art", f"{len(set(runs))} paintings in {len(runs)} shots"
+        + (f"; used more than twice: {over}" if over else ""))
+    base = lambda p: re.sub(r"(-v\d+)?(-motion)?\.json$", "", os.path.basename(p))
+    me = base(spec_path)
+    prev = sorted(p for p in glob.glob(os.path.join(os.path.dirname(spec_path) or ".", "*-motion.json"))
+                  if base(p) < me and (json.load(open(p)).get("thinker") or
+                                       next((v for k, v in THINKER_KEYS.items() if k in base(p)), None)) == thinker)
+    if prev:
+        last = json.load(open(prev[-1]))
+        again = sorted(set(runs) & {os.path.basename(s["img"]).rsplit(".", 1)[0] for s in last["shots"]})
+        res("PASS" if not again else "FAIL", "art", f"vs {base(prev[-1])}: "
+            + ("no painting reused" if not again else f"{len(again)} reused: {again}"))
 
     # 6 hook + 7 light
     f0 = frame(video, 0.1)
