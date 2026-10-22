@@ -7,6 +7,9 @@ Owner of the final yes: Sergio. Claude runs steps 1-6 and asks for step 7.
   sentence on screen from frame 0 until it is spoken (Oct 22). Openers: conflict, question or "you" diagnosis; never comfort.
 - Every "quoted" line is word for word from a public-domain text in `texts/` (source + translator named in the caption).
   Jung, Paz, Camus, Sartre = paraphrase only, labelled "his idea, in plain words".
+- Sergio's own philosophy shapes each batch: at least one of his ideas per batch (ecosystem memory
+  sergio-philosopher), told through the matching thinker in third person. No first-person "Sergio says" unless he asks;
+  family/faith never.
 - Ends with a share/save line and a loop back into the first line. Target 60-66 s (Creator Rewards needs > 60 s).
 
 ## 2. Pictures
