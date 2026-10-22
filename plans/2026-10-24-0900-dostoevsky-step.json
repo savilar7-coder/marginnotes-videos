@@ -1,0 +1,16 @@
+{"name": "2026-10-24-0900-dostoevsky-step", "thinker": "dostoevsky",
+ "emphasis": ["lazy", "scared", "room", "step", "fear", "failure", "talk", "plan", "wait", "chatter", "nothing", "today"],
+ "quote_source": ["Dostoevsky · Crime and Punishment I.1 · tr. Garnett", "Dostoevsky · Crime and Punishment I.1 · tr. Garnett"],
+ "shots": [
+  ["hook", "vrubel_demon_seated", [0.35, 0.45], "push"],
+  ["Dostoevsky said", "perov_dostoevsky", [0.5, 0.35]],
+  ["In Crime and Punishment", "repin_refusal_confession", [0.65, 0.5]],
+  ["Taking a new step", "levitan_vladimirka", null, "dolly"],
+  ["Not failure", "caillebotte_rainy_day", [0.6, 0.55]],
+  ["So you talk", "cezanne_card_players", null],
+  ["You plan it", "kramskoi_christ_desert", [0.45, 0.45]],
+  ["You wait", "kuindzhi_moonlit_dnieper", [0.75, 0.4]],
+  ["It's because I chatter", "munch_karl_johan", [0.3, 0.55]],
+  ["Take one step", "levitan_eternal_peace", null, "pull"],
+  ["Because they say", "vrubel_demon_seated", [0.35, 0.45], "pull"]
+ ]}

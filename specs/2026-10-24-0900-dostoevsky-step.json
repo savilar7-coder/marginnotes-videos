@@ -1,0 +1,174 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.9,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  40,
+  250,
+  1040,
+  1650
+ ],
+ "audio": "audio/2026-10-24-0900-dostoevsky-step.mp3",
+ "align": "audio/2026-10-24-0900-dostoevsky-step.json",
+ "hook_until": 0.0,
+ "thinker": "dostoevsky",
+ "emphasis": [
+  "lazy",
+  "scared",
+  "room",
+  "step",
+  "fear",
+  "failure",
+  "talk",
+  "plan",
+  "wait",
+  "chatter",
+  "nothing",
+  "today"
+ ],
+ "quote_source": [
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett",
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/vrubel_demon_seated.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.35,
+    0.45
+   ],
+   "move": "push"
+  },
+  {
+   "t": 1.76,
+   "img": "assets/perov_dostoevsky.jpg",
+   "line": "Dostoevsky said",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "t": 4.32,
+   "img": "assets/repin_refusal_confession.jpg",
+   "line": "In Crime and Punishment",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.65,
+    0.5
+   ]
+  },
+  {
+   "t": 10.25,
+   "img": "assets/levitan_vladimirka.jpg",
+   "line": "Taking a new step",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "move": "dolly"
+  },
+  {
+   "t": 15.45,
+   "img": "assets/caillebotte_rainy_day.jpg",
+   "line": "Not failure",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.55
+   ]
+  },
+  {
+   "t": 18.98,
+   "img": "assets/cezanne_card_players.jpg",
+   "line": "So you talk",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 20.57,
+   "img": "assets/kramskoi_christ_desert.jpg",
+   "line": "You plan it",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.45
+   ]
+  },
+  {
+   "t": 22.17,
+   "img": "assets/kuindzhi_moonlit_dnieper.jpg",
+   "line": "You wait",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.75,
+    0.4
+   ]
+  },
+  {
+   "t": 23.37,
+   "img": "assets/munch_karl_johan.jpg",
+   "line": "It's because I chatter",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.3,
+    0.55
+   ]
+  },
+  {
+   "t": 26.15,
+   "img": "assets/levitan_eternal_peace.jpg",
+   "line": "Take one step",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "move": "pull"
+  },
+  {
+   "t": 28.93,
+   "img": "assets/vrubel_demon_seated.jpg",
+   "line": "Because they say",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.35,
+    0.45
+   ],
+   "move": "pull"
+  }
+ ]
+}

@@ -1,0 +1,323 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.9,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  40,
+  250,
+  1040,
+  1650
+ ],
+ "audio": "audio/2026-10-24-2000-jung-mask.mp3",
+ "align": "audio/2026-10-24-2000-jung-mask.json",
+ "hook_until": 0.0,
+ "thinker": "jung",
+ "emphasis": [
+  "yourself",
+  "which",
+  "work",
+  "family",
+  "phone",
+  "persona",
+  "mask",
+  "rip",
+  "everyone",
+  "forget",
+  "wearing",
+  "funny",
+  "should",
+  "title",
+  "real",
+  "performed",
+  "lighter",
+  "heavier",
+  "underneath"
+ ],
+ "quote_source": [],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/vermeer_girl_window.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "move": "push"
+  },
+  {
+   "t": 1.95,
+   "img": "assets/velazquez_meninas.jpg",
+   "line": "Jung asked",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.35,
+    0.55
+   ]
+  },
+  {
+   "t": 5.29,
+   "img": "assets/rembrandt_night_watch.jpg",
+   "line": "The one at work",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "t": 6.74,
+   "img": "assets/vangogh_noon_rest.jpg",
+   "line": "The one with your family",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 8.29,
+   "img": "assets/goya_dog.jpg",
+   "line": "The one you are at two",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.75
+   ],
+   "move": "dolly"
+  },
+  {
+   "t": 12.59,
+   "img": "assets/ingres_napoleon_throne.jpg",
+   "line": "Jung called the face",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "t": 17.35,
+   "img": "assets/munch_self_cigarette.jpg",
+   "line": "A mask",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "t": 18.37,
+   "img": "assets/caravaggio_lizard.jpg",
+   "line": "And he didn't say",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.4,
+    0.35
+   ]
+  },
+  {
+   "t": 20.62,
+   "img": "assets/munch_anxiety.jpg",
+   "line": "Everyone needs one",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 21.87,
+   "img": "assets/caravaggio_narcissus.jpg",
+   "line": "The danger is",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 25.06,
+   "img": "assets/bosch_death_miser.jpg",
+   "line": "When the role",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "t": 27.78,
+   "img": "assets/bruegel_dulle_griet.jpg",
+   "line": "You laugh at jokes",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 30.33,
+   "img": "assets/klimt_kiss.jpg",
+   "line": "You want things",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "t": 32.79,
+   "img": "assets/rembrandt_night_watch.jpg",
+   "line": "You become your job",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.62,
+    0.5
+   ]
+  },
+  {
+   "t": 35.06,
+   "img": "assets/vangogh_bandaged_ear.jpg",
+   "line": "So ask one question",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "t": 40.13,
+   "img": "assets/velazquez_meninas.jpg",
+   "line": "is this real",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.6
+   ],
+   "move": "dolly"
+  },
+  {
+   "t": 43.39,
+   "img": "assets/hammershoi_sunbeams.jpg",
+   "line": "Real gets lighter",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 46.17,
+   "img": "assets/martin_pandemonium.jpg",
+   "line": "Performed gets heavier",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "t": 48.69,
+   "img": "assets/hammershoi_sunbeams.jpg",
+   "line": "Jung said growing up",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "move": "rise"
+  },
+  {
+   "t": 52.19,
+   "img": "assets/ingres_napoleon_throne.jpg",
+   "line": "Noticing the mask",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "t": 54.01,
+   "img": "assets/vangogh_bandaged_ear.jpg",
+   "line": "and choosing what's",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "move": "push"
+  },
+  {
+   "t": 55.93,
+   "img": "assets/vermeer_girl_window.jpg",
+   "line": "Because they told you",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "move": "pull"
+  }
+ ]
+}
