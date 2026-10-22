@@ -112,7 +112,8 @@ def main(spec_path, video):
     # 4 quotes
     script = os.path.join("scripts", name + ".txt")
     text = open(script, encoding="utf8").read() if os.path.exists(script) else ""
-    norm = lambda x: re.sub(r"\s+", " ", x.replace("\u2019", "'").replace("\u2014", "-").replace("--", "-")
+    norm = lambda x: re.sub(r"\s+", " ", x.replace("\u200b", "").replace("\xa0", " ")
+                            .replace("\u2019", "'").replace("\u2014", "-").replace("--", "-")
                             .replace("\u201c", '"').replace("\u201d", '"')).strip().lower()
     corpus = ""
     for d in ("texts", os.environ.get("MN_EXTRA_TEXTS", "")):

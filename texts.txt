@@ -5,3 +5,4 @@ seneca_letter13_gummere.html https://en.wikisource.org/wiki/Moral_letters_to_Luc
 gummere_p97.json https://commons.wikimedia.org/w/api.php?action=query&titles=File:Ad_Lucilium_epistulae_morales,_volume_1.djvu&prop=imageinfo&iiprop=url&iiurlwidth=1600&iiurlparam=page97-1600px&format=json
 gummere_p99.json https://commons.wikimedia.org/w/api.php?action=query&titles=File:Ad_Lucilium_epistulae_morales,_volume_1.djvu&prop=imageinfo&iiprop=url&iiurlwidth=1600&iiurlparam=page99-1600px&format=json
 gummere_p101.json https://commons.wikimedia.org/w/api.php?action=query&titles=File:Ad_Lucilium_epistulae_morales,_volume_1.djvu&prop=imageinfo&iiprop=url&iiurlwidth=1600&iiurlparam=page101-1600px&format=json
+seneca_letter1_gummere.html https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_1
