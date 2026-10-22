@@ -7,6 +7,9 @@ inside a rounded frame, a new shot every 2-3 s, film grain + drifting dust, soft
 
 spec: {"audio": "audio/x.mp3", "align": "audio/x.json", "hook_until": 2.4,
        "emphasis": ["word", ...], "shots": [{"t": 0.0, "img": "assets/a.jpg", "focus": [0.5,0.4], "zoom": [1.0,1.15]}, ...]}
+optional: "hook_card": 1.2  -> the whole first sentence on screen, still, from frame 0 until it has been spoken
+                               (at least 1.2 s; critics, Oct 22)
+          "lufs": -14       -> loudness-normalise the final mix (TikTok sits near -14; we were at -18)
 """
 import json, math, re, subprocess, sys, wave
 import numpy as np
@@ -334,6 +337,14 @@ def main(spec_path, out_path):
         w[1] += voice_delay; w[2] += voice_delay
     caps = chunk(words, emphasis)
     caps[0]["t0"] = 0.0
+    hook_card = spec.get("hook_card", 0.0)
+    hook_words = []
+    if hook_card:
+        for w in words:
+            hook_words.append(w)
+            if re.search(r"[.?!…]$", w[0]):
+                break
+        hook_card = max(hook_card, hook_words[-1][2])   # hold until the sentence is spoken: no echo afterwards
     dur = words[-1][2] + spec.get("tail", 1.6)
     hook_until = spec["hook_until"]
     shots = spec["shots"]
@@ -384,7 +395,10 @@ def main(spec_path, out_path):
         for j, (w, (ws, we)) in enumerate(zip(c["words"], c["times"])):
             shown = c["t0"] if (c["kind"] == "quote" or j == 0) else max(c["t0"], ws - 0.02)
             tl.append({"word": w, "shown": round(shown, 3), "spoken": round(ws, 3), "kind": c["kind"]})
+    # the hook card shows the first sentence ahead of the voice on purpose; the gate checks it separately
+    tl += [{"word": w, "shown": 0.0, "spoken": round(ws, 3), "kind": "hook"} for w, ws, we in hook_words]
     json.dump(tl, open(out_path + ".captions.json", "w"))
+    hook_layer = text_layer([w for w, _, _ in hook_words], emphasis, True) if hook_words else None
     mus = out_path + ".music.wav"
     if spec.get("bpm"):
         beats = music_beat(dur, mus, spec["bpm"])
@@ -398,7 +412,7 @@ def main(spec_path, out_path):
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
                            "-i", spec["audio"], "-i", mus,
-                           "-filter_complex", f"[1:a]adelay={int(voice_delay * 1000)}:all=1,volume=1.0[v];[2:a]volume={0.0 if spec.get('music') is False else spec.get('music_volume', 0.55)}[m];[v][m]amix=inputs=2:duration=longest:normalize=0[a]",
+                           "-filter_complex", f"[1:a]adelay={int(voice_delay * 1000)}:all=1,volume=1.0[v];[2:a]volume={0.0 if spec.get('music') is False else spec.get('music_volume', 0.55)}[m];[v][m]amix=inputs=2:duration=longest:normalize=0" + (f",loudnorm=I={spec['lufs']}:TP=-1.5:LRA=11,aresample=44100" if spec.get("lufs") else "") + "[a]",
                            "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-preset", "medium", "-b:v", "6M", "-maxrate", "8M", "-bufsize", "12M",
                            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart",
                            out_path], stdin=subprocess.PIPE)
@@ -437,7 +451,9 @@ def main(spec_path, out_path):
             d.ellipse((px - rr, py - rr, px + rr, py + rr), fill=(c, c, c - 10))
         # caption
         ci = max((i for i, c in enumerate(caps) if c["t0"] <= t), default=0)
-        if t < caps[ci]["t1"] + 0.05:
+        if hook_layer is not None and t < hook_card:
+            frame.paste(hook_layer, ((W - hook_layer.width) // 2, TEXT_Y - hook_layer.height // 2), hook_layer)
+        elif t < caps[ci]["t1"] + 0.05:
             L = layer(ci, t < hook_until, t)
             p = min(1.0, (t - caps[ci]["t0"]) / 0.2) if ci > 0 else 1.0
             k = ease_out_back(p)

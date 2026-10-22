@@ -3,7 +3,8 @@
 Owner of the final yes: Sergio. Claude runs steps 1-6 and asks for step 7.
 
 ## 1. Script (before voice)
-- Hook = first spoken line, aimed at the viewer, readable on frame 1.
+- Hook = first spoken line, aimed at the viewer, readable on frame 1. Spec `"hook_card": 1.2` puts the whole first
+  sentence on screen from frame 0 until it is spoken (Oct 22). Openers: conflict, question or "you" diagnosis; never comfort.
 - Every "quoted" line is word for word from a public-domain text in `texts/` (source + translator named in the caption).
   Jung, Paz, Camus, Sartre = paraphrase only, labelled "his idea, in plain words".
 - Ends with a share/save line and a loop back into the first line. Target 60-66 s (Creator Rewards needs > 60 s).
@@ -14,11 +15,13 @@ Owner of the final yes: Sergio. Claude runs steps 1-6 and asks for step 7.
 
 ## 3. Render
 - `dfvenv/Scripts/python docs/motion.py specs/<n>.json` then `venv/Scripts/python docs/rebrand_render.py specs/<n>-motion.json out/<n>.mp4`
+- Spec `"lufs": -12.5` (single-pass loudnorm lands near -14 LUFS; unset = old -18 mix).
 
 ## 4. Machine gate (must PASS)
 - `venv/Scripts/python docs/prepublish.py specs/<n>-motion.json out/<n>.mp4`
 - Checks: file format, audio starts at 0, voice sync (no drift), no word shown before it is spoken, quotes verified,
-  art set, longest hold, hook frame, brightness, safe zones. FAIL = fix and re-render. WARN = step 5 looks at it.
+  art set, longest hold, hook frame (+ hook card words), brightness, safe zones, loudness. FAIL = fix and re-render.
+  WARN = step 5 looks at it.
 
 ## 5. Eyes and ears (Claude)
 - Open every WARN frame (layout sheet). Watch the phone copy WITH SOUND start to finish: sync, picture matches the words,

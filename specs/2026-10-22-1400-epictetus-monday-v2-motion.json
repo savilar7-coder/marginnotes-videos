@@ -1,0 +1,303 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.9,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "audio": "audio/2026-10-22-1400-epictetus-monday.mp3",
+ "align": "audio/2026-10-22-1400-epictetus-monday.json",
+ "hook_until": 0.0,
+ "thinker": "epictetus",
+ "emphasis": [
+  "monday",
+  "epictetus",
+  "excuse",
+  "answered",
+  "noblest",
+  "grown",
+  "chose",
+  "fault",
+  "yours",
+  "nothing",
+  "slowly",
+  "rule",
+  "combat",
+  "now"
+ ],
+ "quote_source": [
+  "Epictetus \u00b7 Enchiridion 50 \u00b7 tr. Higginson",
+  "Epictetus \u00b7 Enchiridion 50 \u00b7 tr. Higginson",
+  "Epictetus \u00b7 Enchiridion 50 \u00b7 tr. Higginson",
+  "Epictetus \u00b7 Enchiridion 50 \u00b7 tr. Higginson"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/rembrandt_philosopher.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot00.mp4"
+  },
+  {
+   "t": 2.93,
+   "img": "assets/epictetus_frontispiece.jpg",
+   "line": "Epictetus heard that excuse",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot01.mp4"
+  },
+  {
+   "t": 6.35,
+   "img": "assets/raphael_school_athens.jpg",
+   "line": "And he answered it",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot02.mp4"
+  },
+  {
+   "t": 8.97,
+   "img": "assets/ribera_philosopher.jpg",
+   "line": "How long then",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot03.mp4"
+  },
+  {
+   "t": 11.69,
+   "img": "assets/ribera_philosopher.jpg",
+   "line": "How long then",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot04.mp4"
+  },
+  {
+   "t": 14.41,
+   "img": "assets/rembrandt_old_man_red.jpg",
+   "line": "You are no longer",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot05.mp4"
+  },
+  {
+   "t": 18.24,
+   "img": "assets/wright_orrery.jpg",
+   "line": "Think about it",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot06.mp4"
+  },
+  {
+   "t": 21.05,
+   "img": "assets/wright_orrery.jpg",
+   "line": "Think about it",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot07.mp4"
+  },
+  {
+   "t": 23.86,
+   "img": "assets/wright_orrery.jpg",
+   "line": "Think about it",
+   "zoom": [
+    1.6,
+    1.7000000000000002
+   ],
+   "drift": [
+    1,
+    0
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot08.mp4"
+  },
+  {
+   "t": 26.67,
+   "img": "assets/wright_air_pump.jpg",
+   "line": "That part wasn't",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot09.mp4"
+  },
+  {
+   "t": 29.28,
+   "img": "assets/wright_air_pump.jpg",
+   "line": "That part wasn't",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot10.mp4"
+  },
+  {
+   "t": 31.89,
+   "img": "assets/ribera_philosopher2.jpg",
+   "line": "And Epictetus warned",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot11.mp4"
+  },
+  {
+   "t": 35.21,
+   "img": "assets/ribera_philosopher2.jpg",
+   "line": "And Epictetus warned",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot12.mp4"
+  },
+  {
+   "t": 38.53,
+   "img": "assets/millet_gleaners.jpg",
+   "line": "insensibly continue",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot13.mp4"
+  },
+  {
+   "t": 42.11,
+   "img": "assets/bruegel_hunters_snow.jpg",
+   "line": "Not in one dramatic",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot14.mp4"
+  },
+  {
+   "t": 45.095,
+   "img": "assets/bruegel_hunters_snow.jpg",
+   "line": "Not in one dramatic",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot15.mp4"
+  },
+  {
+   "t": 48.08,
+   "img": "assets/vermeer_astronomer.jpg",
+   "line": "So he left one rule",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot16.mp4"
+  },
+  {
+   "t": 51.33,
+   "img": "assets/wright_blacksmith.jpg",
+   "line": "remember that now",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot17.mp4"
+  },
+  {
+   "t": 54.68,
+   "img": "assets/wright_blacksmith.jpg",
+   "line": "remember that now",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot18.mp4"
+  },
+  {
+   "t": 58.03,
+   "img": "assets/friedrich_wanderer.jpg",
+   "line": "Not next week",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot19.mp4"
+  },
+  {
+   "t": 60.455,
+   "img": "assets/friedrich_wanderer.jpg",
+   "line": "Not next week",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot20.mp4"
+  },
+  {
+   "t": 62.88,
+   "img": "assets/raphael_school_athens.jpg",
+   "line": "Send this",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot21.mp4"
+  },
+  {
+   "t": 66.48,
+   "img": "assets/rembrandt_philosopher.jpg",
+   "line": "Because you keep saying",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-22-1400-epictetus-monday/shot22.mp4"
+  }
+ ],
+ "hook_card": 1.2,
+ "lufs": -12.5
+}

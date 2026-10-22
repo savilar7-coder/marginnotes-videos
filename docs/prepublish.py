@@ -5,7 +5,9 @@
 Machine checks (FAIL blocks publishing, WARN needs a human look):
   1 file      1080x1920, 30 fps, 45-75 s, < 60 MB, audio starts at 0 (no edit-list shift)
   2 sync      voice in the video sits at voice_delay +-0.05 s, no drift (start vs end)
-  3 captions  no caption word shown before it is spoken (word-by-word reveal)
+  3 captions  no caption word shown before it is spoken (word-by-word reveal); a hook card (whole first
+              sentence, frame 0, held until spoken) is allowed for the first sentence only, max 12 words
+  9 loudness  integrated loudness -15.5 to -12.5 LUFS (TikTok ~-14)
   4 quotes    every "quoted" sentence in the script is word for word in texts/ (public-domain sources)
   5 art       every painting belongs to the thinker's set (docs/art_sets.json); no painting held > 4.5 s
   6 hook      frame at 0.1 s is not dark and shows text
@@ -91,6 +93,19 @@ def main(spec_path, video):
         res("PASS" if not early else "FAIL", "captions",
             "every word appears when spoken" if not early else
             f"{len(early)} words shown early, e.g. " + ", ".join(f"'{x['word']}' {x['spoken'] - x['shown']:.1f}s early" for x in early[:3]))
+        hook = [x for x in tl if x["kind"] == "hook"]
+        if hook:
+            ok = len(hook) <= 12
+            res("PASS" if ok else "FAIL", "captions", f"hook card until {max(x['spoken'] for x in hook):.1f} s, {len(hook)} words: "
+                + " ".join(x["word"] for x in hook))
+
+    # 9 loudness
+    ln = subprocess.run(["ffmpeg", "-hide_banner", "-i", video, "-af", "ebur128", "-f", "null", "-"],
+                        capture_output=True, text=True).stderr
+    m = re.findall(r"I:\s+(-?[\d.]+) LUFS", ln)
+    if m:
+        lufs = float(m[-1])
+        res("PASS" if -15.5 <= lufs <= -12.5 else "WARN", "loudness", f"{lufs:.1f} LUFS (want about -14)")
 
     # 4 quotes
     script = os.path.join("scripts", name + ".txt")
