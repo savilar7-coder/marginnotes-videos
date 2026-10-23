@@ -1,0 +1,367 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "which",
+  "mask",
+  "wearing",
+  "performed"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "which",
+  "wearing",
+  "heavier"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-10-24-2000-jung-mask-v3-tc.mp3",
+ "align": "audio/2026-10-24-2000-jung-mask-v3-tc.json",
+ "hook_until": 0.0,
+ "thinker": "jung",
+ "emphasis": [
+  "yourself",
+  "which",
+  "phone",
+  "more",
+  "sign",
+  "persona",
+  "mask",
+  "everyone",
+  "wearing",
+  "test",
+  "funny",
+  "want",
+  "title",
+  "real",
+  "performed",
+  "lighter",
+  "heavier",
+  "heavier"
+ ],
+ "quote_source": [],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/vermeer_pearl_earring.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "t": 1.58,
+   "img": "assets/titian_prudence.jpg",
+   "line": "Which one",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.3
+   ]
+  },
+  {
+   "t": 2.7,
+   "img": "assets/rembrandt_night_watch.jpg",
+   "line": "Work you",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.55
+   ]
+  },
+  {
+   "t": 3.72,
+   "img": "assets/vangogh_noon_rest.jpg",
+   "line": "Family you",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "t": 5.71,
+   "img": "assets/goya_dog.jpg",
+   "line": "Two a.m. you",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.75
+   ]
+  },
+  {
+   "t": 9.18,
+   "img": "assets/friedrich_two_men_moon.jpg",
+   "line": "Jung's idea",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 13.41,
+   "img": "assets/bosch_death_miser.jpg",
+   "line": "And one of them",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "t": 16.89,
+   "img": "assets/vangogh_bandaged_ear.jpg",
+   "line": "There's one sign",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "t": 19.61,
+   "img": "assets/munch_self_cigarette.jpg",
+   "line": "He called the face",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "t": 22.95,
+   "img": "assets/ensor_self_masks.jpg",
+   "line": "A mask",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.3
+   ]
+  },
+  {
+   "t": 24.67,
+   "img": "assets/caravaggio_lizard.jpg",
+   "line": "He never said",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.4,
+    0.3
+   ]
+  },
+  {
+   "t": 27.21,
+   "img": "assets/munch_anxiety.jpg",
+   "line": "Everyone needs one",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 28.75,
+   "img": "assets/caravaggio_narcissus.jpg",
+   "line": "The danger is",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.42,
+    0.25
+   ]
+  },
+  {
+   "t": 31.02,
+   "img": "assets/ingres_napoleon_throne.jpg",
+   "line": "starts wearing you",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.22
+   ]
+  },
+  {
+   "t": 33.09,
+   "img": "assets/velazquez_meninas.jpg",
+   "line": "Here's a test",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.3,
+    0.4
+   ]
+  },
+  {
+   "t": 36.08,
+   "img": "assets/hals_malle_babbe.jpg",
+   "line": "You laugh at jokes",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.55,
+    0.4
+   ]
+  },
+  {
+   "t": 38.01,
+   "img": "assets/klimt_kiss.jpg",
+   "line": "You want what",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "t": 41.01,
+   "img": "assets/vaneyck_arnolfini.jpg",
+   "line": "Someone asks who",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.35,
+    0.35
+   ]
+  },
+  {
+   "t": 48.82,
+   "img": "assets/ensor_intrigue.jpg",
+   "line": "is this real",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "t": 53.69,
+   "img": "assets/hammershoi_sunbeams.jpg",
+   "line": "Real gets lighter",
+   "zoom": [
+    1.0,
+    1.12
+   ]
+  },
+  {
+   "t": 56.41,
+   "img": "assets/martin_pandemonium.jpg",
+   "line": "Performed gets heavier",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "t": 58.97,
+   "img": "assets/vermeer_girl_window.jpg",
+   "line": "His idea, in plain words",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.22,
+    0.32
+   ]
+  },
+  {
+   "t": 66.12,
+   "img": "assets/blake_red_dragon.jpg",
+   "line": "So which one got heavier",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 69.2,
+   "img": "assets/vermeer_pearl_earring.jpg",
+   "line": "And still",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "move": "pull"
+  }
+ ]
+}
