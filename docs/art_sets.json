@@ -30,7 +30,11 @@
    "vermeer_geographer",
    "chardin_schoolmistress",
    "homer_breezing_up",
-   "homer_gulf_stream"
+   "homer_gulf_stream",
+   "vangogh_prisoners",
+   "ribera_archimedes",
+   "breton_gleaners",
+   "bruegel_peasant_wedding"
   ]
  },
  "seneca": {
@@ -61,7 +65,11 @@
    "metsu_man_writing",
    "latour_newborn",
    "inness_home_heron",
-   "schalcken_candle"
+   "schalcken_candle",
+   "wright_alchemist",
+   "claesz_vanitas",
+   "dou_old_woman_reading",
+   "cole_voyage_manhood"
   ]
  },
  "marcus": {
@@ -94,7 +102,15 @@
    "cole_voyage_childhood",
    "cole_voyage_old_age",
    "church_twilight",
-   "david_horatii"
+   "david_horatii",
+   "gerome_death_caesar",
+   "cole_empire_savage",
+   "cole_empire_arcadian",
+   "turner_slave_ship",
+   "friedrich_sea_ice",
+   "aivazovsky_among_waves",
+   "cole_voyage_youth",
+   "alma_tadema_reading_homer"
   ]
  },
  "jung": {
@@ -178,7 +194,12 @@
    "levitan_vladimirka",
    "repin_barge_haulers",
    "levitan_eternal_peace",
-   "perov_last_tavern"
+   "perov_last_tavern",
+   "kramskoi_unknown_woman",
+   "vereshchagin_apotheosis",
+   "vasnetsov_crossroads",
+   "grimshaw_reflections_thames",
+   "caillebotte_pont_europe"
   ]
  }
 }
