@@ -11,6 +11,12 @@ optional: "hook_card": 1.2  -> the whole first sentence on screen, still, from f
                                (at least 1.2 s; critics, Oct 22)
           "lufs": -14       -> loudness-normalise the final mix (TikTok sits near -14; we were at -18)
           "card": [40, 250, 1040, 1650] -> painting card size (default 50, 330, 1030, 1590)
+delivery test B (Oct 23, Sergio: motion, tidiness, attention beats):
+          "captions": "karaoke" -> the whole 2-4 word chunk on screen at once, words light up as spoken (no lone "THE")
+          "radius": 0, "border": false, "brand_y": 1480 -> full-screen painting (card [0, 0, 1080, 1920])
+          "punch_words": ["shadow", ...], "punch": 0.06 -> quick zoom-in on the painting on these words only
+          "hit_words": ["shadow", ...] -> low boom + short swell under these words (synthesised, no samples)
+ElevenLabs v3 audio tags in the script ("[pause]", "[whispers]") are not spoken and never become captions.
 """
 import json, math, re, subprocess, sys, wave
 import numpy as np
@@ -28,16 +34,22 @@ TEXT_Y = 860                                       # caption centre (safe zone 2
 
 def words_from_alignment(al):
     chars, st, en = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
-    words, cur, t0 = [], "", None
+    words, cur, t0, in_tag = [], "", None, False
     for c, s, e in zip(chars, st, en):
+        if c == "[":                     # v3 audio tag: direction for the voice, not a word
+            in_tag = True; continue
+        if in_tag:
+            in_tag = c != "]"; continue
         if c.isspace():
+            if cur and not re.search(r"\w", cur):    # a lone dash or "..." left between tags
+                cur = ""; continue
             if cur:
                 words.append([cur, t0, last_e]); cur = ""
             continue
         if not cur:
             t0 = s
         cur += c; last_e = e
-    if cur:
+    if cur and re.search(r"\w", cur):
         words.append([cur, t0, last_e])
     return words
 
@@ -178,41 +190,47 @@ def split_long_shots(shots, dur, max_len=4.2):
     return out
 
 
-def text_layer(words, emphasis, big):
-    """Render one caption as an RGBA image: emphasis word huge + red, others white."""
+def text_layer(words, emphasis, big, lit=None):
+    """Render one caption as an RGBA image: emphasis word huge + red, others white.
+    lit (karaoke captions): only the first `lit` words are bright; the rest of the chunk shows faint."""
     clean = lambda w: re.sub(r"[^\w']", "", w).lower()
     disp = [re.sub(r'^[\"“]|[\"”]$', "", w).strip(".,;:") or w for w in words]
     has_em = any(clean(w) in emphasis for w in words)
+    lit = len(words) if lit is None else lit
     lines = []
-    for w, d in zip(words, disp):
+    for i, (w, d) in enumerate(zip(words, disp)):
         em = clean(w) in emphasis
         size = (250 if big else 230) if em else (190 if big else 150)
         if has_em and not em:
             size = 110
-        lines.append((d.upper(), size, RED if em else (255, 255, 255)))
+        lines.append(([(d.upper(), 255 if i < lit else 70)], size, RED if em else (255, 255, 255)))
     # pack consecutive plain words into lines of <= 9 characters; an emphasis word always gets its own line
     packed = []
-    for txt, size, col in lines:
-        if packed and col != RED and packed[-1][2] != RED and len(packed[-1][0]) + 1 + len(txt) <= 9:
-            packed[-1] = (packed[-1][0] + " " + txt, min(packed[-1][1], size), col)
+    for ws, size, col in lines:
+        n = lambda ws_: len(" ".join(t for t, _ in ws_))
+        if packed and col != RED and packed[-1][2] != RED and n(packed[-1][0]) + 1 + n(ws) <= 9:
+            packed[-1] = (packed[-1][0] + ws, min(packed[-1][1], size), col)
         else:
-            packed.append((txt, size, col))
+            packed.append((ws, size, col))
     lines = packed
     rend = []
-    for txt, size, col in lines:
+    for ws, size, col in lines:
+        txt = " ".join(t for t, _ in ws)
         f = ImageFont.truetype(FONT, size)
         while f.getbbox(txt)[2] > 700 and size > 40:
             size -= 6; f = ImageFont.truetype(FONT, size)
         bb = f.getbbox(txt)
-        rend.append((txt, f, col, bb))
+        rend.append((ws, txt, f, col, bb))
     hgt = sum(bb[3] - bb[1] + 34 for *_, bb in rend)
     pad = 120
     img = Image.new("RGBA", (W, hgt + 2 * pad), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     y = pad
-    for txt, f, col, bb in rend:
+    for ws, txt, f, col, bb in rend:
         x = (W - (bb[2] - bb[0])) // 2 - bb[0]
-        d.text((x, y - bb[1]), txt, font=f, fill=col + (255,), stroke_width=5, stroke_fill=(12, 8, 8, 255))
+        for t_, al in ws:
+            d.text((x, y - bb[1]), t_, font=f, fill=col + (al,), stroke_width=5, stroke_fill=(12, 8, 8, al))
+            x += f.getlength(t_ + " ")
         y += bb[3] - bb[1] + 34
     shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
     shadow.putalpha(img.getchannel("A").filter(ImageFilter.GaussianBlur(14)).point(lambda a: int(a * 0.85)))
@@ -330,11 +348,35 @@ class ClipReader:
         return self.last
 
 
+def add_hits(path, times, sr_default=44100):
+    """Mix a soft low boom (with a short noise swell into it) under each time into the music wav."""
+    with wave.open(path) as w:
+        ch, sw, sr, n = w.getnchannels(), w.getsampwidth(), w.getframerate(), w.getnframes()
+        a = np.frombuffer(w.readframes(n), np.int16).astype(np.float32).reshape(-1, ch)
+    rng = np.random.default_rng(3)
+    tb = np.arange(int(0.9 * sr)) / sr
+    boom = (np.sin(2 * np.pi * 52 * tb) + 0.5 * np.sin(2 * np.pi * 104 * tb)) * np.exp(-tb / 0.28) * np.minimum(1, tb / 0.006)
+    ts = np.arange(int(0.35 * sr)) / sr
+    noise = np.convolve(rng.normal(0, 1, len(ts)), np.ones(40) / 40, "same")
+    swell = noise * (ts / ts[-1]) ** 2.5 * 0.5
+    for t in times:
+        i = int(t * sr)
+        for sig, at in ((boom * 0.5, i), (swell, i - len(swell))):
+            s0, s1 = max(0, at), min(len(a), at + len(sig))
+            if s1 > s0:
+                a[s0:s1] += (sig[s0 - at:s1 - at] * 9000)[:, None]
+    with wave.open(path, "wb") as w:
+        w.setnchannels(ch); w.setsampwidth(sw); w.setframerate(sr)
+        w.writeframes(np.clip(a, -32767, 32767).astype(np.int16).tobytes())
+
+
 def main(spec_path, out_path):
     spec = json.load(open(spec_path))
-    global FX0, FY0, FX1, FY1
+    global FX0, FY0, FX1, FY1, RADIUS
     if spec.get("card"):                 # bigger painting card (Oct 22 deliberation); old specs keep the default
         FX0, FY0, FX1, FY1 = spec["card"]
+    RADIUS = spec.get("radius", RADIUS)
+    karaoke = spec.get("captions") == "karaoke"
     emphasis = {e.lower() for e in spec["emphasis"]}
     words = words_from_alignment(json.load(open(spec["align"])))
     voice_delay = spec.get("voice_delay", 0.15)
@@ -378,6 +420,21 @@ def main(spec_path, out_path):
     grains = [rng.normal(0, 14, (H // 2, W // 2)).astype(np.float32) for _ in range(6)]
     dust = rng.random((60, 4))  # x, y, speed, size
 
+    def starts(ws_):
+        ws_ = {x.lower() for x in ws_}
+        return [w[1] for w in words if re.sub(r"[^\w']", "", w[0]).lower() in ws_]
+    punch_t, punch_amp = starts(spec.get("punch_words", [])), spec.get("punch", 0.06)
+    hit_t = starts(spec.get("hit_words", []))
+
+    def punch(t):
+        """0 -> punch_amp in 0.08 s at each punch word, then eases back over ~0.5 s."""
+        b = 0.0
+        for h in punch_t:
+            dt = t - h
+            if -0.08 < dt < 1.2:
+                b = max(b, punch_amp * (min(1.0, (dt + 0.08) / 0.08) if dt < 0 else math.exp(-dt / 0.35)))
+        return b
+
     layers = {}
     def layer(i, big, t=0.0):
         c = caps[i]
@@ -390,8 +447,8 @@ def main(spec_path, out_path):
         # build the phrase word by word: a word appears only once it is spoken (iNQ style, no text ahead of voice)
         k = max(1, sum(1 for ws, we in c["times"] if ws <= t + 0.02))
         key = (i, big, k)
-        if key not in layers:
-            layers[key] = text_layer(c["words"][:k], emphasis, big)
+        if key not in layers:   # karaoke: the whole chunk shows, unspoken words faint
+            layers[key] = text_layer(c["words"], emphasis, big, k) if karaoke else text_layer(c["words"][:k], emphasis, big)
         return layers[key]
 
     # caption timeline for the pre-publish gate: when each word appears vs when it is spoken
@@ -399,6 +456,7 @@ def main(spec_path, out_path):
     for c in caps:
         for j, (w, (ws, we)) in enumerate(zip(c["words"], c["times"])):
             shown = c["t0"] if (c["kind"] == "quote" or j == 0) else max(c["t0"], ws - 0.02)
+            # karaoke: later words show faint ahead of the voice, but light up only when spoken
             tl.append({"word": w, "shown": round(shown, 3), "spoken": round(ws, 3), "kind": c["kind"]})
     # the hook card shows the first sentence ahead of the voice on purpose; the gate checks it separately
     tl += [{"word": w, "shown": 0.0, "spoken": round(ws, 3), "kind": "hook"} for w, ws, we in hook_words]
@@ -416,6 +474,8 @@ def main(spec_path, out_path):
         shots.sort(key=lambda x: x["t"])
     else:
         music_bed(dur, mus)
+    if hit_t:
+        add_hits(mus, hit_t)
     clips = ClipReader()
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
@@ -449,9 +509,15 @@ def main(spec_path, out_path):
             if si > 0:   # soft 0.1 s dip at a cut (from 80%), not a dark flash: no strobe (Fable review)
                 a *= min(1.0, (t - s["t"]) / 0.10 * 0.2 + 0.8)
             pic = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
+            b = punch(t)
+            if b > 0.002:            # punch-in: scale up around the centre, keep the frame size
+                pw, ph = pic.size
+                cw, ch = pw / (1 + b), ph / (1 + b)
+                pic = pic.resize((pw, ph), Image.BILINEAR, box=((pw - cw) / 2, (ph - ch) / 2, (pw + cw) / 2, (ph + ch) / 2))
             frame.paste(pic, (FX0, FY0), mask)
             # thin frame border
-            ImageDraw.Draw(frame).rounded_rectangle((FX0, FY0, FX1 - 1, FY1 - 1), RADIUS, outline=(60, 60, 60), width=2)
+            if spec.get("border", True):
+                ImageDraw.Draw(frame).rounded_rectangle((FX0, FY0, FX1 - 1, FY1 - 1), RADIUS, outline=(60, 60, 60), width=2)
         # dust (everywhere, subtle)
         d = ImageDraw.Draw(frame)
         for x, y, sp, sz in dust:
@@ -478,7 +544,7 @@ def main(spec_path, out_path):
         # brand mark
         if t >= hook_until:
             f = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 26)
-            d.text((W // 2, FY1 - 46), "MARGIN NOTES", font=f, fill=(200, 200, 200), anchor="mm")
+            d.text((W // 2, spec.get("brand_y", FY1 - 46)), "MARGIN NOTES", font=f, fill=(200, 200, 200), anchor="mm")
         # grain
         g = np.asarray(Image.fromarray(grains[fi % 6]).resize((W, H)), np.float32)[..., None]
         a = np.clip(np.asarray(frame, np.float32) + g, 0, 255).astype(np.uint8)

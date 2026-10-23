@@ -48,6 +48,7 @@ def main(plan_path):
             "audio": f"audio/{name}.mp3", "align": f"audio/{name}.json", "hook_until": 0.0,
             "thinker": plan["thinker"], "emphasis": plan["emphasis"], "quote_source": plan["quote_source"],
             "shots": shots}
+    spec.update(plan.get("spec_extra", {}))   # renderer options for a test (e.g. delivery B, Oct 23)
     out = f"specs/{name}.json"
     json.dump(spec, open(out, "w"), indent=1)
     print(out, f"{len(shots)} shots, voice ends {words[-1][2]:.1f} s")

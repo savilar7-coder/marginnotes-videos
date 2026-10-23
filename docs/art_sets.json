@@ -137,7 +137,13 @@
    "martin_pandemonium",
    "vermeer_girl_window",
    "velazquez_meninas",
-   "vangogh_bandaged_ear"
+   "vangogh_bandaged_ear",
+   "blake_ghost_flea",
+   "blake_red_dragon",
+   "goya_sleep_reason",
+   "moreau_oedipus_sphinx",
+   "waterhouse_echo_narcissus",
+   "bocklin_villa_sea"
   ]
  },
  "dostoevsky": {
@@ -171,7 +177,8 @@
    "repin_refusal_confession",
    "levitan_vladimirka",
    "repin_barge_haulers",
-   "levitan_eternal_peace"
+   "levitan_eternal_peace",
+   "perov_last_tavern"
   ]
  }
 }
