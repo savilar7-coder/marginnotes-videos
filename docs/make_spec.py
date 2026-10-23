@@ -41,10 +41,13 @@ def main(plan_path):
         if extra:                       # optional 4th item: camera move (docs/motion.py), e.g. "dolly"
             s["move"] = extra[0]
         shots.append(s)
-    # Oct 22 standard: whole hook on frame 0, ~-14 LUFS, bigger card (SOP)
-    spec = {"bpm": 76, "snap": False, "dim": 0.9, "tail": 0.35, "vignette": 0.5,
+    # Oct 22 standard: whole hook on frame 0, ~-14 LUFS; Oct 23: style B (SOP)
+    spec = {"bpm": 76, "snap": False, "dim": plan.get("dim", 0.8), "tail": 0.35, "vignette": 0.5,
             "hook_card": plan.get("hook_card", 1.2), "lufs": plan.get("lufs", -12.5),
-            "card": plan.get("card", [40, 250, 1040, 1650]),
+            "card": plan.get("card", [0, 0, 1080, 1920]),
+            # style B (Sergio Oct 23 "way better"): full-screen painting, karaoke phrase captions, punch + hits
+            "radius": 0, "border": False, "brand_y": 1480, "captions": "karaoke",
+            "punch_words": plan.get("punch_words", []), "punch": 0.06, "hit_words": plan.get("hit_words", []),
             "audio": f"audio/{name}.mp3", "align": f"audio/{name}.json", "hook_until": 0.0,
             "thinker": plan["thinker"], "emphasis": plan["emphasis"], "quote_source": plan["quote_source"],
             "shots": shots}

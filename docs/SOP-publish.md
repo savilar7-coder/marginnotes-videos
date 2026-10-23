@@ -11,10 +11,15 @@ Owner of the final yes: Sergio. Claude runs steps 1-6 and asks for step 7.
   sergio-philosopher), told through the matching thinker in third person. No first-person "Sergio says" unless he asks;
   family/faith never.
 - Ends with a share/save line and a loop back into the first line. Target 60-66 s (Creator Rewards needs > 60 s).
+- **Delivery (style B, Sergio Oct 23 "way better"):** direct the voice with ElevenLabs v3 tags in the script:
+  `[pause]` before turns, `[whispers]`/`[quietly]` on the intimate line, `[slowly]` before the quote, `[faster]` on
+  lists, `...` for hesitation. Max 2-3 tags per sentence. Tags are never spoken or captioned. Expect ~130 wpm.
+- Plan picks 3-5 `punch_words` (quick zoom) and 2-3 `hit_words` (low boom) on the real turns only, never more.
 
 ## 2. Pictures
 - Only paintings from the thinker's set (`docs/art_sets.json`, ~30 each since Oct 22); one painting per spoken line,
-  matching the line. A painting at most twice per video, and none from this thinker's previous video (gate FAILs).
+  matching the line. Each painting once per video (the loop ending may return to the hook painting; Sergio Oct 23),
+  none from this thinker's previous video, no two near-identical paintings in one video (gate FAILs repeats).
 - New paintings: public domain, no frame/wall/round mount/watermark, no nudity TikTok could flag. Add to `images.txt`
   (cloud job fetches; Wikimedia rate-limits, so check every file opens) and eye-check a contact sheet first.
 - No museum frames/walls in the image. No painting held > 4.5 s.
