@@ -1,0 +1,146 @@
+{
+ "name": "2026-10-24-0900-dostoevsky-step-v3",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "emphasis": [
+  "lazy",
+  "scared",
+  "murder",
+  "afraid",
+  "fear",
+  "plans",
+  "talks",
+  "waits",
+  "chatter",
+  "nothing",
+  "landlady",
+  "stairs",
+  "today"
+ ],
+ "quote_source": [
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett",
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett"
+ ],
+ "punch_words": [
+  "scared",
+  "murder",
+  "landlady",
+  "today"
+ ],
+ "hit_words": [
+  "scared",
+  "landlady"
+ ],
+ "shots": [
+  [
+   "hook",
+   "vrubel_demon_seated",
+   [
+    0.33,
+    0.3
+   ]
+  ],
+  [
+   "You're scared",
+   "repin_refusal_confession",
+   [
+    0.65,
+    0.45
+   ]
+  ],
+  [
+   "Dostoevsky gave",
+   "perov_dostoevsky",
+   [
+    0.5,
+    0.35
+   ]
+  ],
+  [
+   "a man on his way",
+   "perov_last_tavern",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "Wait till you hear",
+   "grimshaw_reflections_thames",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "Taking a new step",
+   "levitan_vladimirka",
+   null
+  ],
+  [
+   "So he does what we do",
+   "kramskoi_christ_desert",
+   [
+    0.5,
+    0.45
+   ]
+  ],
+  [
+   "Talks",
+   "ge_what_is_truth",
+   [
+    0.3,
+    0.4
+   ]
+  ],
+  [
+   "Waits",
+   "kramskoi_unknown_woman",
+   [
+    0.5,
+    0.35
+   ]
+  ],
+  [
+   "It's because I chatter",
+   "munch_karl_johan",
+   [
+    0.3,
+    0.55
+   ]
+  ],
+  [
+   "And what scares him",
+   "vasnetsov_crossroads",
+   [
+    0.3,
+    0.55
+   ]
+  ],
+  [
+   "His landlady",
+   "hammershoi_woman_back",
+   [
+    0.5,
+    0.4
+   ]
+  ],
+  [
+   "Your step is just",
+   "repin_barge_haulers",
+   [
+    0.2,
+    0.5
+   ]
+  ],
+  [
+   "And next time",
+   "vrubel_demon_seated",
+   [
+    0.33,
+    0.3
+   ],
+   "pull"
+  ]
+ ]
+}

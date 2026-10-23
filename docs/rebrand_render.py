@@ -30,6 +30,7 @@ QFONT = "C:/Windows/Fonts/georgiai.ttf"            # quotes: Georgia Italic
 SFONT = "C:/Windows/Fonts/segoeuib.ttf"            # small source line
 RED = (255, 92, 97)
 TEXT_Y = 860                                       # caption centre (safe zone 230-1382)
+FADE_IN, FADE_OUT, BEAT0 = 2.0, 3.0, 1.0           # music fades + first beat (spec "music_start": "full" -> 0.05/0.3/0.0)
 MAXW = 700                                         # widest caption line (860 for full-screen karaoke)
 
 
@@ -288,7 +289,7 @@ def music_bed(seconds, path, sr=44100):
             out[m] += env * (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(2 * np.pi * 2 * f * tt + 0.3)) * 0.06
         out[m] += env * np.sin(2 * np.pi * ch[0] / 2 * tt) * 0.08
     out *= 0.6 + 0.4 * np.sin(2 * np.pi * 0.07 * t)
-    fade = np.clip(np.minimum(t / 2.0, (seconds - t) / 3.0), 0, 1)
+    fade = np.clip(np.minimum(t / FADE_IN, (seconds - t) / FADE_OUT), 0, 1)
     out = np.tanh(out * fade * 1.4) * 0.5
     pcm = (np.stack([out, np.roll(out, 300)], 1) * 32767).astype(np.int16)
     with wave.open(path, "wb") as w:
@@ -304,7 +305,7 @@ def music_beat(seconds, path, bpm=76, sr=44100):
     n = base.shape[0]
     t = np.arange(n) / sr
     beat = 60.0 / bpm
-    beats = np.arange(1.0, seconds - 1.0, beat)
+    beats = np.arange(BEAT0, seconds - 1.0, beat)
     chords = [[440.0, 523.25, 659.25], [349.23, 440.0, 523.25], [392.0, 523.25, 659.25], [392.0, 493.88, 587.33]]
     out = np.zeros(n, np.float32)
     for i, b in enumerate(beats):
@@ -320,7 +321,7 @@ def music_beat(seconds, path, bpm=76, sr=44100):
         if i % 4 == 0:  # bar pulse
             Lk = min(n - i0, int(sr * 0.35)); tk = np.arange(Lk) / sr
             out[i0:i0 + Lk] += 0.22 * np.exp(-tk * 14) * np.sin(2 * np.pi * (55 + 40 * np.exp(-tk * 30)) * tk)
-    fade = np.clip(np.minimum(t / 2.0, (seconds - t) / 3.0), 0, 1)
+    fade = np.clip(np.minimum(t / FADE_IN, (seconds - t) / FADE_OUT), 0, 1)
     mix = base + np.stack([out, np.roll(out, 180)], 1) * fade[:, None]
     pcm = (np.tanh(mix * 1.2) * 0.8 * 32767).astype(np.int16)
     with wave.open(path, "wb") as w:
@@ -365,6 +366,9 @@ def add_hits(path, times, sr_default=44100):
     rng = np.random.default_rng(3)
     tb = np.arange(int(0.9 * sr)) / sr
     boom = (np.sin(2 * np.pi * 52 * tb) + 0.5 * np.sin(2 * np.pi * 104 * tb)) * np.exp(-tb / 0.28) * np.minimum(1, tb / 0.006)
+    # phone speakers drop everything under ~150 Hz (editor, Oct 23): add a 160/240 Hz body and a short click on top
+    boom += (0.7 * np.sin(2 * np.pi * 160 * tb) + 0.35 * np.sin(2 * np.pi * 240 * tb)) * np.exp(-tb / 0.12)
+    boom[:int(0.004 * sr)] += rng.normal(0, 0.6, int(0.004 * sr))
     ts = np.arange(int(0.35 * sr)) / sr
     noise = np.convolve(rng.normal(0, 1, len(ts)), np.ones(40) / 40, "same")
     swell = noise * (ts / ts[-1]) ** 2.5 * 0.5
@@ -381,10 +385,12 @@ def add_hits(path, times, sr_default=44100):
 
 def main(spec_path, out_path):
     spec = json.load(open(spec_path))
-    global FX0, FY0, FX1, FY1, RADIUS, MAXW
+    global FX0, FY0, FX1, FY1, RADIUS, MAXW, FADE_IN, FADE_OUT, BEAT0
     if spec.get("card"):                 # bigger painting card (Oct 22 deliberation); old specs keep the default
         FX0, FY0, FX1, FY1 = spec["card"]
     RADIUS = spec.get("radius", RADIUS)
+    if spec.get("music_start") == "full":   # music at full level on frame 0, no hole at the loop seam
+        FADE_IN, FADE_OUT, BEAT0 = 0.05, 0.3, 0.0
     karaoke = spec.get("captions") == "karaoke"
     if karaoke:
         MAXW = 860
@@ -519,7 +525,7 @@ def main(spec_path, out_path):
             flick = 1.0 + 0.025 * math.sin(t * 7.3) + 0.015 * math.sin(t * 13.1)
             a *= flick
             # entry flash-in for each new shot (fast fade from black)
-            if si > 0:   # soft 0.1 s dip at a cut (from 80%), not a dark flash: no strobe (Fable review)
+            if si > 0 and spec.get("cut_dip", True):   # soft 0.1 s dip at a cut (from 80%), not a dark flash: no strobe (Fable review)
                 a *= min(1.0, (t - s["t"]) / 0.10 * 0.2 + 0.8)
             pic = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
             b = punch(t)
@@ -542,7 +548,8 @@ def main(spec_path, out_path):
         # caption
         ci = max((i for i, c in enumerate(caps) if c["t0"] <= t), default=0)
         if hook_layer is not None and t < hook_card:
-            frame.paste(hook_layer, ((W - hook_layer.width) // 2, TEXT_Y - hook_layer.height // 2), hook_layer)
+            hy = spec.get("hook_y", TEXT_Y)   # low slot keeps the face on frame 0 clear (art director, Oct 23)
+            frame.paste(hook_layer, ((W - hook_layer.width) // 2, hy - hook_layer.height // 2), hook_layer)
         elif ci >= first_after and t < caps[ci]["t1"] + 0.05:
             L = layer(ci, t < hook_until, t)
             p = min(1.0, (t - caps[ci]["t0"]) / 0.2) if ci > 0 else 1.0

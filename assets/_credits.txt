@@ -3,3 +3,5 @@ Oct 17 2026 (Wikimedia Commons, public domain): starry_night (Van Gogh), ninth_w
 Oct 23 2026 (Wikimedia Commons, public domain): blake_ghost_flea + blake_red_dragon (William Blake), goya_sleep_reason (Goya, Caprichos 43), moreau_oedipus_sphinx (Gustave Moreau), waterhouse_echo_narcissus (J. W. Waterhouse), bocklin_villa_sea (Arnold Bocklin), perov_last_tavern (Vasily Perov)
 
 Oct 23 2026 (Wikimedia Commons, public domain): dostoevsky: kramskoi_unknown_woman, vereshchagin_apotheosis, vasnetsov_crossroads, grimshaw_reflections_thames, caillebotte_pont_europe; epictetus: vangogh_prisoners, ribera_archimedes, breton_gleaners, bruegel_peasant_wedding; seneca: wright_alchemist, claesz_vanitas, dou_old_woman_reading, cole_voyage_manhood; marcus: gerome_death_caesar, cole_empire_savage, cole_empire_arcadian, turner_slave_ship, friedrich_sea_ice, aivazovsky_among_waves, cole_voyage_youth, alma_tadema_reading_homer
+
+Oct 23 2026 (Wikimedia Commons, public domain): ensor_self_masks + ensor_intrigue (James Ensor, d. 1949), hals_malle_babbe (Frans Hals)

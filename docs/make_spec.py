@@ -48,7 +48,9 @@ def main(plan_path):
             "card": plan.get("card", [0, 0, 1080, 1920]),
             # style B (Sergio Oct 23 "way better"): full-screen painting, karaoke phrase captions, punch + hits
             "radius": 0, "border": False, "brand_y": 1480, "captions": "karaoke",
-            "punch_words": plan.get("punch_words", []), "punch": 0.06, "hit_words": plan.get("hit_words", []),
+            "punch_words": plan.get("punch_words", []), "punch": 0.035, "hit_words": plan.get("hit_words", []),
+            # panel vote Oct 23: frame 0 hook in the low slot, music from frame 0, hard cuts
+            "hook_y": plan.get("hook_y", 1250), "music_start": "full", "cut_dip": False, "motion": plan.get("motion", "v2"),
             "audio": f"audio/{voice}.mp3", "align": f"audio/{voice}.json", "hook_until": 0.0,
             "thinker": plan["thinker"], "emphasis": plan["emphasis"], "quote_source": plan["quote_source"],
             "shots": shots}

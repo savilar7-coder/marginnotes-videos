@@ -1,0 +1,226 @@
+{
+ "name": "2026-10-24-2000-jung-mask-v3",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "emphasis": [
+  "yourself",
+  "which",
+  "phone",
+  "more",
+  "sign",
+  "persona",
+  "mask",
+  "everyone",
+  "wearing",
+  "test",
+  "funny",
+  "want",
+  "title",
+  "real",
+  "performed",
+  "lighter",
+  "heavier",
+  "heavier"
+ ],
+ "quote_source": [],
+ "punch_words": [
+  "which",
+  "mask",
+  "wearing",
+  "performed"
+ ],
+ "hit_words": [
+  "which",
+  "wearing",
+  "heavier"
+ ],
+ "shots": [
+  [
+   "hook",
+   "vermeer_pearl_earring",
+   [
+    0.45,
+    0.4
+   ]
+  ],
+  [
+   "Which one",
+   "titian_prudence",
+   [
+    0.45,
+    0.3
+   ]
+  ],
+  [
+   "Work you",
+   "rembrandt_night_watch",
+   [
+    0.45,
+    0.55
+   ]
+  ],
+  [
+   "Family you",
+   "vangogh_noon_rest",
+   [
+    0.5,
+    0.55
+   ]
+  ],
+  [
+   "Two a.m. you",
+   "goya_dog",
+   [
+    0.5,
+    0.75
+   ]
+  ],
+  [
+   "Jung's idea",
+   "friedrich_two_men_moon",
+   null
+  ],
+  [
+   "And one of them",
+   "bosch_death_miser",
+   [
+    0.5,
+    0.45
+   ]
+  ],
+  [
+   "There's one sign",
+   "vangogh_bandaged_ear",
+   [
+    0.45,
+    0.4
+   ]
+  ],
+  [
+   "He called the face",
+   "munch_self_cigarette",
+   [
+    0.5,
+    0.3
+   ]
+  ],
+  [
+   "A mask",
+   "ensor_self_masks",
+   [
+    0.6,
+    0.3
+   ]
+  ],
+  [
+   "He never said",
+   "caravaggio_lizard",
+   [
+    0.4,
+    0.3
+   ]
+  ],
+  [
+   "Everyone needs one",
+   "munch_anxiety",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "The danger is",
+   "caravaggio_narcissus",
+   [
+    0.42,
+    0.25
+   ]
+  ],
+  [
+   "starts wearing you",
+   "ingres_napoleon_throne",
+   [
+    0.5,
+    0.22
+   ]
+  ],
+  [
+   "Here's a test",
+   "velazquez_meninas",
+   [
+    0.3,
+    0.4
+   ]
+  ],
+  [
+   "You laugh at jokes",
+   "hals_malle_babbe",
+   [
+    0.55,
+    0.4
+   ]
+  ],
+  [
+   "You want what",
+   "klimt_kiss",
+   [
+    0.5,
+    0.3
+   ]
+  ],
+  [
+   "Someone asks who",
+   "vaneyck_arnolfini",
+   [
+    0.35,
+    0.35
+   ]
+  ],
+  [
+   "is this real",
+   "ensor_intrigue",
+   [
+    0.5,
+    0.45
+   ]
+  ],
+  [
+   "Real gets lighter",
+   "hammershoi_sunbeams",
+   null
+  ],
+  [
+   "Performed gets heavier",
+   "martin_pandemonium",
+   [
+    0.6,
+    0.5
+   ]
+  ],
+  [
+   "His idea, in plain words",
+   "vermeer_girl_window",
+   [
+    0.22,
+    0.32
+   ]
+  ],
+  [
+   "So which one got heavier",
+   "blake_red_dragon",
+   [
+    0.5,
+    0.4
+   ]
+  ],
+  [
+   "And still",
+   "vermeer_pearl_earring",
+   [
+    0.45,
+    0.4
+   ],
+   "pull"
+  ]
+ ]
+}

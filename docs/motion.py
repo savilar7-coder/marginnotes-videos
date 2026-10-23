@@ -35,13 +35,18 @@ class Drift(DepthScene):
     hook: bool = False
 
     move: str = "push"
+    v2: bool = False         # spec "motion": "v2" (Sergio + motion critic, Oct 23: it read as zoom, not 3D)
 
     def update(self):
         x = min(1.0, max(0.0, self.tau))
         # the hook shot moves fast at once (ease-out) so the first 2 s visibly move; the rest ease in and out
         e = 1.0 - (1.0 - x) ** 2.2 if self.hook else 0.5 - 0.5 * math.cos(math.pi * x)
+        if self.v2:
+            e = x            # constant speed from frame 0: no still start/end on 2-4 s shots
         d = self.direction
         self.state.height = 0.32 if self.hook else 0.22
+        if self.v2:
+            self.state.height = 0.42                     # ~2x the parallax (Depth Anything V2 Small, Apache-2.0)
         self.state.steady = 0.25
         self.state.isometric = 0.55
         if self.move == "pull":
@@ -60,9 +65,14 @@ class Drift(DepthScene):
             self.state.height = 0.30
             self.state.dolly = 6.0 * e
             self.state.zoom = 1.0 - self.push * e
+            if self.v2:      # a dolly alone barely moved on flat paintings (2.3 px); add a slow sideways slide
+                self.state.offset = (d * (-0.25 + 0.50 * e), 0.0)
         else:
             self.state.zoom = 1.0 - self.push * e
             self.state.offset = (d * (-0.30 + 0.60 * e), 0.0)
+        if self.v2 and self.move != "orbit":
+            ox, oy = self.state.offset
+            self.state.offset = (1.6 * ox, 1.6 * oy)     # sideways travel ~+-0.5: the depth layers visibly separate
 
 
 def crop(img, focus, zoom):
@@ -107,9 +117,17 @@ def main(spec_path):
         scene.move = s.get("move") or ("push" if i == 0 else CYCLE[i % len(CYCLE)])
         if s.get("dof"):
             scene.state.blur.intensity, scene.state.blur.start = 0.7, 0.55
+        scene.v2 = spec.get("motion") == "v2"
         if i == 0:
             scene.push = 0.24
-        scene.main(output=str(out), width=FW, height=FH, fps=FPS, time=length, ssaa=1.0)
+            if scene.v2:     # the hook was a 24% zoom = the "just zooming" feel; v2 = half the zoom, more depth + slide
+                scene.push = 0.12
+        elif scene.v2:
+            scene.push = 0.05 if scene.move in ("push", "pull") else scene.push
+            if scene.move in ("rise", "dolly"):   # measured Oct 23: both stayed near-flat on paintings; push separated best
+                scene.move = "push"
+        scene.main(output=str(out), width=FW, height=FH, fps=FPS, time=length,
+                   ssaa=1.5 if scene.v2 else 1.0, quality=80 if scene.v2 else 50)
         s["clip"] = str(out).replace(os.sep, "/")
         print(f"shot {i:02d} {length:4.1f}s {scene.move:5} {s['img']}", flush=True)
     out_spec = spec_path.with_name(spec_path.stem + "-motion.json")

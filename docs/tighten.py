@@ -1,7 +1,9 @@
 """Trim dead air out of a narration without a new voice take (critics, Oct 23: the pause after the hook left
 1.6-1.9 s of silence and an empty screen right where viewers leave; even 1.5-2 s pauses felt like waiting).
 
-    python docs/tighten.py audio/<name>     -> audio/<name>-t.mp3 + audio/<name>-t.json (alignment shifted to match)
+    python docs/tighten.py audio/<name> [keep,long,words] [max_gap] [long_gap]
+        -> audio/<name>-t.mp3 + audio/<name>-t.json (alignment shifted to match)
+Panel edit grammar (Oct 23): no gap over EARLY_GAP s in the first 5 s; 30 s cuts max_gap ~0.45, 55 s ~0.6, beats <= 0.9.
 
 Gap after the hook sentence -> at most HOOK_GAP s; every other gap between words -> at most MAX_GAP s, except before
 the words in KEEP_LONG (the real beats), which may keep up to LONG_GAP s. The cut is taken from the middle of each gap,
@@ -9,10 +11,10 @@ so breaths and word tails stay. ElevenLabs v3 tags ([pause] ...) carry no timing
 """
 import json, re, subprocess, sys
 
-HOOK_GAP, MAX_GAP, LONG_GAP = 0.30, 0.85, 1.25
+HOOK_GAP, MAX_GAP, LONG_GAP, EARLY_GAP = 0.30, 0.85, 1.25, 0.25
 
 
-def main(base, keep_long=()):
+def main(base, keep_long=(), max_gap=MAX_GAP, long_gap=LONG_GAP):
     al = json.load(open(base + ".json"))
     chars, st, en = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
     # word spans on the character list (tags skipped, like rebrand_render.words_from_alignment)
@@ -37,7 +39,9 @@ def main(base, keep_long=()):
     for j in range(len(words) - 1):
         gap = words[j + 1]["s"] - words[j]["e"]
         nxt = re.sub(r"[^\w']", "", words[j + 1]["w"]).lower()
-        cap = HOOK_GAP if j == hook_end else (LONG_GAP if nxt in keep else MAX_GAP)
+        cap = HOOK_GAP if j == hook_end else (long_gap if nxt in keep else max_gap)
+        if words[j]["e"] < 5.0:          # nothing to wait for in the first 5 s
+            cap = min(cap, EARLY_GAP)
         if gap > cap:
             cut = gap - cap
             cuts.append((words[j]["e"] + cap / 2, cut))
@@ -60,4 +64,5 @@ def main(base, keep_long=()):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2].split(",") if len(sys.argv) > 2 else ())
+    a = sys.argv
+    main(a[1], a[2].split(",") if len(a) > 2 and a[2] else (), *(float(x) for x in a[3:5]))

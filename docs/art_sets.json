@@ -50,7 +50,6 @@
    "caravaggio_emmaus",
    "vermeer_woman_letter",
    "whistler_nocturne",
-   "whistler_falling_rocket",
    "bocklin_isle_dead",
    "friedrich_monk_sea",
    "aivazovsky_moonlit",
@@ -122,7 +121,6 @@
    "ingres_napoleon_throne",
    "rembrandt_prodigal_son",
    "munch_scream",
-   "hammershoi_interior",
    "hammershoi_woman_back",
    "friedrich_two_men_moon",
    "vangogh_noon_rest",
@@ -159,7 +157,10 @@
    "goya_sleep_reason",
    "moreau_oedipus_sphinx",
    "waterhouse_echo_narcissus",
-   "bocklin_villa_sea"
+   "bocklin_villa_sea",
+   "ensor_self_masks",
+   "ensor_intrigue",
+   "hals_malle_babbe"
   ]
  },
  "dostoevsky": {
@@ -199,7 +200,9 @@
    "vereshchagin_apotheosis",
    "vasnetsov_crossroads",
    "grimshaw_reflections_thames",
-   "caillebotte_pont_europe"
+   "caillebotte_pont_europe",
+   "hammershoi_woman_back"
   ]
- }
+ },
+ "_duplicates": "Oct 23: hammershoi_interior = hammershoi_woman_back, whistler_falling_rocket = whistler_nocturne (same image twice); removed from the sets"
 }
