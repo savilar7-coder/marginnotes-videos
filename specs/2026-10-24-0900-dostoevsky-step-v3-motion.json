@@ -1,0 +1,284 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "scared",
+  "murder",
+  "landlady",
+  "today"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "scared",
+  "landlady"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-10-24-0900-dostoevsky-step-v3-t.mp3",
+ "align": "audio/2026-10-24-0900-dostoevsky-step-v3-t.json",
+ "hook_until": 0.0,
+ "thinker": "dostoevsky",
+ "emphasis": [
+  "lazy",
+  "scared",
+  "murder",
+  "afraid",
+  "fear",
+  "plans",
+  "talks",
+  "waits",
+  "chatter",
+  "nothing",
+  "landlady",
+  "stairs",
+  "today"
+ ],
+ "quote_source": [
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett",
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/vrubel_demon_seated.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.33,
+    0.3
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot00.mp4"
+  },
+  {
+   "t": 1.03,
+   "img": "assets/repin_refusal_confession.jpg",
+   "line": "You're scared",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.65,
+    0.45
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot01.mp4"
+  },
+  {
+   "t": 2.66,
+   "img": "assets/perov_dostoevsky.jpg",
+   "line": "Dostoevsky gave",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot02.mp4"
+  },
+  {
+   "t": 5.15,
+   "img": "assets/perov_last_tavern.jpg",
+   "line": "a man on his way",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot03.mp4"
+  },
+  {
+   "t": 7.41,
+   "img": "assets/grimshaw_reflections_thames.jpg",
+   "line": "Wait till you hear",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot04.mp4"
+  },
+  {
+   "t": 10.48,
+   "img": "assets/levitan_vladimirka.jpg",
+   "line": "Taking a new step",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot05.mp4"
+  },
+  {
+   "t": 13.33,
+   "img": "assets/levitan_vladimirka.jpg",
+   "line": "Taking a new step",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot06.mp4"
+  },
+  {
+   "t": 16.18,
+   "img": "assets/kramskoi_christ_desert.jpg",
+   "line": "So he does what we do",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot07.mp4"
+  },
+  {
+   "t": 19.72,
+   "img": "assets/ge_what_is_truth.jpg",
+   "line": "Talks",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.3,
+    0.4
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot08.mp4"
+  },
+  {
+   "t": 21.24,
+   "img": "assets/kramskoi_unknown_woman.jpg",
+   "line": "Waits",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot09.mp4"
+  },
+  {
+   "t": 22.51,
+   "img": "assets/munch_karl_johan.jpg",
+   "line": "It's because I chatter",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.3,
+    0.55
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot10.mp4"
+  },
+  {
+   "t": 24.98,
+   "img": "assets/vasnetsov_crossroads.jpg",
+   "line": "And what scares him",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.3,
+    0.55
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot11.mp4"
+  },
+  {
+   "t": 29.18,
+   "img": "assets/hammershoi_woman_back.jpg",
+   "line": "His landlady",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot12.mp4"
+  },
+  {
+   "t": 32.59,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Your step is just",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.2,
+    0.5
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot13.mp4"
+  },
+  {
+   "t": 35.0,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Your step is just",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.2,
+    0.5
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot14.mp4"
+  },
+  {
+   "t": 37.41,
+   "img": "assets/vrubel_demon_seated.jpg",
+   "line": "And next time",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.33,
+    0.3
+   ],
+   "move": "pull",
+   "clip": "motion/2026-10-24-0900-dostoevsky-step-v3/shot15.mp4"
+  }
+ ]
+}
