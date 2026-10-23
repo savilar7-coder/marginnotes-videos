@@ -30,6 +30,7 @@ QFONT = "C:/Windows/Fonts/georgiai.ttf"            # quotes: Georgia Italic
 SFONT = "C:/Windows/Fonts/segoeuib.ttf"            # small source line
 RED = (255, 92, 97)
 TEXT_Y = 860                                       # caption centre (safe zone 230-1382)
+MAXW = 700                                         # widest caption line (860 for full-screen karaoke)
 
 
 def words_from_alignment(al):
@@ -73,9 +74,11 @@ def _closes_quote(w):
     return bool(re.search(r'["”][.,;:!?…]*$', w)) and not (_opens_quote(w) and len(w) <= 2)
 
 
-def chunk(words, emphasis):
+def chunk(words, emphasis, by_meaning=False):
     """Captions of 1-4 words that never end on a small word ("the", "a", "to"...): small words move to the next
-    screen with the word they belong to. A spoken quote stays one caption (kind "quote") shown whole."""
+    screen with the word they belong to. A spoken quote stays one caption (kind "quote") shown whole.
+    by_meaning (karaoke, critics Oct 23): an emphasis word does not force its own screen, so phrases stay whole
+    ("AND YOU CALL IT FATE", not "IT FATE"); up to 4 words, 5 when the 5th closes the sentence."""
     out, cur = [], []
 
     def flush_with_carry():
@@ -102,15 +105,20 @@ def chunk(words, emphasis):
         c = _clean(w)
         lone_small = len(cur) == 1 and c in emphasis and not re.search(r"[.,:;?!…]$", cur[0][0])
         ends_short = len(cur) == 3 and re.search(r"[.,:;?!…]$", w) and len(c) <= 6 and c not in emphasis
-        if cur and not name_tail and not lone_small and (c in emphasis or (len(cur) >= 3 and not ends_short)
-                                                          or s_ - cur[-1][2] > 0.35):
+        if by_meaning:
+            full = len(cur) >= 4 and not (len(cur) == 4 and re.search(r"[.,:;?!…]$", w))
+            brk = cur and not name_tail and (full or s_ - cur[-1][2] > 0.35)
+        else:
+            brk = cur and not name_tail and not lone_small and (c in emphasis or (len(cur) >= 3 and not ends_short)
+                                                                or s_ - cur[-1][2] > 0.35)
+        if brk:
             flush_with_carry()
         cur.append((w, s_, e_))
         nxt = words[i + 1][0] if i + 1 < len(words) else ""
         # keep a name together ("Marcus Aurelius"): a capitalised emphasis word followed by another capitalised word
         keep_name = (c in emphasis and w[:1].isupper() and nxt[:1].isupper() and not _opens_quote(nxt)
                      and not re.search(r"[.,:;?!…]$", w))
-        if name_tail or (not keep_name and (re.search(r"[.,:;?!\"…]$", w) or c in emphasis)):
+        if name_tail or (not keep_name and (re.search(r"[.,:;?!\"…]$", w) or (c in emphasis and not by_meaning))):
             out.append({"kind": "text", "words": cur}); cur = []
         name_tail = keep_name
         i += 1
@@ -194,7 +202,8 @@ def text_layer(words, emphasis, big, lit=None):
     """Render one caption as an RGBA image: emphasis word huge + red, others white.
     lit (karaoke captions): only the first `lit` words are bright; the rest of the chunk shows faint."""
     clean = lambda w: re.sub(r"[^\w']", "", w).lower()
-    disp = [re.sub(r'^[\"“]|[\"”]$', "", w).strip(".,;:") or w for w in words]
+    disp = [re.sub(r'^[\"“]|[\"”]$', "", w) for w in words]
+    disp = [d if re.search(r"\w\.\w", d) else (d.strip(".,;:") or d) for d in disp]   # "a.m." keeps its dots
     has_em = any(clean(w) in emphasis for w in words)
     lit = len(words) if lit is None else lit
     lines = []
@@ -203,7 +212,7 @@ def text_layer(words, emphasis, big, lit=None):
         size = (250 if big else 230) if em else (190 if big else 150)
         if has_em and not em:
             size = 110
-        lines.append(([(d.upper(), 255 if i < lit else 70)], size, RED if em else (255, 255, 255)))
+        lines.append(([(d.upper(), 255 if i < lit else 115)], size, RED if em else (255, 255, 255)))
     # pack consecutive plain words into lines of <= 9 characters; an emphasis word always gets its own line
     packed = []
     for ws, size, col in lines:
@@ -217,7 +226,7 @@ def text_layer(words, emphasis, big, lit=None):
     for ws, size, col in lines:
         txt = " ".join(t for t, _ in ws)
         f = ImageFont.truetype(FONT, size)
-        while f.getbbox(txt)[2] > 700 and size > 40:
+        while f.getbbox(txt)[2] > MAXW and size > 40:
             size -= 6; f = ImageFont.truetype(FONT, size)
         bb = f.getbbox(txt)
         rend.append((ws, txt, f, col, bb))
@@ -372,17 +381,19 @@ def add_hits(path, times, sr_default=44100):
 
 def main(spec_path, out_path):
     spec = json.load(open(spec_path))
-    global FX0, FY0, FX1, FY1, RADIUS
+    global FX0, FY0, FX1, FY1, RADIUS, MAXW
     if spec.get("card"):                 # bigger painting card (Oct 22 deliberation); old specs keep the default
         FX0, FY0, FX1, FY1 = spec["card"]
     RADIUS = spec.get("radius", RADIUS)
     karaoke = spec.get("captions") == "karaoke"
+    if karaoke:
+        MAXW = 860
     emphasis = {e.lower() for e in spec["emphasis"]}
     words = words_from_alignment(json.load(open(spec["align"])))
     voice_delay = spec.get("voice_delay", 0.15)
     for w in words:
         w[1] += voice_delay; w[2] += voice_delay
-    caps = chunk(words, emphasis)
+    caps = chunk(words, emphasis, karaoke)
     caps[0]["t0"] = 0.0
     hook_card = spec.get("hook_card", 0.0)
     hook_words = []
@@ -465,6 +476,8 @@ def main(spec_path, out_path):
     # captions of the hook sentence already shown on the card are skipped afterwards (no "SIDE" echo)
     first_after = next((i for i, c in enumerate(caps) if c["times"][0][0] > hook_words[-1][1] + 0.01),
                        len(caps)) if hook_words else 0
+    if karaoke and hook_words and first_after < len(caps):
+        hook_card = max(hook_card, caps[first_after]["t0"])   # never an empty screen after the hook (critics Oct 23)
     mus = out_path + ".music.wav"
     if spec.get("bpm"):
         beats = music_beat(dur, mus, spec["bpm"])
@@ -569,7 +582,7 @@ def timeline_only(spec_path, out_path):
     d = spec.get("voice_delay", 0.15)
     for w in words:
         w[1] += d; w[2] += d
-    caps = chunk(words, emphasis); caps[0]["t0"] = 0.0
+    caps = chunk(words, emphasis, spec.get("captions") == "karaoke"); caps[0]["t0"] = 0.0
     tl = [{"word": w, "spoken": round(ws, 3), "kind": c["kind"],
            "shown": round(c["t0"] if (c["kind"] == "quote" or j == 0) else max(c["t0"], ws - 0.02), 3)}
           for c in caps for j, (w, (ws, we)) in enumerate(zip(c["words"], c["times"]))]

@@ -1,0 +1,202 @@
+{
+ "name": "2026-10-24-2000-jung-mask-v2",
+ "thinker": "jung",
+ "emphasis": [
+  "yourself",
+  "which",
+  "work",
+  "family",
+  "phone",
+  "persona",
+  "mask",
+  "rip",
+  "everyone",
+  "forget",
+  "wearing",
+  "funny",
+  "should",
+  "title",
+  "real",
+  "performed",
+  "lighter",
+  "heavier",
+  "underneath"
+ ],
+ "quote_source": [],
+ "shots": [
+  [
+   "hook",
+   "vermeer_girl_window",
+   [
+    0.35,
+    0.5
+   ],
+   "push"
+  ],
+  [
+   "Jung asked",
+   "velazquez_meninas",
+   [
+    0.35,
+    0.55
+   ]
+  ],
+  [
+   "The one at work",
+   "rembrandt_night_watch",
+   [
+    0.45,
+    0.5
+   ]
+  ],
+  [
+   "The one with your family",
+   "vangogh_noon_rest",
+   null
+  ],
+  [
+   "The one you are at two",
+   "goya_dog",
+   [
+    0.5,
+    0.75
+   ],
+   "dolly"
+  ],
+  [
+   "Jung called the face",
+   "ingres_napoleon_throne",
+   [
+    0.5,
+    0.3
+   ]
+  ],
+  [
+   "A mask",
+   "munch_self_cigarette",
+   [
+    0.5,
+    0.35
+   ]
+  ],
+  [
+   "And he didn't say",
+   "caravaggio_lizard",
+   [
+    0.4,
+    0.35
+   ]
+  ],
+  [
+   "Everyone needs one",
+   "munch_anxiety",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "The danger is",
+   "caravaggio_narcissus",
+   null
+  ],
+  [
+   "When the role",
+   "bosch_death_miser",
+   [
+    0.5,
+    0.45
+   ]
+  ],
+  [
+   "You laugh at jokes",
+   "bruegel_dulle_griet",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "You want things",
+   "klimt_kiss",
+   [
+    0.5,
+    0.3
+   ]
+  ],
+  [
+   "You become your job",
+   "vaneyck_arnolfini",
+   [
+    0.5,
+    0.4
+   ]
+  ],
+  [
+   "So ask one question",
+   "vangogh_bandaged_ear",
+   [
+    0.45,
+    0.4
+   ]
+  ],
+  [
+   "is this real",
+   "titian_prudence",
+   null,
+   "dolly"
+  ],
+  [
+   "Real gets lighter",
+   "hammershoi_sunbeams",
+   null
+  ],
+  [
+   "Performed gets heavier",
+   "martin_pandemonium",
+   [
+    0.6,
+    0.5
+   ]
+  ],
+  [
+   "Jung said growing up",
+   "friedrich_two_men_moon",
+   null,
+   "rise"
+  ],
+  [
+   "Noticing the mask",
+   "hammershoi_interior",
+   null
+  ],
+  [
+   "and choosing what's",
+   "vermeer_pearl_earring",
+   null,
+   "push"
+  ],
+  [
+   "Because they told you",
+   "vermeer_girl_window",
+   [
+    0.35,
+    0.5
+   ],
+   "pull"
+  ]
+ ],
+ "punch_words": [
+  "which",
+  "persona",
+  "wearing",
+  "performed",
+  "underneath"
+ ],
+ "hit_words": [
+  "which",
+  "wearing",
+  "underneath"
+ ],
+ "audio_suffix": "-t"
+}

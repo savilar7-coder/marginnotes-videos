@@ -1,0 +1,201 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "away",
+  "postponing",
+  "nothing",
+  "hour"
+ ],
+ "punch": 0.06,
+ "hit_words": [
+  "away",
+  "hour"
+ ],
+ "audio": "audio/2026-10-23-2000-seneca-time-v2-t.mp3",
+ "align": "audio/2026-10-23-2000-seneca-time-v2-t.json",
+ "hook_until": 0.0,
+ "thinker": "seneca",
+ "emphasis": [
+  "time",
+  "seneca",
+  "away",
+  "postponing",
+  "scroll",
+  "someday",
+  "more",
+  "nothing",
+  "hour"
+ ],
+ "quote_source": [
+  "Seneca \u00b7 Letter 1 \u00b7 tr. Gummere",
+  "Seneca \u00b7 Letter 1 \u00b7 tr. Gummere"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/latour_newborn.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "move": "push",
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot00.mp4"
+  },
+  {
+   "t": 2.55,
+   "img": "assets/david_death_seneca.jpg",
+   "line": "Seneca said",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot01.mp4"
+  },
+  {
+   "t": 5.86,
+   "img": "assets/metsu_man_writing.jpg",
+   "line": "He wrote to his friend",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot02.mp4"
+  },
+  {
+   "t": 7.98,
+   "img": "assets/claesz_vanitas.jpg",
+   "line": "While we are postponing",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "move": "dolly",
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot03.mp4"
+  },
+  {
+   "t": 10.275,
+   "img": "assets/claesz_vanitas.jpg",
+   "line": "While we are postponing",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "move": "dolly",
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot04.mp4"
+  },
+  {
+   "t": 12.57,
+   "img": "assets/latour_st_jerome.jpg",
+   "line": "Every scroll",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot05.mp4"
+  },
+  {
+   "t": 13.49,
+   "img": "assets/millet_angelus.jpg",
+   "line": "Every someday",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot06.mp4"
+  },
+  {
+   "t": 14.77,
+   "img": "assets/inness_home_heron.jpg",
+   "line": "Every just one more",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot07.mp4"
+  },
+  {
+   "t": 17.68,
+   "img": "assets/holbein_ambassadors.jpg",
+   "line": "Nothing, Lucilius",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "move": "pull",
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot08.mp4"
+  },
+  {
+   "t": 20.145,
+   "img": "assets/holbein_ambassadors.jpg",
+   "line": "Nothing, Lucilius",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "move": "pull",
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot09.mp4"
+  },
+  {
+   "t": 22.61,
+   "img": "assets/schalcken_candle.jpg",
+   "line": "So tonight",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot10.mp4"
+  },
+  {
+   "t": 26.29,
+   "img": "assets/latour_newborn.jpg",
+   "line": "Because they say",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "move": "pull",
+   "clip": "motion/2026-10-23-2000-seneca-time-v2/shot11.mp4"
+  }
+ ]
+}

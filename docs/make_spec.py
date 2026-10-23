@@ -22,7 +22,8 @@ def norm(w):
 def main(plan_path):
     plan = json.load(open(plan_path, encoding="utf8"))
     name = plan["name"]
-    words = words_from_alignment(json.load(open(f"audio/{name}.json")))
+    voice = name + plan.get("audio_suffix", "")      # "-t" = dead air trimmed by docs/tighten.py (Oct 23)
+    words = words_from_alignment(json.load(open(f"audio/{voice}.json")))
     toks = [norm(w[0]) for w in words]
     delay = plan.get("voice_delay", 0.15)
     shots, pos = [], 0
@@ -48,7 +49,7 @@ def main(plan_path):
             # style B (Sergio Oct 23 "way better"): full-screen painting, karaoke phrase captions, punch + hits
             "radius": 0, "border": False, "brand_y": 1480, "captions": "karaoke",
             "punch_words": plan.get("punch_words", []), "punch": 0.06, "hit_words": plan.get("hit_words", []),
-            "audio": f"audio/{name}.mp3", "align": f"audio/{name}.json", "hook_until": 0.0,
+            "audio": f"audio/{voice}.mp3", "align": f"audio/{voice}.json", "hook_until": 0.0,
             "thinker": plan["thinker"], "emphasis": plan["emphasis"], "quote_source": plan["quote_source"],
             "shots": shots}
     spec.update(plan.get("spec_extra", {}))   # renderer options for a test (e.g. delivery B, Oct 23)

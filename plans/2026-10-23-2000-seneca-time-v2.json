@@ -1,0 +1,98 @@
+{
+ "name": "2026-10-23-2000-seneca-time-v2",
+ "thinker": "seneca",
+ "emphasis": [
+  "time",
+  "seneca",
+  "away",
+  "postponing",
+  "scroll",
+  "someday",
+  "more",
+  "nothing",
+  "hour"
+ ],
+ "quote_source": [
+  "Seneca \u00b7 Letter 1 \u00b7 tr. Gummere",
+  "Seneca \u00b7 Letter 1 \u00b7 tr. Gummere"
+ ],
+ "shots": [
+  [
+   "hook",
+   "latour_newborn",
+   [
+    0.6,
+    0.5
+   ],
+   "push"
+  ],
+  [
+   "Seneca said",
+   "david_death_seneca",
+   [
+    0.35,
+    0.5
+   ]
+  ],
+  [
+   "He wrote to his friend",
+   "metsu_man_writing",
+   null
+  ],
+  [
+   "While we are postponing",
+   "claesz_vanitas",
+   null,
+   "dolly"
+  ],
+  [
+   "Every scroll",
+   "latour_st_jerome",
+   null
+  ],
+  [
+   "Every someday",
+   "millet_angelus",
+   null
+  ],
+  [
+   "Every just one more",
+   "inness_home_heron",
+   null
+  ],
+  [
+   "Nothing, Lucilius",
+   "holbein_ambassadors",
+   null,
+   "pull"
+  ],
+  [
+   "So tonight",
+   "schalcken_candle",
+   [
+    0.6,
+    0.4
+   ]
+  ],
+  [
+   "Because they say",
+   "latour_newborn",
+   [
+    0.6,
+    0.5
+   ],
+   "pull"
+  ]
+ ],
+ "punch_words": [
+  "away",
+  "postponing",
+  "nothing",
+  "hour"
+ ],
+ "hit_words": [
+  "away",
+  "hour"
+ ],
+ "audio_suffix": "-t"
+}
