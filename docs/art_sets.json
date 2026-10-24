@@ -160,7 +160,12 @@
    "bocklin_villa_sea",
    "ensor_self_masks",
    "ensor_intrigue",
-   "hals_malle_babbe"
+   "hals_malle_babbe",
+   "chardin_house_of_cards",
+   "hodler_lake_thun",
+   "hodler_thun_stockhorn",
+   "anker_schoolboy",
+   "homer_children_beach"
   ]
  },
  "dostoevsky": {
@@ -180,7 +185,6 @@
    "repin_ivan_son",
    "perov_troika",
    "kuindzhi_moonlit_dnieper",
-   "munch_karl_johan",
    "munch_sick_child",
    "caillebotte_rainy_day",
    "fildes_doctor",
@@ -201,8 +205,12 @@
    "vasnetsov_crossroads",
    "grimshaw_reflections_thames",
    "caillebotte_pont_europe",
-   "hammershoi_woman_back"
+   "hammershoi_woman_back",
+   "vangogh_night_cafe",
+   "fedotov_fresh_cavalier",
+   "fedotov_major_proposal",
+   "munch_karl_johan_hi"
   ]
  },
- "_duplicates": "Oct 23: hammershoi_interior = hammershoi_woman_back, whistler_falling_rocket = whistler_nocturne (same image twice); removed from the sets"
+ "_duplicates": "Oct 23: hammershoi_interior = hammershoi_woman_back, whistler_falling_rocket = whistler_nocturne (same image twice); removed from the sets; Oct 24: munch_karl_johan_hi replaces munch_karl_johan (same painting, 8K scan)"
 }
