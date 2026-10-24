@@ -11,7 +11,7 @@ so breaths and word tails stay. ElevenLabs v3 tags ([pause] ...) carry no timing
 """
 import json, re, subprocess, sys
 
-HOOK_GAP, MAX_GAP, LONG_GAP, EARLY_GAP = 0.30, 0.85, 1.25, 0.25
+HOOK_GAP, MAX_GAP, LONG_GAP, EARLY_GAP, LEAD = 0.30, 0.85, 1.25, 0.25, 0.08
 
 
 def main(base, keep_long=(), max_gap=MAX_GAP, long_gap=LONG_GAP):
@@ -36,6 +36,8 @@ def main(base, keep_long=(), max_gap=MAX_GAP, long_gap=LONG_GAP):
     keep = {k.lower() for k in keep_long}
     hook_end = next(j for j, w in enumerate(words) if re.search(r"[.?!…]$", w["w"]))
     cuts = []                                    # (start, length) in the original timeline
+    if words[0]["s"] > LEAD + 0.05:              # silent lead-in (critics Oct 23: 0.41 s of nothing before the hook)
+        cuts.append((0.0, words[0]["s"] - LEAD))
     for j in range(len(words) - 1):
         gap = words[j + 1]["s"] - words[j]["e"]
         nxt = re.sub(r"[^\w']", "", words[j + 1]["w"]).lower()

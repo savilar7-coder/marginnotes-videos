@@ -36,6 +36,7 @@ class Drift(DepthScene):
 
     move: str = "push"
     v2: bool = False         # spec "motion": "v2" (Sergio + motion critic, Oct 23: it read as zoom, not 3D)
+    height_override: float = 0.0
 
     def update(self):
         x = min(1.0, max(0.0, self.tau))
@@ -47,6 +48,8 @@ class Drift(DepthScene):
         self.state.height = 0.32 if self.hook else 0.22
         if self.v2:
             self.state.height = 0.42                     # ~2x the parallax (Depth Anything V2 Small, Apache-2.0)
+        if self.height_override:
+            self.state.height = self.height_override     # per-shot: less depth on a face that sits on a depth edge
         self.state.steady = 0.25
         self.state.isometric = 0.55
         if self.move == "pull":
@@ -121,6 +124,7 @@ def main(spec_path):
         if s.get("dof"):
             scene.state.blur.intensity, scene.state.blur.start = 0.7, 0.55
         scene.v2 = spec.get("motion") == "v2"
+        scene.height_override = float(s.get("height", 0.0))
         if i == 0:
             scene.push = 0.24
             if scene.v2:     # the hook was a 24% zoom = the "just zooming" feel; v2 = half the zoom, more depth + slide

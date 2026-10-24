@@ -1,0 +1,265 @@
+{
+ "name": "2026-10-24-0900-dostoevsky-step-v6",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "world": [
+  "repin_barge_haulers"
+ ],
+ "emphasis": [
+  "murder",
+  "creeping",
+  "landlady",
+  "cat",
+  "scared",
+  "fear",
+  "plans",
+  "talks",
+  "waits",
+  "chatter",
+  "nothing",
+  "email",
+  "today"
+ ],
+ "quote_source": [
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett",
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett"
+ ],
+ "punch_words": [
+  "murder",
+  "landlady",
+  "email",
+  "today"
+ ],
+ "hit_words": [
+  "murder",
+  "landlady",
+  "today"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "landlady"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "duck": [
+   [
+    22.0,
+    27.5,
+    0.63
+   ]
+  ]
+ },
+ "shots": [
+  [
+   "hook",
+   "repin_barge_haulers",
+   [
+    0.43,
+    0.45
+   ],
+   "push",
+   {
+    "zoom": [
+     2.0,
+     2.25
+    ],
+    "height": 0.3
+   }
+  ],
+  [
+   "Creeping past",
+   "repin_barge_haulers",
+   [
+    0.3,
+    0.4
+   ],
+   {
+    "focus_to": [
+     0.5,
+     0.4
+    ],
+    "zoom": [
+     1.6,
+     1.65
+    ]
+   }
+  ],
+  [
+   "landlady like",
+   "hammershoi_woman_back",
+   [
+    0.5,
+    0.38
+   ],
+   {
+    "zoom": [
+     1.5,
+     1.7
+    ],
+    "gain": 1.25
+   }
+  ],
+  [
+   "Dostoevsky wrote",
+   "repin_barge_haulers",
+   [
+    0.3,
+    0.48
+   ],
+   {
+    "focus_to": [
+     0.8,
+     0.4
+    ],
+    "zoom": [
+     1.6,
+     1.3
+    ]
+   }
+  ],
+  [
+   "And he's scared",
+   "repin_barge_haulers",
+   [
+    0.14,
+    0.48
+   ],
+   "push",
+   {
+    "zoom": [
+     2.1,
+     2.3
+    ]
+   }
+  ],
+  [
+   "Taking a new step",
+   "repin_barge_haulers",
+   [
+    0.18,
+    0.62
+   ],
+   {
+    "zoom": [
+     1.6,
+     1.75
+    ]
+   }
+  ],
+  [
+   "So he does what",
+   "repin_barge_haulers",
+   [
+    0.55,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.5,
+     1.55
+    ]
+   }
+  ],
+  [
+   "Plans",
+   "repin_barge_haulers",
+   [
+    0.25,
+    0.34
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "Talks",
+   "repin_barge_haulers",
+   [
+    0.47,
+    0.42
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "Waits",
+   "repin_barge_haulers",
+   [
+    0.65,
+    0.47
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "It's because I chatter",
+   "repin_barge_haulers",
+   [
+    0.9,
+    0.45
+   ],
+   {
+    "zoom": [
+     1.5,
+     1.6
+    ]
+   }
+  ],
+  [
+   "Your landlady is",
+   "repin_barge_haulers",
+   [
+    0.21,
+    0.42
+   ],
+   {
+    "focus_to": [
+     0.42,
+     0.44
+    ],
+    "zoom": [
+     1.7,
+     1.4
+    ]
+   }
+  ],
+  [
+   "A phone call",
+   "repin_barge_haulers",
+   null,
+   {
+    "fit": true,
+    "card_text": [
+     "Ilya Repin, Barge Haulers on the Volga (1870-73)",
+     "Words: Crime and Punishment, tr. Garnett"
+    ]
+   }
+  ],
+  [
+   "And next time",
+   "repin_barge_haulers",
+   [
+    0.43,
+    0.45
+   ],
+   "pull",
+   {
+    "zoom": [
+     2.2,
+     2.0
+    ]
+   }
+  ]
+ ]
+}

@@ -78,7 +78,7 @@ def _closes_quote(w):
     return bool(re.search(r'["”][.,;:!?…]*$', w)) and not (_opens_quote(w) and len(w) <= 2)
 
 
-def chunk(words, emphasis, by_meaning=False):
+def chunk(words, emphasis, by_meaning=False, solo=()):
     """Captions of 1-4 words that never end on a small word ("the", "a", "to"...): small words move to the next
     screen with the word they belong to. A spoken quote stays one caption (kind "quote") shown whole.
     by_meaning (karaoke, critics Oct 23): an emphasis word does not force its own screen, so phrases stay whole
@@ -111,7 +111,7 @@ def chunk(words, emphasis, by_meaning=False):
         ends_short = len(cur) == 3 and re.search(r"[.,:;?!…]$", w) and len(c) <= 6 and c not in emphasis
         if by_meaning:
             full = len(cur) >= 4 and not (len(cur) == 4 and re.search(r"[.,:;?!…]$", w))
-            brk = cur and not name_tail and (full or s_ - cur[-1][2] > 0.35)
+            brk = cur and not name_tail and (full or s_ - cur[-1][2] > 0.35 or c in solo)
         else:
             brk = cur and not name_tail and not lone_small and (c in emphasis or (len(cur) >= 3 and not ends_short)
                                                                 or s_ - cur[-1][2] > 0.35)
@@ -202,6 +202,9 @@ def split_long_shots(shots, dur, max_len=4.2):
     return out
 
 
+GHOST = None   # spec "ghost": "grey" -> unspoken karaoke words in solid grey, never faint red (art director, Oct 23)
+
+
 def text_layer(words, emphasis, big, lit=None):
     """Render one caption as an RGBA image: emphasis word huge + red, others white.
     lit (karaoke captions): only the first `lit` words are bright; the rest of the chunk shows faint."""
@@ -216,10 +219,12 @@ def text_layer(words, emphasis, big, lit=None):
         size = (250 if big else 230) if em else (190 if big else 150)
         if has_em and not em:
             size = 110
-        lines.append(([(d.upper(), 255 if i < lit else 115)], size, RED if em else (255, 255, 255)))
+        lines.append(([(d.upper(), 255 if i < lit else 115)], size, RED if em else (255, 255, 255), i < lit))
     # pack consecutive plain words into lines of <= 9 characters; an emphasis word always gets its own line
     packed = []
-    for ws, size, col in lines:
+    for ws, size, col, lit_ in lines:
+        if GHOST == "grey" and not lit_:
+            ws, col = [(t, 255) for t, _ in ws], (150, 146, 140)
         n = lambda ws_: len(" ".join(t for t, _ in ws_))
         if packed and col != RED and packed[-1][2] != RED and n(packed[-1][0]) + 1 + n(ws) <= 9:
             packed[-1] = (packed[-1][0] + ws, min(packed[-1][1], size), col)
@@ -413,7 +418,8 @@ def add_hits(path, times, sr_default=44100):
 
 def main(spec_path, out_path):
     spec = json.load(open(spec_path))
-    global FX0, FY0, FX1, FY1, RADIUS, MAXW, FADE_IN, FADE_OUT, BEAT0
+    global FX0, FY0, FX1, FY1, RADIUS, MAXW, FADE_IN, FADE_OUT, BEAT0, GHOST
+    GHOST = spec.get("ghost")
     if spec.get("card"):                 # bigger painting card (Oct 22 deliberation); old specs keep the default
         FX0, FY0, FX1, FY1 = spec["card"]
     RADIUS = spec.get("radius", RADIUS)
@@ -427,7 +433,7 @@ def main(spec_path, out_path):
     voice_delay = spec.get("voice_delay", 0.15)
     for w in words:
         w[1] += voice_delay; w[2] += voice_delay
-    caps = chunk(words, emphasis, karaoke)
+    caps = chunk(words, emphasis, karaoke, {x.lower() for x in spec.get("solo_words", [])})
     caps[0]["t0"] = 0.0
     hook_card = spec.get("hook_card", 0.0)
     hook_words = []
@@ -527,7 +533,7 @@ def main(spec_path, out_path):
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
                            "-i", spec["audio"], "-i", mus,
-                           "-filter_complex", f"[1:a]adelay={int(voice_delay * 1000)}:all=1,volume=1.0[v];[2:a]volume={0.0 if spec.get('music') is False else spec.get('music_volume', 0.55)}[m];[v][m]amix=inputs=2:duration=longest:normalize=0" + (f",loudnorm=I={spec['lufs']}:TP=-1.5:LRA=11,aresample=44100" if spec.get("lufs") else "") + "[a]",
+                           "-filter_complex", f"[1:a]adelay={int(voice_delay * 1000)}:all=1,volume=1.0[v];[2:a]volume={0.0 if spec.get('music') is False else spec.get('music_volume', 0.55)}" + "".join(f",volume={f_}:enable='between(t,{a_},{b_})'" for a_, b_, f_ in spec.get("duck", [])) + "[m];[v][m]amix=inputs=2:duration=longest:normalize=0" + (f",loudnorm=I={spec['lufs']}:TP=-1.5:LRA=11,aresample=44100" if spec.get("lufs") else "") + "[a]",
                            "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-preset", "medium", "-b:v", "6M", "-maxrate", "8M", "-bufsize", "12M",
                            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart",
                            out_path], stdin=subprocess.PIPE)
@@ -549,10 +555,10 @@ def main(spec_path, out_path):
                 f0 = s.get("focus", [0.5, 0.5]); f1 = s.get("focus_to", f0); e = ease(p)
                 pic = shot_frame(imgs[s["img"]], [f0[0] + (f1[0] - f0[0]) * e, f0[1] + (f1[1] - f0[1]) * e],
                                  *s.get("zoom", [1.0, 1.12]), p, [0, 0] if "focus_to" in s else s.get("drift", [1, 0]))
-            a = np.asarray(pic, np.float32) * vign * spec.get("dim", 0.62) * gain[s["img"]]
+            a = np.asarray(pic, np.float32) * vign * spec.get("dim", 0.62) * gain[s["img"]] * s.get("gain", 1.0)
             qi = max((i for i, c in enumerate(caps) if c["t0"] <= t), default=0)
             if caps[qi]["kind"] == "quote" and t < caps[qi]["t1"] + 0.05:
-                a *= 0.6                 # darker painting behind a quote so the serif text reads on a phone
+                a *= spec.get("quote_dim", 0.6)   # darker painting behind a quote so the serif text reads on a phone
             flick = 1.0 + 0.025 * math.sin(t * 7.3) + 0.015 * math.sin(t * 13.1)
             a *= flick
             # entry flash-in for each new shot (fast fade from black)
