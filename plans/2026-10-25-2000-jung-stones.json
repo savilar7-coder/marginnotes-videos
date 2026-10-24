@@ -1,0 +1,311 @@
+{
+ "name": "2026-10-25-2000-jung-stones",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [
+  "anker_schoolboy",
+  "hodler_lake_thun",
+  "homer_children_beach"
+ ],
+ "emphasis": [
+  "lost",
+  "stones",
+  "heir",
+  "footing",
+  "boy",
+  "houses",
+  "life",
+  "cottages",
+  "castle",
+  "village",
+  "ashamed",
+  "anyway",
+  "turning",
+  "red",
+  "book",
+  "love"
+ ],
+ "quote_source": [
+  "Jung · Memories, Dreams, Reflections · tr. Winston"
+ ],
+ "punch_words": [
+  "stones",
+  "village",
+  "ashamed",
+  "love"
+ ],
+ "hit_words": [
+  "stones",
+  "ashamed"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "stones"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85
+ },
+ "shots": [
+  [
+   "hook",
+   "anker_schoolboy",
+   [
+    0.42,
+    0.24
+   ],
+   "push",
+   {
+    "zoom": [
+     1.45,
+     1.55
+    ]
+   }
+  ],
+  [
+   "he went back",
+   "anker_schoolboy",
+   [
+    0.42,
+    0.3
+   ],
+   {
+    "zoom": [
+     1.9,
+     2.0
+    ]
+   }
+  ],
+  [
+   "stones",
+   "homer_children_beach",
+   [
+    0.5,
+    0.6
+   ],
+   {
+    "zoom": [
+     1.6,
+     1.7
+    ]
+   }
+  ],
+  [
+   "He had been",
+   "hodler_lake_thun",
+   [
+    0.2,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   }
+  ],
+  [
+   "Then they split",
+   "hodler_lake_thun",
+   [
+    0.8,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   }
+  ],
+  [
+   "Then he remembered",
+   "anker_schoolboy",
+   [
+    0.42,
+    0.2
+   ],
+   {
+    "zoom": [
+     2.0,
+     2.1
+    ]
+   }
+  ],
+  [
+   "As a boy",
+   "chardin_house_of_cards",
+   [
+    0.35,
+    0.55
+   ],
+   {
+    "focus_to": [
+     0.14,
+     0.65
+    ],
+    "zoom": [
+     1.2,
+     1.6
+    ]
+   }
+  ],
+  [
+   "There is still life",
+   "chardin_house_of_cards",
+   [
+    0.45,
+    0.28
+   ],
+   {
+    "zoom": [
+     1.7,
+     1.8
+    ]
+   }
+  ],
+  [
+   "So he gathered",
+   "homer_children_beach",
+   [
+    0.5,
+    0.55
+   ],
+   {
+    "zoom": [
+     1.05,
+     1.1
+    ]
+   }
+  ],
+  [
+   "Cottages",
+   "homer_children_beach",
+   [
+    0.3,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.5,
+     1.55
+    ]
+   }
+  ],
+  [
+   "A castle",
+   "homer_children_beach",
+   [
+    0.55,
+    0.47
+   ],
+   {
+    "zoom": [
+     1.5,
+     1.55
+    ]
+   }
+  ],
+  [
+   "A whole village",
+   "homer_children_beach",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.15,
+     1.2
+    ]
+   }
+  ],
+  [
+   "He felt ashamed",
+   "anker_schoolboy",
+   [
+    0.42,
+    0.2
+   ],
+   {
+    "zoom": [
+     2.4,
+     2.5
+    ]
+   }
+  ],
+  [
+   "He did it anyway",
+   "hodler_lake_thun",
+   [
+    0.12,
+    0.45
+   ],
+   {
+    "focus_to": [
+     0.12,
+     0.6
+    ],
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "He called it",
+   "hodler_thun_stockhorn",
+   [
+    0.5,
+    0.35
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "That game freed",
+   "hodler_thun_stockhorn",
+   null,
+   {
+    "fit": true,
+    "card_text": [
+     "Anker · Hodler · Chardin · Homer",
+     "Words: Jung, Memories, Dreams, Reflections"
+    ]
+   }
+  ],
+  [
+   "his Red Book",
+   "hodler_thun_stockhorn",
+   [
+    0.5,
+    0.62
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.35
+    ]
+   }
+  ],
+  [
+   "What did you love",
+   "anker_schoolboy",
+   [
+    0.42,
+    0.24
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.45,
+     1.55
+    ]
+   }
+  ]
+ ],
+ "hook_y": 1000
+}

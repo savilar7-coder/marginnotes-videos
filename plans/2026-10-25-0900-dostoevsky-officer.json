@@ -1,0 +1,480 @@
+{
+ "name": "2026-10-25-0900-dostoevsky-officer",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "world": [
+  "munch_karl_johan_hi",
+  "fedotov_fresh_cavalier"
+ ],
+ "emphasis": [
+  "punch",
+  "ignored",
+  "officer",
+  "aside",
+  "forgiven",
+  "blows",
+  "forgive",
+  "noticing",
+  "years",
+  "name",
+  "porter",
+  "rejected",
+  "plan",
+  "gloves",
+  "hat",
+  "beaver",
+  "collar",
+  "nerve",
+  "feet",
+  "stepped",
+  "closed",
+  "shoulder",
+  "arias",
+  "war",
+  "one"
+ ],
+ "quote_source": [
+  "Dostoevsky · Notes from Underground · tr. Garnett"
+ ],
+ "punch_words": [
+  "punch",
+  "ignored",
+  "gloves",
+  "stepped",
+  "one"
+ ],
+ "hit_words": [
+  "ignored",
+  "stepped",
+  "fighting"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "ignored"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.6
+ },
+ "shots": [
+  [
+   "hook",
+   "munch_karl_johan_hi",
+   [
+    0.3,
+    0.64
+   ],
+   "push",
+   {
+    "zoom": [
+     2.0,
+     2.1
+    ]
+   }
+  ],
+  [
+   "Not being",
+   "munch_karl_johan_hi",
+   [
+    0.57,
+    0.78
+   ],
+   {
+    "zoom": [
+     2.3,
+     2.4
+    ]
+   }
+  ],
+  [
+   "An officer took",
+   "vangogh_night_cafe",
+   [
+    0.55,
+    0.55
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.35
+    ]
+   }
+  ],
+  [
+   "moved him aside",
+   "vangogh_night_cafe",
+   [
+    0.69,
+    0.45
+   ],
+   {
+    "zoom": [
+     2.0,
+     2.1
+    ]
+   }
+  ],
+  [
+   "As if he",
+   "vangogh_night_cafe",
+   [
+    0.85,
+    0.52
+   ],
+   {
+    "zoom": [
+     1.8,
+     1.9
+    ]
+   }
+  ],
+  [
+   "In Notes from",
+   "fedotov_fresh_cavalier",
+   [
+    0.62,
+    0.32
+   ],
+   {
+    "zoom": [
+     1.5,
+     1.6
+    ]
+   }
+  ],
+  [
+   "a poor clerk",
+   "fedotov_fresh_cavalier",
+   [
+    0.63,
+    0.4
+   ],
+   {
+    "zoom": [
+     1.9,
+     2.0
+    ]
+   }
+  ],
+  [
+   "I could have forgiven",
+   "fedotov_fresh_cavalier",
+   [
+    0.62,
+    0.27
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "but I could not",
+   "fedotov_fresh_cavalier",
+   [
+    0.6,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.1,
+     1.15
+    ]
+   }
+  ],
+  [
+   "So for years",
+   "munch_karl_johan_hi",
+   [
+    0.72,
+    0.62
+   ],
+   {
+    "zoom": [
+     2.0,
+     2.1
+    ]
+   }
+  ],
+  [
+   "Learned his name",
+   "munch_karl_johan_hi",
+   [
+    0.4,
+    0.62
+   ],
+   {
+    "zoom": [
+     1.6,
+     1.7
+    ]
+   }
+  ],
+  [
+   "Paid a porter",
+   "munch_karl_johan_hi",
+   [
+    0.62,
+    0.42
+   ],
+   {
+    "zoom": [
+     1.8,
+     1.9
+    ]
+   }
+  ],
+  [
+   "He wrote a story",
+   "fedotov_fresh_cavalier",
+   [
+    0.15,
+    0.85
+   ],
+   {
+    "zoom": [
+     2.0,
+     2.1
+    ]
+   }
+  ],
+  [
+   "It was rejected",
+   "fedotov_fresh_cavalier",
+   [
+    0.27,
+    0.33
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "Then the plan",
+   "caillebotte_rainy_day",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.05,
+     1.1
+    ]
+   }
+  ],
+  [
+   "On Petersburg's main",
+   "caillebotte_rainy_day",
+   [
+    0.3,
+    0.55
+   ],
+   {
+    "zoom": [
+     1.5,
+     1.55
+    ]
+   }
+  ],
+  [
+   "He borrowed money",
+   "caillebotte_rainy_day",
+   [
+    0.6,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.6,
+     1.65
+    ]
+   }
+  ],
+  [
+   "Black gloves",
+   "caillebotte_rainy_day",
+   [
+    0.64,
+    0.5
+   ],
+   {
+    "zoom": [
+     2.6,
+     2.7
+    ]
+   }
+  ],
+  [
+   "A hat",
+   "caillebotte_rainy_day",
+   [
+    0.6,
+    0.36
+   ],
+   {
+    "zoom": [
+     2.6,
+     2.7
+    ]
+   }
+  ],
+  [
+   "A beaver collar",
+   "caillebotte_rainy_day",
+   [
+    0.6,
+    0.47
+   ],
+   {
+    "zoom": [
+     2.4,
+     2.5
+    ]
+   }
+  ],
+  [
+   "Six inches away",
+   "munch_karl_johan_hi",
+   [
+    0.57,
+    0.76
+   ],
+   {
+    "zoom": [
+     2.6,
+     2.7
+    ]
+   }
+  ],
+  [
+   "He fell at",
+   "munch_karl_johan_hi",
+   [
+    0.5,
+    0.88
+   ],
+   {
+    "zoom": [
+     1.8,
+     1.9
+    ]
+   }
+  ],
+  [
+   "The officer stepped",
+   "fedotov_major_proposal",
+   [
+    0.92,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.8,
+     1.9
+    ]
+   }
+  ],
+  [
+   "At last eyes closed",
+   "munch_karl_johan_hi",
+   [
+    0.3,
+    0.62
+   ],
+   {
+    "zoom": [
+     1.6,
+     2.4
+    ]
+   }
+  ],
+  [
+   "shoulder to shoulder",
+   "munch_karl_johan_hi",
+   [
+    0.42,
+    0.6
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "The officer didn't",
+   "munch_karl_johan_hi",
+   [
+    0.72,
+    0.62
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "He went home singing",
+   "fedotov_fresh_cavalier",
+   [
+    0.6,
+    0.45
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.25
+    ]
+   }
+  ],
+  [
+   "Years of war",
+   "munch_karl_johan_hi",
+   null,
+   {
+    "fit": true,
+    "card_text": [
+     "Munch · Fedotov · Van Gogh · Caillebotte",
+     "Words: Notes from Underground, tr. Garnett"
+    ]
+   }
+  ],
+  [
+   "And only one",
+   "munch_karl_johan_hi",
+   [
+    0.72,
+    0.6
+   ],
+   {
+    "zoom": [
+     1.5,
+     1.6
+    ]
+   }
+  ],
+  [
+   "Who's your officer",
+   "munch_karl_johan_hi",
+   [
+    0.3,
+    0.64
+   ],
+   "pull",
+   {
+    "zoom": [
+     2.0,
+     2.1
+    ]
+   }
+  ]
+ ]
+}
