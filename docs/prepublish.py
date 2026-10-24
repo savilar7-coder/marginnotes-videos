@@ -63,6 +63,7 @@ def frame(path, t, w=270):
 def main(spec_path, video):
     spec = json.load(open(spec_path))
     name = os.path.basename(spec["audio"]).rsplit(".", 1)[0]
+    name = re.sub(r"-t$", "", name)   # tightened audio (docs/tighten.py) still reads scripts/<name>.txt for the quote check
     delay = spec.get("voice_delay", 0.15)
 
     # 1 file
