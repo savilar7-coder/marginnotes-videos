@@ -105,6 +105,9 @@ def main(spec_path):
     for i, s in enumerate(shots):
         t_end = shots[i + 1]["t"] if i + 1 < len(shots) else dur
         length = max(0.5, t_end - s["t"]) + 0.2
+        if s.get("focus_to") or s.get("fit"):    # camera travel / reveal shots are drawn by rebrand_render itself
+            print(f"shot {i:02d} {length:4.1f}s {'fit' if s.get('fit') else 'travel'} {s['img']}", flush=True)
+            continue
         src = Image.open(s["img"]).convert("RGB")
         z0 = s.get("zoom", [1.0, 1.12])[0]
         frame = crop(src, s.get("focus", [0.5, 0.5]), z0)

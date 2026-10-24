@@ -1,0 +1,290 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "scared",
+  "murder",
+  "landlady",
+  "today"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "scared",
+  "landlady"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-10-24-0900-dostoevsky-step-v4-t.mp3",
+ "align": "audio/2026-10-24-0900-dostoevsky-step-v4-t.json",
+ "hook_until": 0.0,
+ "thinker": "dostoevsky",
+ "emphasis": [
+  "lazy",
+  "scared",
+  "murder",
+  "afraid",
+  "fear",
+  "plans",
+  "talks",
+  "waits",
+  "chatter",
+  "nothing",
+  "landlady",
+  "stairs",
+  "today"
+ ],
+ "quote_source": [
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett",
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "hook",
+   "zoom": [
+    2.0,
+    2.1
+   ],
+   "focus": [
+    0.21,
+    0.44
+   ],
+   "move": "push"
+  },
+  {
+   "t": 1.03,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "You're scared",
+   "zoom": [
+    2.2,
+    2.3
+   ],
+   "focus": [
+    0.14,
+    0.5
+   ]
+  },
+  {
+   "t": 2.66,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Dostoevsky gave",
+   "zoom": [
+    1.4,
+    1.5
+   ],
+   "focus": [
+    0.2,
+    0.5
+   ],
+   "focus_to": [
+    0.43,
+    0.5
+   ]
+  },
+  {
+   "t": 5.15,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "a man on his way",
+   "zoom": [
+    2.1,
+    2.2
+   ],
+   "focus": [
+    0.43,
+    0.45
+   ],
+   "move": "push"
+  },
+  {
+   "t": 7.41,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Wait till you hear",
+   "zoom": [
+    1.7,
+    2.5
+   ],
+   "focus": [
+    0.43,
+    0.48
+   ],
+   "focus_to": [
+    0.43,
+    0.38
+   ]
+  },
+  {
+   "t": 10.48,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Taking a new step",
+   "zoom": [
+    1.3,
+    1.35
+   ],
+   "focus": [
+    0.8,
+    0.4
+   ]
+  },
+  {
+   "t": 16.18,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "So he does what",
+   "zoom": [
+    1.5,
+    1.55
+   ],
+   "focus": [
+    0.55,
+    0.5
+   ]
+  },
+  {
+   "t": 18.86,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Plans",
+   "zoom": [
+    2.2,
+    2.3
+   ],
+   "focus": [
+    0.25,
+    0.42
+   ]
+  },
+  {
+   "t": 19.72,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Talks",
+   "zoom": [
+    2.2,
+    2.3
+   ],
+   "focus": [
+    0.47,
+    0.42
+   ]
+  },
+  {
+   "t": 21.24,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Waits",
+   "zoom": [
+    2.2,
+    2.3
+   ],
+   "focus": [
+    0.65,
+    0.47
+   ]
+  },
+  {
+   "t": 22.51,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "It's because I chatter",
+   "zoom": [
+    1.0,
+    1.05
+   ],
+   "focus": [
+    0.93,
+    0.5
+   ]
+  },
+  {
+   "t": 24.98,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "And what scares him",
+   "zoom": [
+    1.2,
+    1.9
+   ],
+   "focus": [
+    0.8,
+    0.5
+   ],
+   "focus_to": [
+    0.43,
+    0.42
+   ]
+  },
+  {
+   "t": 29.18,
+   "img": "assets/hammershoi_woman_back.jpg",
+   "line": "His landlady",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 32.59,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Your step is just",
+   "zoom": [
+    2.0,
+    1.0
+   ],
+   "focus": [
+    0.21,
+    0.5
+   ],
+   "focus_to": [
+    0.42,
+    0.5
+   ]
+  },
+  {
+   "t": 35.74,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "Take it today",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "fit": true,
+   "card_text": [
+    "Ilya Repin, Barge Haulers on the Volga (1870-73)",
+    "Words: Crime and Punishment, tr. Garnett"
+   ]
+  },
+  {
+   "t": 37.41,
+   "img": "assets/repin_barge_haulers.jpg",
+   "line": "And next time",
+   "zoom": [
+    2.0,
+    2.1
+   ],
+   "focus": [
+    0.21,
+    0.44
+   ],
+   "move": "pull"
+  }
+ ],
+ "world": [
+  "repin_barge_haulers"
+ ]
+}

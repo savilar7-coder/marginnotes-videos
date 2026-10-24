@@ -39,8 +39,8 @@ def main(plan_path):
         s = {"t": t, "img": f"assets/{img}.jpg", "line": anchor, "zoom": [1.0, 1.12]}
         if focus:
             s["focus"] = focus
-        if extra:                       # optional 4th item: camera move (docs/motion.py), e.g. "dolly"
-            s["move"] = extra[0]
+        for e in extra:                 # optional: camera move (docs/motion.py) and/or a dict of shot options
+            s.update(e) if isinstance(e, dict) else s.__setitem__("move", e)
         shots.append(s)
     # Oct 22 standard: whole hook on frame 0, ~-14 LUFS; Oct 23: style B (SOP)
     spec = {"bpm": 76, "snap": False, "dim": plan.get("dim", 0.8), "tail": 0.35, "vignette": 0.5,
@@ -54,6 +54,8 @@ def main(plan_path):
             "audio": f"audio/{voice}.mp3", "align": f"audio/{voice}.json", "hook_until": 0.0,
             "thinker": plan["thinker"], "emphasis": plan["emphasis"], "quote_source": plan["quote_source"],
             "shots": shots}
+    if plan.get("world"):           # one painting, one story: the world painting(s) may return within a video
+        spec["world"] = plan["world"]
     spec.update(plan.get("spec_extra", {}))   # renderer options for a test (e.g. delivery B, Oct 23)
     out = f"specs/{name}.json"
     json.dump(spec, open(out, "w"), indent=1)

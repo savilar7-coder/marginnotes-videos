@@ -16,6 +16,9 @@ delivery test B (Oct 23, Sergio: motion, tidiness, attention beats):
           "radius": 0, "border": false, "brand_y": 1480 -> full-screen painting (card [0, 0, 1080, 1920])
           "punch_words": ["shadow", ...], "punch": 0.06 -> quick zoom-in on the painting on these words only
           "hit_words": ["shadow", ...] -> low boom + short swell under these words (synthesised, no samples)
+one painting, one story (Oct 23 concept upgrade): a shot may "focus_to": [x, y] (the camera travels across the same
+painting from "focus" to "focus_to" while "zoom" goes z0 -> z1; no motion clip), "fit": true (the whole painting,
+letterboxed over a dark blurred copy = the reveal) and "card_text": ["line 1", "line 2"] (the end card: painting + source).
 ElevenLabs v3 audio tags in the script ("[pause]", "[whispers]") are not spoken and never become captions.
 """
 import json, math, re, subprocess, sys, wave
@@ -358,6 +361,31 @@ class ClipReader:
         return self.last
 
 
+def fit_frame(img, p):
+    """The whole painting, fitted to the frame width and placed low, over a dark blurred copy (the reveal shot)."""
+    fw, fh = FX1 - FX0, FY1 - FY0
+    iw, ih = img.size
+    sc = max(fw / iw, fh / ih)
+    bg = img.resize((int(iw * sc) + 1, int(ih * sc) + 1)).crop((0, 0, fw, fh)).filter(ImageFilter.GaussianBlur(30))
+    bg = Image.eval(bg, lambda v: int(v * 0.35))
+    k = 1.0 + 0.04 * ease(p)
+    w = int(fw * 0.96 * k); h = int(ih * w / iw)
+    fg = img.resize((w, h), Image.BICUBIC)
+    bg.paste(fg, ((fw - w) // 2, int(fh * 0.65) - h // 2))
+    return bg
+
+
+def card_layer(lines):
+    """End card text: painting title (serif italic) + source line, centred, for the reveal shot."""
+    f1, f2 = ImageFont.truetype(QFONT, 46), ImageFont.truetype(SFONT, 30)
+    img = Image.new("RGBA", (W, 220), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    d.text((W // 2, 60), lines[0], font=f1, fill=(240, 232, 214, 255), anchor="mm")
+    if len(lines) > 1:
+        d.text((W // 2, 130), lines[1].upper(), font=f2, fill=(200, 190, 175, 255), anchor="mm")
+    return img
+
+
 def add_hits(path, times, sr_default=44100):
     """Mix a soft low boom (with a short noise swell into it) under each time into the music wav."""
     with wave.open(path) as w:
@@ -515,9 +543,12 @@ def main(spec_path, out_path):
             p = (t - s["t"]) / max(0.1, t_end - s["t"])
             if s.get("clip"):
                 pic = clips.get(s["clip"], int((t - s["t"]) * FPS))
+            elif s.get("fit"):
+                pic = fit_frame(imgs[s["img"]], p)
             else:
-                pic = shot_frame(imgs[s["img"]], s.get("focus", [0.5, 0.5]), *s.get("zoom", [1.0, 1.12]), p,
-                                 s.get("drift", [1, 0]))
+                f0 = s.get("focus", [0.5, 0.5]); f1 = s.get("focus_to", f0); e = ease(p)
+                pic = shot_frame(imgs[s["img"]], [f0[0] + (f1[0] - f0[0]) * e, f0[1] + (f1[1] - f0[1]) * e],
+                                 *s.get("zoom", [1.0, 1.12]), p, [0, 0] if "focus_to" in s else s.get("drift", [1, 0]))
             a = np.asarray(pic, np.float32) * vign * spec.get("dim", 0.62) * gain[s["img"]]
             qi = max((i for i, c in enumerate(caps) if c["t0"] <= t), default=0)
             if caps[qi]["kind"] == "quote" and t < caps[qi]["t1"] + 0.05:
@@ -561,6 +592,17 @@ def main(spec_path, out_path):
                 al = L2.getchannel("A").point(lambda a, m=min(1.0, p * 2.5): int(a * m))
                 L2 = L2.copy(); L2.putalpha(al)
             frame.paste(L2, ((W - L2.width) // 2, TEXT_Y - L2.height // 2 + dy), L2)
+        # end card on the reveal shot (painting + source)
+        if t >= hook_until and shots[max(i for i, s_ in enumerate(shots) if s_["t"] <= t)].get("card_text"):
+            st_ = shots[max(i for i, s_ in enumerate(shots) if s_["t"] <= t)]
+            key = ("card", tuple(st_["card_text"]))
+            if key not in layers:
+                layers[key] = card_layer(st_["card_text"])
+            cl = layers[key]
+            al = min(1.0, (t - st_["t"]) / 0.4)
+            if al < 1.0:
+                cl = cl.copy(); cl.putalpha(cl.getchannel("A").point(lambda a, m=al: int(a * m)))
+            frame.paste(cl, (0, 330), cl)
         # brand mark
         if t >= hook_until:
             f = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 26)

@@ -149,6 +149,7 @@ def main(spec_path, video):
     imgs = [os.path.basename(s["img"]).rsplit(".", 1)[0] for s in shots]
     runs = [im for i, im in enumerate(imgs) if i == 0 or im != imgs[i - 1]]
     body = runs[:-1] if len(runs) > 2 and runs[-1] == runs[0] else runs
+    body = [im for im in body if im not in spec.get("world", [])]   # the world painting may return (one painting, one story)
     over = {im: n for im, n in Counter(body).items() if n > 1}
     res("PASS" if not over else "FAIL", "art", f"{len(set(runs))} paintings in {len(runs)} shots"
         + (f"; used more than once: {over}" if over else ""))

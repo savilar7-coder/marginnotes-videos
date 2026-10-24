@@ -1,0 +1,274 @@
+{
+ "name": "2026-10-24-0900-dostoevsky-step-v4",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "world": [
+  "repin_barge_haulers"
+ ],
+ "emphasis": [
+  "lazy",
+  "scared",
+  "murder",
+  "afraid",
+  "fear",
+  "plans",
+  "talks",
+  "waits",
+  "chatter",
+  "nothing",
+  "landlady",
+  "stairs",
+  "today"
+ ],
+ "quote_source": [
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett",
+  "Dostoevsky \u00b7 Crime and Punishment I.1 \u00b7 tr. Garnett"
+ ],
+ "punch_words": [
+  "scared",
+  "murder",
+  "landlady",
+  "today"
+ ],
+ "hit_words": [
+  "scared",
+  "landlady"
+ ],
+ "shots": [
+  [
+   "hook",
+   "repin_barge_haulers",
+   [
+    0.21,
+    0.44
+   ],
+   "push",
+   {
+    "zoom": [
+     2.0,
+     2.1
+    ]
+   }
+  ],
+  [
+   "You're scared",
+   "repin_barge_haulers",
+   [
+    0.14,
+    0.5
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "Dostoevsky gave",
+   "repin_barge_haulers",
+   [
+    0.2,
+    0.5
+   ],
+   {
+    "focus_to": [
+     0.43,
+     0.5
+    ],
+    "zoom": [
+     1.4,
+     1.5
+    ]
+   }
+  ],
+  [
+   "a man on his way",
+   "repin_barge_haulers",
+   [
+    0.43,
+    0.45
+   ],
+   "push",
+   {
+    "zoom": [
+     2.1,
+     2.2
+    ]
+   }
+  ],
+  [
+   "Wait till you hear",
+   "repin_barge_haulers",
+   [
+    0.43,
+    0.48
+   ],
+   {
+    "focus_to": [
+     0.43,
+     0.38
+    ],
+    "zoom": [
+     1.7,
+     2.5
+    ]
+   }
+  ],
+  [
+   "Taking a new step",
+   "repin_barge_haulers",
+   [
+    0.8,
+    0.4
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.35
+    ]
+   }
+  ],
+  [
+   "So he does what",
+   "repin_barge_haulers",
+   [
+    0.55,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.5,
+     1.55
+    ]
+   }
+  ],
+  [
+   "Plans",
+   "repin_barge_haulers",
+   [
+    0.25,
+    0.42
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "Talks",
+   "repin_barge_haulers",
+   [
+    0.47,
+    0.42
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "Waits",
+   "repin_barge_haulers",
+   [
+    0.65,
+    0.47
+   ],
+   {
+    "zoom": [
+     2.2,
+     2.3
+    ]
+   }
+  ],
+  [
+   "It's because I chatter",
+   "repin_barge_haulers",
+   [
+    0.93,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   }
+  ],
+  [
+   "And what scares him",
+   "repin_barge_haulers",
+   [
+    0.8,
+    0.5
+   ],
+   {
+    "focus_to": [
+     0.43,
+     0.42
+    ],
+    "zoom": [
+     1.2,
+     1.9
+    ]
+   }
+  ],
+  [
+   "His landlady",
+   "hammershoi_woman_back",
+   [
+    0.5,
+    0.4
+   ]
+  ],
+  [
+   "Your step is just",
+   "repin_barge_haulers",
+   [
+    0.21,
+    0.5
+   ],
+   {
+    "focus_to": [
+     0.42,
+     0.5
+    ],
+    "zoom": [
+     2.0,
+     1.0
+    ]
+   }
+  ],
+  [
+   "Take it today",
+   "repin_barge_haulers",
+   null,
+   {
+    "fit": true,
+    "card_text": [
+     "Ilya Repin, Barge Haulers on the Volga (1870-73)",
+     "Words: Crime and Punishment, tr. Garnett"
+    ]
+   }
+  ],
+  [
+   "And next time",
+   "repin_barge_haulers",
+   [
+    0.21,
+    0.44
+   ],
+   "pull",
+   {
+    "zoom": [
+     2.0,
+     2.1
+    ]
+   }
+  ]
+ ]
+}
