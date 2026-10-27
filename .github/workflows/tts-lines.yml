@@ -47,11 +47,12 @@ jobs:
           else:
               lines = json.loads(base64.b64decode(os.environ["LINES"]).decode("utf-8"))
               os.makedirs("out", exist_ok=True)
-              vs = {"stability": 0.45, "similarity_boost": 0.8, "style": 0.15, "use_speaker_boost": True}
+              v3 = os.environ["MODEL"] == "eleven_v3"  # v3: stability 0.0/0.5/1.0 only, direction comes from [tags] in the text
+              vs = {"stability": 0.0, "similarity_boost": 0.8, "use_speaker_boost": True} if v3 else                    {"stability": 0.45, "similarity_boost": 0.8, "style": 0.15, "use_speaker_boost": True}
               for i, t in enumerate(lines):
-                  body = {"text": t, "model_id": os.environ["MODEL"], "voice_settings": vs,
-                          "previous_text": lines[i - 1] if i else None,
-                          "next_text": lines[i + 1] if i + 1 < len(lines) else None}
+                  body = {"text": t, "model_id": os.environ["MODEL"], "voice_settings": vs}
+                  if not v3:
+                      body.update(previous_text=lines[i - 1] if i else None, next_text=lines[i + 1] if i + 1 < len(lines) else None)
                   open(f"out/line{i}.mp3", "wb").write(call(
                       f"https://api.elevenlabs.io/v1/text-to-speech/{os.environ['VOICE']}?output_format=mp3_44100_128", body, raw=True))
               print("made", len(lines), "lines")
