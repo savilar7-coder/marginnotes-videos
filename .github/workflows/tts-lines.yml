@@ -1,0 +1,61 @@
+name: tts-lines
+# On-demand narration: one mp3 per line, returned as a 1-day artifact (nothing committed, text never printed).
+# mode=search lists library voices for a query; mode=add adds a library voice (owner_id/voice_id); mode=speak makes audio.
+on:
+  workflow_dispatch:
+    inputs:
+      mode: {required: true, default: speak}
+      voice: {required: false, default: ""}
+      model: {required: false, default: eleven_multilingual_v2}
+      lines_b64: {required: false, default: ""}
+      query: {required: false, default: ""}
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ElevenLabs
+        env:
+          XI_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          MODE: ${{ inputs.mode }}
+          VOICE: ${{ inputs.voice }}
+          MODEL: ${{ inputs.model }}
+          LINES: ${{ inputs.lines_b64 }}
+          QUERY: ${{ inputs.query }}
+        run: |
+          python3 - <<'PY'
+          import os, json, base64, urllib.request, urllib.error
+          key, mode = os.environ["XI_KEY"], os.environ["MODE"]
+          def call(url, body=None, raw=False):
+              req = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None,
+                    headers={"xi-api-key": key, "Content-Type": "application/json"})
+              try:
+                  r = urllib.request.urlopen(req, timeout=300)
+                  return r.read() if raw else json.load(r)
+              except urllib.error.HTTPError as e:
+                  print("HTTP", e.code, e.read()[:500]); raise
+          if mode == "search":
+              r = call("https://api.elevenlabs.io/v1/shared-voices?page_size=40&" + os.environ["QUERY"])
+              for v in r.get("voices", []):
+                  print(v.get("name"), "|", v.get("accent"), v.get("gender"), v.get("age"), v.get("use_case"), "|",
+                        v.get("public_owner_id"), v.get("voice_id"), "| uses", v.get("cloned_by_count"), "|",
+                        (v.get("description") or "")[:120].replace("\n", " "))
+          elif mode == "add":
+              owner, vid = os.environ["VOICE"].split("/")
+              print(call(f"https://api.elevenlabs.io/v1/voices/add/{owner}/{vid}", {"new_name": "es-mx narrator"}))
+          else:
+              lines = json.loads(base64.b64decode(os.environ["LINES"]).decode("utf-8"))
+              os.makedirs("out", exist_ok=True)
+              vs = {"stability": 0.45, "similarity_boost": 0.8, "style": 0.15, "use_speaker_boost": True}
+              for i, t in enumerate(lines):
+                  body = {"text": t, "model_id": os.environ["MODEL"], "voice_settings": vs,
+                          "previous_text": lines[i - 1] if i else None,
+                          "next_text": lines[i + 1] if i + 1 < len(lines) else None}
+                  open(f"out/line{i}.mp3", "wb").write(call(
+                      f"https://api.elevenlabs.io/v1/text-to-speech/{os.environ['VOICE']}?output_format=mp3_44100_128", body, raw=True))
+              print("made", len(lines), "lines")
+          PY
+      - if: inputs.mode == 'speak'
+        uses: actions/upload-artifact@v4
+        with: {name: audio, path: out/, retention-days: 1}
