@@ -1,0 +1,111 @@
+{
+ "name": "2026-10-31-2000-jung-mirror",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [
+  "hals_malle_babbe",
+  "waterhouse_echo_narcissus",
+  "ensor_intrigue"
+ ],
+ "emphasis": [
+  "annoys",
+  "mirror",
+  "Jung",
+  "projection",
+  "parts",
+  "loud",
+  "lazy",
+  "show-off",
+  "stand",
+  "won't",
+  "right",
+  "useful",
+  "skin",
+  "showing"
+ ],
+ "quote_source": [
+  "Jung · Memories, Dreams, Reflections · his idea, in plain words"
+ ],
+ "punch_words": [
+  "mirror",
+  "projection",
+  "useful"
+ ],
+ "hit_words": [
+  "mirror",
+  "projection"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "mirror"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85
+ },
+ "shots": [
+  [
+   "hook",
+   "hals_malle_babbe",
+   [
+    0.45,
+    0.34
+   ],
+   "push",
+   {
+    "zoom": [
+     1.5,
+     1.6
+    ]
+   }
+  ],
+  [
+   "That's Carl",
+   "ensor_self_masks",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "He called it",
+   "waterhouse_echo_narcissus",
+   [
+    0.7,
+    0.64
+   ]
+  ],
+  [
+   "The loud one",
+   "ensor_intrigue",
+   [
+    0.5,
+    0.42
+   ]
+  ],
+  [
+   "Sometimes we",
+   "caravaggio_lizard",
+   [
+    0.5,
+    0.4
+   ]
+  ],
+  [
+   "That doesn't make",
+   "goya_sleep_reason",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "So next time",
+   "waterhouse_echo_narcissus",
+   [
+    0.66,
+    0.58
+   ],
+   "pull"
+  ]
+ ]
+}
