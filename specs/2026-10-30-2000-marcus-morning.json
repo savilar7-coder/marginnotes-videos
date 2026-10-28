@@ -1,0 +1,193 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "rude",
+  "twist",
+  "angry",
+  "power"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "rude",
+  "angry"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-10-30-2000-marcus-morning-t.mp3",
+ "align": "audio/2026-10-30-2000-marcus-morning-t.json",
+ "hook_until": 0.0,
+ "thinker": "marcus",
+ "emphasis": [
+  "emperor",
+  "morning",
+  "rude",
+  "Rome",
+  "busybody",
+  "ungrateful",
+  "arrogant",
+  "deceitful",
+  "envious",
+  "unsocial",
+  "twist",
+  "angry",
+  "hate",
+  "credit",
+  "cuts",
+  "texts",
+  "power",
+  "coffee",
+  "decide"
+ ],
+ "quote_source": [
+  "Marcus Aurelius \u00b7 Meditations II.1 \u00b7 tr. George Long"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/david_horatii.jpg",
+   "line": "hook",
+   "zoom": [
+    1.5,
+    1.6
+   ],
+   "focus": [
+    0.58,
+    0.34
+   ],
+   "move": "push"
+  },
+  {
+   "t": 4.89,
+   "img": "assets/gerome_ave_caesar.jpg",
+   "line": "Marcus Aurelius ran",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.55,
+    0.45
+   ]
+  },
+  {
+   "t": 11.64,
+   "img": "assets/lorrain_seaport_sunset.jpg",
+   "line": "Begin the morning",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.47
+   ]
+  },
+  {
+   "t": 16.94,
+   "img": "assets/gerome_pollice_verso.jpg",
+   "line": "the ungrateful",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.75,
+    0.24
+   ]
+  },
+  {
+   "t": 23.81,
+   "img": "assets/alma_tadema_reading_homer.jpg",
+   "line": "Then the twist",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.82,
+    0.32
+   ]
+  },
+  {
+   "t": 29.66,
+   "img": "assets/david_horatii.jpg",
+   "line": "Nor can I",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.42,
+    0.42
+   ]
+  },
+  {
+   "t": 33.34,
+   "img": "assets/gerome_pollice_verso.jpg",
+   "line": "The coworker",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.38,
+    0.62
+   ]
+  },
+  {
+   "t": 40.5,
+   "img": "assets/church_twilight.jpg",
+   "line": "Expected, they",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 44.42,
+   "img": "assets/lorrain_seaport_sunset.jpg",
+   "line": "So tomorrow",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.56,
+    0.4
+   ],
+   "move": "pull"
+  }
+ ],
+ "world": [
+  "david_horatii",
+  "lorrain_seaport_sunset",
+  "gerome_pollice_verso"
+ ],
+ "solo_words": [
+  "rude"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85
+}
