@@ -1,0 +1,165 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "laugh",
+  "sneer",
+  "going",
+  "admire"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "laugh",
+  "admire"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-02-2000-epictetus-laugh-t.mp3",
+ "align": "audio/2026-11-02-2000-epictetus-laugh-t.json",
+ "hook_until": 0.0,
+ "thinker": "epictetus",
+ "emphasis": [
+  "new",
+  "laugh",
+  "slave",
+  "teacher",
+  "warned",
+  "multitude",
+  "sneer",
+  "gym",
+  "project",
+  "thirty-five",
+  "argue",
+  "superior",
+  "going",
+  "persistent",
+  "ridiculed",
+  "admire",
+  "Start"
+ ],
+ "quote_source": [
+  "Epictetus \u00b7 Enchiridion XXII \u00b7 tr. Higginson"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/ribera_archimedes.jpg",
+   "line": "hook",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "focus": [
+    0.5,
+    0.46
+   ],
+   "move": "push"
+  },
+  {
+   "t": 3.21,
+   "img": "assets/millet_man_hoe.jpg",
+   "line": "Epictetus, a former",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.55,
+    0.32
+   ]
+  },
+  {
+   "t": 11.36,
+   "img": "assets/waterhouse_diogenes.jpg",
+   "line": "Prepare yourself",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.42,
+    0.26
+   ]
+  },
+  {
+   "t": 17.18,
+   "img": "assets/millet_sower.jpg",
+   "line": "The gym",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "t": 21.71,
+   "img": "assets/waterhouse_diogenes.jpg",
+   "line": "Don't argue",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.68,
+    0.72
+   ]
+  },
+  {
+   "t": 27.51,
+   "img": "assets/breton_song_lark.jpg",
+   "line": "If you are persistent",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.46,
+    0.32
+   ]
+  },
+  {
+   "t": 35.1,
+   "img": "assets/ribera_archimedes.jpg",
+   "line": "So go ahead",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "move": "pull"
+  }
+ ],
+ "world": [
+  "ribera_archimedes",
+  "waterhouse_diogenes",
+  "millet_sower"
+ ],
+ "solo_words": [
+  "laugh"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85
+}
