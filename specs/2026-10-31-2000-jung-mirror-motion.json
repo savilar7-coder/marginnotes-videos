@@ -1,0 +1,277 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "mirror",
+  "projection",
+  "useful"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "mirror",
+  "projection"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-10-31-2000-jung-mirror-t.mp3",
+ "align": "audio/2026-10-31-2000-jung-mirror-t.json",
+ "hook_until": 0.0,
+ "thinker": "jung",
+ "emphasis": [
+  "annoys",
+  "mirror",
+  "Jung",
+  "projection",
+  "parts",
+  "loud",
+  "lazy",
+  "show-off",
+  "stand",
+  "won't",
+  "right",
+  "useful",
+  "skin",
+  "showing"
+ ],
+ "quote_source": [
+  "Jung \u00b7 Memories, Dreams, Reflections \u00b7 his idea, in plain words"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/hals_malle_babbe.jpg",
+   "line": "hook",
+   "zoom": [
+    1.15,
+    1.25
+   ],
+   "focus": [
+    0.42,
+    0.42
+   ],
+   "move": "push",
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot00.mp4"
+  },
+  {
+   "t": 3.38,
+   "img": "assets/ensor_self_masks.jpg",
+   "line": "That's Carl",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot01.mp4"
+  },
+  {
+   "t": 6.77,
+   "img": "assets/ensor_self_masks.jpg",
+   "line": "That's Carl",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot02.mp4"
+  },
+  {
+   "t": 10.16,
+   "img": "assets/waterhouse_echo_narcissus.jpg",
+   "line": "He called it",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.7,
+    0.64
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot03.mp4"
+  },
+  {
+   "t": 13.695,
+   "img": "assets/waterhouse_echo_narcissus.jpg",
+   "line": "He called it",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.7,
+    0.64
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot04.mp4"
+  },
+  {
+   "t": 17.23,
+   "img": "assets/ensor_intrigue.jpg",
+   "line": "The loud one",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot05.mp4"
+  },
+  {
+   "t": 19.45,
+   "img": "assets/ensor_intrigue.jpg",
+   "line": "The loud one",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot06.mp4"
+  },
+  {
+   "t": 21.67,
+   "img": "assets/caravaggio_lizard.jpg",
+   "line": "Sometimes we",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot07.mp4"
+  },
+  {
+   "t": 24.26,
+   "img": "assets/caravaggio_lizard.jpg",
+   "line": "Sometimes we",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot08.mp4"
+  },
+  {
+   "t": 26.85,
+   "img": "assets/caravaggio_lizard.jpg",
+   "line": "That doesn't make",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.62,
+    0.62
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot09.mp4"
+  },
+  {
+   "t": 28.955,
+   "img": "assets/caravaggio_lizard.jpg",
+   "line": "That doesn't make",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.62,
+    0.62
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot10.mp4"
+  },
+  {
+   "t": 31.06,
+   "img": "assets/waterhouse_echo_narcissus.jpg",
+   "line": "So next time",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.66,
+    0.58
+   ],
+   "move": "pull",
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot11.mp4"
+  },
+  {
+   "t": 33.35,
+   "img": "assets/waterhouse_echo_narcissus.jpg",
+   "line": "So next time",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.66,
+    0.58
+   ],
+   "move": "pull",
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-31-2000-jung-mirror/shot12.mp4"
+  }
+ ],
+ "world": [
+  "hals_malle_babbe",
+  "waterhouse_echo_narcissus",
+  "ensor_intrigue"
+ ],
+ "solo_words": [
+  "mirror"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85
+}
