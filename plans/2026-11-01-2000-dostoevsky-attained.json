@@ -1,0 +1,121 @@
+{
+ "name": "2026-11-01-2000-dostoevsky-attained",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "world": [
+  "pukirev_unequal_marriage",
+  "titian_sisyphus",
+  "perov_troika"
+ ],
+ "emphasis": [
+  "finally",
+  "nothing",
+  "Underground",
+  "bitter",
+  "process",
+  "attaining",
+  "attained",
+  "chase",
+  "promotion",
+  "phone",
+  "fun",
+  "comical",
+  "prize",
+  "climb",
+  "getting"
+ ],
+ "quote_source": [
+  "Dostoevsky · Notes from Underground · tr. Garnett"
+ ],
+ "punch_words": [
+  "nothing",
+  "attained",
+  "fun",
+  "climb"
+ ],
+ "hit_words": [
+  "nothing",
+  "climb"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "nothing"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85
+ },
+ "shots": [
+  [
+   "hook",
+   "pukirev_unequal_marriage",
+   [
+    0.58,
+    0.44
+   ],
+   "push",
+   {
+    "zoom": [
+     1.6,
+     1.7
+    ]
+   }
+  ],
+  [
+   "Dostoevsky gave",
+   "kramskoi_unknown_woman",
+   [
+    0.5,
+    0.36
+   ]
+  ],
+  [
+   "He loves the",
+   "titian_sisyphus",
+   [
+    0.5,
+    0.4
+   ]
+  ],
+  [
+   "but does not",
+   "pukirev_unequal_marriage",
+   [
+    0.36,
+    0.36
+   ]
+  ],
+  [
+   "The chase",
+   "perov_troika",
+   [
+    0.52,
+    0.56
+   ]
+  ],
+  [
+   "Man is a comical",
+   "daumier_third_class",
+   [
+    0.38,
+    0.42
+   ]
+  ],
+  [
+   "Maybe the point",
+   "titian_sisyphus",
+   [
+    0.5,
+    0.62
+   ]
+  ],
+  [
+   "So enjoy",
+   "perov_troika",
+   [
+    0.44,
+    0.46
+   ],
+   "pull"
+  ]
+ ]
+}
