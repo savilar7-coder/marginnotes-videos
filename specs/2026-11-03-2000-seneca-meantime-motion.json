@@ -1,0 +1,261 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "already",
+  "fickle",
+  "meantime",
+  "sleep"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "already",
+  "meantime"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-03-2000-seneca-meantime-t.mp3",
+ "align": "audio/2026-11-03-2000-seneca-meantime-t.json",
+ "hook_until": 0.0,
+ "thinker": "seneca",
+ "emphasis": [
+  "bad",
+  "news",
+  "already",
+  "suffering",
+  "sleep",
+  "never",
+  "fickle",
+  "perhaps",
+  "meantime",
+  "email",
+  "test",
+  "Monday",
+  "tonight",
+  "happened",
+  "then"
+ ],
+ "quote_source": [
+  "Seneca \u00b7 Letters to Lucilius, 13 \u00b7 tr. Gummere"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/vermeer_woman_letter.jpg",
+   "line": "hook",
+   "zoom": [
+    1.5,
+    1.6
+   ],
+   "focus": [
+    0.46,
+    0.3
+   ],
+   "move": "push",
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot00.mp4"
+  },
+  {
+   "t": 3.82,
+   "img": "assets/terborch_woman_writing.jpg",
+   "line": "Seneca wrote",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot01.mp4"
+  },
+  {
+   "t": 6.99,
+   "img": "assets/terborch_woman_writing.jpg",
+   "line": "Seneca wrote",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot02.mp4"
+  },
+  {
+   "t": 10.16,
+   "img": "assets/bocklin_isle_dead.jpg",
+   "line": "Even bad fortune",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot03.mp4"
+  },
+  {
+   "t": 11.96,
+   "img": "assets/aivazovsky_moonlit.jpg",
+   "line": "Perhaps it will come",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.42,
+    0.46
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot04.mp4"
+  },
+  {
+   "t": 14.725,
+   "img": "assets/aivazovsky_moonlit.jpg",
+   "line": "Perhaps it will come",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.42,
+    0.46
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot05.mp4"
+  },
+  {
+   "t": 17.49,
+   "img": "assets/vermeer_woman_letter.jpg",
+   "line": "The email",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot06.mp4"
+  },
+  {
+   "t": 19.795,
+   "img": "assets/vermeer_woman_letter.jpg",
+   "line": "The email",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot07.mp4"
+  },
+  {
+   "t": 22.1,
+   "img": "assets/whistler_nocturne.jpg",
+   "line": "Right now",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot08.mp4"
+  },
+  {
+   "t": 24.375,
+   "img": "assets/whistler_nocturne.jpg",
+   "line": "Right now",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot09.mp4"
+  },
+  {
+   "t": 26.65,
+   "img": "assets/friedrich_monk_sea.jpg",
+   "line": "So sleep",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.33,
+    0.62
+   ],
+   "move": "pull",
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot10.mp4"
+  },
+  {
+   "t": 29.486,
+   "img": "assets/friedrich_monk_sea.jpg",
+   "line": "So sleep",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.33,
+    0.62
+   ],
+   "move": "pull",
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-03-2000-seneca-meantime/shot11.mp4"
+  }
+ ],
+ "world": [
+  "vermeer_woman_letter",
+  "aivazovsky_moonlit",
+  "friedrich_monk_sea"
+ ],
+ "solo_words": [
+  "already"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85
+}
