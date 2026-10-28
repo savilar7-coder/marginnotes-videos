@@ -1,0 +1,115 @@
+{
+ "name": "2026-11-02-2000-epictetus-laugh",
+ "thinker": "epictetus",
+ "audio_suffix": "-t",
+ "world": [
+  "ribera_archimedes",
+  "waterhouse_diogenes",
+  "millet_sower"
+ ],
+ "emphasis": [
+  "new",
+  "laugh",
+  "slave",
+  "teacher",
+  "warned",
+  "multitude",
+  "sneer",
+  "gym",
+  "project",
+  "thirty-five",
+  "argue",
+  "superior",
+  "going",
+  "persistent",
+  "ridiculed",
+  "admire",
+  "Start"
+ ],
+ "quote_source": [
+  "Epictetus · Enchiridion XXII · tr. Higginson"
+ ],
+ "punch_words": [
+  "laugh",
+  "sneer",
+  "going",
+  "admire"
+ ],
+ "hit_words": [
+  "laugh",
+  "admire"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "laugh"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85
+ },
+ "shots": [
+  [
+   "hook",
+   "ribera_archimedes",
+   [
+    0.5,
+    0.34
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Epictetus, a former",
+   "gerome_diogenes",
+   [
+    0.45,
+    0.42
+   ]
+  ],
+  [
+   "Prepare yourself",
+   "waterhouse_diogenes",
+   [
+    0.42,
+    0.26
+   ]
+  ],
+  [
+   "The gym",
+   "millet_sower",
+   [
+    0.5,
+    0.45
+   ]
+  ],
+  [
+   "Don't argue",
+   "waterhouse_diogenes",
+   [
+    0.68,
+    0.72
+   ]
+  ],
+  [
+   "If you are persistent",
+   "breton_song_lark",
+   [
+    0.46,
+    0.32
+   ]
+  ],
+  [
+   "So go ahead",
+   "ribera_archimedes",
+   [
+    0.55,
+    0.5
+   ],
+   "pull"
+  ]
+ ]
+}
