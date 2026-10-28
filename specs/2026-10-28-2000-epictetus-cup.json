@@ -1,0 +1,201 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "furious",
+  "question",
+  "owner",
+  "greater"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "furious",
+  "owner"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-10-28-2000-epictetus-cup-t.mp3",
+ "align": "audio/2026-10-28-2000-epictetus-cup-t.json",
+ "hook_until": 0.0,
+ "thinker": "epictetus",
+ "emphasis": [
+  "cup",
+  "shrug",
+  "furious",
+  "slave",
+  "question",
+  "calm",
+  "apart",
+  "broken",
+  "owner",
+  "greater",
+  "train",
+  "deal",
+  "email",
+  "neighbor's"
+ ],
+ "quote_source": [
+  "Epictetus \u00b7 Enchiridion XXVI \u00b7 tr. Higginson"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/chardin_schoolmistress.jpg",
+   "line": "hook",
+   "zoom": [
+    1.55,
+    1.65
+   ],
+   "focus": [
+    0.3,
+    0.62
+   ],
+   "move": "push"
+  },
+  {
+   "t": 2.37,
+   "img": "assets/rembrandt_aristotle_homer.jpg",
+   "line": "Your own cup",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.62,
+    0.32
+   ]
+  },
+  {
+   "t": 6.1,
+   "img": "assets/courbet_stone_breakers.jpg",
+   "line": "Epictetus, a man",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.62,
+    0.5
+   ]
+  },
+  {
+   "t": 14.5,
+   "img": "assets/breton_gleaners.jpg",
+   "line": "People stay calm",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.42,
+    0.62
+   ]
+  },
+  {
+   "t": 21.59,
+   "img": "assets/rembrandt_aristotle_homer.jpg",
+   "line": "When your own cup",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.33,
+    0.45
+   ]
+  },
+  {
+   "t": 24.07,
+   "img": "assets/vermeer_geographer.jpg",
+   "line": "you ought to be",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.42,
+    0.34
+   ]
+  },
+  {
+   "t": 28.99,
+   "img": "assets/caillebotte_floor_scrapers.jpg",
+   "line": "Same cup",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.46,
+    0.42
+   ]
+  },
+  {
+   "t": 33.86,
+   "img": "assets/vermeer_geographer.jpg",
+   "line": "Now apply",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.36,
+    0.5
+   ]
+  },
+  {
+   "t": 35.97,
+   "img": "assets/homer_gulf_stream.jpg",
+   "line": "The late train",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.52
+   ]
+  },
+  {
+   "t": 40.19,
+   "img": "assets/chardin_schoolmistress.jpg",
+   "line": "So when something",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.62,
+    0.32
+   ],
+   "move": "pull"
+  }
+ ],
+ "world": [
+  "chardin_schoolmistress",
+  "rembrandt_aristotle_homer",
+  "vermeer_geographer"
+ ],
+ "solo_words": [
+  "furious"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85
+}
