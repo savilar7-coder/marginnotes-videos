@@ -1,0 +1,113 @@
+{
+ "name": "2026-11-03-2000-seneca-meantime",
+ "thinker": "seneca",
+ "audio_suffix": "-t",
+ "world": [
+  "vermeer_woman_letter",
+  "aivazovsky_moonlit",
+  "friedrich_monk_sea"
+ ],
+ "emphasis": [
+  "bad",
+  "news",
+  "already",
+  "suffering",
+  "sleep",
+  "never",
+  "fickle",
+  "perhaps",
+  "meantime",
+  "email",
+  "test",
+  "Monday",
+  "tonight",
+  "happened",
+  "then"
+ ],
+ "quote_source": [
+  "Seneca · Letters to Lucilius, 13 · tr. Gummere"
+ ],
+ "punch_words": [
+  "already",
+  "fickle",
+  "meantime",
+  "sleep"
+ ],
+ "hit_words": [
+  "already",
+  "meantime"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "already"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85
+ },
+ "shots": [
+  [
+   "hook",
+   "vermeer_woman_letter",
+   [
+    0.46,
+    0.3
+   ],
+   "push",
+   {
+    "zoom": [
+     1.5,
+     1.6
+    ]
+   }
+  ],
+  [
+   "Seneca wrote",
+   "terborch_woman_writing",
+   [
+    0.55,
+    0.45
+   ]
+  ],
+  [
+   "Even bad fortune",
+   "bocklin_isle_dead",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "Perhaps it will come",
+   "aivazovsky_moonlit",
+   [
+    0.42,
+    0.46
+   ]
+  ],
+  [
+   "The email",
+   "vermeer_woman_letter",
+   [
+    0.45,
+    0.5
+   ]
+  ],
+  [
+   "Right now",
+   "whistler_nocturne",
+   [
+    0.5,
+    0.55
+   ]
+  ],
+  [
+   "So sleep",
+   "friedrich_monk_sea",
+   [
+    0.33,
+    0.62
+   ],
+   "pull"
+  ]
+ ]
+}
