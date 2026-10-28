@@ -1,0 +1,136 @@
+{
+ "name": "2026-10-28-2000-epictetus-cup",
+ "thinker": "epictetus",
+ "audio_suffix": "-t",
+ "world": [
+  "chardin_schoolmistress",
+  "rembrandt_aristotle_homer",
+  "vermeer_geographer"
+ ],
+ "emphasis": [
+  "cup",
+  "shrug",
+  "furious",
+  "slave",
+  "question",
+  "calm",
+  "apart",
+  "broken",
+  "owner",
+  "greater",
+  "train",
+  "deal",
+  "email",
+  "neighbor's"
+ ],
+ "quote_source": [
+  "Epictetus · Enchiridion XXVI · tr. Higginson"
+ ],
+ "punch_words": [
+  "furious",
+  "question",
+  "owner",
+  "greater"
+ ],
+ "hit_words": [
+  "furious",
+  "owner"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "furious"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85
+ },
+ "shots": [
+  [
+   "hook",
+   "chardin_schoolmistress",
+   [
+    0.3,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.55,
+     1.65
+    ]
+   }
+  ],
+  [
+   "Your own cup",
+   "rembrandt_aristotle_homer",
+   [
+    0.62,
+    0.32
+   ]
+  ],
+  [
+   "Epictetus, a man",
+   "courbet_stone_breakers",
+   [
+    0.62,
+    0.5
+   ]
+  ],
+  [
+   "People stay calm",
+   "breton_gleaners",
+   [
+    0.42,
+    0.62
+   ]
+  ],
+  [
+   "When your own cup",
+   "rembrandt_aristotle_homer",
+   [
+    0.33,
+    0.45
+   ]
+  ],
+  [
+   "you ought to be",
+   "vermeer_geographer",
+   [
+    0.42,
+    0.34
+   ]
+  ],
+  [
+   "Same cup",
+   "caillebotte_floor_scrapers",
+   [
+    0.46,
+    0.42
+   ]
+  ],
+  [
+   "Now apply",
+   "vermeer_geographer",
+   [
+    0.36,
+    0.5
+   ]
+  ],
+  [
+   "The late train",
+   "homer_gulf_stream",
+   [
+    0.5,
+    0.52
+   ]
+  ],
+  [
+   "So when something",
+   "chardin_schoolmistress",
+   [
+    0.62,
+    0.32
+   ],
+   "pull"
+  ]
+ ]
+}
