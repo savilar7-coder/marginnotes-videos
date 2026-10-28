@@ -1,0 +1,255 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "scared",
+  "fistfight",
+  "blood",
+  "bruises"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "fistfight",
+  "blood"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-10-29-2000-seneca-fighter3-t.mp3",
+ "align": "audio/2026-10-29-2000-seneca-fighter3-t.json",
+ "hook_until": 0.0,
+ "thinker": "seneca",
+ "emphasis": [
+  "hit",
+  "scared",
+  "fears",
+  "fistfight",
+  "prizefighter",
+  "beaten",
+  "blue",
+  "calm",
+  "blood",
+  "up",
+  "rejection",
+  "exam",
+  "died",
+  "round",
+  "survived",
+  "bruises"
+ ],
+ "quote_source": [
+  "Seneca \u00b7 Letters to Lucilius, 13 \u00b7 tr. Gummere"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/latour_joseph.jpg",
+   "line": "hook",
+   "zoom": [
+    1.7,
+    1.8
+   ],
+   "focus": [
+    0.75,
+    0.36
+   ],
+   "move": "push",
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot00.mp4"
+  },
+  {
+   "t": 3.21,
+   "img": "assets/dou_astronomer_candle.jpg",
+   "line": "Seneca wrote",
+   "zoom": [
+    2.3,
+    2.4
+   ],
+   "focus": [
+    0.5,
+    0.46
+   ],
+   "move": null,
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot01.mp4"
+  },
+  {
+   "t": 5.59,
+   "img": "assets/dou_astronomer_candle.jpg",
+   "line": "Seneca wrote",
+   "zoom": [
+    2.9899999999999998,
+    3.09
+   ],
+   "focus": [
+    0.5,
+    0.46
+   ],
+   "move": null,
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot02.mp4"
+  },
+  {
+   "t": 7.97,
+   "img": "assets/bruegel_triumph_death.jpg",
+   "line": "And he answered",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.62
+   ],
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot03.mp4"
+  },
+  {
+   "t": 10.83,
+   "img": "assets/bruegel_triumph_death.jpg",
+   "line": "No prizefighter",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.66,
+    0.55
+   ],
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot04.mp4"
+  },
+  {
+   "t": 14.19,
+   "img": "assets/cole_voyage_manhood.jpg",
+   "line": "if he has never",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.33,
+    0.64
+   ],
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot05.mp4"
+  },
+  {
+   "t": 18.03,
+   "img": "assets/latour_joseph.jpg",
+   "line": "The one who walks",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.3,
+    0.32
+   ],
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot06.mp4"
+  },
+  {
+   "t": 21.845,
+   "img": "assets/latour_joseph.jpg",
+   "line": "The one who walks",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.3,
+    0.32
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot07.mp4"
+  },
+  {
+   "t": 25.66,
+   "img": "assets/wright_alchemist.jpg",
+   "line": "The rejection",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.56,
+    0.64
+   ],
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot08.mp4"
+  },
+  {
+   "t": 29.8,
+   "img": "assets/dou_old_woman_reading.jpg",
+   "line": "Every one of them",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.56,
+    0.36
+   ],
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot09.mp4"
+  },
+  {
+   "t": 32.115,
+   "img": "assets/dou_old_woman_reading.jpg",
+   "line": "Every one of them",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.56,
+    0.36
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot10.mp4"
+  },
+  {
+   "t": 34.43,
+   "img": "assets/cole_voyage_manhood.jpg",
+   "line": "So the next time",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.62,
+    0.42
+   ],
+   "move": "pull",
+   "clip": "motion/2026-10-29-2000-seneca-fighter3/shot11.mp4"
+  }
+ ],
+ "world": [
+  "latour_joseph",
+  "bruegel_triumph_death",
+  "cole_voyage_manhood"
+ ],
+ "solo_words": [
+  "fistfight"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85
+}
