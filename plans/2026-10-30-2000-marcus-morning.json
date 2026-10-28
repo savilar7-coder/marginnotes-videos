@@ -1,0 +1,133 @@
+{
+ "name": "2026-10-30-2000-marcus-morning",
+ "thinker": "marcus",
+ "audio_suffix": "-t",
+ "world": [
+  "david_horatii",
+  "lorrain_seaport_sunset",
+  "gerome_pollice_verso"
+ ],
+ "emphasis": [
+  "emperor",
+  "morning",
+  "rude",
+  "Rome",
+  "busybody",
+  "ungrateful",
+  "arrogant",
+  "deceitful",
+  "envious",
+  "unsocial",
+  "twist",
+  "angry",
+  "hate",
+  "credit",
+  "cuts",
+  "texts",
+  "power",
+  "coffee",
+  "decide"
+ ],
+ "quote_source": [
+  "Marcus Aurelius · Meditations II.1 · tr. George Long"
+ ],
+ "punch_words": [
+  "rude",
+  "twist",
+  "angry",
+  "power"
+ ],
+ "hit_words": [
+  "rude",
+  "angry"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "rude"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85
+ },
+ "shots": [
+  [
+   "hook",
+   "david_horatii",
+   [
+    0.58,
+    0.34
+   ],
+   "push",
+   {
+    "zoom": [
+     1.5,
+     1.6
+    ]
+   }
+  ],
+  [
+   "Marcus Aurelius ran",
+   "gerome_ave_caesar",
+   [
+    0.55,
+    0.45
+   ]
+  ],
+  [
+   "Begin the morning",
+   "lorrain_seaport_sunset",
+   [
+    0.5,
+    0.47
+   ]
+  ],
+  [
+   "the ungrateful",
+   "gerome_pollice_verso",
+   [
+    0.75,
+    0.24
+   ]
+  ],
+  [
+   "Then the twist",
+   "alma_tadema_reading_homer",
+   [
+    0.82,
+    0.32
+   ]
+  ],
+  [
+   "Nor can I",
+   "david_horatii",
+   [
+    0.42,
+    0.42
+   ]
+  ],
+  [
+   "The coworker",
+   "gerome_pollice_verso",
+   [
+    0.38,
+    0.62
+   ]
+  ],
+  [
+   "Expected, they",
+   "church_twilight",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "So tomorrow",
+   "lorrain_seaport_sunset",
+   [
+    0.56,
+    0.4
+   ],
+   "pull"
+  ]
+ ]
+}
