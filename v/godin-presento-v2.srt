@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:03,533
+Claude, mañana a las nueve presento y no tengo nada.
+
+2
+00:00:05,733 --> 00:00:08,133
+Tienes veintidós diapositivas.
+
+3
+00:00:08,213 --> 00:00:09,213
+¿Desde cuándo?
+
+4
+00:00:09,493 --> 00:00:12,160
+Desde hace tres minutos.
+
+5
+00:00:12,240 --> 00:00:13,607
+¿Y qué dicen?
+
+6
+00:00:13,687 --> 00:00:16,820
+Lo que dijiste en la junta. Con gráficas.
+
+7
+00:00:16,900 --> 00:00:18,967
+Yo no dije nada en la junta.
+
+8
+00:00:19,517 --> 00:00:21,483
+Por eso son bonitas.
+
+9
+00:00:22,883 --> 00:00:26,417
+Comenta AGENTE y te mando un prompt que sirve hoy, gratis.
