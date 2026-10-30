@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:02,600
+Hoy toda la oficina trabaja con IA. Yo también.
+
+2
+00:00:02,700 --> 00:00:04,133
+Claude, CONTESTA mis correos.
+
+3
+00:00:04,233 --> 00:00:05,133
+Contestados.
+
+4
+00:00:05,433 --> 00:00:06,633
+¿Quién lee todo esto?
+
+5
+00:00:06,933 --> 00:00:09,133
+Otras IAs. Se contestan entre ELLAS.
+
+6
+00:00:09,733 --> 00:00:11,267
+¿Tengo DOCE juntas?
+
+7
+00:00:11,417 --> 00:00:14,517
+Una IA te invitó. Otra ACEPTÓ por ti.
+
+8
+00:00:15,967 --> 00:00:18,200
+…Ya. No CONTESTES. Dime qué HAGO.
+
+9
+00:00:21,200 --> 00:00:21,767
+¿No me TOCA?
+
+10
+00:00:21,967 --> 00:00:24,167
+No. Y la junta de las doce TAMPOCO.
+
+11
+00:00:24,367 --> 00:00:25,067
+¿Y los TACOS?
+
+12
+00:00:25,567 --> 00:00:26,833
+Esos SÍ te tocan.
+
+13
+00:00:28,283 --> 00:00:30,117
+Mándaselo a tu compa de la oficina.
