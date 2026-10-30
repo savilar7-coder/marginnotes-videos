@@ -1,0 +1,67 @@
+1
+00:00:00,000 --> 00:00:02,300
+Una hora de junta. Cero decisiones.
+
+2
+00:00:02,350 --> 00:00:04,217
+Claude, esta junta pudo ser un correo.
+
+3
+00:00:04,317 --> 00:00:04,850
+Hecho.
+
+4
+00:00:05,350 --> 00:00:05,750
+¿Qué?
+
+5
+00:00:06,170 --> 00:00:06,937
+Ya lo mandé.
+
+6
+00:00:08,507 --> 00:00:09,440
+¡Un correo CORTO!
+
+7
+00:00:09,590 --> 00:00:10,123
+Hecho.
+
+8
+00:00:11,373 --> 00:00:12,607
+¡Con lo que se DECIDIÓ!
+
+9
+00:00:13,007 --> 00:00:14,107
+No se decidió nada.
+
+10
+00:00:14,607 --> 00:00:15,707
+Se decidió otra junta.
+
+11
+00:00:15,757 --> 00:00:17,390
+Ya la agendé. Tú la pediste.
+
+12
+00:00:17,840 --> 00:00:20,673
+Pídeme cinco líneas: qué, quién, cuándo.
+
+13
+00:00:20,873 --> 00:00:21,340
+Mándalo.
+
+14
+00:00:21,390 --> 00:00:22,457
+Y cancelé la de mañana.
+
+15
+00:00:22,657 --> 00:00:24,057
+La cancelé con un correo.
+
+16
+00:00:24,477 --> 00:00:25,810
+De sesenta minutos.
+
+17
+00:00:27,210 --> 00:00:29,043
+Mándaselo a tu compa de la oficina.
