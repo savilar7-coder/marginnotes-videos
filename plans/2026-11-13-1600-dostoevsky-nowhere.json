@@ -16,7 +16,7 @@
   "no"
  ],
  "quote_source": [
-  "Dostoevsky · Crime and Punishment (1866), Part I ch. 2 · tr. Constance Garnett (1914)"
+  "Dostoevsky · Crime and Punishment · tr. Garnett"
  ],
  "punch_words": [
   "nowhere",
@@ -43,8 +43,8 @@
    "hook",
    "levitan_vladimirka",
    [
-    0.5,
-    0.5
+    0.45,
+    0.62
    ],
    "push",
    {

@@ -15,7 +15,7 @@
   "noon"
  ],
  "quote_source": [
-  "Jung · The Stages of Life (1930), CW 8 §784 · tr. Dell & Baynes (1933)"
+  "Jung · The Stages of Life · CW 8 §784"
  ],
  "punch_words": [
   "forty",
@@ -43,7 +43,7 @@
    "munch_self_cigarette",
    [
     0.5,
-    0.35
+    0.5
    ],
    "push",
    {

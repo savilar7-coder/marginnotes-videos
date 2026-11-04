@@ -15,7 +15,7 @@
   "more"
  ],
  "quote_source": [
-  "Kafka · The Metamorphosis (1915), ch. I · retold in our words"
+  "Kafka · The Metamorphosis (1915) · retold"
  ],
  "punch_words": [
   "dread",
@@ -36,8 +36,7 @@
   "quote_dim": 0.85,
   "hook_pack": 13,
   "paint_max": 200,
-  "text_y": 1260,
-  "hook_y": 1260
+  "text_y": 1150
  },
  "shots": [
   [

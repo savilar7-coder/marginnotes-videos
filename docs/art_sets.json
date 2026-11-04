@@ -245,12 +245,12 @@
    "sorolla_seashore",
    "bocklin_villa_ruin",
    "monet_impression_sunrise",
-   "courbet_saint_aubin",
    "vangogh_rhone",
    "ink_camus_boulder_1",
    "ink_camus_boulder_2",
    "ink_camus_boulder_3",
-   "ink_camus_boulder_4"
+   "ink_camus_boulder_4",
+   "courbet_saint_aubin_canvas"
   ]
  },
  "kafka": {

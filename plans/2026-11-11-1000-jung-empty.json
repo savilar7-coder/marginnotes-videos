@@ -17,7 +17,7 @@
   "outside"
  ],
  "quote_source": [
-  "Jung · The Red Book (Liber Novus), Liber Primus ch. i · retold in our words"
+  "Jung · The Red Book, ch. i · retold"
  ],
  "punch_words": [
   "wanted",
@@ -38,8 +38,7 @@
   "quote_dim": 0.85,
   "hook_pack": 13,
   "paint_max": 200,
-  "text_y": 1260,
-  "hook_y": 1260
+  "text_y": 1150
  },
  "shots": [
   [

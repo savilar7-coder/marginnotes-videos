@@ -16,7 +16,7 @@
   "starts"
  ],
  "quote_source": [
-  "Dostoevsky · The Brothers Karamazov (1880), Book II ch. 2 · tr. Constance Garnett (1912)"
+  "Dostoevsky · Brothers Karamazov · tr. Garnett"
  ],
  "punch_words": [
   "lie",
@@ -44,7 +44,7 @@
    "munch_karl_johan_hi",
    [
     0.45,
-    0.42
+    0.58
    ],
    "push",
    {

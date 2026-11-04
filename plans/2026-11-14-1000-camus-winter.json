@@ -18,7 +18,7 @@
   "warm"
  ],
  "quote_source": [
-  "Camus · Return to Tipasa (1952), in Summer (L'Été, 1954) · our translation"
+  "Camus · Return to Tipasa (1952) · our tr."
  ],
  "punch_words": [
   "coldest",
@@ -45,14 +45,14 @@
    "hook",
    "monet_magpie",
    [
-    0.5,
-    0.5
+    0.62,
+    0.58
    ],
    "push",
    {
     "zoom": [
-     1.3,
-     1.4
+     1.2,
+     1.3
     ]
    }
   ],
@@ -72,10 +72,10 @@
   ],
   [
    "And in the cold",
-   "courbet_saint_aubin",
+   "courbet_saint_aubin_canvas",
    [
-    0.5,
-    0.5
+    0.3,
+    0.55
    ],
    "pull",
    {
