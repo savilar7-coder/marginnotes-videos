@@ -6,7 +6,7 @@
   "ink_jung_soul_2"
  ],
  "emphasis": [
-  "you",
+  "ask",
   "November",
   "1913",
   "soul",
@@ -36,12 +36,13 @@
   ],
   "ghost": "grey",
   "quote_dim": 0.55,
-  "hook_pack": 13,
+  "hook_pack": 10,
   "paint_max": 200,
   "quote_style": "bold",
   "max_shot": 2.6,
-  "text_y": 1360,
-  "brand_y": 270
+  "text_y": 1280,
+  "brand_y": 270,
+  "quote_y": 1000
  },
  "shots": [
   [

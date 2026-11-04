@@ -150,7 +150,7 @@ def quote_layer(words, k, source=None):
     lines, line, wline = [], [], 0.0
     for idx, w in enumerate(txt):
         wl = f.getlength(w)
-        if line and wline + space + wl > (900 if bold else 820):
+        if line and wline + space + wl > (780 if bold else 820):
             lines.append(line); line, wline = [], 0.0
         line.append((idx, w, wl)); wline += (space if len(line) > 1 else 0) + wl
     if line:
@@ -606,7 +606,8 @@ def main(spec_path, out_path):
             if p < 1.0:
                 al = L2.getchannel("A").point(lambda a, m=min(1.0, p * 2.5): int(a * m))
                 L2 = L2.copy(); L2.putalpha(al)
-            frame.paste(L2, ((W - L2.width) // 2, spec.get("text_y", TEXT_Y) - L2.height // 2 + dy), L2)
+            ty = spec.get("quote_y", spec.get("text_y", TEXT_Y)) if caps[ci]["kind"] == "quote" else spec.get("text_y", TEXT_Y)   # opt-in quote_y (Nov 4)
+            frame.paste(L2, ((W - L2.width) // 2, ty - L2.height // 2 + dy), L2)
         # end card on the reveal shot (painting + source)
         if t >= hook_until and shots[max(i for i, s_ in enumerate(shots) if s_["t"] <= t)].get("card_text"):
             st_ = shots[max(i for i, s_ in enumerate(shots) if s_["t"] <= t)]

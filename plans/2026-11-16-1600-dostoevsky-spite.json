@@ -39,8 +39,9 @@
   "paint_max": 200,
   "quote_style": "bold",
   "max_shot": 2.6,
-  "text_y": 1360,
-  "brand_y": 270
+  "text_y": 1280,
+  "brand_y": 270,
+  "quote_y": 1000
  },
  "shots": [
   [

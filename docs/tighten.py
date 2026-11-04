@@ -11,7 +11,7 @@ so breaths and word tails stay. ElevenLabs v3 tags ([pause] ...) carry no timing
 """
 import json, re, subprocess, sys
 
-HOOK_GAP, MAX_GAP, LONG_GAP, EARLY_GAP, LEAD = 0.30, 0.85, 1.25, 0.25, 0.08
+HOOK_GAP, MAX_GAP, LONG_GAP, EARLY_GAP, LEAD = 0.30, 0.85, 1.25, 0.25, 0.20   # LEAD 0.08 -> 0.20 (Nov 4): aligner marks words late, 0.08 clipped "Some-"/"Every-"
 
 
 def main(base, keep_long=(), max_gap=MAX_GAP, long_gap=LONG_GAP):

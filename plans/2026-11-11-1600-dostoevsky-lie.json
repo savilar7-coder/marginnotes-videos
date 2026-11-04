@@ -4,9 +4,7 @@
  "audio_suffix": "-t",
  "world": [],
  "emphasis": [
-  "easiest",
   "lie",
-  "you",
   "monk",
   "liar",
   "Above",
@@ -117,10 +115,10 @@
   ],
   [
    "Every lie",
-   "perov_dostoevsky",
+   "pukirev_unequal_marriage",
    [
     0.5,
-    0.45
+    0.4
    ],
    "push",
    {
