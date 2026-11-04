@@ -601,7 +601,7 @@ def main(spec_path, out_path):
             if p < 1.0:
                 al = L2.getchannel("A").point(lambda a, m=min(1.0, p * 2.5): int(a * m))
                 L2 = L2.copy(); L2.putalpha(al)
-            frame.paste(L2, ((W - L2.width) // 2, TEXT_Y - L2.height // 2 + dy), L2)
+            frame.paste(L2, ((W - L2.width) // 2, spec.get("text_y", TEXT_Y) - L2.height // 2 + dy), L2)
         # end card on the reveal shot (painting + source)
         if t >= hook_until and shots[max(i for i, s_ in enumerate(shots) if s_["t"] <= t)].get("card_text"):
             st_ = shots[max(i for i, s_ in enumerate(shots) if s_["t"] <= t)]
