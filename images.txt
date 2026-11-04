@@ -165,3 +165,16 @@ vangogh_night_cafe.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Van_G
 munch_karl_johan_hi.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Edvard_Munch_-_Evening_on_Karl_Johan_Street_%281892%29.jpg?width=4000
 renoir_boating_party.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_-_Google_Art_Project.jpg?width=2400
 durer_stag_beetle.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht_D%C3%BCrer_-_Hirschk%C3%A4fer_(1505).jpg?width=2400
+nesterov_hermit.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Mikhail_Nesterov_009_-_variation_(GRM).jpg?width=2400
+courbet_burial_ornans.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project.jpg?width=3600
+whistler_mother.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Whistlers_Mother_high_res.jpg?width=2400
+daumier_three_lawyers.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Honor%C3%A9_Daumier_-_Three_Lawyers_-_Google_Art_Project.jpg?width=2400
+monet_magpie.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg?width=3000
+sorolla_seashore.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Joaqu%C3%ADn_Sorolla_y_Bastida_-_Strolling_along_the_Seashore_-_Google_Art_Project.jpg?width=2400
+sorolla_sand.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Joaqu%C3%ADn_Sorolla_y_Bastida_-_Dibujando_en_la_arena_(ca._1911).jpg?width=2400
+bocklin_villa_ruin.jpg https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B6cklin_-_Ruine_einer_Villa_am_Meer,_1878%E2%80%931880,_A_DSC_9416_(cropped).jpg?width=3000
+hammershoi_ida_letter.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Hammershoi,_Ida_reading_a_letter.jpg?width=2400
+hammershoi_white_doors.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Vilhelm_Hammersh%C3%B8i_-_Hvide_d%C3%B8re._Interi%C3%B8r_fra_Strandgade_25_-_1913.png?width=2400
+menzel_balcony_room.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Adolph_Menzel_-_Das_Balkonzimmer_-_Google_Art_Project.jpg?width=2400
+spilliaert_self_blue.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Zelfportret_met_blauw_schetsboek,_L%C3%A9on_Spilliaert,_1907,_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen,_2697.jpg?width=2400
+caillebotte_young_man_window.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Caillebotte_-_Jeune_homme_%C3%A0_sa_fen%C3%AAtre_(B_32).jpg?width=2400

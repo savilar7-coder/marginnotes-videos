@@ -26,7 +26,7 @@ sys.path.insert(0, HERE)
 import rebrand_render as rr  # noqa: E402
 
 THINKER_KEYS = {"epictetus": "epictetus", "seneca": "seneca", "marcus": "marcus", "jung": "jung",
-                "dostoevsky": "dostoevsky"}
+                "dostoevsky": "dostoevsky", "camus": "camus", "kafka": "kafka"}
 results = []
 
 

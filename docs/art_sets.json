@@ -167,7 +167,21 @@
    "anker_schoolboy",
    "homer_children_beach",
    "renoir_boating_party",
-   "durer_stag_beetle"
+   "durer_stag_beetle",
+   "ink_jung_empty_1",
+   "ink_jung_empty_2",
+   "ink_jung_empty_3",
+   "ink_jung_empty_4",
+   "ink_jung_empty_5",
+   "ink_jung_shadow_1",
+   "ink_jung_shadow_2",
+   "ink_jung_shadow_3",
+   "ink_jung_shadow_4",
+   "ink_jung_soul_1",
+   "ink_jung_soul_2",
+   "ink_jung_soul_3",
+   "ink_jung_soul_4",
+   "ink_jung_soul_5"
   ]
  },
  "dostoevsky": {
@@ -211,8 +225,55 @@
    "vangogh_night_cafe",
    "fedotov_fresh_cavalier",
    "fedotov_major_proposal",
-   "munch_karl_johan_hi"
+   "munch_karl_johan_hi",
+   "ink_dost_spite_1",
+   "ink_dost_spite_2",
+   "ink_dost_spite_3",
+   "ink_dost_spite_4",
+   "nesterov_hermit"
   ]
  },
- "_duplicates": "Oct 23: hammershoi_interior = hammershoi_woman_back, whistler_falling_rocket = whistler_nocturne (same image twice); removed from the sets; Oct 24: munch_karl_johan_hi replaces munch_karl_johan (same painting, 8K scan)"
+ "_duplicates": "Oct 23: hammershoi_interior = hammershoi_woman_back, whistler_falling_rocket = whistler_nocturne (same image twice); removed from the sets; Oct 24: munch_karl_johan_hi replaces munch_karl_johan (same painting, 8K scan)",
+ "camus": {
+  "theme": "the absurd, Mediterranean light, sea and sun, funerals and courts, winter and summer, Sisyphus; Nov 4: ink scenes in the channel lamp look",
+  "images": [
+   "courbet_burial_ornans",
+   "whistler_mother",
+   "daumier_three_lawyers",
+   "bruegel_icarus",
+   "monet_magpie",
+   "sorolla_seashore",
+   "sorolla_sand",
+   "bocklin_villa_ruin",
+   "monet_impression_sunrise",
+   "courbet_saint_aubin",
+   "vangogh_rhone",
+   "ink_camus_boulder_1",
+   "ink_camus_boulder_2",
+   "ink_camus_boulder_3",
+   "ink_camus_boulder_4"
+  ]
+ },
+ "kafka": {
+  "theme": "doors, rooms, fathers, letters, offices, waiting, the insect; Nov 4: ink scenes in the channel lamp look",
+  "images": [
+   "hammershoi_ida_letter",
+   "hammershoi_white_doors",
+   "menzel_balcony_room",
+   "spilliaert_self_blue",
+   "caillebotte_young_man_window",
+   "fedotov_encore",
+   "friedrich_man_woman_moon",
+   "ink_kafka_bug_1",
+   "ink_kafka_bug_2",
+   "ink_kafka_bug_3",
+   "ink_kafka_bug_4",
+   "ink_kafka_bug_5",
+   "ink_kafka_door_1",
+   "ink_kafka_door_2",
+   "ink_kafka_door_3",
+   "ink_kafka_door_4",
+   "ink_kafka_door_5"
+  ]
+ }
 }
