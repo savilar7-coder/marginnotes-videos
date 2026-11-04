@@ -1,0 +1,7 @@
+[briskly] You're still waiting for someone to let you in.
+
+In Kafka's parable, a man waits at an open door for years. The guard says: not now.
+
+He grows old there. Dying, he asks why no one else ever came. The guard shouts: [slowly] "This entrance was meant only for you. I am now going to shut it."
+
+[quietly] The door was open the whole time. He only asked. He never walked in.
