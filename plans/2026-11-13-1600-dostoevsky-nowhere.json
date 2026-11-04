@@ -4,29 +4,28 @@
  "audio_suffix": "-t",
  "world": [],
  "emphasis": [
-  "absolutely",
-  "nowhere",
-  "tavern",
-  "clerk",
-  "understand",
+  "Nowhere",
   "turn",
-  "Raskolnikov",
-  "forgets",
-  "poverty",
-  "no"
+  "broke",
+  "drunk",
+  "understand",
+  "absolutely",
+  "home",
+  "coins",
+  "somewhere"
  ],
  "quote_source": [
   "Dostoevsky · Crime and Punishment · tr. Garnett"
  ],
  "punch_words": [
-  "nowhere",
+  "Nowhere",
   "turn",
-  "forgets",
-  "poverty"
+  "coins",
+  "somewhere"
  ],
  "hit_words": [
-  "nowhere",
-  "turn"
+  "turn",
+  "somewhere"
  ],
  "hook_y": 1000,
  "spec_extra": {
@@ -34,9 +33,11 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
-  "paint_max": 200
+  "paint_max": 200,
+  "quote_style": "bold",
+  "max_shot": 2.6
  },
  "shots": [
   [
@@ -55,7 +56,7 @@
    }
   ],
   [
-   "In a dirty",
+   "In Crime and",
    "vangogh_night_cafe",
    [
     0.5,
@@ -99,8 +100,8 @@
    }
   ],
   [
-   "The stranger is",
-   "grimshaw_thames",
+   "The stranger",
+   "perov_last_tavern",
    [
     0.5,
     0.5
@@ -113,13 +114,28 @@
    }
   ],
   [
-   "Dostoevsky knew",
-   "kramskoi_christ_desert",
+   "And quietly",
+   "friedrich_woman_window",
    [
     0.5,
-    0.4
+    0.45
    ],
    "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "When someone",
+   "perov_dostoevsky",
+   [
+    0.5,
+    0.45
+   ],
+   "pull",
    {
     "zoom": [
      1.2,

@@ -4,28 +4,27 @@
  "audio_suffix": "-t",
  "world": [],
  "emphasis": [
-  "forty",
   "rules",
   "stopped",
+  "halfway",
   "afternoon",
   "morning",
   "name",
   "under",
-  "broken",
-  "noon"
+  "lost"
  ],
  "quote_source": [
   "Jung · The Stages of Life · CW 8 §784"
  ],
  "punch_words": [
-  "forty",
+  "stopped",
   "afternoon",
   "name",
-  "noon"
+  "lost"
  ],
  "hit_words": [
   "afternoon",
-  "noon"
+  "lost"
  ],
  "hook_y": 1000,
  "spec_extra": {
@@ -33,9 +32,11 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 15,
   "paint_max": 200,
+  "quote_style": "bold",
+  "max_shot": 2.6,
   "hook_y": 940
  },
  "shots": [
@@ -103,7 +104,7 @@
    "rembrandt_self_1669",
    [
     0.5,
-    0.35
+    0.45
    ],
    {
     "zoom": [
@@ -113,7 +114,7 @@
    }
   ],
   [
-   "Nothing's broken",
+   "You're not lost",
    "bocklin_villa_sea",
    [
     0.6,

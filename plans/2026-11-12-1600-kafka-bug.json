@@ -8,11 +8,11 @@
   "work",
   "insect",
   "train",
-  "furious",
+  "boss",
   "debt",
   "joke",
   "bug",
-  "more"
+  "honest"
  ],
  "quote_source": [
   "Kafka · The Metamorphosis (1915) · retold"
@@ -25,7 +25,7 @@
  ],
  "hit_words": [
   "insect",
-  "more"
+  "honest"
  ],
  "hook_y": 1000,
  "spec_extra": {
@@ -33,17 +33,20 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
   "paint_max": 200,
-  "text_y": 1150
+  "quote_style": "bold",
+  "max_shot": 2.6,
+  "text_y": 1360,
+  "brand_y": 270
  },
  "shots": [
   [
    "hook",
-   "ink_kafka_bug_1",
+   "ink_kafka_bug_2",
    [
-    0.45,
+    0.48,
     0.6
    ],
    "push",
@@ -56,9 +59,9 @@
   ],
   [
    "Gregor Samsa",
-   "ink_kafka_bug_2",
+   "ink_kafka_bug_1",
    [
-    0.48,
+    0.45,
     0.6
    ],
    "rise",
@@ -85,7 +88,7 @@
    }
   ],
   [
-   "His boss",
+   "Not his body",
    "ink_kafka_bug_4",
    [
     0.6,

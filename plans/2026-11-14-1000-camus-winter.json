@@ -6,29 +6,31 @@
   "monet_magpie"
  ],
  "emphasis": [
-  "coldest",
-  "winter",
-  "end",
-  "ruins",
+  "trusted",
+  "1952",
+  "Sartre",
+  "public",
+  "Paris",
+  "Tipasa",
   "young",
-  "cold",
+  "winter",
   "invincible",
   "summer",
-  "real",
-  "warm"
+  "lost",
+  "take"
  ],
  "quote_source": [
   "Camus · Return to Tipasa (1952) · our tr."
  ],
  "punch_words": [
-  "coldest",
-  "young",
+  "trusted",
+  "Sartre",
   "summer",
-  "warm"
+  "take"
  ],
  "hit_words": [
   "summer",
-  "warm"
+  "take"
  ],
  "hook_y": 1000,
  "spec_extra": {
@@ -36,9 +38,11 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
-  "paint_max": 200
+  "paint_max": 200,
+  "quote_style": "bold",
+  "max_shot": 2.6
  },
  "shots": [
   [
@@ -57,10 +61,10 @@
    }
   ],
   [
-   "Years later",
-   "bocklin_villa_ruin",
+   "1952",
+   "beraud_paris_kiosk",
    [
-    0.42,
+    0.5,
     0.45
    ],
    {
@@ -71,13 +75,27 @@
    }
   ],
   [
-   "And in the cold",
+   "That December",
+   "bocklin_villa_ruin",
+   [
+    0.42,
+    0.45
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "And there",
    "courbet_saint_aubin_canvas",
    [
     0.3,
     0.55
    ],
-   "pull",
    {
     "zoom": [
      1.2,
@@ -101,7 +119,7 @@
    }
   ],
   [
-   "The winter is",
+   "Winter shows",
    "monet_magpie",
    [
     0.25,
@@ -115,7 +133,7 @@
    }
   ],
   [
-   "So is the part",
+   "It also shows",
    "monet_impression_sunrise",
    [
     0.5,

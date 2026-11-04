@@ -9,12 +9,12 @@
   "died",
   "nothing",
   "guilty",
-  "Stranger",
   "Mother",
   "cry",
   "funeral",
-  "trial",
+  "murder",
   "prosecutor",
+  "dry",
   "fake"
  ],
  "quote_source": [
@@ -23,7 +23,7 @@
  "punch_words": [
   "nothing",
   "Mother",
-  "prosecutor",
+  "murder",
   "fake"
  ],
  "hit_words": [
@@ -36,9 +36,11 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
-  "paint_max": 200
+  "paint_max": 200,
+  "quote_style": "bold",
+  "max_shot": 2.6
  },
  "shots": [
   [
@@ -57,7 +59,7 @@
    }
   ],
   [
-   "That's how Camus",
+   "The Stranger opens",
    "whistler_mother",
    [
     0.68,
@@ -71,7 +73,7 @@
    }
   ],
   [
-   "Meursault doesn't",
+   "Meursault does not",
    "courbet_burial_ornans",
    [
     0.75,
@@ -86,7 +88,7 @@
    }
   ],
   [
-   "Later, on trial",
+   "Months later",
    "daumier_three_lawyers",
    [
     0.52,
@@ -101,7 +103,7 @@
    }
   ],
   [
-   "Camus never said",
+   "Camus said",
    "bruegel_icarus",
    [
     0.5,

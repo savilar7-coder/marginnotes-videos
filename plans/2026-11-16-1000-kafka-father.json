@@ -8,23 +8,22 @@
  "emphasis": [
   "letter",
   "never",
-  "send",
+  "sent",
   "father",
-  "pages",
   "afraid",
-  "truth",
   "writing",
-  "reached",
-  "finally"
+  "read",
+  "point"
  ],
  "quote_source": [
+  "Kafka · Letter to His Father (1919) · our tr.",
   "Kafka · Letter to His Father (1919) · our tr."
  ],
  "punch_words": [
-  "send",
+  "sent",
   "afraid",
   "writing",
-  "finally"
+  "point"
  ],
  "hit_words": [
   "afraid",
@@ -36,9 +35,11 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
-  "paint_max": 200
+  "paint_max": 200,
+  "quote_style": "bold",
+  "max_shot": 2.6
  },
  "shots": [
   [
@@ -57,7 +58,7 @@
    }
   ],
   [
-   "At thirty-six",
+   "Dozens of pages",
    "caillebotte_young_man_window",
    [
     0.55,
@@ -71,7 +72,7 @@
    }
   ],
   [
-   "It begins",
+   "It opens",
    "hammershoi_white_doors",
    [
     0.5,
@@ -86,11 +87,11 @@
    }
   ],
   [
-   "Then the truth",
-   "spilliaert_self_blue",
+   "Deep inside",
+   "spitzweg_poor_poet",
    [
-    0.5,
-    0.38
+    0.45,
+    0.45
    ],
    "push",
    {
@@ -101,7 +102,7 @@
    }
   ],
   [
-   "It never reached",
+   "His father never",
    "menzel_balcony_room",
    [
     0.6,

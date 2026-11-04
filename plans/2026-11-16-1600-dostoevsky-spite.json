@@ -4,29 +4,29 @@
  "audio_suffix": "-t",
  "world": [],
  "emphasis": [
-  "hurt",
-  "nobody",
-  "controls",
+  "good",
+  "opposite",
   "sick",
   "spiteful",
   "liver",
   "doctor",
   "spite",
-  "no",
-  "you"
+  "worse",
+  "decide"
  ],
  "quote_source": [
+  "Dostoevsky · Notes from Underground · tr. Garnett",
   "Dostoevsky · Notes from Underground · tr. Garnett"
  ],
  "punch_words": [
-  "controls",
+  "opposite",
   "spiteful",
-  "spite",
-  "you"
+  "worse",
+  "decide"
  ],
  "hit_words": [
   "spiteful",
-  "you"
+  "decide"
  ],
  "hook_y": 1000,
  "spec_extra": {
@@ -34,10 +34,13 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
   "paint_max": 200,
-  "text_y": 1150
+  "quote_style": "bold",
+  "max_shot": 2.6,
+  "text_y": 1360,
+  "brand_y": 270
  },
  "shots": [
   [
@@ -85,7 +88,7 @@
    }
   ],
   [
-   "A freedom",
+   "Doing the opposite",
    "ink_dost_spite_4",
    [
     0.48,

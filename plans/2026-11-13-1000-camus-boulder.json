@@ -5,26 +5,26 @@
  "world": [],
  "emphasis": [
   "Same",
-  "day",
-  "Sisyphus",
-  "Forever",
+  "rock",
+  "1942",
+  "war",
+  "forever",
+  "Again",
   "happy",
-  "never",
-  "yours",
-  "means"
+  "choose"
  ],
  "quote_source": [
   "Camus · The Myth of Sisyphus · tr. O'Brien"
  ],
  "punch_words": [
-  "day",
-  "Forever",
+  "rock",
+  "forever",
   "happy",
-  "yours"
+  "choose"
  ],
  "hit_words": [
-  "Forever",
-  "yours"
+  "forever",
+  "choose"
  ],
  "hook_y": 1000,
  "spec_extra": {
@@ -32,10 +32,13 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
   "paint_max": 200,
-  "text_y": 1150
+  "quote_style": "bold",
+  "max_shot": 2.6,
+  "text_y": 1360,
+  "brand_y": 270
  },
  "shots": [
   [
@@ -54,7 +57,7 @@
    }
   ],
   [
-   "The gods",
+   "In 1942",
    "ink_camus_boulder_2",
    [
     0.5,
@@ -69,7 +72,7 @@
    }
   ],
   [
-   "Albert Camus",
+   "Then Camus watches",
    "ink_camus_boulder_3",
    [
     0.48,
@@ -84,7 +87,7 @@
    }
   ],
   [
-   "The rock never",
+   "You can't change",
    "ink_camus_boulder_4",
    [
     0.52,

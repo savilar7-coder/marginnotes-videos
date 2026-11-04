@@ -4,15 +4,16 @@
  "audio_suffix": "-t",
  "world": [],
  "emphasis": [
-  "same",
+  "easiest",
   "lie",
-  "true",
+  "you",
   "monk",
   "liar",
   "Above",
   "yourself",
   "truth",
-  "respecting",
+  "inside",
+  "around",
   "starts"
  ],
  "quote_source": [
@@ -34,9 +35,11 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
-  "paint_max": 200
+  "paint_max": 200,
+  "quote_style": "bold",
+  "max_shot": 2.6
  },
  "shots": [
   [
@@ -84,7 +87,7 @@
    }
   ],
   [
-   "Lie to yourself",
+   "A man who",
    "munch_melancholy",
    [
     0.3,
@@ -99,11 +102,11 @@
    }
   ],
   [
-   "Then you stop",
-   "perov_last_tavern",
+   "Not around",
+   "vrubel_demon_seated",
    [
-    0.5,
-    0.45
+    0.45,
+    0.4
    ],
    {
     "zoom": [
@@ -114,10 +117,10 @@
   ],
   [
    "Every lie",
-   "vrubel_demon_seated",
+   "perov_dostoevsky",
    [
-    0.45,
-    0.4
+    0.5,
+    0.45
    ],
    "push",
    {

@@ -6,13 +6,12 @@
  "emphasis": [
   "nicest",
   "dark",
-  "you",
   "shadow",
+  "Anger",
+  "Envy",
   "darker",
-  "denser",
-  "twin",
-  "refused",
-  "lighter"
+  "purpose",
+  "surprise"
  ],
  "quote_source": [
   "Jung · Psychology and Religion · CW 11 §131"
@@ -20,12 +19,12 @@
  "punch_words": [
   "dark",
   "shadow",
-  "denser",
-  "lighter"
+  "darker",
+  "surprise"
  ],
  "hit_words": [
   "shadow",
-  "lighter"
+  "surprise"
  ],
  "hook_y": 1000,
  "spec_extra": {
@@ -33,10 +32,13 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
   "paint_max": 200,
-  "text_y": 1150
+  "quote_style": "bold",
+  "max_shot": 2.6,
+  "text_y": 1360,
+  "brand_y": 270
  },
  "shots": [
   [
@@ -55,7 +57,7 @@
    }
   ],
   [
-   "Carl Jung said",
+   "Carl Jung put",
    "ink_jung_shadow_2",
    [
     0.5,
@@ -70,7 +72,7 @@
    }
   ],
   [
-   "And the less",
+   "Anger",
    "ink_jung_shadow_3",
    [
     0.45,
@@ -85,7 +87,7 @@
    }
   ],
   [
-   "Your shadow isn't",
+   "Meet your shadow",
    "ink_jung_shadow_4",
    [
     0.5,

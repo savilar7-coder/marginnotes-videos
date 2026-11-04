@@ -181,7 +181,20 @@
    "ink_jung_soul_2",
    "ink_jung_soul_3",
    "ink_jung_soul_4",
-   "ink_jung_soul_5"
+   "ink_jung_soul_5",
+   "ink_jung_empty_1_b",
+   "ink_jung_empty_2_b",
+   "ink_jung_empty_3_b",
+   "ink_jung_empty_4_b",
+   "ink_jung_empty_5_b",
+   "ink_jung_shadow_1_b",
+   "ink_jung_shadow_2_b",
+   "ink_jung_shadow_3_b",
+   "ink_jung_shadow_4_b",
+   "ink_jung_soul_1_b",
+   "ink_jung_soul_2_b",
+   "ink_jung_soul_3_b",
+   "ink_jung_soul_4_b"
   ]
  },
  "dostoevsky": {
@@ -230,7 +243,11 @@
    "ink_dost_spite_2",
    "ink_dost_spite_3",
    "ink_dost_spite_4",
-   "nesterov_hermit"
+   "nesterov_hermit",
+   "ink_dost_spite_1_b",
+   "ink_dost_spite_2_b",
+   "ink_dost_spite_3_b",
+   "ink_dost_spite_4_b"
   ]
  },
  "_duplicates": "Oct 23: hammershoi_interior = hammershoi_woman_back, whistler_falling_rocket = whistler_nocturne (same image twice); removed from the sets; Oct 24: munch_karl_johan_hi replaces munch_karl_johan (same painting, 8K scan)",
@@ -251,7 +268,11 @@
    "ink_camus_boulder_3",
    "ink_camus_boulder_4",
    "courbet_saint_aubin_canvas",
-   "beraud_paris_kiosk"
+   "beraud_paris_kiosk",
+   "ink_camus_boulder_1_b",
+   "ink_camus_boulder_2_b",
+   "ink_camus_boulder_3_b",
+   "ink_camus_boulder_4_b"
   ]
  },
  "kafka": {
@@ -274,7 +295,16 @@
    "ink_kafka_door_3",
    "ink_kafka_door_4",
    "ink_kafka_door_5",
-   "spitzweg_poor_poet"
+   "spitzweg_poor_poet",
+   "ink_kafka_bug_1_b",
+   "ink_kafka_bug_2_b",
+   "ink_kafka_bug_4_b",
+   "ink_kafka_bug_5_b",
+   "ink_kafka_door_1_b",
+   "ink_kafka_door_2_b",
+   "ink_kafka_door_3_b",
+   "ink_kafka_door_4_b",
+   "ink_kafka_door_5_b"
   ]
  }
 }

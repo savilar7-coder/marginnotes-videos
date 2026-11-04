@@ -10,8 +10,7 @@
   "Neurosis",
   "substitute",
   "legitimate",
-  "leave",
-  "everywhere",
+  "pieces",
   "honest",
   "thousand"
  ],
@@ -21,7 +20,7 @@
  "punch_words": [
   "conversation",
   "substitute",
-  "everywhere",
+  "pieces",
   "honest"
  ],
  "hit_words": [
@@ -34,9 +33,11 @@
    "you"
   ],
   "ghost": "grey",
-  "quote_dim": 0.85,
+  "quote_dim": 0.55,
   "hook_pack": 13,
-  "paint_max": 200
+  "paint_max": 200,
+  "quote_style": "bold",
+  "max_shot": 2.6
  },
  "shots": [
   [
@@ -55,7 +56,7 @@
    }
   ],
   [
-   "Carl Jung wrote",
+   "Carl Jung saw",
    "redon_closed_eyes",
    [
     0.5,
@@ -84,7 +85,7 @@
    }
   ],
   [
-   "It comes back",
+   "Bad sleep",
    "bruegel_dulle_griet",
    [
     0.55,
