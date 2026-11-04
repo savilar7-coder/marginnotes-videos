@@ -1,0 +1,149 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "hope",
+  "scared",
+  "chained",
+  "present",
+  "tonight"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "scared",
+  "present"
+ ],
+ "hook_y": 1000,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-12-2000-seneca-chain-t.mp3",
+ "align": "audio/2026-11-12-2000-seneca-chain-t.json",
+ "hook_until": 0.0,
+ "thinker": "seneca",
+ "emphasis": [
+  "sleep",
+  "offer",
+  "test",
+  "reply",
+  "scared",
+  "chained",
+  "prisoner",
+  "guard",
+  "future",
+  "present",
+  "wretched",
+  "Tomorrow",
+  "Tonight"
+ ],
+ "quote_source": [
+  "Seneca \u00b7 Letters to Lucilius, 5 \u00b7 tr. Gummere"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/latour_newborn.jpg",
+   "line": "hook",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "move": "push"
+  },
+  {
+   "t": 2.64,
+   "img": "assets/metsu_man_writing.jpg",
+   "line": "The job offer",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.4,
+    0.53
+   ]
+  },
+  {
+   "t": 9.42,
+   "img": "assets/david_death_seneca.jpg",
+   "line": "Seneca said",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.3,
+    0.55
+   ]
+  },
+  {
+   "t": 15.72,
+   "img": "assets/cole_voyage_manhood.jpg",
+   "line": "Both live",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 19.12,
+   "img": "assets/millet_angelus.jpg",
+   "line": "The present alone",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "focus": [
+    0.46,
+    0.48
+   ]
+  },
+  {
+   "t": 22.4,
+   "img": "assets/whistler_nocturne.jpg",
+   "line": "Tomorrow can wait",
+   "zoom": [
+    1.1,
+    1.2
+   ],
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "move": "pull"
+  }
+ ],
+ "world": [
+  "latour_newborn"
+ ],
+ "solo_words": [
+  "hope"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85,
+ "hook_pack": 13,
+ "paint_max": 200
+}

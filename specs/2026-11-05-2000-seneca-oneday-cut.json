@@ -1,0 +1,131 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.65,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "feared",
+  "nothing",
+  "imagination",
+  "stop"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "never",
+  "imagination"
+ ],
+ "hook_y": 1000,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-05-2000-seneca-oneday-cut-t.mp3",
+ "align": "audio/2026-11-05-2000-seneca-oneday-cut-t.json",
+ "hook_until": 0.0,
+ "thinker": "seneca",
+ "emphasis": [
+  "never",
+  "rehearsed",
+  "nothing",
+  "Seneca",
+  "suffer",
+  "imagination",
+  "reality",
+  "night",
+  "stop"
+ ],
+ "quote_source": [
+  "Seneca \u00b7 Letters to Lucilius, 13 \u00b7 tr. Gummere"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/latour_magdalene.jpg",
+   "line": "hook",
+   "zoom": [
+    1.3,
+    1.38
+   ],
+   "focus": [
+    0.42,
+    0.4
+   ],
+   "move": "push"
+  },
+  {
+   "t": 4.69,
+   "img": "assets/dou_old_woman_reading.jpg",
+   "line": "One day you'll realize you rehearsed",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "t": 9.35,
+   "img": "assets/rubens_dying_seneca.jpg",
+   "line": "Seneca realized",
+   "zoom": [
+    1.5,
+    1.6
+   ],
+   "focus": [
+    0.45,
+    0.25
+   ]
+  },
+  {
+   "t": 12.57,
+   "img": "assets/latour_st_jerome.jpg",
+   "line": "We suffer",
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "focus": [
+    0.5,
+    0.32
+   ]
+  },
+  {
+   "t": 16.19,
+   "img": "assets/dou_astronomer_candle.jpg",
+   "line": "Save this",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "move": "pull"
+  }
+ ],
+ "world": [
+  "latour_magdalene"
+ ],
+ "solo_words": [
+  "feared"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85,
+ "hook_pack": 13,
+ "paint_max": 200
+}

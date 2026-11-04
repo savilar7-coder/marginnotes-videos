@@ -1,0 +1,146 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "read",
+  "gone",
+  "story",
+  "judgment",
+  "kinder"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "gone",
+  "judgment"
+ ],
+ "hook_y": 1000,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-09-2000-marcus-onread-t.mp3",
+ "align": "audio/2026-11-09-2000-marcus-onread-t.json",
+ "hook_until": 0.0,
+ "thinker": "marcus",
+ "emphasis": [
+  "read",
+  "message",
+  "story",
+  "Marcus",
+  "pained",
+  "external",
+  "judgment",
+  "asleep",
+  "kinder",
+  "back"
+ ],
+ "quote_source": [
+  "Marcus Aurelius \u00b7 Meditations VIII.47 \u00b7 tr. George Long"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/friedrich_woman_sun.jpg",
+   "line": "hook",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.47,
+    0.52
+   ],
+   "move": "push"
+  },
+  {
+   "t": 3.66,
+   "img": "assets/ninth_wave.jpg",
+   "line": "But the message",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 8.0,
+   "img": "assets/delacroix_marcus_last_words.jpg",
+   "line": "Marcus Aurelius",
+   "zoom": [
+    1.4,
+    1.5
+   ],
+   "focus": [
+    0.6,
+    0.45
+   ],
+   "gain": 0.75
+  },
+  {
+   "t": 10.08,
+   "img": "assets/friedrich_moonrise_sea.jpg",
+   "line": "If thou art",
+   "zoom": [
+    1.4,
+    1.5
+   ],
+   "focus": [
+    0.45,
+    0.6
+   ]
+  },
+  {
+   "t": 18.69,
+   "img": "assets/cole_voyage_old_age.jpg",
+   "line": "Maybe they're asleep",
+   "zoom": [
+    1.4,
+    1.5
+   ],
+   "focus": [
+    0.62,
+    0.85
+   ]
+  },
+  {
+   "t": 20.18,
+   "img": "assets/friedrich_woman_sun.jpg",
+   "line": "Pick a kinder",
+   "zoom": [
+    1.1,
+    1.2
+   ],
+   "focus": [
+    0.47,
+    0.52
+   ],
+   "move": "pull"
+  }
+ ],
+ "world": [
+  "friedrich_woman_sun"
+ ],
+ "solo_words": [
+  "read"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85,
+ "hook_pack": 13
+}

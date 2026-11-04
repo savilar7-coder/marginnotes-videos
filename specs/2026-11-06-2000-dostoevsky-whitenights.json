@@ -1,0 +1,161 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "mind",
+  "love",
+  "else",
+  "counts"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "else",
+  "counts"
+ ],
+ "hook_y": 1000,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-06-2000-dostoevsky-whitenights-t.mp3",
+ "align": "audio/2026-11-06-2000-dostoevsky-whitenights-t.json",
+ "hook_until": 0.0,
+ "thinker": "dostoevsky",
+ "emphasis": [
+  "days",
+  "lonely",
+  "crying",
+  "canal",
+  "four",
+  "nights",
+  "love",
+  "else",
+  "comes",
+  "runs",
+  "happiness",
+  "little",
+  "ended",
+  "counts"
+ ],
+ "quote_source": [
+  "Dostoevsky \u00b7 White Nights \u00b7 tr. Garnett"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/munch_melancholy.jpg",
+   "line": "hook",
+   "zoom": [
+    1.12,
+    1.2
+   ],
+   "focus": [
+    0.7,
+    0.62
+   ],
+   "move": "push"
+  },
+  {
+   "t": 3.97,
+   "img": "assets/grimshaw_reflections_thames.jpg",
+   "line": "In Dostoevsky's",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.72,
+    0.55
+   ]
+  },
+  {
+   "t": 10.73,
+   "img": "assets/starry_night.jpg",
+   "line": "For four nights",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "t": 14.57,
+   "img": "assets/friedrich_woman_window.jpg",
+   "line": "She's waiting",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "t": 16.76,
+   "img": "assets/caillebotte_rainy_day.jpg",
+   "line": "The other man",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "focus": [
+    0.74,
+    0.55
+   ]
+  },
+  {
+   "t": 20.53,
+   "img": "assets/caillebotte_pont_europe.jpg",
+   "line": "My God",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.42,
+    0.45
+   ]
+  },
+  {
+   "t": 27.05,
+   "img": "assets/munch_melancholy.jpg",
+   "line": "It ended",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.7,
+    0.56
+   ],
+   "move": "pull"
+  }
+ ],
+ "world": [
+  "munch_melancholy"
+ ],
+ "solo_words": [
+  "mind"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85,
+ "hook_pack": 16
+}

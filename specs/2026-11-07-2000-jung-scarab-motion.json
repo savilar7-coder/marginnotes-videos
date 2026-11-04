@@ -1,0 +1,219 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "text",
+  "logic",
+  "tapped",
+  "scarab",
+  "synchronicity"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "tapped",
+  "synchronicity"
+ ],
+ "hook_y": 1000,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-07-2000-jung-scarab-t.mp3",
+ "align": "audio/2026-11-07-2000-jung-scarab-t.json",
+ "hook_until": 0.0,
+ "thinker": "jung",
+ "emphasis": [
+  "text",
+  "logic",
+  "dream",
+  "golden",
+  "scarab",
+  "tapped",
+  "window",
+  "beetle",
+  "synchronicity",
+  "nothing",
+  "universe",
+  "through"
+ ],
+ "quote_source": [
+  "Jung \u00b7 Synchronicity (Collected Works 8) \u00b7 tr. Hull"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/vermeer_girl_window.jpg",
+   "line": "hook",
+   "zoom": [
+    1.45,
+    1.55
+   ],
+   "focus": [
+    0.52,
+    0.7
+   ],
+   "move": "push",
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot00.mp4"
+  },
+  {
+   "t": 3.47,
+   "img": "assets/blake_newton.jpg",
+   "line": "Carl Jung had",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.6,
+    0.55
+   ],
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot01.mp4"
+  },
+  {
+   "t": 6.72,
+   "img": "assets/redon_closed_eyes.jpg",
+   "line": "While she told",
+   "zoom": [
+    1.25,
+    1.3
+   ],
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot02.mp4"
+  },
+  {
+   "t": 10.07,
+   "img": "assets/hammershoi_sunbeams.jpg",
+   "line": "something tapped",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "focus": [
+    0.42,
+    0.4
+   ],
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot03.mp4"
+  },
+  {
+   "t": 12.69,
+   "img": "assets/durer_stag_beetle.jpg",
+   "line": "A beetle",
+   "zoom": [
+    1.12,
+    1.18
+   ],
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot04.mp4"
+  },
+  {
+   "t": 16.7,
+   "img": "assets/durer_stag_beetle.jpg",
+   "line": "He caught it",
+   "zoom": [
+    1.4,
+    1.5
+   ],
+   "focus": [
+    0.55,
+    0.36
+   ],
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot05.mp4"
+  },
+  {
+   "t": 19.11,
+   "img": "assets/durer_stag_beetle.jpg",
+   "line": "He caught it",
+   "zoom": [
+    1.8199999999999998,
+    1.92
+   ],
+   "focus": [
+    0.55,
+    0.36
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot06.mp4"
+  },
+  {
+   "t": 21.52,
+   "img": "assets/vangogh_almond_blossom.jpg",
+   "line": "He called it",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot07.mp4"
+  },
+  {
+   "t": 24.64,
+   "img": "assets/vermeer_girl_window.jpg",
+   "line": "It proves nothing",
+   "zoom": [
+    1.45,
+    1.55
+   ],
+   "focus": [
+    0.52,
+    0.7
+   ],
+   "move": "pull",
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot08.mp4"
+  },
+  {
+   "t": 26.794,
+   "img": "assets/vermeer_girl_window.jpg",
+   "line": "It proves nothing",
+   "zoom": [
+    1.885,
+    1.985
+   ],
+   "focus": [
+    0.52,
+    0.7
+   ],
+   "move": "pull",
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-07-2000-jung-scarab/shot09.mp4"
+  }
+ ],
+ "world": [
+  "vermeer_girl_window",
+  "durer_stag_beetle"
+ ],
+ "solo_words": [
+  "text"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85,
+ "hook_pack": 16
+}

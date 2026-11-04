@@ -39,7 +39,8 @@
   ],
   "ghost": "grey",
   "quote_dim": 0.85,
-  "hook_pack": 13
+  "hook_pack": 13,
+  "paint_max": 222
  },
  "hook_y": 1000,
  "shots": [
@@ -55,8 +56,7 @@
     "zoom": [
      1.45,
      1.55
-    ],
-    "gain": 0.85
+    ]
    }
   ],
   [

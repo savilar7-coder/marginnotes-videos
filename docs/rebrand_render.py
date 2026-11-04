@@ -564,6 +564,10 @@ def main(spec_path, out_path):
             # entry flash-in for each new shot (fast fade from black)
             if si > 0 and spec.get("cut_dip", True):   # soft 0.1 s dip at a cut (from 80%), not a dark flash: no strobe (Fable review)
                 a *= min(1.0, (t - s["t"]) / 0.10 * 0.2 + 0.8)
+            pm = spec.get("paint_max")   # opt-in (Nov 3): soft-cap painting highlights so only text is pure white (video_qa reads >225 as text)
+            if pm:
+                k = pm - 32.0
+                a = np.where(a > k, k + 32.0 * (1.0 - np.exp(-(a - k) / 40.0)), a)
             pic = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
             b = punch(t)
             if b > 0.002:            # punch-in: scale up around the centre, keep the frame size
