@@ -1,0 +1,156 @@
+{
+ "name": "2026-11-07-2000-jung-scarab",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [
+  "vermeer_girl_window",
+  "durer_stag_beetle"
+ ],
+ "emphasis": [
+  "text",
+  "logic",
+  "dream",
+  "golden",
+  "scarab",
+  "tapped",
+  "window",
+  "beetle",
+  "synchronicity",
+  "nothing",
+  "universe",
+  "through"
+ ],
+ "quote_source": [
+  "Jung · Synchronicity (Collected Works 8) · tr. Hull"
+ ],
+ "punch_words": [
+  "text",
+  "logic",
+  "tapped",
+  "scarab",
+  "synchronicity"
+ ],
+ "hit_words": [
+  "tapped",
+  "synchronicity"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "text"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 16
+ },
+ "shots": [
+  [
+   "hook",
+   "vermeer_girl_window",
+   [
+    0.47,
+    0.6
+   ],
+   "push",
+   {
+    "zoom": [
+     1.4,
+     1.5
+    ]
+   }
+  ],
+  [
+   "Carl Jung had",
+   "blake_newton",
+   [
+    0.6,
+    0.55
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "While she told",
+   "redon_closed_eyes",
+   [
+    0.5,
+    0.42
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "something tapped",
+   "hammershoi_sunbeams",
+   [
+    0.42,
+    0.4
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "A beetle",
+   "durer_stag_beetle",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "He caught it",
+   "durer_stag_beetle",
+   [
+    0.45,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.6,
+     1.7
+    ]
+   }
+  ],
+  [
+   "He called it",
+   "vangogh_almond_blossom",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "It proves nothing",
+   "vermeer_girl_window",
+   [
+    0.47,
+    0.6
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.4,
+     1.5
+    ]
+   }
+  ]
+ ],
+ "hook_y": 1000
+}

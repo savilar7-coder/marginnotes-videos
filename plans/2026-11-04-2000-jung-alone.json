@@ -1,0 +1,119 @@
+{
+ "name": "2026-11-04-2000-jung-alone",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [
+  "renoir_boating_party",
+  "friedrich_two_men_moon"
+ ],
+ "emphasis": [
+  "alone",
+  "loneliness",
+  "matter",
+  "laugh",
+  "nod",
+  "real",
+  "fix",
+  "one",
+  "true",
+  "yours"
+ ],
+ "quote_source": [
+  "Jung · Memories, Dreams, Reflections · his idea, in plain words"
+ ],
+ "punch_words": [
+  "alone",
+  "matter",
+  "true",
+  "yours"
+ ],
+ "hit_words": [
+  "alone",
+  "true"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "alone"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 16
+ },
+ "shots": [
+  [
+   "hook",
+   "renoir_boating_party",
+   [
+    0.39,
+    0.44
+   ],
+   "push",
+   {
+    "zoom": [
+     1.18,
+     1.26
+    ]
+   }
+  ],
+  [
+   "Carl Jung wrote",
+   "hammershoi_woman_back",
+   [
+    0.55,
+    0.42
+   ]
+  ],
+  [
+   "It comes from",
+   "khnopff_lock_door",
+   [
+    0.4,
+    0.62
+   ],
+   {
+    "zoom": [
+     1.35,
+     1.45
+    ]
+   }
+  ],
+  [
+   "So you laugh",
+   "munch_anxiety",
+   [
+    0.5,
+    0.42
+   ]
+  ],
+  [
+   "More friends",
+   "friedrich_two_men_moon",
+   [
+    0.36,
+    0.55
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Who's yours",
+   "vermeer_pearl_earring",
+   [
+    0.5,
+    0.56
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ]
+ ],
+ "hook_y": 1000
+}

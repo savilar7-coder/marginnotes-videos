@@ -205,7 +205,7 @@ def split_long_shots(shots, dur, max_len=4.2):
 GHOST = None   # spec "ghost": "grey" -> unspoken karaoke words in solid grey, never faint red (art director, Oct 23)
 
 
-def text_layer(words, emphasis, big, lit=None):
+def text_layer(words, emphasis, big, lit=None, pack=9):
     """Render one caption as an RGBA image: emphasis word huge + red, others white.
     lit (karaoke captions): only the first `lit` words are bright; the rest of the chunk shows faint."""
     clean = lambda w: re.sub(r"[^\w']", "", w).lower()
@@ -226,7 +226,7 @@ def text_layer(words, emphasis, big, lit=None):
         if GHOST == "grey" and not lit_:
             ws, col = [(t, 255) for t, _ in ws], (150, 146, 140)
         n = lambda ws_: len(" ".join(t for t, _ in ws_))
-        if packed and col != RED and packed[-1][2] != RED and n(packed[-1][0]) + 1 + n(ws) <= 9:
+        if packed and col != RED and packed[-1][2] != RED and n(packed[-1][0]) + 1 + n(ws) <= pack:
             packed[-1] = (packed[-1][0] + ws, min(packed[-1][1], size), col)
         else:
             packed.append((ws, size, col))
@@ -512,7 +512,7 @@ def main(spec_path, out_path):
     # the hook card shows the first sentence ahead of the voice on purpose; the gate checks it separately
     tl += [{"word": w, "shown": 0.0, "spoken": round(ws, 3), "kind": "hook"} for w, ws, we in hook_words]
     json.dump(tl, open(out_path + ".captions.json", "w"))
-    hook_layer = text_layer([w for w, _, _ in hook_words], emphasis, True) if hook_words else None
+    hook_layer = text_layer([w for w, _, _ in hook_words], emphasis, True, pack=spec.get("hook_pack", 9)) if hook_words else None   # spec "hook_pack": wider hook lines (Nov 3)
     # captions of the hook sentence already shown on the card are skipped afterwards (no "SIDE" echo)
     first_after = next((i for i, c in enumerate(caps) if c["times"][0][0] > hook_words[-1][1] + 0.01),
                        len(caps)) if hook_words else 0

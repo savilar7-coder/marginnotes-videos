@@ -1,0 +1,107 @@
+{
+ "name": "2026-11-11-2000-jung-stones-cut",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [
+  "anker_schoolboy",
+  "hodler_lake_thun",
+  "homer_children_beach"
+ ],
+ "emphasis": [
+  "lost",
+  "Freud",
+  "stones",
+  "lake",
+  "Cottages",
+  "castle",
+  "village",
+  "humiliating",
+  "anyway",
+  "turning"
+ ],
+ "quote_source": [
+  "Jung · Memories, Dreams, Reflections · tr. Winston"
+ ],
+ "punch_words": [
+  "lost",
+  "ten",
+  "stones",
+  "village",
+  "anyway"
+ ],
+ "hit_words": [
+  "stones",
+  "anyway"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "lost"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 16
+ },
+ "hook_y": 1000,
+ "shots": [
+  [
+   "hook",
+   "anker_schoolboy",
+   [
+    0.42,
+    0.24
+   ],
+   "push",
+   {
+    "zoom": [
+     1.45,
+     1.55
+    ]
+   }
+  ],
+  [
+   "At thirty-seven",
+   "hodler_lake_thun",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "He gathered",
+   "homer_children_beach",
+   [
+    0.5,
+    0.6
+   ],
+   {
+    "zoom": [
+     1.6,
+     1.7
+    ]
+   }
+  ],
+  [
+   "It felt",
+   "chardin_house_of_cards",
+   [
+    0.5,
+    0.45
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "He called it",
+   "hodler_thun_stockhorn",
+   [
+    0.5,
+    0.5
+   ],
+   "pull"
+  ]
+ ]
+}

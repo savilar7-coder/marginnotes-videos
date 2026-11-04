@@ -1,0 +1,116 @@
+{
+ "name": "2026-11-13-2000-jung-inside",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [
+  "vangogh_bandaged_ear"
+ ],
+ "emphasis": [
+  "scrolling",
+  "video",
+  "list",
+  "stranger",
+  "Jung",
+  "outside",
+  "dreams",
+  "inside",
+  "awakes",
+  "question"
+ ],
+ "quote_source": [
+  "Jung · Letter to Fanny Bowditch, 1916 · tr. Hull"
+ ],
+ "punch_words": [
+  "scrolling",
+  "stranger",
+  "inside",
+  "question"
+ ],
+ "hit_words": [
+  "scrolling",
+  "inside"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "scrolling"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 16
+ },
+ "shots": [
+  [
+   "hook",
+   "vangogh_bandaged_ear",
+   [
+    0.45,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Another video",
+   "ensor_intrigue",
+   [
+    0.5,
+    0.55
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "In 1916",
+   "waterhouse_shalott",
+   [
+    0.35,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Who looks outside",
+   "redon_closed_eyes",
+   [
+    0.5,
+    0.42
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "The answer you're",
+   "moreau_oedipus_sphinx",
+   [
+    0.45,
+    0.45
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ]
+ ],
+ "hook_y": 1000
+}

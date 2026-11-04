@@ -1,0 +1,138 @@
+{
+ "name": "2026-11-10-2000-dostoevsky-minutes",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "world": [
+  "levitan_eternal_peace"
+ ],
+ "emphasis": [
+  "wasting",
+  "1849",
+  "firing",
+  "squad",
+  "pardon",
+  "Idiot",
+  "swore",
+  "grudge",
+  "minute",
+  "waste",
+  "wasted",
+  "many",
+  "Knowing",
+  "Starting",
+  "again"
+ ],
+ "quote_source": [
+  "Dostoevsky · The Idiot, Part I ch. 5 · tr. Eva Martin"
+ ],
+ "punch_words": [
+  "wasting",
+  "firing",
+  "pardon",
+  "minute",
+  "again"
+ ],
+ "hit_words": [
+  "firing",
+  "again"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "wasting"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 16
+ },
+ "shots": [
+  [
+   "hook",
+   "perov_dostoevsky",
+   [
+    0.5,
+    0.47
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "In 1849",
+   "surikov_streltsy",
+   [
+    0.45,
+    0.6
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Then a pardon",
+   "levitan_eternal_peace",
+   [
+    0.3,
+    0.55
+   ]
+  ],
+  [
+   "In The Idiot",
+   "repin_refusal_confession",
+   [
+    0.6,
+    0.57
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "How I should",
+   "levitan_eternal_peace",
+   [
+    0.35,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Afterwards",
+   "cezanne_card_players",
+   [
+    0.72,
+    0.42
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Knowing",
+   "levitan_vladimirka",
+   [
+    0.5,
+    0.55
+   ],
+   "pull"
+  ]
+ ],
+ "hook_y": 1000
+}

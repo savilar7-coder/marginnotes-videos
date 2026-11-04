@@ -1,0 +1,112 @@
+{
+ "name": "2026-11-06-2000-dostoevsky-whitenights",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "world": [
+  "munch_melancholy"
+ ],
+ "emphasis": [
+  "days",
+  "lonely",
+  "crying",
+  "canal",
+  "four",
+  "nights",
+  "love",
+  "else",
+  "comes",
+  "runs",
+  "happiness",
+  "little",
+  "ended",
+  "counts"
+ ],
+ "quote_source": [
+  "Dostoevsky · White Nights · tr. Garnett"
+ ],
+ "punch_words": [
+  "mind",
+  "love",
+  "else",
+  "counts"
+ ],
+ "hit_words": [
+  "else",
+  "counts"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "mind"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 16
+ },
+ "shots": [
+  [
+   "hook",
+   "munch_melancholy",
+   [
+    0.7,
+    0.42
+   ],
+   "push",
+   {
+    "zoom": [
+     1.4,
+     1.5
+    ]
+   }
+  ],
+  [
+   "In Dostoevsky's",
+   "grimshaw_reflections_thames",
+   [
+    0.72,
+    0.55
+   ]
+  ],
+  [
+   "For four nights",
+   "starry_night",
+   [
+    0.5,
+    0.42
+   ]
+  ],
+  [
+   "She's waiting",
+   "friedrich_woman_window",
+   [
+    0.5,
+    0.42
+   ]
+  ],
+  [
+   "The other man",
+   "caillebotte_rainy_day",
+   [
+    0.74,
+    0.5
+   ]
+  ],
+  [
+   "My God",
+   "caillebotte_pont_europe",
+   [
+    0.42,
+    0.45
+   ]
+  ],
+  [
+   "It ended",
+   "munch_melancholy",
+   [
+    0.7,
+    0.45
+   ],
+   "pull"
+  ]
+ ],
+ "hook_y": 1000
+}

@@ -1,0 +1,125 @@
+{
+ "name": "2026-11-09-2000-marcus-onread",
+ "thinker": "marcus",
+ "audio_suffix": "-t",
+ "world": [
+  "friedrich_woman_sun"
+ ],
+ "emphasis": [
+  "read",
+  "message",
+  "story",
+  "Marcus",
+  "pained",
+  "external",
+  "judgment",
+  "asleep",
+  "kinder",
+  "back"
+ ],
+ "quote_source": [
+  "Marcus Aurelius · Meditations VIII.47 · tr. George Long"
+ ],
+ "punch_words": [
+  "read",
+  "gone",
+  "story",
+  "judgment",
+  "kinder"
+ ],
+ "hit_words": [
+  "gone",
+  "judgment"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "read"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 16
+ },
+ "shots": [
+  [
+   "hook",
+   "friedrich_woman_sun",
+   [
+    0.47,
+    0.52
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "But the message",
+   "turner_snowstorm",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "Marcus Aurelius",
+   "delacroix_marcus_last_words",
+   [
+    0.45,
+    0.62
+   ],
+   {
+    "zoom": [
+     1.4,
+     1.5
+    ]
+   }
+  ],
+  [
+   "If thou art",
+   "friedrich_moonrise_sea",
+   [
+    0.45,
+    0.6
+   ],
+   {
+    "zoom": [
+     1.4,
+     1.5
+    ]
+   }
+  ],
+  [
+   "Maybe they're asleep",
+   "cole_voyage_old_age",
+   [
+    0.62,
+    0.85
+   ],
+   {
+    "zoom": [
+     1.4,
+     1.5
+    ]
+   }
+  ],
+  [
+   "Pick a kinder",
+   "aivazovsky_rainbow",
+   [
+    0.35,
+    0.65
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ]
+ ],
+ "hook_y": 1000
+}

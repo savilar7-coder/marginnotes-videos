@@ -1,0 +1,128 @@
+{
+ "name": "2026-11-12-2000-seneca-chain",
+ "thinker": "seneca",
+ "audio_suffix": "-t",
+ "world": [
+  "latour_joseph"
+ ],
+ "emphasis": [
+  "sleep",
+  "offer",
+  "test",
+  "reply",
+  "scared",
+  "chained",
+  "prisoner",
+  "guard",
+  "future",
+  "present",
+  "wretched",
+  "Tomorrow",
+  "Tonight"
+ ],
+ "quote_source": [
+  "Seneca · Letters to Lucilius, 5 · tr. Gummere"
+ ],
+ "punch_words": [
+  "hope",
+  "scared",
+  "chained",
+  "present",
+  "tonight"
+ ],
+ "hit_words": [
+  "scared",
+  "present"
+ ],
+ "spec_extra": {
+  "solo_words": [
+   "hope"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 16
+ },
+ "shots": [
+  [
+   "hook",
+   "latour_joseph",
+   [
+    0.68,
+    0.35
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "The job offer",
+   "metsu_man_writing",
+   [
+    0.4,
+    0.53
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Seneca said",
+   "rubens_dying_seneca",
+   [
+    0.45,
+    0.28
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Both live",
+   "cole_voyage_manhood",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "The present alone",
+   "millet_angelus",
+   [
+    0.46,
+    0.48
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Tomorrow can wait",
+   "latour_newborn",
+   [
+    0.55,
+    0.4
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ]
+ ],
+ "hook_y": 1000
+}
