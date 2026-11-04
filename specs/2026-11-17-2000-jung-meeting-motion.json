@@ -1,0 +1,195 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "same",
+  "transformed",
+  "both",
+  "met"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "transformed",
+  "met"
+ ],
+ "hook_y": 1000,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-17-2000-jung-meeting-t.mp3",
+ "align": "audio/2026-11-17-2000-jung-meeting-t.json",
+ "hook_until": 0.0,
+ "thinker": "jung",
+ "emphasis": [
+  "same",
+  "personalities",
+  "chemical",
+  "reaction",
+  "transformed",
+  "Both",
+  "moved",
+  "room",
+  "met"
+ ],
+ "quote_source": [
+  "Jung \u00b7 Modern Man in Search of a Soul \u00b7 tr. Dell & Baynes"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/klimt_kiss.jpg",
+   "line": "hook",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.57,
+    0.3
+   ],
+   "move": "push",
+   "clip": "motion/2026-11-17-2000-jung-meeting/shot00.mp4"
+  },
+  {
+   "t": 3.45,
+   "img": "assets/rossetti_how_they_met.jpg",
+   "line": "Carl Jung wrote",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "clip": "motion/2026-11-17-2000-jung-meeting/shot01.mp4"
+  },
+  {
+   "t": 6.817,
+   "img": "assets/rossetti_how_they_met.jpg",
+   "line": "Carl Jung wrote",
+   "zoom": [
+    1.56,
+    1.6600000000000001
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-17-2000-jung-meeting/shot02.mp4"
+  },
+  {
+   "t": 10.183,
+   "img": "assets/rossetti_how_they_met.jpg",
+   "line": "Carl Jung wrote",
+   "zoom": [
+    1.92,
+    2.02
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "drift": [
+    1,
+    0
+   ],
+   "clip": "motion/2026-11-17-2000-jung-meeting/shot03.mp4"
+  },
+  {
+   "t": 13.55,
+   "img": "assets/friedrich_two_men_moon.jpg",
+   "line": "Both",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.36,
+    0.55
+   ],
+   "clip": "motion/2026-11-17-2000-jung-meeting/shot04.mp4"
+  },
+  {
+   "t": 16.24,
+   "img": "assets/friedrich_two_men_moon.jpg",
+   "line": "Both",
+   "zoom": [
+    1.6900000000000002,
+    1.7900000000000003
+   ],
+   "focus": [
+    0.36,
+    0.55
+   ],
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-17-2000-jung-meeting/shot05.mp4"
+  },
+  {
+   "t": 18.93,
+   "img": "assets/vaneyck_arnolfini.jpg",
+   "line": "And if nothing",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "move": "pull",
+   "clip": "motion/2026-11-17-2000-jung-meeting/shot06.mp4"
+  },
+  {
+   "t": 22.282,
+   "img": "assets/vaneyck_arnolfini.jpg",
+   "line": "And if nothing",
+   "zoom": [
+    1.56,
+    1.6600000000000001
+   ],
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "move": "pull",
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-17-2000-jung-meeting/shot07.mp4"
+  }
+ ],
+ "world": [
+  "klimt_kiss"
+ ],
+ "solo_words": [
+  "same"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85,
+ "hook_pack": 13,
+ "paint_max": 200
+}

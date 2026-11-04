@@ -1,0 +1,118 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 0.35,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "same",
+  "transformed",
+  "both",
+  "met"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "transformed",
+  "met"
+ ],
+ "hook_y": 1000,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-17-2000-jung-meeting-t.mp3",
+ "align": "audio/2026-11-17-2000-jung-meeting-t.json",
+ "hook_until": 0.0,
+ "thinker": "jung",
+ "emphasis": [
+  "same",
+  "personalities",
+  "chemical",
+  "reaction",
+  "transformed",
+  "Both",
+  "moved",
+  "room",
+  "met"
+ ],
+ "quote_source": [
+  "Jung \u00b7 Modern Man in Search of a Soul \u00b7 tr. Dell & Baynes"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/klimt_kiss.jpg",
+   "line": "hook",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.57,
+    0.3
+   ],
+   "move": "push"
+  },
+  {
+   "t": 3.45,
+   "img": "assets/rossetti_how_they_met.jpg",
+   "line": "Carl Jung wrote",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 13.55,
+   "img": "assets/friedrich_two_men_moon.jpg",
+   "line": "Both",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "focus": [
+    0.36,
+    0.55
+   ]
+  },
+  {
+   "t": 18.93,
+   "img": "assets/vaneyck_arnolfini.jpg",
+   "line": "And if nothing",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "move": "pull"
+  }
+ ],
+ "world": [
+  "klimt_kiss"
+ ],
+ "solo_words": [
+  "same"
+ ],
+ "ghost": "grey",
+ "quote_dim": 0.85,
+ "hook_pack": 13,
+ "paint_max": 200
+}
