@@ -1,0 +1,102 @@
+{
+ "name": "2026-11-16-1600-dostoevsky-spite",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "hurt",
+  "nobody",
+  "controls",
+  "sick",
+  "spiteful",
+  "liver",
+  "doctor",
+  "spite",
+  "no",
+  "you"
+ ],
+ "quote_source": [
+  "Dostoevsky · Notes from Underground (1864), I.1 · tr. Constance Garnett (1918)"
+ ],
+ "punch_words": [
+  "controls",
+  "spiteful",
+  "spite",
+  "you"
+ ],
+ "hit_words": [
+  "spiteful",
+  "you"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "ink_dost_spite_1",
+   [
+    0.5,
+    0.45
+   ],
+   "push",
+   {
+    "zoom": [
+     1.15,
+     1.25
+    ]
+   }
+  ],
+  [
+   "Dostoevsky's Underground",
+   "ink_dost_spite_2",
+   [
+    0.5,
+    0.45
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "His liver",
+   "ink_dost_spite_3",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "A freedom",
+   "ink_dost_spite_4",
+   [
+    0.48,
+    0.48
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ]
+ ]
+}

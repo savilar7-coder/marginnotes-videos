@@ -1,0 +1,133 @@
+{
+ "name": "2026-11-14-1000-camus-winter",
+ "thinker": "camus",
+ "audio_suffix": "-t",
+ "world": [
+  "monet_magpie"
+ ],
+ "emphasis": [
+  "coldest",
+  "winter",
+  "end",
+  "ruins",
+  "young",
+  "cold",
+  "invincible",
+  "summer",
+  "real",
+  "warm"
+ ],
+ "quote_source": [
+  "Camus · Return to Tipasa (1952), in Summer (L'Été, 1954) · our translation"
+ ],
+ "punch_words": [
+  "coldest",
+  "young",
+  "summer",
+  "warm"
+ ],
+ "hit_words": [
+  "summer",
+  "warm"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "monet_magpie",
+   [
+    0.5,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Years later",
+   "bocklin_villa_ruin",
+   [
+    0.42,
+    0.45
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "And in the cold",
+   "courbet_saint_aubin",
+   [
+    0.5,
+    0.5
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "an invincible",
+   "sorolla_seashore",
+   [
+    0.65,
+    0.3
+   ],
+   "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "The winter is",
+   "monet_magpie",
+   [
+    0.25,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "So is the part",
+   "monet_impression_sunrise",
+   [
+    0.5,
+    0.5
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ]
+ ]
+}

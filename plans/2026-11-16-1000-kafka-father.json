@@ -1,0 +1,133 @@
+{
+ "name": "2026-11-16-1000-kafka-father",
+ "thinker": "kafka",
+ "audio_suffix": "-t",
+ "world": [
+  "hammershoi_ida_letter"
+ ],
+ "emphasis": [
+  "letter",
+  "never",
+  "send",
+  "father",
+  "pages",
+  "afraid",
+  "truth",
+  "writing",
+  "reached",
+  "finally"
+ ],
+ "quote_source": [
+  "Kafka · Letter to His Father (Nov 1919) · our translation"
+ ],
+ "punch_words": [
+  "send",
+  "afraid",
+  "writing",
+  "finally"
+ ],
+ "hit_words": [
+  "afraid",
+  "writing"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "hammershoi_ida_letter",
+   [
+    0.3,
+    0.38
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "At thirty-six",
+   "caillebotte_young_man_window",
+   [
+    0.55,
+    0.36
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "It begins",
+   "hammershoi_white_doors",
+   [
+    0.5,
+    0.45
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Then the truth",
+   "spilliaert_self_blue",
+   [
+    0.5,
+    0.28
+   ],
+   "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "It never reached",
+   "menzel_balcony_room",
+   [
+    0.6,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Some letters",
+   "hammershoi_ida_letter",
+   [
+    0.62,
+    0.5
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ]
+ ]
+}

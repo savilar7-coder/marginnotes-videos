@@ -1,0 +1,119 @@
+{
+ "name": "2026-11-15-1000-kafka-door",
+ "thinker": "kafka",
+ "audio_suffix": "-t",
+ "world": [
+  "ink_kafka_door_2"
+ ],
+ "emphasis": [
+  "waiting",
+  "in",
+  "years",
+  "not",
+  "now",
+  "old",
+  "only",
+  "shut",
+  "open",
+  "walked"
+ ],
+ "quote_source": [
+  "Kafka · Before the Law, in The Trial (1925), ch. 9 · our translation"
+ ],
+ "punch_words": [
+  "waiting",
+  "now",
+  "shut",
+  "walked"
+ ],
+ "hit_words": [
+  "shut",
+  "walked"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "ink_kafka_door_1",
+   [
+    0.5,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.15,
+     1.25
+    ]
+   }
+  ],
+  [
+   "In Kafka's parable",
+   "ink_kafka_door_2",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "He grows old",
+   "ink_kafka_door_3",
+   [
+    0.45,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "The guard shouts",
+   "ink_kafka_door_4",
+   [
+    0.5,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.1,
+     1.25
+    ]
+   }
+  ],
+  [
+   "The door was",
+   "ink_kafka_door_5",
+   [
+    0.5,
+    0.5
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ]
+ ]
+}

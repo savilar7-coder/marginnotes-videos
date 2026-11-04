@@ -1,0 +1,130 @@
+{
+ "name": "2026-11-12-1000-jung-afternoon",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "forty",
+  "rules",
+  "stopped",
+  "afternoon",
+  "morning",
+  "name",
+  "under",
+  "broken",
+  "noon"
+ ],
+ "quote_source": [
+  "Jung · The Stages of Life (1930), CW 8 §784 · tr. Dell & Baynes (1933)"
+ ],
+ "punch_words": [
+  "forty",
+  "afternoon",
+  "name",
+  "noon"
+ ],
+ "hit_words": [
+  "afternoon",
+  "noon"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "munch_self_cigarette",
+   [
+    0.5,
+    0.35
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Carl Jung saw",
+   "hammershoi_sunbeams",
+   [
+    0.5,
+    0.45
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "We cannot",
+   "vangogh_noon_rest",
+   [
+    0.5,
+    0.5
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Morning is",
+   "ingres_napoleon_throne",
+   [
+    0.5,
+    0.3
+   ],
+   "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Afternoon is",
+   "rembrandt_self_1669",
+   [
+    0.5,
+    0.35
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Nothing's broken",
+   "hodler_lake_thun",
+   [
+    0.5,
+    0.5
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ]
+ ]
+}

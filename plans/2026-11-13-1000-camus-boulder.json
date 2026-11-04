@@ -1,0 +1,101 @@
+{
+ "name": "2026-11-13-1000-camus-boulder",
+ "thinker": "camus",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "Same",
+  "day",
+  "Sisyphus",
+  "Forever",
+  "happy",
+  "never",
+  "yours",
+  "means"
+ ],
+ "quote_source": [
+  "Camus · The Myth of Sisyphus (1942) · tr. Justin O'Brien (1955)"
+ ],
+ "punch_words": [
+  "day",
+  "Forever",
+  "happy",
+  "yours"
+ ],
+ "hit_words": [
+  "Forever",
+  "yours"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "ink_camus_boulder_1",
+   [
+    0.5,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.15,
+     1.25
+    ]
+   }
+  ],
+  [
+   "The gods",
+   "ink_camus_boulder_2",
+   [
+    0.5,
+    0.52
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "Albert Camus",
+   "ink_camus_boulder_3",
+   [
+    0.48,
+    0.52
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "The rock never",
+   "ink_camus_boulder_4",
+   [
+    0.52,
+    0.55
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ]
+ ]
+}

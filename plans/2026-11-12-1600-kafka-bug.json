@@ -1,0 +1,116 @@
+{
+ "name": "2026-11-12-1600-kafka-bug",
+ "thinker": "kafka",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "dread",
+  "work",
+  "insect",
+  "train",
+  "furious",
+  "debt",
+  "joke",
+  "bug",
+  "more"
+ ],
+ "quote_source": [
+  "Kafka · The Metamorphosis (1915), ch. I · retold in our words"
+ ],
+ "punch_words": [
+  "dread",
+  "insect",
+  "train",
+  "bug"
+ ],
+ "hit_words": [
+  "insect",
+  "more"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "ink_kafka_bug_1",
+   [
+    0.45,
+    0.55
+   ],
+   "push",
+   {
+    "zoom": [
+     1.15,
+     1.25
+    ]
+   }
+  ],
+  [
+   "Gregor Samsa",
+   "ink_kafka_bug_2",
+   [
+    0.48,
+    0.42
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "His first worry",
+   "ink_kafka_bug_3",
+   [
+    0.52,
+    0.42
+   ],
+   "push",
+   {
+    "zoom": [
+     1.1,
+     1.25
+    ]
+   }
+  ],
+  [
+   "His boss",
+   "ink_kafka_bug_4",
+   [
+    0.6,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "Kafka's dark joke",
+   "ink_kafka_bug_5",
+   [
+    0.55,
+    0.45
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ]
+ ]
+}

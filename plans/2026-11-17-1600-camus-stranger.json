@@ -1,0 +1,119 @@
+{
+ "name": "2026-11-17-1600-camus-stranger",
+ "thinker": "camus",
+ "audio_suffix": "-t",
+ "world": [
+  "courbet_burial_ornans"
+ ],
+ "emphasis": [
+  "died",
+  "nothing",
+  "guilty",
+  "Stranger",
+  "Mother",
+  "cry",
+  "funeral",
+  "trial",
+  "prosecutor",
+  "fake"
+ ],
+ "quote_source": [
+  "Camus · The Stranger (1942), first line · tr. Stuart Gilbert (1946)"
+ ],
+ "punch_words": [
+  "nothing",
+  "Mother",
+  "prosecutor",
+  "fake"
+ ],
+ "hit_words": [
+  "Mother",
+  "fake"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "courbet_burial_ornans",
+   [
+    0.35,
+    0.45
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "That's how Camus",
+   "whistler_mother",
+   [
+    0.68,
+    0.4
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Meursault doesn't",
+   "courbet_burial_ornans",
+   [
+    0.75,
+    0.5
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Later, on trial",
+   "daumier_three_lawyers",
+   [
+    0.52,
+    0.38
+   ],
+   "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Camus never said",
+   "bruegel_icarus",
+   [
+    0.5,
+    0.5
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ]
+ ]
+}

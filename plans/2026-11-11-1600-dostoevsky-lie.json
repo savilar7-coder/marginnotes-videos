@@ -1,0 +1,131 @@
+{
+ "name": "2026-11-11-1600-dostoevsky-lie",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "same",
+  "lie",
+  "true",
+  "monk",
+  "liar",
+  "Above",
+  "yourself",
+  "truth",
+  "respecting",
+  "starts"
+ ],
+ "quote_source": [
+  "Dostoevsky · The Brothers Karamazov (1880), Book II ch. 2 · tr. Constance Garnett (1912)"
+ ],
+ "punch_words": [
+  "lie",
+  "liar",
+  "truth",
+  "yourself"
+ ],
+ "hit_words": [
+  "liar",
+  "yourself"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "munch_karl_johan_hi",
+   [
+    0.45,
+    0.42
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "In The Brothers",
+   "nesterov_hermit",
+   [
+    0.43,
+    0.38
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Above all",
+   "ge_what_is_truth",
+   [
+    0.4,
+    0.4
+   ],
+   "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Lie to yourself",
+   "munch_melancholy",
+   [
+    0.3,
+    0.45
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Then you stop",
+   "perov_last_tavern",
+   [
+    0.5,
+    0.45
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Every lie",
+   "repin_refusal_confession",
+   [
+    0.4,
+    0.4
+   ],
+   "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ]
+ ]
+}

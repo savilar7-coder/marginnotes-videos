@@ -171,7 +171,6 @@ whistler_mother.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Whistler
 daumier_three_lawyers.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Honor%C3%A9_Daumier_-_Three_Lawyers_-_Google_Art_Project.jpg?width=2400
 monet_magpie.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg?width=3000
 sorolla_seashore.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Joaqu%C3%ADn_Sorolla_y_Bastida_-_Strolling_along_the_Seashore_-_Google_Art_Project.jpg?width=2400
-sorolla_sand.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Joaqu%C3%ADn_Sorolla_y_Bastida_-_Dibujando_en_la_arena_(ca._1911).jpg?width=2400
 bocklin_villa_ruin.jpg https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B6cklin_-_Ruine_einer_Villa_am_Meer,_1878%E2%80%931880,_A_DSC_9416_(cropped).jpg?width=3000
 hammershoi_ida_letter.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Hammershoi,_Ida_reading_a_letter.jpg?width=2400
 hammershoi_white_doors.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Vilhelm_Hammersh%C3%B8i_-_Hvide_d%C3%B8re._Interi%C3%B8r_fra_Strandgade_25_-_1913.png?width=2400

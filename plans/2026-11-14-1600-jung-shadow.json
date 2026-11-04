@@ -1,0 +1,102 @@
+{
+ "name": "2026-11-14-1600-jung-shadow",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "nicest",
+  "dark",
+  "you",
+  "shadow",
+  "darker",
+  "denser",
+  "twin",
+  "refused",
+  "lighter"
+ ],
+ "quote_source": [
+  "Jung · Psychology and Religion (1938), CW 11 §131"
+ ],
+ "punch_words": [
+  "dark",
+  "shadow",
+  "denser",
+  "lighter"
+ ],
+ "hit_words": [
+  "shadow",
+  "lighter"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "ink_jung_shadow_1",
+   [
+    0.5,
+    0.45
+   ],
+   "push",
+   {
+    "zoom": [
+     1.15,
+     1.25
+    ]
+   }
+  ],
+  [
+   "Carl Jung said",
+   "ink_jung_shadow_2",
+   [
+    0.5,
+    0.5
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "And the less",
+   "ink_jung_shadow_3",
+   [
+    0.45,
+    0.45
+   ],
+   "push",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "Your shadow isn't",
+   "ink_jung_shadow_4",
+   [
+    0.5,
+    0.45
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "name": "2026-11-13-1600-dostoevsky-nowhere",
+ "thinker": "dostoevsky",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "absolutely",
+  "nowhere",
+  "tavern",
+  "clerk",
+  "understand",
+  "turn",
+  "Raskolnikov",
+  "forgets",
+  "poverty",
+  "no"
+ ],
+ "quote_source": [
+  "Dostoevsky · Crime and Punishment (1866), Part I ch. 2 · tr. Constance Garnett (1914)"
+ ],
+ "punch_words": [
+  "nowhere",
+  "turn",
+  "forgets",
+  "poverty"
+ ],
+ "hit_words": [
+  "nowhere",
+  "turn"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "levitan_vladimirka",
+   [
+    0.5,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "In a dirty",
+   "vangogh_night_cafe",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Do you understand",
+   "daumier_third_class",
+   [
+    0.45,
+    0.4
+   ],
+   "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "what it means",
+   "perov_troika",
+   [
+    0.5,
+    0.45
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "The stranger is",
+   "grimshaw_thames",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Dostoevsky knew",
+   "kramskoi_christ_desert",
+   [
+    0.5,
+    0.4
+   ],
+   "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ]
+ ]
+}

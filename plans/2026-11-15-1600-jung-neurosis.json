@@ -1,0 +1,116 @@
+{
+ "name": "2026-11-15-1600-jung-neurosis",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "avoiding",
+  "conversation",
+  "hurts",
+  "Neurosis",
+  "substitute",
+  "legitimate",
+  "leave",
+  "everywhere",
+  "honest",
+  "thousand"
+ ],
+ "quote_source": [
+  "Jung · Psychology and Religion (1938), CW 11 §129"
+ ],
+ "punch_words": [
+  "conversation",
+  "substitute",
+  "everywhere",
+  "honest"
+ ],
+ "hit_words": [
+  "substitute",
+  "honest"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "khnopff_lock_door",
+   [
+    0.5,
+    0.35
+   ],
+   "push",
+   {
+    "zoom": [
+     1.3,
+     1.4
+    ]
+   }
+  ],
+  [
+   "Carl Jung wrote",
+   "redon_closed_eyes",
+   [
+    0.5,
+    0.4
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "The pain you",
+   "goya_sleep_reason",
+   [
+    0.5,
+    0.45
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "It comes back",
+   "bruegel_dulle_griet",
+   [
+    0.55,
+    0.45
+   ],
+   "push",
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ],
+  [
+   "Have the conversation",
+   "rembrandt_prodigal_son",
+   [
+    0.45,
+    0.4
+   ],
+   {
+    "zoom": [
+     1.2,
+     1.3
+    ]
+   }
+  ]
+ ]
+}

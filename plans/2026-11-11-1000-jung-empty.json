@@ -1,0 +1,117 @@
+{
+ "name": "2026-11-11-1000-jung-empty",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [
+  "ink_jung_empty_4"
+ ],
+ "emphasis": [
+  "wanted",
+  "in",
+  "all",
+  "horror",
+  "soul",
+  "Red",
+  "Book",
+  "empty",
+  "outside"
+ ],
+ "quote_source": [
+  "Jung · The Red Book (Liber Novus), Liber Primus ch. i · retold in our words"
+ ],
+ "punch_words": [
+  "wanted",
+  "horror",
+  "soul",
+  "outside"
+ ],
+ "hit_words": [
+  "horror",
+  "outside"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "ink_jung_empty_1",
+   [
+    0.5,
+    0.6
+   ],
+   "push",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "In 1913",
+   "ink_jung_empty_2",
+   [
+    0.5,
+    0.55
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Then the wanting",
+   "ink_jung_empty_3",
+   [
+    0.5,
+    0.55
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "So he began",
+   "ink_jung_empty_4",
+   [
+    0.52,
+    0.6
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Feeling empty",
+   "ink_jung_empty_5",
+   [
+    0.45,
+    0.6
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ]
+ ]
+}

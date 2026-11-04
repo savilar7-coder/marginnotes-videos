@@ -1,0 +1,119 @@
+{
+ "name": "2026-11-17-1000-jung-soul",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [
+  "ink_jung_soul_2"
+ ],
+ "emphasis": [
+  "you",
+  "You",
+  "November",
+  "1913",
+  "soul",
+  "where",
+  "years",
+  "name",
+  "go",
+  "strangest"
+ ],
+ "quote_source": [
+  "Jung · The Red Book (Liber Novus), Liber Primus ch. i · Norton 2009"
+ ],
+ "punch_words": [
+  "You",
+  "soul",
+  "years",
+  "strangest"
+ ],
+ "hit_words": [
+  "soul",
+  "strangest"
+ ],
+ "hook_y": 1000,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.85,
+  "hook_pack": 13,
+  "paint_max": 200
+ },
+ "shots": [
+  [
+   "hook",
+   "ink_jung_soul_1",
+   [
+    0.5,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.15,
+     1.25
+    ]
+   }
+  ],
+  [
+   "One November night",
+   "ink_jung_soul_2",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "My soul",
+   "ink_jung_soul_3",
+   [
+    0.5,
+    0.48
+   ],
+   "push",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "He'd been away",
+   "ink_jung_soul_4",
+   [
+    0.5,
+    0.48
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.1,
+     1.2
+    ]
+   }
+  ],
+  [
+   "That question",
+   "ink_jung_soul_5",
+   [
+    0.5,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.1,
+     1.25
+    ]
+   }
+  ]
+ ]
+}
