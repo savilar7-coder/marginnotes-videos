@@ -177,3 +177,5 @@ hammershoi_white_doors.jpg https://commons.wikimedia.org/wiki/Special:FilePath/V
 menzel_balcony_room.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Adolph_Menzel_-_Das_Balkonzimmer_-_Google_Art_Project.jpg?width=2400
 spilliaert_self_blue.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Zelfportret_met_blauw_schetsboek,_L%C3%A9on_Spilliaert,_1907,_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen,_2697.jpg?width=2400
 caillebotte_young_man_window.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Caillebotte_-_Jeune_homme_%C3%A0_sa_fen%C3%AAtre_(B_32).jpg?width=2400
+spitzweg_poor_poet.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Carl_Spitzweg_-_Der_arme_Poet_(Neue_Pinakothek).jpg?width=3000
+beraud_paris_kiosk.jpg https://commons.wikimedia.org/wiki/Special:FilePath/Jean_B%C3%A9raud_-_Paris_Kiosk_-_Walters_371055.jpg?width=1800

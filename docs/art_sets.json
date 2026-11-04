@@ -250,7 +250,8 @@
    "ink_camus_boulder_2",
    "ink_camus_boulder_3",
    "ink_camus_boulder_4",
-   "courbet_saint_aubin_canvas"
+   "courbet_saint_aubin_canvas",
+   "beraud_paris_kiosk"
   ]
  },
  "kafka": {
@@ -272,7 +273,8 @@
    "ink_kafka_door_2",
    "ink_kafka_door_3",
    "ink_kafka_door_4",
-   "ink_kafka_door_5"
+   "ink_kafka_door_5",
+   "spitzweg_poor_poet"
   ]
  }
 }
