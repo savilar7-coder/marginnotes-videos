@@ -140,22 +140,23 @@ def chunk(words, emphasis, by_meaning=False, solo=()):
 def quote_layer(words, k, source=None):
     """A spoken quote shown whole in italic serif; words already spoken are cream, the current one red,
     upcoming ones dimmed. Optional small source line underneath."""
-    qsize = 96 if len(words) <= 8 else 80 if len(words) <= 14 else 64   # short quotes big enough for a phone (Oct 22)
-    f = ImageFont.truetype(QFONT, qsize)
-    txt = [w for w in words]
+    bold = QSTYLE == "bold"   # opt-in (Nov 4, independent grader: thin grey italic unreadable on a phone)
+    qsize = (104 if len(words) <= 8 else 88 if len(words) <= 14 else 74) if bold else (96 if len(words) <= 8 else 80 if len(words) <= 14 else 64)
+    f = ImageFont.truetype(FONT if bold else QFONT, qsize)
+    txt = [w.upper() if bold else w for w in words]
     txt[0] = "“" + re.sub(r'^["“]', "", txt[0])
     txt[-1] = re.sub(r'["”]([.,;:!?…]*)$', r"\1", txt[-1]) + "”"
     space = f.getlength(" ")
     lines, line, wline = [], [], 0.0
     for idx, w in enumerate(txt):
         wl = f.getlength(w)
-        if line and wline + space + wl > 820:
+        if line and wline + space + wl > (900 if bold else 820):
             lines.append(line); line, wline = [], 0.0
         line.append((idx, w, wl)); wline += (space if len(line) > 1 else 0) + wl
     if line:
         lines.append(line)
-    lh = int(qsize * 1.31)
-    sf = ImageFont.truetype(SFONT, 28) if source else None
+    lh = int(qsize * (1.12 if bold else 1.31))
+    sf = ImageFont.truetype(SFONT, 34 if bold else 28) if source else None
     hgt = lh * len(lines) + (70 if source else 0)
     pad = 120
     img = Image.new("RGBA", (W, hgt + 2 * pad), (0, 0, 0, 0))
@@ -165,17 +166,18 @@ def quote_layer(words, k, source=None):
         lw = sum(x[2] for x in ln) + space * (len(ln) - 1)
         x = (W - lw) / 2
         for idx, w, wl in ln:
-            col = RED + (255,) if idx == k else ((237, 230, 218, 255) if idx < k else (237, 230, 218, 120))
-            d.text((x, y), w, font=f, fill=col, stroke_width=3, stroke_fill=(10, 8, 8, 255))
+            col = RED + (255,) if idx == k else ((255, 255, 255, 255) if bold else (237, 230, 218, 255)) if idx < k else ((150, 146, 140, 255) if bold else (237, 230, 218, 120))
+            d.text((x, y), w, font=f, fill=col, stroke_width=5 if bold else 3, stroke_fill=(10, 8, 8, 255))
             x += wl + space
         y += lh
     if source:
         st = source.upper()
-        sw = sf.getlength(st) + 4 * len(st)
+        sp = 1 if bold else 4
+        sw = sf.getlength(st) + sp * len(st)
         x = (W - sw) / 2
         for ch in st:
-            d.text((x, y + 26), ch, font=sf, fill=(201, 191, 174, 230))
-            x += sf.getlength(ch) + 4
+            d.text((x, y + 26), ch, font=sf, fill=(235, 226, 210, 255) if bold else (201, 191, 174, 230), stroke_width=2 if bold else 0, stroke_fill=(10, 8, 8, 255))
+            x += sf.getlength(ch) + sp
     halo = Image.new("RGBA", img.size, (0, 0, 0, 0))
     halo.putalpha(img.getchannel("A").filter(ImageFilter.GaussianBlur(44)).point(lambda a: min(255, int(a * 1.7))))
     out = Image.new("RGBA", img.size, (0, 0, 0, 0))
@@ -202,6 +204,7 @@ def split_long_shots(shots, dur, max_len=4.2):
     return out
 
 
+QSTYLE = None  # spec "quote_style": "bold" -> quotes in the caption font, big, white (Nov 4)
 GHOST = None   # spec "ghost": "grey" -> unspoken karaoke words in solid grey, never faint red (art director, Oct 23)
 
 
@@ -420,6 +423,8 @@ def main(spec_path, out_path):
     spec = json.load(open(spec_path))
     global FX0, FY0, FX1, FY1, RADIUS, MAXW, FADE_IN, FADE_OUT, BEAT0, GHOST
     GHOST = spec.get("ghost")
+    global QSTYLE
+    QSTYLE = spec.get("quote_style")
     if spec.get("card"):                 # bigger painting card (Oct 22 deliberation); old specs keep the default
         FX0, FY0, FX1, FY1 = spec["card"]
     RADIUS = spec.get("radius", RADIUS)

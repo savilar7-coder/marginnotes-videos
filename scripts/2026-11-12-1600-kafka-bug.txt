@@ -1,7 +1,7 @@
 [briskly] You wake up, and you already dread work.
 
-Gregor Samsa woke up as a giant insect. His first worry was work: [slowly] he'd missed the five o'clock train.
+Gregor Samsa wakes up as a giant insect. His first worry? [slowly] He's missed the five o'clock train.
 
-His boss would be furious. His parents' debt still had years to go.
+Not his body. His boss. His family's debt.
 
-[quietly] Kafka's dark joke: the job scared Gregor more than becoming a bug. What scares you more?
+[quietly] Kafka's dark joke: the job scares him more than the bug. Be honest. Which one scares you more?
