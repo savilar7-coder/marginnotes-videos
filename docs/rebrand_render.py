@@ -111,7 +111,7 @@ def chunk(words, emphasis, by_meaning=False, solo=()):
                     if left and (len(cur_q) >= QCHUNK or (len(cur_q) >= 3 and re.search(r"[,.;:!?…—]$", x[0]) and left >= 2)):
                         parts.append(cur_q); cur_q = []
                 if cur_q:
-                    if len(cur_q) <= 2 and parts:
+                    if len(cur_q) <= 1 and parts:
                         parts[-1] += cur_q
                     else:
                         parts.append(cur_q)
@@ -158,6 +158,8 @@ def quote_layer(words, k, source=None, qpart=(True, True)):
     upcoming ones dimmed. Optional small source line underneath."""
     bold = QSTYLE == "bold"   # opt-in (Nov 4, independent grader: thin grey italic unreadable on a phone)
     qsize = (104 if len(words) <= 8 else 88 if len(words) <= 14 else 74) if bold else (96 if len(words) <= 8 else 80 if len(words) <= 14 else 64)
+    if QCHUNK:   # quote pieces (Nov 5): smaller and wider, 2-3 lines, so the picture stays visible
+        qsize = 76 if bold else 70
     f = ImageFont.truetype(FONT if bold else QFONT, qsize)
     txt = [w.upper() if bold else w for w in words]
     txt[0] = ("“" if qpart[0] else "") + re.sub(r'^["“]', "", txt[0])
@@ -166,7 +168,7 @@ def quote_layer(words, k, source=None, qpart=(True, True)):
     lines, line, wline = [], [], 0.0
     for idx, w in enumerate(txt):
         wl = f.getlength(w)
-        if line and wline + space + wl > (780 if bold else 820):
+        if line and wline + space + wl > (920 if QCHUNK else 780 if bold else 820):
             lines.append(line); line, wline = [], 0.0
         line.append((idx, w, wl)); wline += (space if len(line) > 1 else 0) + wl
     if line:
