@@ -205,6 +205,7 @@ def split_long_shots(shots, dur, max_len=4.2):
 
 
 CAPSCALE = 1.0  # spec "cap_scale"
+HOOKSCALE = 1.0  # spec "hook_scale" (Nov 4): smaller hook card so it can sit off the character
 QSTYLE = None  # spec "quote_style": "bold" -> quotes in the caption font, big, white (Nov 4)
 GHOST = None   # spec "ghost": "grey" -> unspoken karaoke words in solid grey, never faint red (art director, Oct 23)
 
@@ -223,7 +224,7 @@ def text_layer(words, emphasis, big, lit=None, pack=9):
         size = (250 if big else 230) if em else (190 if big else 150)
         if has_em and not em:
             size = 110
-        size = int(size * (CAPSCALE if not big else 1.0))   # opt-in spec "cap_scale" (Nov 4): smaller captions off the subject
+        size = int(size * (CAPSCALE if not big else HOOKSCALE))   # opt-in spec "cap_scale" (Nov 4): smaller captions off the subject
         lines.append(([(d.upper(), 255 if i < lit else 115)], size, RED if em else (255, 255, 255), i < lit))
     # pack consecutive plain words into lines of <= 9 characters; an emphasis word always gets its own line
     packed = []
@@ -428,6 +429,8 @@ def main(spec_path, out_path):
     global QSTYLE, CAPSCALE
     QSTYLE = spec.get("quote_style")
     CAPSCALE = spec.get("cap_scale", 1.0)
+    global HOOKSCALE
+    HOOKSCALE = spec.get("hook_scale", 1.0)
     if spec.get("card"):                 # bigger painting card (Oct 22 deliberation); old specs keep the default
         FX0, FY0, FX1, FY1 = spec["card"]
     RADIUS = spec.get("radius", RADIUS)
@@ -598,10 +601,16 @@ def main(spec_path, out_path):
         ci = max((i for i, c in enumerate(caps) if c["t0"] <= t), default=0)
         if hook_layer is not None and t < hook_card:
             hy = spec.get("hook_y", TEXT_Y)   # low slot keeps the face on frame 0 clear (art director, Oct 23)
-            frame.paste(hook_layer, ((W - hook_layer.width) // 2, hy - hook_layer.height // 2), hook_layer)
+            hy0 = hy - hook_layer.height // 2
+            tb = spec.get("text_bottom")
+            if tb:
+                bb = hook_layer.getchannel("A").point(lambda v: 255 if v > 120 else 0).getbbox()
+                if bb and hy0 + bb[3] > tb:
+                    hy0 = tb - bb[3]
+            frame.paste(hook_layer, ((W - hook_layer.width) // 2, hy0), hook_layer)
         elif ci >= first_after and t < caps[ci]["t1"] + 0.05:
             L = layer(ci, t < hook_until, t)
-            p = min(1.0, (t - caps[ci]["t0"]) / 0.2) if ci > 0 else 1.0
+            p = min(1.0, (t - caps[ci]["t0"]) / spec.get("cap_fade", 0.2)) if ci > 0 else 1.0   # opt-in cap_fade (Nov 4): no half-faded frames
             k = ease_out_back(p)
             sc = 0.82 + 0.18 * k
             dy = int((1 - k) * 46)

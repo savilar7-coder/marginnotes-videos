@@ -27,7 +27,7 @@
   "Mother",
   "fake"
  ],
- "hook_y": 1000,
+ "hook_y": 1300,
  "spec_extra": {
   "solo_words": [
    "you"
@@ -40,10 +40,13 @@
   "max_shot": 3.4,
   "text_bottom": 1470,
   "text_y": 1280,
-  "brand_y": 270,
+  "brand_y": 110,
   "quote_y": 1300,
   "cap_scale": 0.8,
-  "captions": "words"
+  "captions": "words",
+  "cap_fade": 0.06,
+  "hook_scale": 0.72,
+  "hook_y": 1300
  },
  "shots": [
   [

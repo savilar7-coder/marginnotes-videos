@@ -25,7 +25,7 @@
   "afternoon",
   "lost"
  ],
- "hook_y": 1000,
+ "hook_y": 1300,
  "spec_extra": {
   "solo_words": [
    "you"
@@ -38,11 +38,13 @@
   "max_shot": 3.4,
   "text_bottom": 1470,
   "text_y": 1280,
-  "brand_y": 270,
+  "brand_y": 110,
   "quote_y": 1300,
   "cap_scale": 0.8,
   "captions": "words",
-  "hook_y": 940
+  "cap_fade": 0.06,
+  "hook_scale": 0.72,
+  "hook_y": 1300
  },
  "shots": [
   [
@@ -61,7 +63,7 @@
    }
   ],
   [
-   "Carl Jung saw",
+   "At thirty-eight",
    "d_jung-afternoon_02",
    [
     0.5,
@@ -75,7 +77,7 @@
    }
   ],
   [
-   "We cannot",
+   "He wrote",
    "d_jung-afternoon_03",
    [
     0.5,
@@ -91,26 +93,12 @@
   ],
   [
    "The afternoon is",
-   "d_jung-afternoon_04",
-   [
-    0.5,
-    0.58
-   ],
-   "rise",
-   {
-    "zoom": [
-     1.0,
-     1.04
-    ]
-   }
-  ],
-  [
-   "It has its",
    "d_jung-afternoon_05",
    [
     0.5,
     0.58
    ],
+   "rise",
    {
     "zoom": [
      1.0,
@@ -125,7 +113,6 @@
     0.5,
     0.58
    ],
-   "orbit",
    {
     "zoom": [
      1.0,
@@ -140,7 +127,7 @@
     0.5,
     0.58
    ],
-   "push",
+   "orbit",
    {
     "zoom": [
      1.0,
