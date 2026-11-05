@@ -36,7 +36,8 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6,
+  "max_shot": 3.2,
+  "text_bottom": 1470,
   "text_y": 1280,
   "brand_y": 270,
   "quote_y": 1000
@@ -44,10 +45,10 @@
  "shots": [
   [
    "hook",
-   "ink_kafka_bug_2",
+   "d_kafka-bug_01",
    [
-    0.48,
-    0.6
+    0.5,
+    0.58
    ],
    "push",
    {
@@ -59,10 +60,39 @@
   ],
   [
    "Gregor Samsa",
-   "ink_kafka_bug_1",
+   "d_kafka-bug_02",
    [
-    0.45,
-    0.6
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Legs waving",
+   "d_kafka-bug_03",
+   [
+    0.5,
+    0.58
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "And his first",
+   "d_kafka-bug_04",
+   [
+    0.5,
+    0.58
    ],
    "rise",
    {
@@ -73,42 +103,42 @@
    }
   ],
   [
-   "His first worry",
-   "ink_kafka_bug_3",
+   "But here is",
+   "d_kafka-bug_05",
    [
-    0.52,
-    0.6
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "The job scares",
+   "d_kafka-bug_06",
+   [
+    0.5,
+    0.58
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Be honest",
+   "d_kafka-bug_07",
+   [
+    0.5,
+    0.58
    ],
    "push",
-   {
-    "zoom": [
-     1.0,
-     1.08
-    ]
-   }
-  ],
-  [
-   "Not his body",
-   "ink_kafka_bug_4",
-   [
-    0.6,
-    0.6
-   ],
-   {
-    "zoom": [
-     1.0,
-     1.08
-    ]
-   }
-  ],
-  [
-   "Kafka's dark joke",
-   "ink_kafka_bug_5",
-   [
-    0.55,
-    0.6
-   ],
-   "pull",
    {
     "zoom": [
      1.0,

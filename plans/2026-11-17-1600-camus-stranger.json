@@ -2,9 +2,7 @@
  "name": "2026-11-17-1600-camus-stranger",
  "thinker": "camus",
  "audio_suffix": "-t",
- "world": [
-  "courbet_burial_ornans"
- ],
+ "world": [],
  "emphasis": [
   "nothing",
   "guilty",
@@ -39,80 +37,113 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6
+  "max_shot": 3.2,
+  "text_bottom": 1470,
+  "text_y": 1280,
+  "brand_y": 270,
+  "quote_y": 1000
  },
  "shots": [
   [
    "hook",
-   "courbet_burial_ornans",
+   "d_camus-stranger_01",
    [
-    0.35,
-    0.62
+    0.5,
+    0.58
    ],
    "push",
    {
     "zoom": [
-     1.3,
-     1.4
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Then you felt",
+   "d_camus-stranger_02",
+   [
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "The Stranger opens",
-   "whistler_mother",
+   "d_camus-stranger_03",
    [
-    0.68,
-    0.4
+    0.5,
+    0.58
    ],
+   "pull",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "Meursault does not",
-   "courbet_burial_ornans",
+   "d_camus-stranger_04",
    [
-    0.75,
-    0.5
+    0.5,
+    0.58
    ],
-   "pull",
+   "rise",
    {
     "zoom": [
-     1.3,
-     1.4
+     1.0,
+     1.08
     ]
    }
   ],
   [
-   "Months later",
-   "daumier_three_lawyers",
+   "Weeks later",
+   "d_camus-stranger_05",
    [
-    0.52,
-    0.38
+    0.5,
+    0.58
    ],
-   "push",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "But at his",
+   "d_camus-stranger_06",
+   [
+    0.5,
+    0.58
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "Camus said",
-   "bruegel_icarus",
+   "d_camus-stranger_07",
    [
     0.5,
-    0.5
+    0.58
    ],
-   "rise",
+   "push",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ]

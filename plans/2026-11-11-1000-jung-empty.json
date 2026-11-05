@@ -36,7 +36,8 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6,
+  "max_shot": 3.2,
+  "text_bottom": 1470,
   "text_y": 1280,
   "brand_y": 270,
   "quote_y": 1000
@@ -44,10 +45,10 @@
  "shots": [
   [
    "hook",
-   "ink_jung_empty_1",
+   "d_jung-empty_01",
    [
     0.5,
-    0.6
+    0.58
    ],
    "push",
    {
@@ -58,11 +59,11 @@
    }
   ],
   [
-   "1913",
-   "ink_jung_empty_2",
+   "So why does",
+   "d_jung-empty_02",
    [
     0.5,
-    0.6
+    0.58
    ],
    {
     "zoom": [
@@ -72,11 +73,11 @@
    }
   ],
   [
-   "And he feels",
-   "ink_jung_empty_3",
+   "1913",
+   "d_jung-empty_03",
    [
     0.5,
-    0.6
+    0.58
    ],
    "pull",
    {
@@ -87,11 +88,26 @@
    }
   ],
   [
-   "So every night",
-   "ink_jung_empty_4",
+   "And one night",
+   "d_jung-empty_04",
    [
-    0.52,
-    0.6
+    0.5,
+    0.58
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "But he does",
+   "d_jung-empty_05",
+   [
+    0.5,
+    0.58
    ],
    {
     "zoom": [
@@ -101,13 +117,42 @@
    }
   ],
   [
-   "Empty does not",
-   "ink_jung_empty_5",
+   "He sits down",
+   "d_jung-empty_06",
    [
-    0.45,
-    0.6
+    0.5,
+    0.58
    ],
-   "rise",
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Those pages",
+   "d_jung-empty_07",
+   [
+    0.5,
+    0.58
+   ],
+   "push",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Empty does not",
+   "d_jung-empty_08",
+   [
+    0.5,
+    0.58
+   ],
    {
     "zoom": [
      1.0,

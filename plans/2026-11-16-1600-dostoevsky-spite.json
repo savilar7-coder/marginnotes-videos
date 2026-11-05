@@ -38,7 +38,8 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6,
+  "max_shot": 3.2,
+  "text_bottom": 1470,
   "text_y": 1280,
   "brand_y": 270,
   "quote_y": 1000
@@ -46,10 +47,10 @@
  "shots": [
   [
    "hook",
-   "ink_dost_spite_1",
+   "d_dostoevsky-spite_01",
    [
     0.5,
-    0.6
+    0.58
    ],
    "push",
    {
@@ -60,11 +61,40 @@
    }
   ],
   [
-   "Dostoevsky's Underground",
-   "ink_dost_spite_2",
+   "So you did",
+   "d_dostoevsky-spite_02",
    [
     0.5,
-    0.6
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Dostoevsky's Underground",
+   "d_dostoevsky-spite_03",
+   [
+    0.5,
+    0.58
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "I am a spiteful",
+   "d_dostoevsky-spite_04",
+   [
+    0.5,
+    0.58
    ],
    "rise",
    {
@@ -75,11 +105,11 @@
    }
   ],
   [
-   "His liver",
-   "ink_dost_spite_3",
+   "His liver is",
+   "d_dostoevsky-spite_05",
    [
     0.5,
-    0.6
+    0.58
    ],
    {
     "zoom": [
@@ -89,13 +119,42 @@
    }
   ],
   [
-   "Doing the opposite",
-   "ink_dost_spite_4",
+   "But he will",
+   "d_dostoevsky-spite_06",
    [
-    0.48,
-    0.6
+    0.5,
+    0.58
    ],
-   "pull",
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Out of spite",
+   "d_dostoevsky-spite_07",
+   [
+    0.5,
+    0.58
+   ],
+   "push",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Doing the opposite",
+   "d_dostoevsky-spite_08",
+   [
+    0.5,
+    0.58
+   ],
    {
     "zoom": [
      1.0,

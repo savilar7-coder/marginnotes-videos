@@ -36,7 +36,8 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6,
+  "max_shot": 3.2,
+  "text_bottom": 1470,
   "text_y": 1280,
   "brand_y": 270,
   "quote_y": 1000
@@ -44,10 +45,10 @@
  "shots": [
   [
    "hook",
-   "ink_camus_boulder_1",
+   "d_camus-boulder_01",
    [
     0.5,
-    0.6
+    0.58
    ],
    "push",
    {
@@ -58,13 +59,12 @@
    }
   ],
   [
-   "In 1942",
-   "ink_camus_boulder_2",
+   "1942",
+   "d_camus-boulder_02",
    [
     0.5,
-    0.6
+    0.58
    ],
-   "orbit",
    {
     "zoom": [
      1.0,
@@ -73,11 +73,11 @@
    }
   ],
   [
-   "Then Camus watches",
-   "ink_camus_boulder_3",
+   "Push the rock",
+   "d_camus-boulder_03",
    [
-    0.48,
-    0.6
+    0.5,
+    0.58
    ],
    "pull",
    {
@@ -88,13 +88,57 @@
    }
   ],
   [
-   "You can't change",
-   "ink_camus_boulder_4",
+   "Watch it roll",
+   "d_camus-boulder_04",
    [
-    0.52,
-    0.6
+    0.5,
+    0.58
    ],
    "rise",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "But Camus does",
+   "d_camus-boulder_05",
+   [
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "And he writes",
+   "d_camus-boulder_06",
+   [
+    0.5,
+    0.58
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "You cannot change",
+   "d_camus-boulder_07",
+   [
+    0.5,
+    0.58
+   ],
+   "push",
    {
     "zoom": [
      1.0,

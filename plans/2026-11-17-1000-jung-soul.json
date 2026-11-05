@@ -2,9 +2,7 @@
  "name": "2026-11-17-1000-jung-soul",
  "thinker": "jung",
  "audio_suffix": "-t",
- "world": [
-  "ink_jung_soul_2"
- ],
+ "world": [],
  "emphasis": [
   "ask",
   "November",
@@ -39,7 +37,8 @@
   "hook_pack": 10,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6,
+  "max_shot": 3.2,
+  "text_bottom": 1470,
   "text_y": 1280,
   "brand_y": 270,
   "quote_y": 1000
@@ -47,10 +46,10 @@
  "shots": [
   [
    "hook",
-   "ink_jung_soul_1",
+   "d_jung-soul_01",
    [
     0.5,
-    0.6
+    0.58
    ],
    "push",
    {
@@ -62,10 +61,10 @@
   ],
   [
    "November 1913",
-   "ink_jung_soul_2",
+   "d_jung-soul_02",
    [
     0.5,
-    0.6
+    0.58
    ],
    {
     "zoom": [
@@ -75,13 +74,13 @@
    }
   ],
   [
-   "My soul",
-   "ink_jung_soul_3",
+   "But he does",
+   "d_jung-soul_03",
    [
     0.5,
-    0.6
+    0.58
    ],
-   "push",
+   "pull",
    {
     "zoom": [
      1.0,
@@ -90,28 +89,42 @@
    }
   ],
   [
-   "For years",
-   "ink_jung_soul_4",
+   "He writes to",
+   "d_jung-soul_04",
    [
     0.5,
-    0.6
+    0.58
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "For years he",
+   "d_jung-soul_05",
+   [
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "That question",
+   "d_jung-soul_06",
+   [
+    0.5,
+    0.58
    ],
    "orbit",
-   {
-    "zoom": [
-     1.0,
-     1.08
-    ]
-   }
-  ],
-  [
-   "That one question",
-   "ink_jung_soul_5",
-   [
-    0.5,
-    0.6
-   ],
-   "push",
    {
     "zoom": [
      1.0,

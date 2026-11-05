@@ -35,95 +35,114 @@
   "hook_pack": 15,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6,
+  "max_shot": 3.2,
+  "text_bottom": 1470,
+  "text_y": 1280,
+  "brand_y": 270,
+  "quote_y": 1000,
   "hook_y": 940
  },
  "shots": [
   [
    "hook",
-   "munch_self_cigarette",
+   "d_jung-afternoon_01",
    [
     0.5,
-    0.42
+    0.58
    ],
    "push",
    {
     "zoom": [
-     1.3,
-     1.4
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "Carl Jung saw",
-   "hammershoi_sunbeams",
+   "d_jung-afternoon_02",
    [
     0.5,
-    0.45
+    0.58
    ],
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "We cannot",
-   "vangogh_noon_rest",
+   "d_jung-afternoon_03",
    [
     0.5,
-    0.5
+    0.58
    ],
    "pull",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "But here is",
+   "d_jung-afternoon_04",
+   [
+    0.5,
+    0.58
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "The afternoon is",
+   "d_jung-afternoon_05",
+   [
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "Morning is",
-   "ingres_napoleon_throne",
+   "d_jung-afternoon_06",
    [
     0.5,
-    0.3
+    0.58
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Afternoon is for",
+   "d_jung-afternoon_07",
+   [
+    0.5,
+    0.58
    ],
    "push",
    {
     "zoom": [
-     1.2,
-     1.3
-    ]
-   }
-  ],
-  [
-   "Afternoon is",
-   "rembrandt_self_1669",
-   [
-    0.5,
-    0.45
-   ],
-   {
-    "zoom": [
-     1.2,
-     1.3
-    ]
-   }
-  ],
-  [
-   "You're not lost",
-   "bocklin_villa_sea",
-   [
-    0.6,
-    0.45
-   ],
-   "rise",
-   {
-    "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ]

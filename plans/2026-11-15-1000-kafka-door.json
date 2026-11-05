@@ -2,9 +2,7 @@
  "name": "2026-11-15-1000-kafka-door",
  "thinker": "kafka",
  "audio_suffix": "-t",
- "world": [
-  "ink_kafka_door_2"
- ],
+ "world": [],
  "emphasis": [
   "permission",
   "door",
@@ -39,7 +37,8 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6,
+  "max_shot": 3.2,
+  "text_bottom": 1470,
   "text_y": 1280,
   "brand_y": 270,
   "quote_y": 1000
@@ -47,10 +46,10 @@
  "shots": [
   [
    "hook",
-   "ink_kafka_door_1",
+   "d_kafka-door_01",
    [
     0.5,
-    0.6
+    0.58
    ],
    "push",
    {
@@ -62,10 +61,10 @@
   ],
   [
    "In Kafka's parable",
-   "ink_kafka_door_2",
+   "d_kafka-door_02",
    [
     0.5,
-    0.6
+    0.58
    ],
    {
     "zoom": [
@@ -75,13 +74,57 @@
    }
   ],
   [
-   "Old and dying",
-   "ink_kafka_door_3",
+   "So he sits",
+   "d_kafka-door_03",
    [
-    0.45,
-    0.6
+    0.5,
+    0.58
    ],
-   "push",
+   "pull",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "He grows old",
+   "d_kafka-door_04",
+   [
+    0.5,
+    0.58
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "He even begs",
+   "d_kafka-door_05",
+   [
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Dying",
+   "d_kafka-door_06",
+   [
+    0.5,
+    0.58
+   ],
+   "orbit",
    {
     "zoom": [
      1.0,
@@ -91,10 +134,10 @@
   ],
   [
    "The guard shouts",
-   "ink_kafka_door_4",
+   "d_kafka-door_07",
    [
     0.5,
-    0.6
+    0.58
    ],
    "push",
    {
@@ -106,12 +149,11 @@
   ],
   [
    "What door",
-   "ink_kafka_door_5",
+   "d_kafka-door_08",
    [
     0.5,
-    0.6
+    0.58
    ],
-   "pull",
    {
     "zoom": [
      1.0,

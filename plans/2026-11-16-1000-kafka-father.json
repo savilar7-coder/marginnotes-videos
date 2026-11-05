@@ -2,9 +2,7 @@
  "name": "2026-11-16-1000-kafka-father",
  "thinker": "kafka",
  "audio_suffix": "-t",
- "world": [
-  "hammershoi_ida_letter"
- ],
+ "world": [],
  "emphasis": [
   "sent",
   "father",
@@ -37,94 +35,113 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6
+  "max_shot": 3.2,
+  "text_bottom": 1470,
+  "text_y": 1280,
+  "brand_y": 270,
+  "quote_y": 1000
  },
  "shots": [
   [
    "hook",
-   "hammershoi_ida_letter",
-   [
-    0.25,
-    0.52
-   ],
-   "push",
-   {
-    "zoom": [
-     1.2,
-     1.3
-    ]
-   }
-  ],
-  [
-   "Dozens of pages",
-   "caillebotte_young_man_window",
-   [
-    0.55,
-    0.36
-   ],
-   {
-    "zoom": [
-     1.2,
-     1.3
-    ]
-   }
-  ],
-  [
-   "It opens",
-   "hammershoi_white_doors",
+   "d_kafka-father_01",
    [
     0.5,
-    0.45
-   ],
-   "pull",
-   {
-    "zoom": [
-     1.2,
-     1.3
-    ]
-   }
-  ],
-  [
-   "Deep inside",
-   "spitzweg_poor_poet",
-   [
-    0.45,
-    0.45
+    0.58
    ],
    "push",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "His father never",
-   "menzel_balcony_room",
+   "d_kafka-father_02",
    [
-    0.6,
-    0.5
+    0.5,
+    0.58
    ],
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "It opens",
+   "d_kafka-father_03",
+   [
+    0.5,
+    0.58
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "And deep inside",
+   "d_kafka-father_04",
+   [
+    0.5,
+    0.58
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "But it never",
+   "d_kafka-father_05",
+   [
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "She never did",
+   "d_kafka-father_06",
+   [
+    0.5,
+    0.58
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "Some letters",
-   "hammershoi_ida_letter",
+   "d_kafka-father_07",
    [
-    0.62,
-    0.5
+    0.5,
+    0.58
    ],
-   "pull",
+   "push",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ]

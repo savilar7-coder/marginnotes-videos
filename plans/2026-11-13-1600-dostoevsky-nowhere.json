@@ -35,109 +35,127 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6
+  "max_shot": 3.2,
+  "text_bottom": 1470,
+  "text_y": 1280,
+  "brand_y": 270,
+  "quote_y": 1000
  },
  "shots": [
   [
    "hook",
-   "levitan_vladimirka",
+   "d_dostoevsky-nowhere_01",
    [
-    0.45,
-    0.62
+    0.5,
+    0.58
    ],
    "push",
    {
     "zoom": [
-     1.3,
-     1.4
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "In Crime and",
-   "vangogh_night_cafe",
+   "d_dostoevsky-nowhere_02",
    [
     0.5,
-    0.5
+    0.58
    ],
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "Do you understand",
-   "daumier_third_class",
+   "d_dostoevsky-nowhere_03",
    [
-    0.45,
-    0.4
+    0.5,
+    0.58
    ],
-   "push",
+   "pull",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "what it means",
-   "perov_troika",
+   "d_dostoevsky-nowhere_04",
    [
     0.5,
-    0.45
+    0.58
    ],
-   "pull",
+   "rise",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ],
   [
-   "The stranger",
-   "perov_last_tavern",
+   "The stranger is",
+   "d_dostoevsky-nowhere_05",
    [
     0.5,
-    0.5
+    0.58
    ],
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ],
   [
-   "And quietly",
-   "friedrich_woman_window",
+   "But tonight",
+   "d_dostoevsky-nowhere_06",
    [
     0.5,
-    0.45
+    0.58
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "and leaves his",
+   "d_dostoevsky-nowhere_07",
+   [
+    0.5,
+    0.58
    ],
    "push",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "When someone",
-   "perov_dostoevsky",
+   "d_dostoevsky-nowhere_08",
    [
     0.5,
-    0.45
+    0.58
    ],
-   "pull",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ]

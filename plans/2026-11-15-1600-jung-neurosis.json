@@ -36,79 +36,142 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6
+  "max_shot": 3.2,
+  "text_bottom": 1470,
+  "text_y": 1280,
+  "brand_y": 270,
+  "quote_y": 1000
  },
  "shots": [
   [
    "hook",
-   "khnopff_lock_door",
+   "d_jung-neurosis_01",
    [
-    0.4,
-    0.62
+    0.5,
+    0.58
    ],
    "push",
    {
     "zoom": [
-     1.15,
-     1.25
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "And you have",
+   "d_jung-neurosis_02",
+   [
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "Carl Jung saw",
-   "redon_closed_eyes",
+   "d_jung-neurosis_03",
    [
     0.5,
-    0.4
-   ],
-   {
-    "zoom": [
-     1.2,
-     1.3
-    ]
-   }
-  ],
-  [
-   "The pain you",
-   "goya_sleep_reason",
-   [
-    0.5,
-    0.45
+    0.58
    ],
    "pull",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ],
   [
-   "Bad sleep",
-   "bruegel_dulle_griet",
+   "Here is the",
+   "d_jung-neurosis_04",
    [
-    0.55,
-    0.45
+    0.5,
+    0.58
+   ],
+   "rise",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "So they multiply",
+   "d_jung-neurosis_05",
+   [
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Short temper",
+   "d_jung-neurosis_06",
+   [
+    0.5,
+    0.58
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Tight chest",
+   "d_jung-neurosis_07",
+   [
+    0.5,
+    0.58
    ],
    "push",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Three",
+   "d_jung-neurosis_08",
+   [
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
     ]
    }
   ],
   [
    "Have the conversation",
-   "rembrandt_prodigal_son",
+   "d_jung-neurosis_09",
    [
-    0.45,
-    0.4
+    0.5,
+    0.58
    ],
+   "pull",
    {
     "zoom": [
-     1.2,
-     1.3
+     1.0,
+     1.08
     ]
    }
   ]

@@ -35,7 +35,8 @@
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 2.6,
+  "max_shot": 3.2,
+  "text_bottom": 1470,
   "text_y": 1280,
   "brand_y": 270,
   "quote_y": 1000
@@ -43,10 +44,10 @@
  "shots": [
   [
    "hook",
-   "ink_jung_shadow_1",
+   "d_jung-shadow_01",
    [
     0.5,
-    0.6
+    0.58
    ],
    "push",
    {
@@ -57,11 +58,40 @@
    }
   ],
   [
-   "Carl Jung put",
-   "ink_jung_shadow_2",
+   "So do you",
+   "d_jung-shadow_02",
    [
     0.5,
-    0.6
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Carl Jung put",
+   "d_jung-shadow_03",
+   [
+    0.5,
+    0.58
+   ],
+   "pull",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Anger",
+   "d_jung-shadow_04",
+   [
+    0.5,
+    0.58
    ],
    "rise",
    {
@@ -72,11 +102,40 @@
    }
   ],
   [
-   "Anger",
-   "ink_jung_shadow_3",
+   "Envy",
+   "d_jung-shadow_05",
    [
-    0.45,
-    0.6
+    0.5,
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Wanting more",
+   "d_jung-shadow_06",
+   [
+    0.5,
+    0.58
+   ],
+   "orbit",
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Everything you were",
+   "d_jung-shadow_07",
+   [
+    0.5,
+    0.58
    ],
    "push",
    {
@@ -87,11 +146,25 @@
    }
   ],
   [
-   "Meet your shadow",
-   "ink_jung_shadow_4",
+   "But hiding it",
+   "d_jung-shadow_08",
    [
     0.5,
-    0.6
+    0.58
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Meet your shadow",
+   "d_jung-shadow_09",
+   [
+    0.5,
+    0.58
    ],
    "pull",
    {
