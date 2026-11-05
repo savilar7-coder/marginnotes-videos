@@ -168,7 +168,7 @@ def quote_layer(words, k, source=None, qpart=(True, True)):
     lines, line, wline = [], [], 0.0
     for idx, w in enumerate(txt):
         wl = f.getlength(w)
-        if line and wline + space + wl > (920 if QCHUNK else 780 if bold else 820):
+        if line and wline + space + wl > (800 if QCHUNK else 780 if bold else 820):
             lines.append(line); line, wline = [], 0.0
         line.append((idx, w, wl)); wline += (space if len(line) > 1 else 0) + wl
     if line:
@@ -192,6 +192,9 @@ def quote_layer(words, k, source=None, qpart=(True, True)):
         st = source.upper()
         sp = 1 if bold else 4
         sw = sf.getlength(st) + sp * len(st)
+        if QCHUNK and sw > 800:   # (Nov 5) long source lines reached the QA edge zones on dark frames: shrink to fit 800 px
+            sf = ImageFont.truetype(SFONT, max(22, int((34 if bold else 28) * 800 / sw)))
+            sw = sf.getlength(st) + sp * len(st)
         x = (W - sw) / 2
         for ch in st:
             d.text((x, y + 26), ch, font=sf, fill=(235, 226, 210, 255) if bold else (201, 191, 174, 230), stroke_width=2 if bold else 0, stroke_fill=(10, 8, 8, 255))
