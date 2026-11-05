@@ -607,7 +607,13 @@ def main(spec_path, out_path):
                 al = L2.getchannel("A").point(lambda a, m=min(1.0, p * 2.5): int(a * m))
                 L2 = L2.copy(); L2.putalpha(al)
             ty = spec.get("quote_y", spec.get("text_y", TEXT_Y)) if caps[ci]["kind"] == "quote" else spec.get("text_y", TEXT_Y)   # opt-in quote_y (Nov 4)
-            frame.paste(L2, ((W - L2.width) // 2, ty - L2.height // 2 + dy), L2)
+            y0 = ty - L2.height // 2 + dy
+            tb = spec.get("text_bottom")   # opt-in (Nov 4): long captions move up so the visible text ends above this y
+            if tb:
+                bb = L2.getchannel("A").point(lambda v: 255 if v > 120 else 0).getbbox()
+                if bb and y0 + bb[3] > tb:
+                    y0 = tb - bb[3]
+            frame.paste(L2, ((W - L2.width) // 2, y0), L2)
         # end card on the reveal shot (painting + source)
         if t >= hook_until and shots[max(i for i, s_ in enumerate(shots) if s_["t"] <= t)].get("card_text"):
             st_ = shots[max(i for i, s_ in enumerate(shots) if s_["t"] <= t)]

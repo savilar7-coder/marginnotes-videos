@@ -1,7 +1,9 @@
 [briskly] Still waiting for permission?
 
-In Kafka's parable, a man comes to a door. A guard says: not now. So he sits down and waits. For years.
+In Kafka's parable, a man comes to a door. A guard says: not now. So he sits down, and waits. For years.
 
-Old and dying, he asks why no one else ever came. The guard shouts: [slowly] "This entrance was meant only for you. I am now going to shut it."
+He grows old. He even begs the fleas in the guard's fur collar.
+
+Dying, he asks why no one else ever came. The guard shouts: [slowly] "This entrance was meant only for you. I am now going to shut it."
 
 [quietly] What door are you sitting outside?
