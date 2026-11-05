@@ -204,6 +204,7 @@ def split_long_shots(shots, dur, max_len=4.2):
     return out
 
 
+CAPSCALE = 1.0  # spec "cap_scale"
 QSTYLE = None  # spec "quote_style": "bold" -> quotes in the caption font, big, white (Nov 4)
 GHOST = None   # spec "ghost": "grey" -> unspoken karaoke words in solid grey, never faint red (art director, Oct 23)
 
@@ -222,12 +223,13 @@ def text_layer(words, emphasis, big, lit=None, pack=9):
         size = (250 if big else 230) if em else (190 if big else 150)
         if has_em and not em:
             size = 110
+        size = int(size * (CAPSCALE if not big else 1.0))   # opt-in spec "cap_scale" (Nov 4): smaller captions off the subject
         lines.append(([(d.upper(), 255 if i < lit else 115)], size, RED if em else (255, 255, 255), i < lit))
     # pack consecutive plain words into lines of <= 9 characters; an emphasis word always gets its own line
     packed = []
     for ws, size, col, lit_ in lines:
-        if GHOST == "grey" and not lit_:
-            ws, col = [(t, 255) for t, _ in ws], (150, 146, 140)
+        if GHOST in ("grey", "light") and not lit_:
+            ws, col = [(t, 255) for t, _ in ws], ((150, 146, 140) if GHOST == "grey" else (214, 208, 196))
         n = lambda ws_: len(" ".join(t for t, _ in ws_))
         if packed and col != RED and packed[-1][2] != RED and n(packed[-1][0]) + 1 + n(ws) <= pack:
             packed[-1] = (packed[-1][0] + ws, min(packed[-1][1], size), col)
@@ -423,8 +425,9 @@ def main(spec_path, out_path):
     spec = json.load(open(spec_path))
     global FX0, FY0, FX1, FY1, RADIUS, MAXW, FADE_IN, FADE_OUT, BEAT0, GHOST
     GHOST = spec.get("ghost")
-    global QSTYLE
+    global QSTYLE, CAPSCALE
     QSTYLE = spec.get("quote_style")
+    CAPSCALE = spec.get("cap_scale", 1.0)
     if spec.get("card"):                 # bigger painting card (Oct 22 deliberation); old specs keep the default
         FX0, FY0, FX1, FY1 = spec["card"]
     RADIUS = spec.get("radius", RADIUS)
