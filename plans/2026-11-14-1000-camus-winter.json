@@ -37,7 +37,7 @@
   ],
   "ghost": "grey",
   "quote_dim": 0.55,
-  "hook_pack": 13,
+  "hook_pack": 14,
   "paint_max": 200,
   "quote_style": "bold",
   "max_shot": 3.4,
@@ -47,10 +47,11 @@
   "quote_y": 1300,
   "cap_scale": 0.8,
   "captions": "words",
-  "cap_fade": 0.06,
-  "hook_scale": 0.72,
+  "cap_fade": 0.001,
+  "hook_scale": 0.5,
   "hook_y": 1300,
-  "quote_chunk": 5
+  "quote_chunk": 7,
+  "tail": 0.8
  },
  "shots": [
   [

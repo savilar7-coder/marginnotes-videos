@@ -46,6 +46,8 @@
   "cap_fade": 0.06,
   "hook_scale": 0.72,
   "hook_y": 1300,
+  "quote_chunk": 5,
+  "tail": 0.8,
   "film": true,
   "dim": 1.0,
   "vignette": 0.0

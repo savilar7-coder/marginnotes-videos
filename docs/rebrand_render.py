@@ -108,7 +108,8 @@ def chunk(words, emphasis, by_meaning=False, solo=()):
                 for n_, x in enumerate(q):
                     cur_q.append(x)
                     left = len(q) - n_ - 1
-                    if left and (len(cur_q) >= QCHUNK or (len(cur_q) >= 3 and re.search(r"[,.;:!?…—]$", x[0]) and left >= 2)):
+                    if left and (len(cur_q) >= QCHUNK or (len(cur_q) >= 2 and re.search(r"[.;:!?…—]$", x[0]) and left >= 2)
+                                 or (len(cur_q) >= 4 and x[0].endswith(",") and left >= 3)):   # sentence ends first (Nov 5: "FOR YOU. I AM NOW")
                         parts.append(cur_q); cur_q = []
                 if cur_q:
                     if len(cur_q) <= 1 and parts:
@@ -184,7 +185,7 @@ def quote_layer(words, k, source=None, qpart=(True, True)):
         lw = sum(x[2] for x in ln) + space * (len(ln) - 1)
         x = (W - lw) / 2
         for idx, w, wl in ln:
-            col = RED + (255,) if idx == k else ((255, 255, 255, 255) if bold else (237, 230, 218, 255)) if idx < k else ((150, 146, 140, 255) if bold else (237, 230, 218, 120))
+            col = RED + (255,) if idx == k else ((255, 255, 255, 255) if bold else (237, 230, 218, 255)) if idx < k else ((214, 208, 198, 255) if QCHUNK else (150, 146, 140, 255) if bold else (237, 230, 218, 120))
             d.text((x, y), w, font=f, fill=col, stroke_width=5 if bold else 3, stroke_fill=(10, 8, 8, 255))
             x += wl + space
         y += lh
