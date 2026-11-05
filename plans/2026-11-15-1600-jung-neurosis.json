@@ -45,7 +45,11 @@
   "captions": "words",
   "cap_fade": 0.06,
   "hook_scale": 0.72,
-  "hook_y": 1300
+  "hook_y": 1300,
+  "quote_chunk": 6,
+  "break_after": [
+   "from"
+  ]
  },
  "shots": [
   [

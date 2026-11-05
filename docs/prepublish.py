@@ -133,37 +133,40 @@ def main(spec_path, video):
         res("PASS" if qn in corpus else "FAIL", "quotes", f'"{q[:60]}..." {"found" if qn in corpus else "NOT FOUND in texts/"}')
 
     # 5 art
-    sets = json.load(open(os.path.join(HERE, "art_sets.json")))
-    thinker = spec.get("thinker") or next((v for k, v in THINKER_KEYS.items() if k in name), None)
-    if thinker and thinker in sets:
-        allowed = set(sets[thinker]["images"])
-        bad = sorted({os.path.basename(s["img"]).rsplit(".", 1)[0] for s in spec["shots"]} - allowed)
-        res("PASS" if not bad else "WARN", "art", f"{thinker} set" + (f"; outside set: {bad}" if bad else ""))
+    if spec.get("film"):   # opt-in (Nov 4): one drawn, acted, full-length film clip (shorts-film engine); painting-hold and set checks n/a
+        res("PASS", "art", "drawn film clip: " + os.path.basename(spec["shots"][0].get("clip", "?")))
     else:
-        res("WARN", "art", "thinker unknown: add \"thinker\" to the spec")
-    shots = spec["shots"]
-    longest = max((shots[i + 1]["t"] if i + 1 < len(shots) else dur) - s["t"] for i, s in enumerate(shots))
-    res("PASS" if longest <= 4.5 else "FAIL", "art", f"longest painting hold {longest:.1f} s")
-    # no repeats (Sergio, Oct 23, was "at most twice" Oct 22): each painting once per video (a long shot split
-    # into closer views counts once; the loop ending may return to the hook painting) and never a painting from
-    # this thinker's previous video
-    imgs = [os.path.basename(s["img"]).rsplit(".", 1)[0] for s in shots]
-    runs = [im for i, im in enumerate(imgs) if i == 0 or im != imgs[i - 1]]
-    body = runs[:-1] if len(runs) > 2 and runs[-1] == runs[0] else runs
-    body = [im for im in body if im not in spec.get("world", [])]   # the world painting may return (one painting, one story)
-    over = {im: n for im, n in Counter(body).items() if n > 1}
-    res("PASS" if not over else "FAIL", "art", f"{len(set(runs))} paintings in {len(runs)} shots"
-        + (f"; used more than once: {over}" if over else ""))
-    base = lambda p: re.sub(r"(-v\d+)?(-motion)?\.json$", "", os.path.basename(p))
-    me = base(spec_path)
-    prev = sorted(p for p in glob.glob(os.path.join(os.path.dirname(spec_path) or ".", "*-motion.json"))
-                  if base(p) < me and (json.load(open(p)).get("thinker") or
-                                       next((v for k, v in THINKER_KEYS.items() if k in base(p)), None)) == thinker)
-    if prev:
-        last = json.load(open(prev[-1]))
-        again = sorted(set(runs) & {os.path.basename(s["img"]).rsplit(".", 1)[0] for s in last["shots"]})
-        res("PASS" if not again else "FAIL", "art", f"vs {base(prev[-1])}: "
-            + ("no painting reused" if not again else f"{len(again)} reused: {again}"))
+        sets = json.load(open(os.path.join(HERE, "art_sets.json")))
+        thinker = spec.get("thinker") or next((v for k, v in THINKER_KEYS.items() if k in name), None)
+        if thinker and thinker in sets:
+            allowed = set(sets[thinker]["images"])
+            bad = sorted({os.path.basename(s["img"]).rsplit(".", 1)[0] for s in spec["shots"]} - allowed)
+            res("PASS" if not bad else "WARN", "art", f"{thinker} set" + (f"; outside set: {bad}" if bad else ""))
+        else:
+            res("WARN", "art", "thinker unknown: add \"thinker\" to the spec")
+        shots = spec["shots"]
+        longest = max((shots[i + 1]["t"] if i + 1 < len(shots) else dur) - s["t"] for i, s in enumerate(shots))
+        res("PASS" if longest <= 4.5 else "FAIL", "art", f"longest painting hold {longest:.1f} s")
+        # no repeats (Sergio, Oct 23, was "at most twice" Oct 22): each painting once per video (a long shot split
+        # into closer views counts once; the loop ending may return to the hook painting) and never a painting from
+        # this thinker's previous video
+        imgs = [os.path.basename(s["img"]).rsplit(".", 1)[0] for s in shots]
+        runs = [im for i, im in enumerate(imgs) if i == 0 or im != imgs[i - 1]]
+        body = runs[:-1] if len(runs) > 2 and runs[-1] == runs[0] else runs
+        body = [im for im in body if im not in spec.get("world", [])]   # the world painting may return (one painting, one story)
+        over = {im: n for im, n in Counter(body).items() if n > 1}
+        res("PASS" if not over else "FAIL", "art", f"{len(set(runs))} paintings in {len(runs)} shots"
+            + (f"; used more than once: {over}" if over else ""))
+        base = lambda p: re.sub(r"(-v\d+)?(-motion)?\.json$", "", os.path.basename(p))
+        me = base(spec_path)
+        prev = sorted(p for p in glob.glob(os.path.join(os.path.dirname(spec_path) or ".", "*-motion.json"))
+                      if base(p) < me and (json.load(open(p)).get("thinker") or
+                                           next((v for k, v in THINKER_KEYS.items() if k in base(p)), None)) == thinker)
+        if prev:
+            last = json.load(open(prev[-1]))
+            again = sorted(set(runs) & {os.path.basename(s["img"]).rsplit(".", 1)[0] for s in last["shots"]})
+            res("PASS" if not again else "FAIL", "art", f"vs {base(prev[-1])}: "
+                + ("no painting reused" if not again else f"{len(again)} reused: {again}"))
 
     # 6 hook + 7 light
     f0 = frame(video, 0.1)

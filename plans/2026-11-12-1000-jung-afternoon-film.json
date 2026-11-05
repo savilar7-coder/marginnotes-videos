@@ -1,0 +1,69 @@
+{
+ "name": "2026-11-12-1000-jung-afternoon",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "stopped",
+  "halfway",
+  "afternoon",
+  "morning",
+  "name",
+  "under",
+  "lost"
+ ],
+ "quote_source": [
+  "Jung · The Stages of Life · CW 8 §784"
+ ],
+ "punch_words": [
+  "stopped",
+  "afternoon",
+  "name",
+  "lost"
+ ],
+ "hit_words": [
+  "afternoon",
+  "lost"
+ ],
+ "hook_y": 1300,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.8,
+  "hook_pack": 15,
+  "paint_max": 200,
+  "quote_style": "bold",
+  "max_shot": 999,
+  "text_bottom": 1470,
+  "text_y": 1280,
+  "brand_y": 110,
+  "quote_y": 1300,
+  "cap_scale": 0.8,
+  "captions": "words",
+  "cap_fade": 0.06,
+  "hook_scale": 0.72,
+  "hook_y": 1300,
+  "quote_chunk": 6,
+  "film": true,
+  "dim": 1.0,
+  "vignette": 0.0
+ },
+ "shots": [
+  [
+   "hook",
+   "film_neutral",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ ]
+}

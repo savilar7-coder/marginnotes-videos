@@ -103,7 +103,22 @@ def chunk(words, emphasis, by_meaning=False, solo=()):
             q, j = [words[i]], i
             while not _closes_quote(words[j][0]) and j + 1 < len(words):
                 j += 1; q.append(words[j])
-            out.append({"kind": "quote", "words": q})
+            if QCHUNK and len(q) > QCHUNK:   # opt-in "quote_chunk" (Nov 5): long quote -> short pieces, 1-2 lines each, off the character
+                parts, cur_q = [], []
+                for n_, x in enumerate(q):
+                    cur_q.append(x)
+                    left = len(q) - n_ - 1
+                    if left and (len(cur_q) >= QCHUNK or (len(cur_q) >= 3 and re.search(r"[,.;:!?…—]$", x[0]) and left >= 2)):
+                        parts.append(cur_q); cur_q = []
+                if cur_q:
+                    if len(cur_q) <= 2 and parts:
+                        parts[-1] += cur_q
+                    else:
+                        parts.append(cur_q)
+                for n_, pq in enumerate(parts):
+                    out.append({"kind": "quote", "words": pq, "qpart": (n_ == 0, n_ == len(parts) - 1)})
+            else:
+                out.append({"kind": "quote", "words": q})
             i = j + 1
             continue
         c = _clean(w)
@@ -122,7 +137,7 @@ def chunk(words, emphasis, by_meaning=False, solo=()):
         # keep a name together ("Marcus Aurelius"): a capitalised emphasis word followed by another capitalised word
         keep_name = (c in emphasis and w[:1].isupper() and nxt[:1].isupper() and not _opens_quote(nxt)
                      and not re.search(r"[.,:;?!…]$", w))
-        if name_tail or (not keep_name and (re.search(r"[.,:;?!\"…]$", w) or (c in emphasis and not by_meaning))):
+        if name_tail or (not keep_name and (re.search(r"[.,:;?!\"…]$", w) or (c in emphasis and not by_meaning) or c in BREAK_AFTER)):   # opt-in "break_after" (Nov 5): "the pain they ran from | came back"
             out.append({"kind": "text", "words": cur}); cur = []
         name_tail = keep_name
         i += 1
@@ -133,19 +148,20 @@ def chunk(words, emphasis, by_meaning=False, solo=()):
         start = c["words"][0][1]
         end = out[i + 1]["words"][0][1] if i + 1 < len(out) else c["words"][-1][2] + 0.6
         caps.append({"kind": c["kind"], "words": [x[0] for x in c["words"]],
-                     "times": [(x[1], x[2]) for x in c["words"]], "t0": start, "t1": end})
+                     "times": [(x[1], x[2]) for x in c["words"]], "t0": start, "t1": end,
+                     "qpart": c.get("qpart", (True, True))})
     return caps
 
 
-def quote_layer(words, k, source=None):
+def quote_layer(words, k, source=None, qpart=(True, True)):
     """A spoken quote shown whole in italic serif; words already spoken are cream, the current one red,
     upcoming ones dimmed. Optional small source line underneath."""
     bold = QSTYLE == "bold"   # opt-in (Nov 4, independent grader: thin grey italic unreadable on a phone)
     qsize = (104 if len(words) <= 8 else 88 if len(words) <= 14 else 74) if bold else (96 if len(words) <= 8 else 80 if len(words) <= 14 else 64)
     f = ImageFont.truetype(FONT if bold else QFONT, qsize)
     txt = [w.upper() if bold else w for w in words]
-    txt[0] = "“" + re.sub(r'^["“]', "", txt[0])
-    txt[-1] = re.sub(r'["”]([.,;:!?…]*)$', r"\1", txt[-1]) + "”"
+    txt[0] = ("“" if qpart[0] else "") + re.sub(r'^["“]', "", txt[0])
+    txt[-1] = re.sub(r'["”]([.,;:!?…]*)$', r"\1", txt[-1]) + ("”" if qpart[1] else "")
     space = f.getlength(" ")
     lines, line, wline = [], [], 0.0
     for idx, w in enumerate(txt):
@@ -206,6 +222,8 @@ def split_long_shots(shots, dur, max_len=4.2):
 
 CAPSCALE = 1.0  # spec "cap_scale"
 HOOKSCALE = 1.0  # spec "hook_scale" (Nov 4): smaller hook card so it can sit off the character
+BREAK_AFTER = set()   # spec "break_after": words that end a caption (a small word there is not carried to the next screen)
+QCHUNK = 0     # spec "quote_chunk": max words per quote piece (0 = whole quote on one card)
 QSTYLE = None  # spec "quote_style": "bold" -> quotes in the caption font, big, white (Nov 4)
 GHOST = None   # spec "ghost": "grey" -> unspoken karaoke words in solid grey, never faint red (art director, Oct 23)
 
@@ -428,6 +446,9 @@ def main(spec_path, out_path):
     GHOST = spec.get("ghost")
     global QSTYLE, CAPSCALE
     QSTYLE = spec.get("quote_style")
+    global QCHUNK, BREAK_AFTER
+    QCHUNK = spec.get("quote_chunk", 0)
+    BREAK_AFTER = {x.lower() for x in spec.get("break_after", [])}
     CAPSCALE = spec.get("cap_scale", 1.0)
     global HOOKSCALE
     HOOKSCALE = spec.get("hook_scale", 1.0)
@@ -464,7 +485,7 @@ def main(spec_path, out_path):
     qsrc = qsrc if isinstance(qsrc, list) else [qsrc] * 20
     qn = 0
     for c in caps:
-        if c["kind"] == "quote":
+        if c["kind"] == "quote" and c["qpart"][1]:   # source line only under the last piece
             c["source"] = qsrc[qn] if qn < len(qsrc) else None; qn += 1
     # auto-exposure: bring dark paintings (Rembrandt, La Tour) up to a common brightness
     gain = {k: float(np.clip(105.0 / max(1.0, np.asarray(v.convert("L"), np.float32).mean()), 0.75, 2.2))
@@ -504,7 +525,7 @@ def main(spec_path, out_path):
             k = max((j for j, (ws, we) in enumerate(c["times"]) if ws <= t), default=0)
             key = (i, "q", k)
             if key not in layers:
-                layers[key] = quote_layer(c["words"], k, c.get("source"))
+                layers[key] = quote_layer(c["words"], k, c.get("source"), c["qpart"])
             return layers[key]
         # build the phrase word by word: a word appears only once it is spoken (iNQ style, no text ahead of voice)
         k = max(1, sum(1 for ws, we in c["times"] if ws <= t + 0.02))

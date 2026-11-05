@@ -1,0 +1,69 @@
+{
+ "name": "2026-11-15-1600-jung-neurosis",
+ "thinker": "jung",
+ "audio_suffix": "-t",
+ "world": [],
+ "emphasis": [
+  "conversation",
+  "hurts",
+  "Neurosis",
+  "substitute",
+  "legitimate",
+  "pieces",
+  "honest",
+  "thousand"
+ ],
+ "quote_source": [
+  "Jung · Psychology and Religion · CW 11 §129"
+ ],
+ "punch_words": [
+  "conversation",
+  "substitute",
+  "pieces",
+  "honest"
+ ],
+ "hit_words": [
+  "substitute",
+  "honest"
+ ],
+ "hook_y": 1300,
+ "spec_extra": {
+  "solo_words": [
+   "you"
+  ],
+  "ghost": "grey",
+  "quote_dim": 0.8,
+  "hook_pack": 13,
+  "paint_max": 200,
+  "quote_style": "bold",
+  "max_shot": 999,
+  "text_bottom": 1470,
+  "text_y": 1280,
+  "brand_y": 110,
+  "quote_y": 1300,
+  "cap_scale": 0.8,
+  "captions": "words",
+  "cap_fade": 0.06,
+  "hook_scale": 0.72,
+  "hook_y": 1300,
+  "film": true,
+  "dim": 1.0,
+  "vignette": 0.0
+ },
+ "shots": [
+  [
+   "hook",
+   "film_neutral",
+   [
+    0.5,
+    0.5
+   ],
+   {
+    "zoom": [
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ ]
+}

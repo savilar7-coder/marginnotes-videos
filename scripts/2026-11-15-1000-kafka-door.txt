@@ -2,7 +2,7 @@
 
 In Kafka's parable, a man waits at a door for years. The guard keeps saying: not now.
 
-So he gives the guard everything he owns. The guard takes it all, [slowly] "so that you don't think you've left anything undone."
+So he gives the guard everything he owns. The guard takes it all, and still says: not now.
 
 Dying, the man asks why no one else ever came. [slowly] "This entrance was meant only for you. I am now going to shut it."
 
