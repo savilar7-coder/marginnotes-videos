@@ -31,7 +31,7 @@
   "solo_words": [
    "you"
   ],
-  "ghost": "grey",
+  "ghost": "light",
   "quote_dim": 0.55,
   "hook_pack": 13,
   "paint_max": 200,
@@ -40,7 +40,8 @@
   "text_bottom": 1470,
   "text_y": 1280,
   "brand_y": 270,
-  "quote_y": 1000
+  "quote_y": 1000,
+  "cap_scale": 0.8
  },
  "shots": [
   [
@@ -88,7 +89,7 @@
    }
   ],
   [
-   "And one night",
+   "Then the visions",
    "d_jung-empty_04",
    [
     0.5,
@@ -117,7 +118,7 @@
    }
   ],
   [
-   "He sits down",
+   "Every night",
    "d_jung-empty_06",
    [
     0.5,
@@ -147,7 +148,7 @@
    }
   ],
   [
-   "Empty does not",
+   "He kept writing",
    "d_jung-empty_08",
    [
     0.5,

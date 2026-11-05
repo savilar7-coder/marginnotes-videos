@@ -30,7 +30,7 @@
   "solo_words": [
    "you"
   ],
-  "ghost": "grey",
+  "ghost": "light",
   "quote_dim": 0.55,
   "hook_pack": 15,
   "paint_max": 200,
@@ -40,6 +40,7 @@
   "text_y": 1280,
   "brand_y": 270,
   "quote_y": 1000,
+  "cap_scale": 0.8,
   "hook_y": 940
  },
  "shots": [
@@ -88,7 +89,7 @@
    }
   ],
   [
-   "But here is",
+   "The afternoon is",
    "d_jung-afternoon_04",
    [
     0.5,
@@ -103,7 +104,7 @@
    }
   ],
   [
-   "The afternoon is",
+   "It has its",
    "d_jung-afternoon_05",
    [
     0.5,
