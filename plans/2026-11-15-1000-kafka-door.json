@@ -32,17 +32,18 @@
   "solo_words": [
    "you"
   ],
-  "ghost": "light",
+  "ghost": "grey",
   "quote_dim": 0.55,
   "hook_pack": 13,
   "paint_max": 200,
   "quote_style": "bold",
-  "max_shot": 1.8,
+  "max_shot": 3.4,
   "text_bottom": 1470,
   "text_y": 1280,
   "brand_y": 270,
-  "quote_y": 1000,
-  "cap_scale": 0.8
+  "quote_y": 1300,
+  "cap_scale": 0.8,
+  "captions": "words"
  },
  "shots": [
   [
@@ -56,7 +57,7 @@
    {
     "zoom": [
      1.0,
-     1.08
+     1.04
     ]
    }
   ],
@@ -70,12 +71,12 @@
    {
     "zoom": [
      1.0,
-     1.08
+     1.04
     ]
    }
   ],
   [
-   "So he sits",
+   "The guard keeps",
    "d_kafka-door_03",
    [
     0.5,
@@ -85,12 +86,12 @@
    {
     "zoom": [
      1.0,
-     1.08
+     1.04
     ]
    }
   ],
   [
-   "He grows old",
+   "So he gives",
    "d_kafka-door_04",
    [
     0.5,
@@ -100,12 +101,12 @@
    {
     "zoom": [
      1.0,
-     1.08
+     1.04
     ]
    }
   ],
   [
-   "He even begs",
+   "so that you",
    "d_kafka-door_05",
    [
     0.5,
@@ -114,7 +115,7 @@
    {
     "zoom": [
      1.0,
-     1.08
+     1.04
     ]
    }
   ],
@@ -129,12 +130,12 @@
    {
     "zoom": [
      1.0,
-     1.08
+     1.04
     ]
    }
   ],
   [
-   "The guard shouts",
+   "This entrance",
    "d_kafka-door_07",
    [
     0.5,
@@ -144,7 +145,7 @@
    {
     "zoom": [
      1.0,
-     1.08
+     1.04
     ]
    }
   ],
@@ -158,7 +159,7 @@
    {
     "zoom": [
      1.0,
-     1.08
+     1.04
     ]
    }
   ]

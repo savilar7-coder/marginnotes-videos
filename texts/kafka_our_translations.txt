@@ -1,6 +1,8 @@
 # Kafka (d. 1924): German originals are public domain. English lines are OUR translations (Margin Notes, Nov 4 2026).
 # Der Process (1925), ch. 9 "Im Dom", parable "Vor dem Gesetz" (Project Gutenberg #69327):
 # German: „Hier konnte niemand sonst Einlaß erhalten, denn dieser Eingang war nur für dich bestimmt. Ich gehe jetzt und schließe ihn.“
+I am only taking it so that you don't think you've left anything undone.
+# German: „Ich nehme es nur an, damit du nicht glaubst, etwas versäumt zu haben.“
 No one else could ever be admitted here, since this entrance was meant only for you. I am now going to shut it.
 # Brief an den Vater (Nov 1919; first printed 1952), Wikisource de (facsimile transcription, Fischer 1994), sheet ~ "Mein Schreiben":
 # German: Mein Schreiben handelte von Dir, ich klagte dort ja nur, was ich an Deiner Brust nicht klagen konnte.
