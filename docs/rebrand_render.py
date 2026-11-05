@@ -489,10 +489,9 @@ def main(spec_path, out_path):
         new = []
         for j, g in enumerate(first):
             nxt = first[j + 1][0][1] if j + 1 < len(first) else (rest[0]["t0"] if rest else g[-1][2] + 0.6)
-            new.append({"kind": "text", "words": [x[0] for x in g], "times": [(x[1], x[2]) for x in g], "t0": g[0][1], "t1": nxt, "qpart": (True, True)})
+            new.append({"kind": "text", "words": [x[0] for x in g], "times": [(x[1], x[2]) for x in g], "t0": g[0][1], "t1": nxt, "qpart": (True, True), "big": True})
         caps = new + rest
-        spec["hook_card"] = 0
-        spec["hook_until"] = words[n1 - 1][2]
+        spec["hook_card"] = 0   # (hook_until stays: it also gates the picture)
     caps[0]["t0"] = 0.0
     hook_card = spec.get("hook_card", 0.0)
     hook_words = []
@@ -556,6 +555,8 @@ def main(spec_path, out_path):
             return layers[key]
         # build the phrase word by word: a word appears only once it is spoken (iNQ style, no text ahead of voice)
         k = max(1, sum(1 for ws, we in c["times"] if ws <= t + 0.02))
+        if i == 0 and c.get("big"):   # hook_single: the first screen shows whole from frame 0 ("IN CRIME", not "IN")
+            k = len(c["words"])
         if HOLDSMALL and not karaoke and i > 0:   # opt-in "hold_small" (Nov 5): a small word ("a", "the") waits for its next word, never alone on screen
             while 0 < k < len(c["words"]) and _clean(c["words"][k - 1]) in FUNC:
                 k -= 1
@@ -563,14 +564,15 @@ def main(spec_path, out_path):
                 return Image.new("RGBA", (1, 1), (0, 0, 0, 0))
         key = (i, big, k)
         if key not in layers:   # karaoke: the whole chunk shows, unspoken words faint
-            layers[key] = text_layer(c["words"], emphasis, big, k) if karaoke else text_layer(c["words"][:k], emphasis, big)
+            em_ = set() if (i == 0 and c.get("big")) else emphasis   # frame-0 word always white (the gate reads white text at 0.1 s)
+            layers[key] = text_layer(c["words"], em_, big, k) if karaoke else text_layer(c["words"][:k], em_, big)
         return layers[key]
 
     # caption timeline for the pre-publish gate: when each word appears vs when it is spoken
     tl = []
     for c in caps:
         for j, (w, (ws, we)) in enumerate(zip(c["words"], c["times"])):
-            shown = c["t0"] if (c["kind"] == "quote" or j == 0) else max(c["t0"], ws - 0.02)
+            shown = c["t0"] if (c["kind"] == "quote" or j == 0 or (c is caps[0] and c.get("big"))) else max(c["t0"], ws - 0.02)
             # karaoke: later words show faint ahead of the voice, but light up only when spoken
             tl.append({"word": w, "shown": round(shown, 3), "spoken": round(ws, 3), "kind": c["kind"]})
     # the hook card shows the first sentence ahead of the voice on purpose; the gate checks it separately
@@ -662,7 +664,7 @@ def main(spec_path, out_path):
                     hy0 = tb - bb[3]
             frame.paste(hook_layer, ((W - hook_layer.width) // 2, hy0), hook_layer)
         elif ci >= first_after and t < caps[ci]["t1"] + 0.05:
-            L = layer(ci, t < hook_until, t)
+            L = layer(ci, t < hook_until or caps[ci].get("big", False), t)
             p = min(1.0, (t - caps[ci]["t0"]) / spec.get("cap_fade", 0.2)) if ci > 0 else 1.0   # opt-in cap_fade (Nov 4): no half-faded frames
             k = ease_out_back(p)
             sc = 0.82 + 0.18 * k

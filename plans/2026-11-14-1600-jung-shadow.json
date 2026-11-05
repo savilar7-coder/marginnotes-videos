@@ -43,11 +43,12 @@
   "cap_scale": 0.8,
   "captions": "words",
   "cap_fade": 0.001,
-  "hook_scale": 0.42,
+  "hook_scale": 0.7,
   "hook_y": 1300,
   "quote_chunk": 7,
   "hold_small": true,
-  "hook_plain": true
+  "hook_plain": true,
+  "hook_single": true
  },
  "shots": [
   [
