@@ -229,6 +229,7 @@ def split_long_shots(shots, dur, max_len=4.2):
 CAPSCALE = 1.0  # spec "cap_scale"
 HOOKSCALE = 1.0  # spec "hook_scale" (Nov 4): smaller hook card so it can sit off the character
 BREAK_AFTER = set()   # spec "break_after": words that end a caption (a small word there is not carried to the next screen)
+HOLDSMALL = False   # spec "hold_small"
 QCHUNK = 0     # spec "quote_chunk": max words per quote piece (0 = whole quote on one card)
 QSTYLE = None  # spec "quote_style": "bold" -> quotes in the caption font, big, white (Nov 4)
 GHOST = None   # spec "ghost": "grey" -> unspoken karaoke words in solid grey, never faint red (art director, Oct 23)
@@ -455,6 +456,8 @@ def main(spec_path, out_path):
     global QCHUNK, BREAK_AFTER
     QCHUNK = spec.get("quote_chunk", 0)
     BREAK_AFTER = {x.lower() for x in spec.get("break_after", [])}
+    global HOLDSMALL
+    HOLDSMALL = spec.get("hold_small", False)
     CAPSCALE = spec.get("cap_scale", 1.0)
     global HOOKSCALE
     HOOKSCALE = spec.get("hook_scale", 1.0)
@@ -472,6 +475,24 @@ def main(spec_path, out_path):
     for w in words:
         w[1] += voice_delay; w[2] += voice_delay
     caps = chunk(words, emphasis, karaoke, {x.lower() for x in spec.get("solo_words", [])})
+    if spec.get("hook_single"):   # opt-in (Nov 5, room): the first sentence one big word at a time (small words ride with the next word), no hook card
+        n1 = next((j for j, w in enumerate(words) if re.search(r"[.?!…]$", w[0])), len(words) - 1) + 1
+        first, cur = [], []
+        for j, w in enumerate(words[:n1]):
+            cur.append(w)
+            if _clean(w[0]) in FUNC and j < n1 - 1 and len(cur) < 2:
+                continue
+            first.append(cur); cur = []
+        if cur:
+            first.append(cur)
+        rest = [c for c in caps if c["times"][0][0] >= words[n1 - 1][1] + 0.001 or c["times"][0][0] > words[n1 - 1][2]]
+        new = []
+        for j, g in enumerate(first):
+            nxt = first[j + 1][0][1] if j + 1 < len(first) else (rest[0]["t0"] if rest else g[-1][2] + 0.6)
+            new.append({"kind": "text", "words": [x[0] for x in g], "times": [(x[1], x[2]) for x in g], "t0": g[0][1], "t1": nxt, "qpart": (True, True)})
+        caps = new + rest
+        spec["hook_card"] = 0
+        spec["hook_until"] = words[n1 - 1][2]
     caps[0]["t0"] = 0.0
     hook_card = spec.get("hook_card", 0.0)
     hook_words = []
@@ -535,6 +556,11 @@ def main(spec_path, out_path):
             return layers[key]
         # build the phrase word by word: a word appears only once it is spoken (iNQ style, no text ahead of voice)
         k = max(1, sum(1 for ws, we in c["times"] if ws <= t + 0.02))
+        if HOLDSMALL and not karaoke and i > 0:   # opt-in "hold_small" (Nov 5): a small word ("a", "the") waits for its next word, never alone on screen
+            while 0 < k < len(c["words"]) and _clean(c["words"][k - 1]) in FUNC:
+                k -= 1
+            if k == 0:
+                return Image.new("RGBA", (1, 1), (0, 0, 0, 0))
         key = (i, big, k)
         if key not in layers:   # karaoke: the whole chunk shows, unspoken words faint
             layers[key] = text_layer(c["words"], emphasis, big, k) if karaoke else text_layer(c["words"][:k], emphasis, big)
@@ -550,7 +576,7 @@ def main(spec_path, out_path):
     # the hook card shows the first sentence ahead of the voice on purpose; the gate checks it separately
     tl += [{"word": w, "shown": 0.0, "spoken": round(ws, 3), "kind": "hook"} for w, ws, we in hook_words]
     json.dump(tl, open(out_path + ".captions.json", "w"))
-    hook_layer = text_layer([w for w, _, _ in hook_words], emphasis, True, pack=spec.get("hook_pack", 9)) if hook_words else None   # spec "hook_pack": wider hook lines (Nov 3)
+    hook_layer = text_layer([w for w, _, _ in hook_words], set() if spec.get("hook_plain") else emphasis, True, pack=spec.get("hook_pack", 9)) if hook_words else None   # spec "hook_pack": wider hook lines (Nov 3)
     # captions of the hook sentence already shown on the card are skipped afterwards (no "SIDE" echo)
     first_after = next((i for i, c in enumerate(caps) if c["times"][0][0] > hook_words[-1][1] + 0.01),
                        len(caps)) if hook_words else 0

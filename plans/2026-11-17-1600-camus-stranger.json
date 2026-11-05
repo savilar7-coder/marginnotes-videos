@@ -34,20 +34,22 @@
   ],
   "ghost": "grey",
   "quote_dim": 0.55,
-  "hook_pack": 14,
+  "hook_pack": 17,
   "paint_max": 200,
   "quote_style": "bold",
   "max_shot": 3.4,
-  "text_bottom": 1470,
+  "text_bottom": 1430,
   "text_y": 1280,
   "brand_y": 110,
   "quote_y": 1300,
   "cap_scale": 0.8,
   "captions": "words",
   "cap_fade": 0.001,
-  "hook_scale": 0.5,
+  "hook_scale": 0.42,
   "hook_y": 1300,
-  "quote_chunk": 7
+  "quote_chunk": 7,
+  "hold_small": true,
+  "hook_plain": true
  },
  "shots": [
   [
