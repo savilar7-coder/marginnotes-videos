@@ -1,0 +1,50 @@
+{
+  "status": "PREPARED_NOT_RENDERED",
+  "purpose": "Six-second Aglaya hand-turn production test, fixed room and anchored cuff; no TTS or upload to YouTube.",
+  "original_renderer_sha256": "efccd81ff3b817417dabcd6ae6289422b398b5e11b0fb3b2c8694ee69b7081a9",
+  "device_change": "Isolated copy replaces CUDA requirement with explicit CPU device and four torch threads; all image math, input guards and encoder checks preserved.",
+  "local_heavy_render_started": false,
+  "duration_seconds": 6,
+  "files": [
+    {
+      "path": "layers/n3_aglaya_v1.png",
+      "sha256": "da4c0952ad6ef8bf45204d11c1025cf5acc0316e579629bd2ec0c4123ac3a2bb",
+      "bytes": 154398
+    },
+    {
+      "path": "plates/n3_aglaya_v1.png",
+      "sha256": "b9bd87fb95d8c454078d10478c93c31b861ed4869e280ffce648cc91a57f36c5",
+      "bytes": 4343220
+    },
+    {
+      "path": "plates/n3_aglaya_v1_bg.png",
+      "sha256": "6bb5ecf5828d1182de5a5f002e458a47d9a73068831845ff2f6bef9d12784ec2",
+      "bytes": 4226683
+    },
+    {
+      "path": "render_checked.py",
+      "sha256": "c9a17c0ce132065a27767973fccb815ee59f30ddf1949ff0f82ecd8e19e6f872",
+      "bytes": 19019
+    },
+    {
+      "path": "render_guard.py",
+      "sha256": "1b8686461b71b770f34a5554b8b8944321bf849eb3552dea725f7fcb422498d9",
+      "bytes": 5031
+    },
+    {
+      "path": "test_acting_guard.py",
+      "sha256": "de8a649558a6b23da6780a360ee34dda0a975ca7f8f79905d50b5fa2bddcd141",
+      "bytes": 1928
+    },
+    {
+      "path": "test_render_guard.py",
+      "sha256": "082bff27fcfe85a9bd999615c3943c6b1c259d4430f819d5da20b6eea29b1945",
+      "bytes": 3824
+    },
+    {
+      "path": "timeline.json",
+      "sha256": "2b03fd2caea3744c608cb5420cec38b2959d9e9a5d719e16c70b6e964ed06e08",
+      "bytes": 328
+    }
+  ]
+}

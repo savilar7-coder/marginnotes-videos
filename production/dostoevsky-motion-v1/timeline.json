@@ -1,0 +1,11 @@
+{
+  "dur": 6,
+  "fps": 30,
+  "grain_strength": 0,
+  "shots": [{
+    "t0": 0, "t1": 6, "plate": "n3_aglaya_v1", "fig": 1,
+    "cam": [0.5, 0.5, 1, 1], "par": 0, "dust": false,
+    "acting": {"kind": "phone_lift", "interval": [0.8, 2.4], "angle_degrees": 6, "pivot": [825, 775], "forearm_blend": [780, 885]}
+  }],
+  "texts": []
+}

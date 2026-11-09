@@ -1,0 +1,46 @@
+name: checked-motion-scene
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: marginnotes-heavy-render
+  cancel-in-progress: false
+jobs:
+  scene:
+    if: github.repository == 'savilar7-coder/marginnotes-videos' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CPU composition dependencies
+        run: |
+          python -m pip install --disable-pip-version-check numpy pillow
+          python -m pip install --disable-pip-version-check torch --index-url https://download.pytorch.org/whl/cpu
+          command -v ffmpeg
+          command -v ffprobe
+      - name: Verify source and free memory
+        working-directory: production/dostoevsky-motion-v1
+        run: |
+          python verify_bundle.py
+          python -m unittest test_render_guard test_acting_guard
+          python render_checked.py timeline.json scene.mp4 --preflight-only
+      - name: Render one six-second scene
+        working-directory: production/dostoevsky-motion-v1
+        run: |
+          python render_checked.py timeline.json scene.mp4
+          python verify_output.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aglaya-checked-motion-v1
+          path: |
+            production/dostoevsky-motion-v1/scene.mp4
+            production/dostoevsky-motion-v1/output-receipt.json
+            production/dostoevsky-motion-v1/environment.json
+          if-no-files-found: error
+          retention-days: 1
