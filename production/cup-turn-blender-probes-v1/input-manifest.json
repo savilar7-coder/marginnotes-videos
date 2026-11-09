@@ -1,0 +1,26 @@
+{
+  "status": "PREPARED_NOT_PUBLISHED_NOT_RUN",
+  "source_builder_sha256": "e606d7290ec1522c9333c9cbea4426e781070f318bec0be418fb5446e0951c98",
+  "adaptations": [
+    "Linux hosted-runner preflight replaces Windows GPU gate.",
+    "CPU Cycles replaces Eevee; 12 samples, 2 threads, limited bounces.",
+    "Only probes/preview/cycles CLI choices; full sequence branch removed.",
+    "Seven remote PNGs become one <=500 KiB JPEG contact sheet plus JSON receipts.",
+    "Scene geometry, poses, camera, lighting and materials remain unchanged."
+  ],
+  "files": {
+    "build_cup_scene_cpu.py": "c00aaf392986305eaeb69db8f962f88847d3301853840ef14e268c4f2ca1a0b1",
+    "cloud_preflight.py": "60607b439a543695c9b39cd57f8402bda30386b11a11ae29b30e6c544669dc50",
+    "cup_motion.py": "b3c79584db5cc6a706796c23d3c085a403a4d2aa83b292554b1969734d1e589f",
+    "emit_probe_logs.py": "3d29f9ae61b538683ef6d5b704c0b716145b055d01275a11d0afc168db63d9be",
+    "verify_bundle.py": "5a56b09d51da5a0d8f1a5fd43a82681f1876b6cc3d9320c34cd82f5586093f66"
+  },
+  "blender_binary": {
+    "version": "5.2.3",
+    "bytes": 385331224,
+    "url": "https://download.blender.org/release/Blender5.2/blender-5.2.3-linux-x64.tar.xz",
+    "sha256": "78486c018b4443efe5e75ab54c290ed8c15abafd249b862c2c9ce2530a918eec"
+  },
+  "blender_executed": false,
+  "remote_mutations": false
+}

@@ -1,0 +1,57 @@
+name: cup-turn-seven-probes
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: Exact reviewed 40-character commit; reject changed dispatch ref
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: marginnotes-heavy-render
+  cancel-in-progress: false
+jobs:
+  probes:
+    if: github.repository == 'savilar7-coder/marginnotes-videos' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      EXPECTED_SHA: ${{ inputs.expected_sha }}
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      CUDA_VISIBLE_DEVICES: ''
+    steps:
+      - name: Require exact reviewed dispatch commit
+        run: |
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$GITHUB_SHA" == "$EXPECTED_SHA" ]]
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.expected_sha }}
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: production/cup-turn-blender-probes-v1
+      - name: Verify exact inputs and free runner memory
+        working-directory: production/cup-turn-blender-probes-v1
+        run: |
+          python3 verify_bundle.py
+          python3 cloud_preflight.py
+      - name: Fetch checksum-pinned official Blender 5.2.3
+        timeout-minutes: 5
+        working-directory: ${{ runner.temp }}
+        run: |
+          curl --fail --location --retry 1 --connect-timeout 15 --max-time 150 --output blender.tar.xz https://download.blender.org/release/Blender5.2/blender-5.2.3-linux-x64.tar.xz
+          printf '%s  %s\n' '78486c018b4443efe5e75ab54c290ed8c15abafd249b862c2c9ce2530a918eec' 'blender.tar.xz' | sha256sum --check --strict
+          tar --extract --xz --file blender.tar.xz
+          ./blender-5.2.3-linux-x64/blender --version
+          ldd ./blender-5.2.3-linux-x64/blender > blender-libraries.txt
+          if grep -q 'not found' blender-libraries.txt; then cat blender-libraries.txt; exit 1; fi
+      - name: Render only seven CPU probe frames
+        timeout-minutes: 11
+        working-directory: production/cup-turn-blender-probes-v1
+        run: |
+          timeout --signal=TERM --kill-after=15s 600s "$RUNNER_TEMP/blender-5.2.3-linux-x64/blender" --background --factory-startup --threads 2 --python-exit-code 1 --python build_cup_scene_cpu.py -- --out "$RUNNER_TEMP/cup-probes" --mode probes --quality preview --engine cycles
+      - name: Return bounded probes in logs without artifact storage
+        working-directory: production/cup-turn-blender-probes-v1
+        run: python3 emit_probe_logs.py "$RUNNER_TEMP/cup-probes"
