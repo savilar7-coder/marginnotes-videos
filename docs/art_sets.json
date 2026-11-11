@@ -413,5 +413,28 @@
    "d_kafka-father_06",
    "d_kafka-father_07"
   ]
+ },
+ "machiavelli": {
+  "theme": "Nov 10: Renaissance court portraits; cold stone and velvet, faces looking sideways, rulers with the people around them; everyday lessons about power and people, never manipulation",
+  "images": [
+   "santi_machiavelli",
+   "raphael_leo_x",
+   "titian_paul_iii",
+   "bronzino_young_man",
+   "bronzino_cosimo",
+   "antonello_man",
+   "antonello_condottiero",
+   "raphael_castiglione",
+   "bellini_loredan",
+   "titian_man_glove",
+   "lotto_odoni",
+   "mantegna_court",
+   "moroni_tailor",
+   "sebastiano_ferry",
+   "raphael_julius",
+   "barbari_pacioli",
+   "botticelli_calumny",
+   "antonello_jerome"
+  ]
  }
 }

@@ -1,0 +1,210 @@
+{
+ "name": "2026-11-10-t8-m2-everyone-agrees",
+ "thinker": "machiavelli",
+ "audio_suffix": "-t",
+ "emphasis": [
+  "agrees",
+  "Bad",
+  "yes-men",
+  "ruin",
+  "truth",
+  "offend",
+  "nobody",
+  "scared",
+  "wrong",
+  "friendship",
+  "own",
+  "Thank"
+ ],
+ "quote_source": [
+  "Machiavelli · The Prince, ch. 23 · tr. Marriott"
+ ],
+ "punch_words": [
+  "Bad",
+  "scared",
+  "wrong",
+  "Thank"
+ ],
+ "hit_words": [
+  "sign",
+  "scared"
+ ],
+ "spec_extra": {
+  "ghost": "light",
+  "quote_dim": 0.85,
+  "text_y": 1080,
+  "text_bottom": 1382,
+  "quote_style": "bold",
+  "cap_scale": 0.95,
+  "break_after": [
+   "jung"
+  ],
+  "tail": 2.0
+ },
+ "shots": [
+  [
+   "hook",
+   "titian_paul_iii",
+   [
+    0.51,
+    0.44
+   ],
+   "push",
+   {
+    "zoom": [
+     1.55,
+     1.62
+    ]
+   }
+  ],
+  [
+   "Machiavelli watched",
+   "santi_machiavelli",
+   [
+    0.52,
+    0.3
+   ]
+  ],
+  [
+   "ruin princes",
+   "botticelli_calumny",
+   [
+    0.86,
+    0.47
+   ],
+   null,
+   {
+    "zoom": [
+     2.0,
+     2.1
+    ]
+   }
+  ],
+  [
+   "His fix",
+   "raphael_julius",
+   [
+    0.5,
+    0.3
+   ]
+  ],
+  [
+   "to tell you",
+   "bellini_loredan",
+   [
+    0.5,
+    0.3
+   ]
+  ],
+  [
+   "If nobody",
+   "mantegna_court",
+   [
+    0.27,
+    0.54
+   ],
+   null,
+   {
+    "zoom": [
+     1.6,
+     1.7
+    ]
+   }
+  ],
+  [
+   "they're scared",
+   "mantegna_court",
+   [
+    0.8,
+    0.375
+   ],
+   null,
+   {
+    "zoom": [
+     1.6,
+     1.7
+    ]
+   }
+  ],
+  [
+   "Jung told",
+   "barbari_pacioli",
+   [
+    0.645,
+    0.5
+   ],
+   null,
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "Freud he",
+   "barbari_pacioli",
+   [
+    0.5,
+    0.39
+   ],
+   null,
+   {
+    "zoom": [
+     1.6,
+     1.7
+    ]
+   }
+  ],
+  [
+   "It cost him",
+   "barbari_pacioli",
+   [
+    0.79,
+    0.283
+   ],
+   null,
+   {
+    "zoom": [
+     1.8,
+     1.9
+    ]
+   }
+  ],
+  [
+   "and it gave",
+   "antonello_jerome",
+   [
+    0.58,
+    0.66
+   ],
+   null,
+   {
+    "zoom": [
+     2.6,
+     2.7
+    ]
+   }
+  ],
+  [
+   "Thank the next",
+   "moroni_tailor",
+   [
+    0.55,
+    0.35
+   ],
+   null,
+   {
+    "zoom": [
+     1.0,
+     1.1
+    ]
+   }
+  ]
+ ],
+ "world": [
+  "titian_paul_iii",
+  "barbari_pacioli",
+  "mantegna_court"
+ ]
+}

@@ -1,0 +1,267 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 2.0,
+ "vignette": 0.5,
+ "hook_card": 1.2,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "Bad",
+  "scared",
+  "wrong",
+  "Thank"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "sign",
+  "scared"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-10-t8-m2-everyone-agrees-t.mp3",
+ "align": "audio/2026-11-10-t8-m2-everyone-agrees-t.json",
+ "hook_until": 0.0,
+ "thinker": "machiavelli",
+ "emphasis": [
+  "agrees",
+  "Bad",
+  "yes-men",
+  "ruin",
+  "truth",
+  "offend",
+  "nobody",
+  "scared",
+  "wrong",
+  "friendship",
+  "own",
+  "Thank"
+ ],
+ "quote_source": [
+  "Machiavelli \u00b7 The Prince, ch. 23 \u00b7 tr. Marriott"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/titian_paul_iii.jpg",
+   "line": "hook",
+   "zoom": [
+    1.55,
+    1.62
+   ],
+   "focus": [
+    0.51,
+    0.44
+   ],
+   "move": "push",
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot00.mp4"
+  },
+  {
+   "t": 3.0,
+   "img": "assets/santi_machiavelli.jpg",
+   "line": "Machiavelli watched",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.52,
+    0.3
+   ],
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot01.mp4"
+  },
+  {
+   "t": 4.88,
+   "img": "assets/botticelli_calumny.jpg",
+   "line": "ruin princes",
+   "zoom": [
+    2.0,
+    2.1
+   ],
+   "focus": [
+    0.86,
+    0.47
+   ],
+   "move": null,
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot02.mp4"
+  },
+  {
+   "t": 6.46,
+   "img": "assets/raphael_julius.jpg",
+   "line": "His fix",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot03.mp4"
+  },
+  {
+   "t": 9.52,
+   "img": "assets/bellini_loredan.jpg",
+   "line": "to tell you",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot04.mp4"
+  },
+  {
+   "t": 12.65,
+   "img": "assets/mantegna_court.jpg",
+   "line": "If nobody",
+   "zoom": [
+    1.6,
+    1.7
+   ],
+   "focus": [
+    0.27,
+    0.54
+   ],
+   "move": null,
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot05.mp4"
+  },
+  {
+   "t": 14.6,
+   "img": "assets/mantegna_court.jpg",
+   "line": "they're scared",
+   "zoom": [
+    1.6,
+    1.7
+   ],
+   "focus": [
+    0.8,
+    0.375
+   ],
+   "move": null,
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot06.mp4"
+  },
+  {
+   "t": 16.53,
+   "img": "assets/barbari_pacioli.jpg",
+   "line": "Jung told",
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "focus": [
+    0.645,
+    0.5
+   ],
+   "move": null,
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot07.mp4"
+  },
+  {
+   "t": 18.54,
+   "img": "assets/barbari_pacioli.jpg",
+   "line": "Freud he",
+   "zoom": [
+    1.6,
+    1.7
+   ],
+   "focus": [
+    0.5,
+    0.39
+   ],
+   "move": null,
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot08.mp4"
+  },
+  {
+   "t": 20.83,
+   "img": "assets/barbari_pacioli.jpg",
+   "line": "It cost him",
+   "zoom": [
+    1.8,
+    1.9
+   ],
+   "focus": [
+    0.79,
+    0.283
+   ],
+   "move": null,
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot09.mp4"
+  },
+  {
+   "t": 22.47,
+   "img": "assets/antonello_jerome.jpg",
+   "line": "and it gave",
+   "zoom": [
+    2.6,
+    2.7
+   ],
+   "focus": [
+    0.58,
+    0.66
+   ],
+   "move": null,
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot10.mp4"
+  },
+  {
+   "t": 24.77,
+   "img": "assets/moroni_tailor.jpg",
+   "line": "Thank the next",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "focus": [
+    0.55,
+    0.35
+   ],
+   "move": null,
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot11.mp4"
+  },
+  {
+   "t": 27.109,
+   "img": "assets/moroni_tailor.jpg",
+   "line": "Thank the next",
+   "zoom": [
+    1.3,
+    1.4000000000000001
+   ],
+   "focus": [
+    0.55,
+    0.35
+   ],
+   "move": null,
+   "drift": [
+    -1,
+    0
+   ],
+   "clip": "motion/2026-11-10-t8-m2-everyone-agrees/shot12.mp4"
+  }
+ ],
+ "world": [
+  "titian_paul_iii",
+  "barbari_pacioli",
+  "mantegna_court"
+ ],
+ "ghost": "light",
+ "quote_dim": 0.85,
+ "text_y": 1080,
+ "text_bottom": 1382,
+ "quote_style": "bold",
+ "cap_scale": 0.95,
+ "break_after": [
+  "jung"
+ ]
+}
