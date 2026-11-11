@@ -1,0 +1,204 @@
+{
+ "bpm": 76,
+ "snap": false,
+ "dim": 0.8,
+ "tail": 2.4,
+ "vignette": 0.5,
+ "hook_card": 0,
+ "lufs": -12.5,
+ "card": [
+  0,
+  0,
+  1080,
+  1920
+ ],
+ "radius": 0,
+ "border": false,
+ "brand_y": 1480,
+ "captions": "karaoke",
+ "punch_words": [
+  "reputation",
+  "looked",
+  "split",
+  "does"
+ ],
+ "punch": 0.035,
+ "hit_words": [
+  "reputation",
+  "split"
+ ],
+ "hook_y": 1250,
+ "music_start": "full",
+ "cut_dip": false,
+ "motion": "v2",
+ "audio": "audio/2026-11-10-t8-m1-your-three-t.mp3",
+ "align": "audio/2026-11-10-t8-m1-your-three-t.json",
+ "hook_until": 0.0,
+ "thinker": "machiavelli",
+ "emphasis": [
+  "three",
+  "reputation",
+  "observing",
+  "men",
+  "around",
+  "speak",
+  "looked",
+  "lived",
+  "heir",
+  "split",
+  "Choose",
+  "name",
+  "does"
+ ],
+ "quote_source": [
+  "The Prince, ch. 22 \u00b7 tr. Marriott"
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "img": "assets/raphael_leo_x.jpg",
+   "line": "hook",
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.52,
+    0.5
+   ],
+   "move": "push"
+  },
+  {
+   "t": 3.28,
+   "img": "assets/santi_machiavelli.jpg",
+   "line": "Machiavelli judged",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.52,
+    0.3
+   ]
+  },
+  {
+   "t": 5.2,
+   "img": "assets/raphael_leo_x.jpg",
+   "line": "by observing",
+   "zoom": [
+    1.7,
+    1.8
+   ],
+   "focus": [
+    0.88,
+    0.3
+   ],
+   "move": null
+  },
+  {
+   "t": 8.08,
+   "img": "assets/bronzino_cosimo.jpg",
+   "line": "Before you speak",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.45,
+    0.3
+   ]
+  },
+  {
+   "t": 10.13,
+   "img": "assets/lotto_odoni.jpg",
+   "line": "people have already",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.32
+   ]
+  },
+  {
+   "t": 12.22,
+   "img": "assets/sebastiano_ferry.jpg",
+   "line": "Jung lived",
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "move": null
+  },
+  {
+   "t": 14.23,
+   "img": "assets/barbari_pacioli.jpg",
+   "line": "For years",
+   "zoom": [
+    1.5,
+    1.58
+   ],
+   "focus": [
+    0.76,
+    0.3
+   ],
+   "move": null
+  },
+  {
+   "t": 17.97,
+   "img": "assets/titian_man_glove.jpg",
+   "line": "Then they split",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 19.25,
+   "img": "assets/bronzino_young_man.jpg",
+   "line": "Choose your three",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "t": 23.35,
+   "img": "assets/raphael_castiglione.jpg",
+   "line": "It does",
+   "zoom": [
+    1.15,
+    1.25
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "move": null
+  }
+ ],
+ "world": [
+  "raphael_leo_x",
+  "sebastiano_ferry",
+  "barbari_pacioli"
+ ],
+ "ghost": "light",
+ "quote_dim": 0.85,
+ "text_y": 1080,
+ "text_bottom": 1382,
+ "quote_style": "bold",
+ "cap_scale": 0.92
+}

@@ -1,0 +1,165 @@
+{
+ "name": "2026-11-10-t8-m1-your-three",
+ "thinker": "machiavelli",
+ "audio_suffix": "-t",
+ "world": [
+  "raphael_leo_x",
+  "sebastiano_ferry",
+  "barbari_pacioli"
+ ],
+ "emphasis": [
+  "three",
+  "reputation",
+  "observing",
+  "men",
+  "around",
+  "speak",
+  "looked",
+  "lived",
+  "heir",
+  "split",
+  "Choose",
+  "name",
+  "does"
+ ],
+ "quote_source": [
+  "The Prince, ch. 22 · tr. Marriott"
+ ],
+ "punch_words": [
+  "reputation",
+  "looked",
+  "split",
+  "does"
+ ],
+ "hit_words": [
+  "reputation",
+  "split"
+ ],
+ "spec_extra": {
+  "ghost": "light",
+  "quote_dim": 0.85,
+  "text_y": 1080,
+  "text_bottom": 1382,
+  "quote_style": "bold",
+  "cap_scale": 0.92,
+  "tail": 2.4
+ },
+ "shots": [
+  [
+   "hook",
+   "raphael_leo_x",
+   [
+    0.52,
+    0.5
+   ],
+   "push",
+   {
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   }
+  ],
+  [
+   "Machiavelli judged",
+   "santi_machiavelli",
+   [
+    0.52,
+    0.3
+   ]
+  ],
+  [
+   "by observing",
+   "raphael_leo_x",
+   [
+    0.88,
+    0.3
+   ],
+   null,
+   {
+    "zoom": [
+     1.7,
+     1.8
+    ]
+   }
+  ],
+  [
+   "Before you speak",
+   "bronzino_cosimo",
+   [
+    0.45,
+    0.3
+   ]
+  ],
+  [
+   "people have already",
+   "lotto_odoni",
+   [
+    0.5,
+    0.32
+   ]
+  ],
+  [
+   "Jung lived",
+   "sebastiano_ferry",
+   [
+    0.5,
+    0.45
+   ],
+   null,
+   {
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  ],
+  [
+   "For years",
+   "barbari_pacioli",
+   [
+    0.76,
+    0.3
+   ],
+   null,
+   {
+    "zoom": [
+     1.5,
+     1.58
+    ]
+   }
+  ],
+  [
+   "Then they split",
+   "titian_man_glove",
+   [
+    0.5,
+    0.4
+   ]
+  ],
+  [
+   "Choose your three",
+   "bronzino_young_man",
+   [
+    0.5,
+    0.3
+   ]
+  ],
+  [
+   "It does",
+   "raphael_castiglione",
+   [
+    0.5,
+    0.5
+   ],
+   null,
+   {
+    "zoom": [
+     1.15,
+     1.25
+    ]
+   }
+  ]
+ ],
+ "hook_card": 0
+}
