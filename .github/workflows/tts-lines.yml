@@ -67,6 +67,7 @@ jobs:
                   except Exception as e:
                       print("ERR", type(e).__name__); return None
               before, made, costs = used(), 0, []
+              prev = before
               for i, it in enumerate(items):
                   name = re.sub(r"[^a-z0-9_-]", "", str(it.get("name", "")).lower()) or f"{mode}{i}"
                   if mode == "sfx":
@@ -81,9 +82,8 @@ jobs:
                   now = used()
                   if audio:
                       open(f"out/{name}.mp3", "wb").write(audio); made += 1
-                  if before is not None and now is not None:
-                      costs.append(now - (costs and prev or before))
-                  prev = now
+                  costs.append(now - prev if None not in (now, prev) else None)
+                  prev = now if now is not None else prev
               after = used()
               print("made", made, "of", len(items), mode, "| credits per item", costs,
                     "| credits total", (after - before) if None not in (before, after) else "unknown",
