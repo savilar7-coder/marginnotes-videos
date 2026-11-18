@@ -1,6 +1,9 @@
 name: tts-lines
 # On-demand narration: one mp3 per line, returned as a 1-day artifact (nothing committed, text never printed).
 # mode=search lists library voices for a query; mode=add adds a library voice (owner_id/voice_id); mode=speak makes audio.
+# mode=sfx: lines_b64 = base64 JSON array of {text, duration_seconds?, loop?, prompt_influence?, name?} -> one mp3 each (eleven_text_to_sound_v3).
+# mode=music: lines_b64 = base64 JSON array of {prompt, music_length_ms, name?} -> one instrumental mp3 each (music_v2_5).
+# mode=usage: prints the subscription's credit count and limit (two numbers), nothing else.
 on:
   workflow_dispatch:
     inputs:
@@ -44,6 +47,48 @@ jobs:
           elif mode == "add":
               owner, vid = os.environ["VOICE"].split("/")
               print(call(f"https://api.elevenlabs.io/v1/voices/add/{owner}/{vid}", {"new_name": "es-mx narrator"}))
+          elif mode == "usage":
+              r = call("https://api.elevenlabs.io/v1/user/subscription")
+              print("used", int(r["character_count"]), "limit", int(r["character_limit"]))
+          elif mode in ("sfx", "music"):
+              import re
+              items = json.loads(base64.b64decode(os.environ["LINES"]).decode("utf-8"))
+              os.makedirs("out", exist_ok=True)
+              def used():
+                  try: return int(call("https://api.elevenlabs.io/v1/user/subscription")["character_count"])
+                  except Exception: return None
+              def post(url, body, timeout):
+                  req = urllib.request.Request(url, data=json.dumps(body).encode(),
+                        headers={"xi-api-key": key, "Content-Type": "application/json"})
+                  try:
+                      return urllib.request.urlopen(req, timeout=timeout).read()
+                  except urllib.error.HTTPError as e:
+                      print("HTTP", e.code, e.read()[:500]); return None
+                  except Exception as e:
+                      print("ERR", type(e).__name__); return None
+              before, made, costs = used(), 0, []
+              for i, it in enumerate(items):
+                  name = re.sub(r"[^a-z0-9_-]", "", str(it.get("name", "")).lower()) or f"{mode}{i}"
+                  if mode == "sfx":
+                      body = {"text": it["text"], "model_id": "eleven_text_to_sound_v3"}
+                      for k in ("duration_seconds", "loop", "prompt_influence"):
+                          if it.get(k) is not None: body[k] = it[k]
+                      audio = post("https://api.elevenlabs.io/v1/sound-generation?output_format=mp3_44100_192", body, 300)
+                  else:
+                      body = {"prompt": it["prompt"], "music_length_ms": int(it["music_length_ms"]),
+                              "model_id": "music_v2_5", "force_instrumental": True}
+                      audio = post("https://api.elevenlabs.io/v1/music", body, 1200)
+                  now = used()
+                  if audio:
+                      open(f"out/{name}.mp3", "wb").write(audio); made += 1
+                  if before is not None and now is not None:
+                      costs.append(now - (costs and prev or before))
+                  prev = now
+              after = used()
+              print("made", made, "of", len(items), mode, "| credits per item", costs,
+                    "| credits total", (after - before) if None not in (before, after) else "unknown",
+                    "| used now", after)
+              if not made: raise SystemExit(1)
           else:
               lines = json.loads(base64.b64decode(os.environ["LINES"]).decode("utf-8"))
               os.makedirs("out", exist_ok=True)
@@ -57,6 +102,6 @@ jobs:
                       f"https://api.elevenlabs.io/v1/text-to-speech/{os.environ['VOICE']}?output_format=mp3_44100_128", body, raw=True))
               print("made", len(lines), "lines")
           PY
-      - if: inputs.mode == 'speak'
+      - if: inputs.mode == 'speak' || inputs.mode == 'sfx' || inputs.mode == 'music'
         uses: actions/upload-artifact@v4
         with: {name: audio, path: out/, retention-days: 1}
