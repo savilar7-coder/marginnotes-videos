@@ -48,6 +48,7 @@ jobs:
               owner, vid = os.environ["VOICE"].split("/")
               print(call(f"https://api.elevenlabs.io/v1/voices/add/{owner}/{vid}", {"new_name": "es-mx narrator"}))
           elif mode == "usage":
+              # needs the user_read permission on the key; without it this prints the HTTP 401 and fails
               r = call("https://api.elevenlabs.io/v1/user/subscription")
               print("used", int(r["character_count"]), "limit", int(r["character_limit"]))
           elif mode in ("sfx", "music"):
@@ -55,39 +56,39 @@ jobs:
               items = json.loads(base64.b64decode(os.environ["LINES"]).decode("utf-8"))
               os.makedirs("out", exist_ok=True)
               def used():
-                  try: return int(call("https://api.elevenlabs.io/v1/user/subscription")["character_count"])
+                  try:
+                      req = urllib.request.Request("https://api.elevenlabs.io/v1/user/subscription", headers={"xi-api-key": key})
+                      return int(json.load(urllib.request.urlopen(req, timeout=60))["character_count"])
                   except Exception: return None
               def post(url, body, timeout):
                   req = urllib.request.Request(url, data=json.dumps(body).encode(),
                         headers={"xi-api-key": key, "Content-Type": "application/json"})
                   try:
-                      return urllib.request.urlopen(req, timeout=timeout).read()
+                      r = urllib.request.urlopen(req, timeout=timeout)
+                      cost = {k.lower(): v for k, v in r.headers.items() if re.search("cost|credit|character", k, re.I)}
+                      return r.read(), cost
                   except urllib.error.HTTPError as e:
-                      print("HTTP", e.code, e.read()[:500]); return None
+                      print("HTTP", e.code, e.read()[:500]); return None, {}
                   except Exception as e:
-                      print("ERR", type(e).__name__); return None
+                      print("ERR", type(e).__name__); return None, {}
               before, made, costs = used(), 0, []
-              prev = before
               for i, it in enumerate(items):
                   name = re.sub(r"[^a-z0-9_-]", "", str(it.get("name", "")).lower()) or f"{mode}{i}"
                   if mode == "sfx":
                       body = {"text": it["text"], "model_id": "eleven_text_to_sound_v3"}
                       for k in ("duration_seconds", "loop", "prompt_influence"):
                           if it.get(k) is not None: body[k] = it[k]
-                      audio = post("https://api.elevenlabs.io/v1/sound-generation?output_format=mp3_44100_192", body, 300)
+                      audio, cost = post("https://api.elevenlabs.io/v1/sound-generation?output_format=mp3_44100_192", body, 300)
                   else:
                       body = {"prompt": it["prompt"], "music_length_ms": int(it["music_length_ms"]),
                               "model_id": "music_v2_5", "force_instrumental": True}
-                      audio = post("https://api.elevenlabs.io/v1/music", body, 1200)
-                  now = used()
+                      audio, cost = post("https://api.elevenlabs.io/v1/music", body, 1200)
                   if audio:
                       open(f"out/{name}.mp3", "wb").write(audio); made += 1
-                  costs.append(now - prev if None not in (now, prev) else None)
-                  prev = now if now is not None else prev
+                  costs.append(cost.get("character-cost", cost or None))
               after = used()
-              print("made", made, "of", len(items), mode, "| credits per item", costs,
-                    "| credits total", (after - before) if None not in (before, after) else "unknown",
-                    "| used now", after)
+              print("made", made, "of", len(items), mode, "| cost per item", costs,
+                    "| balance used before", before, "after", after)
               if not made: raise SystemExit(1)
           else:
               lines = json.loads(base64.b64decode(os.environ["LINES"]).decode("utf-8"))
