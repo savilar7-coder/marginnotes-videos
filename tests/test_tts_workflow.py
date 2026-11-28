@@ -167,8 +167,26 @@ class NarrationGateTests(unittest.TestCase):
         self.assertFalse((self.root / "audio/selected.mp3").exists())
         self.assertFalse((self.root / "step-output.txt").exists())
 
-    def test_only_manual_guard_is_maintained(self):
-        self.assertFalse(WORKFLOW_PATH.with_name("tts.yml").exists())
+    def test_legacy_stub_is_inert_and_paid_guard_is_manual(self):
+        # Exact policy allowlist: this retired path must never grow paid code,
+        # secrets, checkout actions, or a trigger capable of automatic runs.
+        legacy = WORKFLOW_PATH.with_name("tts.yml").read_text(encoding="utf-8")
+        active_lines = "\n".join(line.rstrip() for line in legacy.splitlines()
+                                 if line.strip() and not line.lstrip().startswith("#"))
+        expected = textwrap.dedent('''\
+            name: Retired automatic narration
+            on:
+              workflow_dispatch:
+            permissions: {}
+            jobs:
+              retired:
+                if: ${{ false }}
+                runs-on: ubuntu-latest
+                steps:
+                  - name: Retired workflow
+                    run: echo "Retired. Use the separately approved manual narration workflow."
+            ''').strip()
+        self.assertEqual(active_lines, expected)
         self.assertTrue(WORKFLOW.startswith("name: Narration (manual approval only)\n"))
 
     def test_workflow_is_manual_serialized_and_commits_only_named_outputs(self):

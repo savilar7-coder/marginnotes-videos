@@ -1,0 +1,13 @@
+# Retain this inert legacy path so workflow ID 387061232 can stay disabled.
+# After integration, verify the legacy ID and disable it; never dispatch it.
+name: Retired automatic narration
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  retired:
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retired workflow
+        run: echo "Retired. Use the separately approved manual narration workflow."
