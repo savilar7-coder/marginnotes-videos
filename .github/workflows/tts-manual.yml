@@ -1,0 +1,206 @@
+name: Narration (manual approval only)
+on:
+  workflow_dispatch:
+    inputs:
+      approved:
+        description: "Approve paid narration for this one script AND storing its audio in this repository"
+        type: boolean
+        required: true
+        default: false
+      script:
+        description: "One scripts/*.txt basename on the latest selected branch (example: episode.txt)"
+        type: string
+        required: true
+      max_characters:
+        description: "Approved narration character ceiling after headers; 0 denies spending"
+        type: number
+        required: true
+        default: 0
+permissions:
+  contents: write
+concurrency:
+  group: tts-${{ github.repository }}
+  cancel-in-progress: false
+jobs:
+  speak:
+    if: github.event_name == 'workflow_dispatch' && inputs.approved
+    runs-on: ubuntu-latest
+    env:
+      TARGET_REF: ${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Read the latest selected branch under the TTS lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$TARGET_REF" in refs/heads/*) ;; *) echo "Select a branch, not a tag"; exit 1;; esac
+          git check-ref-format "$TARGET_REF"
+          git fetch --no-tags origin "$TARGET_REF"
+          git checkout --detach FETCH_HEAD
+      - name: Generate only the approved narration
+        id: synthesize
+        env:
+          XI_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          TTS_APPROVED: ${{ inputs.approved }}
+          TTS_SCRIPT: ${{ inputs.script }}
+          TTS_MAX_CHARACTERS: ${{ inputs.max_characters }}
+        run: |
+          python3 - <<'PY'
+          import base64
+          import binascii
+          import json
+          import math
+          import os
+          from pathlib import Path
+          import re
+          import shutil
+          import subprocess
+          import tempfile
+          import urllib.error
+          import urllib.request
+
+          def deny(message):
+              raise SystemExit(message)
+
+          def valid_mp3(path):
+              try:
+                  probe = subprocess.run(
+                      ["ffprobe", "-v", "error", "-select_streams", "a:0",
+                       "-show_entries", "stream=codec_name:format=duration",
+                       "-of", "json", str(path)],
+                      check=False, capture_output=True, text=True, timeout=30)
+                  info = json.loads(probe.stdout) if probe.returncode == 0 else {}
+                  duration = float(info.get("format", {}).get("duration", 0))
+                  return (math.isfinite(duration) and duration > 0
+                          and any(s.get("codec_name") == "mp3" for s in info.get("streams", [])))
+              except (OSError, ValueError, TypeError, subprocess.TimeoutExpired):
+                  return False
+
+          def main():
+              if os.environ.get("TTS_APPROVED", "").lower() != "true":
+                  deny("Paid narration and repository storage were not approved")
+              basename = os.environ.get("TTS_SCRIPT", "")
+              if (len(basename) > 128 or ".." in basename
+                      or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*\.txt", basename)):
+                  deny("Select one scripts/*.txt basename; paths, wildcards and traversal are forbidden")
+              ceiling = os.environ.get("TTS_MAX_CHARACTERS", "")
+              if not re.fullmatch(r"[0-9]{1,9}", ceiling) or int(ceiling) <= 0:
+                  deny("A positive approved character ceiling is required")
+
+              root = Path.cwd().resolve()
+              scripts = root / "scripts"
+              source = scripts / basename
+              audio = root / "audio"
+              name = basename[:-4]
+              mp3, alignment = audio / (name + ".mp3"), audio / (name + ".json")
+              if scripts.is_symlink() or not scripts.is_dir():
+                  deny("scripts must be a real directory")
+              if source.is_symlink() or not source.is_file() or source.resolve().parent != scripts:
+                  deny("The selected script must be a regular, non-symlink file in scripts")
+              if audio.is_symlink() or (audio.exists() and not audio.is_dir()):
+                  deny("audio must be a real directory")
+              if any(p.is_symlink() or (p.exists() and not p.is_file()) for p in (mp3, alignment)):
+                  deny("Output paths must be regular files, never symlinks")
+
+              # Preserve the existing defaults and leading header semantics.
+              voice = "onwK4e9ZLuTAKqWW03F9"  # Daniel, chosen by Sergio Oct 16
+              model = "eleven_v3"
+              settings = {"stability": 0.5, "similarity_boost": 0.75,
+                          "style": 0.0, "use_speaker_boost": True}
+              try:
+                  text = source.read_text(encoding="utf-8-sig").strip()
+                  while text.startswith("#"):
+                      first, _, text = text.partition("\n")
+                      key, _, value = first[1:].partition(":")
+                      if key == "voice":
+                          voice = value.strip()
+                      elif key == "model":
+                          model = value.strip()
+                      elif key == "settings":
+                          override = json.loads(value)
+                          if not isinstance(override, dict):
+                              deny("#settings must contain a JSON object")
+                          settings.update(override)
+                      text = text.strip()
+                  if not re.fullmatch(r"[A-Za-z0-9_-]{1,128}", voice):
+                      deny("Invalid #voice identifier")
+                  if not re.fullmatch(r"[A-Za-z0-9_-]{1,128}", model):
+                      deny("Invalid #model identifier")
+                  body = json.dumps({"text": text, "model_id": model, "voice_settings": settings}, allow_nan=False).encode()
+              except (OSError, UnicodeError, ValueError, TypeError):
+                  deny("Cannot parse the selected script or its voice/model/settings headers")
+              if not text:
+                  deny("The selected script has no narration")
+              if len(text) > int(ceiling):
+                  deny(f"Narration has {len(text)} characters; approved ceiling is {int(ceiling)}")
+              if not shutil.which("ffprobe"):
+                  deny("ffprobe is required for audio validation; no paid request was attempted")
+              if mp3.exists():
+                  if valid_mp3(mp3):
+                      print("skipped existing valid audio", name)
+                      return
+                  deny("Existing audio is invalid or incomplete; recover it explicitly before another paid run")
+              if alignment.exists():
+                  deny("Alignment exists without audio; recover the previous output before another paid run")
+              key = os.environ.get("XI_KEY")
+              if not key:
+                  deny("ElevenLabs key is unavailable")
+
+              # Exactly one paid request, with no automatic HTTP retry loop.
+              request = urllib.request.Request(
+                  f"https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format=mp3_44100_128",
+                  data=body, headers={"xi-api-key": key, "Content-Type": "application/json"}, method="POST")
+              try:
+                  with urllib.request.urlopen(request, timeout=300) as response:
+                      result = json.load(response)
+              except urllib.error.HTTPError as exc:
+                  deny(f"ElevenLabs HTTP {exc.code}; no automatic retry")
+              except (urllib.error.URLError, TimeoutError, ValueError):
+                  deny("ElevenLabs request failed; inspect the provider before approving a retry")
+              try:
+                  payload = base64.b64decode(result["audio_base64"], validate=True)
+                  alignment_json = json.dumps(result.get("alignment"), allow_nan=False)
+              except (KeyError, TypeError, ValueError, binascii.Error):
+                  deny("Invalid provider response; inspect the provider before approving a retry")
+              audio.mkdir(exist_ok=True)
+              with tempfile.NamedTemporaryFile(dir=audio, suffix=".mp3", delete=False) as temp:
+                  temp_path = Path(temp.name)
+                  temp.write(payload)
+              try:
+                  if not valid_mp3(temp_path):
+                      deny("Provider audio failed validation; inspect the provider before approving a retry")
+                  # Exclusive creation also prevents accidental overwrites.
+                  with mp3.open("xb") as stream:
+                      stream.write(payload)
+                  with alignment.open("x", encoding="utf-8") as stream:
+                      stream.write(alignment_json)
+              finally:
+                  temp_path.unlink(missing_ok=True)
+              with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as stream:
+                  stream.write(f"generated=true\nname={name}\n")
+              print("made", name, "characters", len(text))
+
+          if __name__ == "__main__":
+              main()
+          PY
+      - name: Store only the generated narration
+        if: steps.synthesize.outputs.generated == 'true'
+        env:
+          AUDIO_NAME: ${{ steps.synthesize.outputs.name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "audio/$AUDIO_NAME.mp3" "audio/$AUDIO_NAME.json"
+          git diff --cached --quiet && exit 0
+          git commit -m "Narration: $AUDIO_NAME"
+          for i in 1 2 3; do
+            git fetch --no-tags origin "$TARGET_REF"
+            git rebase FETCH_HEAD
+            if git push origin "HEAD:$TARGET_REF"; then exit 0; fi
+            sleep 5
+          done
+          exit 1
